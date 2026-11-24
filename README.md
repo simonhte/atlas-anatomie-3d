@@ -5,6 +5,8 @@ Atlas d'anatomie humaine en 3D pour réviser la P2 (DFGSM2) : modèles anatomiqu
 3D et de scanner, quiz avec répétition espacée. Installable et utilisable hors ligne.
 
 > État : **étape 6 — application installable, hors ligne, mise en ligne**.
+>
+> **En ligne : https://simonhte.github.io/atlas-anatomie-3d/**
 
 ## Lancer l'app sur le Mac
 
@@ -82,7 +84,7 @@ reference/           Prototype d'origine
 ## Mise en ligne (GitHub Pages, gratuit)
 
 Le fichier `.github/workflows/mise-en-ligne.yml` demande à GitHub de tester, construire et publier l'app à
-chaque envoi sur la branche `main`. L'adresse est `https://<ton-compte>.github.io/atlas-anatomie-3d/`.
+chaque envoi sur la branche `main`. L'adresse est **https://simonhte.github.io/atlas-anatomie-3d/** (dépôt : https://github.com/simonhte/atlas-anatomie-3d).
 Pour publier une modification : `git push` (après un commit).
 
 ## Pipeline des modèles
