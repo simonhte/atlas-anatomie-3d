@@ -16,6 +16,9 @@
   import Etiquettes from './components/Etiquettes.svelte';
   import Credits from './components/Credits.svelte';
   import Dissection from './components/Dissection.svelte';
+  import Coupes from './components/Coupes.svelte';
+  import Scanner from './components/Scanner.svelte';
+  import { plansActifs, type Plans } from './lib/coupes';
   import { DISSECTION_INITIALE, ETAPES, deplacer, etapeEffective } from './lib/dissection';
 
   let canvas: HTMLCanvasElement;
@@ -39,6 +42,33 @@
   });
   /** Région ciblée par le curseur de dissection (null = tout le corps) */
   let regionDissection: string | null = $state(null);
+  // ------------------------------------------------------------ coupes
+  let plans: Plans = $state({
+    y: { actif: false, position: 1.1, inverser: false },
+    z: { actif: false, position: 0, inverser: false },
+    x: { actif: false, position: 0, inverser: false },
+  });
+  let bornes: Record<'x' | 'y' | 'z', [number, number]> = $state({ x: [-0.4, 0.4], y: [0, 1.8], z: [-0.25, 0.25] });
+  let scannerOuvert = $state(false);
+  /** Coupe imposée par le mode scanner (« couper le modèle à ce niveau ») */
+  let coupeScanner: { axe: 'x' | 'y' | 'z'; position: number } | null = $state(null);
+  $effect(() => {
+    const liste = plansActifs(plans);
+    viewer?.setCoupes(coupeScanner ? [...liste, { ...coupeScanner, inverser: false }] : liste);
+  });
+  function repereScanner(r: { axe: 'x' | 'y' | 'z'; valeur: number } | null, couper: boolean) {
+    viewer?.setRepere(r);
+    coupeScanner = r && couper ? { axe: r.axe, position: r.valeur } : null;
+  }
+  /** Clic sur une structure du scanner : on sélectionne la structure correspondante du modèle 3D. */
+  function selectionDepuisScanner(lien: string, cote: 'g' | 'd' | null) {
+    const candidates = structures.filter((s) => (s.fiche === lien || s.cle === lien) && (!cote || !s.cote || s.cote === cote));
+    // on préfère la structure elle-même, puis les parties principales (pas un conduit ou une branche)
+    const rang = (s: Structure) => (s.cle === lien ? 0 : /^(conduit|branche|affluent|arbre|tronc|partie|rameau|canal)/i.test(s.fr) ? 2 : 1);
+    candidates.sort((a, b) => rang(a) - rang(b));
+    if (candidates.length) selectionner(candidates[0].id, false);
+  }
+
   /** Résultat de « Retirer et voir dessous » */
   let dessous: { muscle: string; ids: { id: string; part: number }[] } | null = $state(null);
   const historique = new Historique<EtatAffichage>();
@@ -230,6 +260,10 @@
         pousser();
         v.vue('ant');
         chargement = '';
+        // bornes des curseurs de coupe = boîte du modèle
+        const b = v.boiteModele;
+        bornes = { x: [b.min.x, b.max.x], y: [b.min.y, b.max.y], z: [b.min.z, b.max.z] };
+        plans = { y: { ...plans.y, position: (b.min.y + b.max.y) * 0.62 }, z: { ...plans.z, position: (b.min.z + b.max.z) / 2 }, x: { ...plans.x, position: (b.min.x + b.max.x) / 2 } };
         // 2) vaisseaux, nerfs et organes en arrière-plan (4 paquets à la fois)
         let m = 0;
         chargementFond = `Vaisseaux, nerfs et organes : 0/${autres.length}`;
@@ -316,6 +350,9 @@
     <h2 class="titre-section">Dissection par couches</h2>
     <Dissection dissection={etat.dissection} bind:region={regionDissection} onDeplacer={dissequer} onEtape={etapeDirecte} />
 
+    <h2 class="titre-section">Coupes</h2>
+    <Coupes bind:plans {bornes} onScanner={() => { scannerOuvert = true; panneau = null; }} />
+
     <h2 class="titre-section">Affichage</h2>
     <div class="rangee">
       <button class="chip" class:on={etiquettes} onclick={() => { etiquettes = !etiquettes; viewer?.demanderRendu(); }}>Étiquettes</button>
@@ -358,6 +395,9 @@
         {/each}
       </div>
     </div>
+    {#if scannerOuvert}
+      <Scanner onSelection={selectionDepuisScanner} onRepere={repereScanner} onFermer={() => (scannerOuvert = false)} />
+    {/if}
     {#if chargement}<div class="etat">{chargement}</div>{/if}
     {#if chargementFond}<div class="fond-chargement">{chargementFond}</div>{/if}
     {#if erreur}<div class="etat erreur">Erreur : {erreur}</div>{/if}

@@ -74,6 +74,10 @@ export class Viewer {
   private anim: { t0: number; duree: number; de: [THREE.Vector3, THREE.Vector3]; vers: [THREE.Vector3, THREE.Vector3] } | null = null;
   private observateur: ResizeObserver;
   private boite = new THREE.Box3();
+  /** Plans de coupe actifs (appliqués aux matériaux des structures uniquement) */
+  private plans: THREE.Plane[] = [];
+  /** Plan repère translucide (position de la coupe de scanner) */
+  private repere: THREE.Group | null = null;
 
   /** Appelé à chaque rendu (pour repositionner les étiquettes) */
   onRendu: (() => void) | null = null;
@@ -88,6 +92,7 @@ export class Viewer {
     const mobile = matchMedia('(pointer: coarse)').matches;
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.5 : 2));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+    this.renderer.localClippingEnabled = true;
 
     this.camera = new THREE.PerspectiveCamera(35, 1, 0.01, 50);
     this.camera.position.set(0, 1, 5);
@@ -151,7 +156,18 @@ export class Viewer {
       }
       const src = m.material as THREE.MeshStandardMaterial;
       const couleur = couleurs[id] ? new THREE.Color(couleurs[id]) : src.color.clone();
-      const mat = new THREE.MeshStandardMaterial({ color: couleur, roughness: 0.68, metalness: 0, transparent: false, side: THREE.FrontSide });
+      const mat = new THREE.MeshStandardMaterial({ color: couleur, roughness: 0.68, metalness: 0, transparent: false, side: this.plans.length ? THREE.DoubleSide : THREE.FrontSide });
+      mat.clippingPlanes = this.plans;
+      // Remplissage des surfaces coupées : quand un plan de coupe ouvre une
+      // structure, on voit l'intérieur (faces arrière) ; on le peint d'une
+      // teinte unie, plus sombre, pour donner l'aspect d'une section pleine.
+      mat.onBeforeCompile = (shader) => {
+        shader.fragmentShader = shader.fragmentShader.replace(
+          '#include <dithering_fragment>',
+          '#include <dithering_fragment>\n  if (!gl_FrontFacing) gl_FragColor = vec4(diffuseColor.rgb * 0.6, 1.0);',
+        );
+      };
+      mat.customProgramCacheKey = () => 'atlas-coupe';
       const mesh = new THREE.Mesh(m.geometry, mat);
       mesh.name = id;
       // On fige la transformation (quantification meshopt) dans la matrice
@@ -295,7 +311,8 @@ export class Viewer {
     const ndc = new THREE.Vector2(((x - r.left) / r.width) * 2 - 1, -((y - r.top) / r.height) * 2 + 1);
     this.raycaster.setFromCamera(ndc, this.camera);
     const cibles = [...this.maillages.values()].filter((i) => i.mesh.visible).map((i) => i.mesh);
-    const hits = this.raycaster.intersectObjects(cibles, false);
+    // on ignore les points retirés par les plans de coupe
+    const hits = this.raycaster.intersectObjects(cibles, false).filter((h) => this.plans.every((p) => p.distanceToPoint(h.point) >= 0));
     // En rayons X, on privilégie ce qui n'est pas quasi transparent
     const hit = hits.find((h) => ((h.object as THREE.Mesh).material as THREE.Material).opacity > 0.3) ?? hits[0];
     return hit ? (hit.object.userData.id as string) : null;
@@ -391,6 +408,54 @@ export class Viewer {
       .map(([k, n]) => ({ id: k, part: n / Math.max(1, total) }))
       .filter((x) => x.part >= 0.02)
       .sort((a, b) => b.part - a.part);
+  }
+
+  // ------------------------------------------------------------------ coupes
+
+  /** Boîte englobante de tout le modèle (pour les curseurs de coupe). */
+  get boiteModele(): THREE.Box3 { return this.boite.clone(); }
+
+  /**
+   * Plans de coupe. Pour chaque plan : axe, position (m) et sens. Par défaut on
+   * GARDE la partie située du côté des valeurs basses (sous un plan axial,
+   * derrière un plan coronal, à droite du sujet pour un plan sagittal) ;
+   * `inverser` garde l'autre côté.
+   */
+  setCoupes(liste: { axe: 'x' | 'y' | 'z'; position: number; inverser?: boolean }[]) {
+    const n = { x: new THREE.Vector3(1, 0, 0), y: new THREE.Vector3(0, 1, 0), z: new THREE.Vector3(0, 0, 1) };
+    // plan.distanceToPoint(p) >= 0 => point conservé
+    this.plans = liste.map((c) => (c.inverser
+      ? new THREE.Plane(n[c.axe].clone(), -c.position)
+      : new THREE.Plane(n[c.axe].clone().negate(), c.position)));
+    for (const info of this.maillages.values()) {
+      const mat = info.mesh.material as THREE.MeshStandardMaterial;
+      mat.clippingPlanes = this.plans;
+      const cote = this.plans.length ? THREE.DoubleSide : THREE.FrontSide;
+      if (mat.side !== cote) { mat.side = cote; mat.needsUpdate = true; }
+    }
+    this.demanderRendu();
+  }
+
+  /** Affiche (ou retire avec null) un plan repère translucide à une position donnée. */
+  setRepere(r: { axe: 'x' | 'y' | 'z'; valeur: number } | null) {
+    if (this.repere) { this.scene.remove(this.repere); this.repere = null; }
+    if (r) {
+      const t = this.boite.getSize(new THREE.Vector3()).multiplyScalar(1.15);
+      const c = this.boite.getCenter(new THREE.Vector3());
+      const [l, h] = r.axe === 'y' ? [t.x, t.z] : r.axe === 'z' ? [t.x, t.y] : [t.z, t.y];
+      const geo = new THREE.PlaneGeometry(l, h);
+      const g = new THREE.Group();
+      g.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: ACCENT, transparent: true, opacity: 0.16, side: THREE.DoubleSide, depthWrite: false })));
+      g.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: ACCENT })));
+      g.position.copy(c);
+      if (r.axe === 'y') { g.rotation.x = -Math.PI / 2; g.position.y = r.valeur; }
+      else if (r.axe === 'z') g.position.z = r.valeur;
+      else { g.rotation.y = Math.PI / 2; g.position.x = r.valeur; }
+      g.renderOrder = 2;
+      this.repere = g;
+      this.scene.add(g);
+    }
+    this.demanderRendu();
   }
 
   // ------------------------------------------------------------------ étiquettes

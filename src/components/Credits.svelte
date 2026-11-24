@@ -59,6 +59,16 @@
     fournie par Z-Anatomy (CC BY-SA 4.0), complétée par des traductions automatiques signalées dans les fiches.
   </p>
 
+  <h3>Coupes de scanner</h3>
+  <p class="petit">
+    Scanner et segmentations du patient s1371 du jeu de données <b>TotalSegmentator</b> (version 2), licence
+    <a href="https://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank" rel="noopener">CC BY 4.0</a> —
+    <a href="https://doi.org/10.5281/zenodo.8367169" target="_blank" rel="noopener">Zenodo 10.5281/zenodo.8367169</a>.
+    Wasserthal J. et al., <i>TotalSegmentator: Robust Segmentation of 104 Anatomic Structures in CT Images</i>,
+    Radiology: Artificial Intelligence, 2023. Modifications : coupes tous les 3 mm, densités compressées sur 8 bits,
+    noms des structures traduits en français.
+  </p>
+
   <h3>Contenu des fiches</h3>
   <p class="petit">
     Fiches rédigées pour ce projet à partir du programme d'anatomie de DFGSM2. Elles sont marquées

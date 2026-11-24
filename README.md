@@ -3,7 +3,7 @@
 Atlas d'anatomie humaine en 3D pour réviser la P2 (DFGSM2) : modèles anatomiques réels
 (BodyParts3D), fiches de cours en français, et bientôt dissection par couches, coupes et quiz.
 
-> État : **étape 3 — vaisseaux, nerfs et organes** (corps entier, dissection en 7 couches).
+> État : **étape 4 — coupes** (plans de coupe 3D avec sections pleines, coupes de scanner réelles annotées).
 
 ## Lancer l'app sur le Mac
 
@@ -101,6 +101,17 @@ seulement approchés (autre modèle).
 ```bash
 brew install --cask blender
 ```
+
+## Coupes
+
+- **Plans de coupe 3D** (axial, coronal, sagittal) : panneau « Coupes ». Les surfaces coupées sont remplies
+  (teinte plus sombre de la structure) : on lit le modèle comme une coupe anatomique.
+- **Coupe scanner** : vraies images de scanner (patient s1371 de TotalSegmentator, CC BY 4.0, des cuisses à C6),
+  axiales, coronales et sagittales tous les 3 mm, fenêtres parties molles / poumon / os, structures annotées,
+  nom au survol, clic = fiche, plan repère bleu sur le modèle 3D (hauteur calée sur les vertèbres T1–L5).
+- Pipeline : `npm run modeles:coupes` (`pipeline/06-coupes-scanner.mjs`). Seul ce patient (≈ 63 Mo) est
+  téléchargé dans l'archive de 3,2 Go, par requêtes partielles (`pipeline/lib/zip-distant.mjs`). Sortie :
+  `public/coupes/` (≈ 13 Mo).
 
 ## Dissection par couches
 

@@ -16,7 +16,8 @@
     "modeles:construire": "node pipeline/03-construire-glb.mjs",
     "modeles:z-anatomy": "node pipeline/04-z-anatomy.mjs",
     "modeles:feminin": "node pipeline/05-hubmap-feminin.mjs",
-    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:z-anatomy && npm run modeles:feminin && npm run modeles:inventaire && npm run modeles:construire"
+    "modeles:coupes": "node pipeline/06-coupes-scanner.mjs",
+    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:z-anatomy && npm run modeles:feminin && npm run modeles:inventaire && npm run modeles:construire && npm run modeles:coupes"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.1.0",
@@ -33,6 +34,7 @@
     "@tsconfig/svelte": "^5.0.4",
     "@types/node": "^24.19.2",
     "@types/three": "^0.171.0",
+    "jpeg-js": "^0.4.4",
     "meshoptimizer": "^0.22.0",
     "svelte": "^5.15.0",
     "svelte-check": "^4.1.0",
