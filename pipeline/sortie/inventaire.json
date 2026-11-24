@@ -26,7 +26,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "aorte-abdominale",
+  "fiche": "aorte",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -284,70 +284,6 @@
   "couche": 5,
   "fiche": "artere-colique-moyenne",
   "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2373",
-  "fma": "FMA22707",
-  "en": "Right superior ulnar collateral artery",
-  "systeme": "arteres",
-  "centre": [
-   -185,
-   -69.3,
-   1081.7
-  ],
-  "min": [
-   -188.8325,
-   -84.2403,
-   1040.5013
-  ],
-  "max": [
-   -181.1599,
-   -54.4021,
-   1122.974
-  ],
-  "cle": "artere-collaterale-ulnaire",
-  "fr": "Artère collatérale ulnaire",
-  "la": "Arteria collateralis ulnaris superior",
-  "genre": "f",
-  "region": "abdomen",
-  "groupe": "Artères de l'abdomen",
-  "couche": 5,
-  "fiche": "artere-collaterale-ulnaire",
-  "cote": "d",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2374",
-  "fma": "FMA22708",
-  "en": "Left superior ulnar collateral artery",
-  "systeme": "arteres",
-  "centre": [
-   185,
-   -69.3,
-   1081.7
-  ],
-  "min": [
-   181.1545,
-   -84.2392,
-   1040.507
-  ],
-  "max": [
-   188.8215,
-   -54.401,
-   1122.9746
-  ],
-  "cle": "artere-collaterale-ulnaire",
-  "fr": "Artère collatérale ulnaire",
-  "la": "Arteria collateralis ulnaris superior",
-  "genre": "f",
-  "region": "abdomen",
-  "groupe": "Artères de l'abdomen",
-  "couche": 5,
-  "fiche": "artere-collaterale-ulnaire",
-  "cote": "g",
   "auto": false,
   "anglais": false
  },
@@ -730,7 +666,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreatico-duodenale-superieure-anterieure",
+  "fiche": "pancreas",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -762,7 +698,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreaticoduodenale-inferieure",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -794,7 +730,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreaticoduodenale-infero-anterieure",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -826,7 +762,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreaticoduodenale-infero-posterieure",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -858,7 +794,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreaticoduodenale-posterosuperieure",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -890,7 +826,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreatique-caudale",
+  "fiche": "pancreas",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -922,7 +858,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreatique-dorsale",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -954,7 +890,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-pancreatique-inferieure",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -1050,7 +986,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-renale-droite",
+  "fiche": "artere-renale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -1082,7 +1018,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "artere-renale-gauche",
+  "fiche": "artere-renale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -1978,7 +1914,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2010,7 +1946,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2042,7 +1978,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2074,7 +2010,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2106,7 +2042,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2138,7 +2074,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2170,7 +2106,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2202,7 +2138,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2234,7 +2170,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2266,7 +2202,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2298,7 +2234,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2330,7 +2266,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-anterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2362,7 +2298,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-posterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2394,7 +2330,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-posterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2426,7 +2362,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-posterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2458,7 +2394,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-posterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2490,7 +2426,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-posterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2522,7 +2458,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "division-posterieure-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2554,7 +2490,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "grande-artere-pancreatique",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -2586,7 +2522,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "segment-ureterique-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2618,7 +2554,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "segment-ureterique-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2650,7 +2586,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "segment-ureterique-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2778,7 +2714,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "tronc-de-l-artere-mesenterique-superieure",
+  "fiche": "artere-mesenterique-superieure",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -2810,7 +2746,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "tronc-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -2842,7 +2778,7 @@
   "region": "abdomen",
   "groupe": "Artères de l'abdomen",
   "couche": 5,
-  "fiche": "tronc-de-l-artere-renale",
+  "fiche": "artere-renale",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -2938,7 +2874,7 @@
   "region": "bassin",
   "groupe": "Artères du bassin",
   "couche": 5,
-  "fiche": "artere-dorsale-du-penis",
+  "fiche": "penis",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -2970,7 +2906,7 @@
   "region": "bassin",
   "groupe": "Artères du bassin",
   "couche": 5,
-  "fiche": "artere-dorsale-du-penis",
+  "fiche": "penis",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -3002,7 +2938,7 @@
   "region": "bassin",
   "groupe": "Artères du bassin",
   "couche": 5,
-  "fiche": "artere-dorsale-du-penis",
+  "fiche": "penis",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -3034,7 +2970,7 @@
   "region": "bassin",
   "groupe": "Artères du bassin",
   "couche": 5,
-  "fiche": "artere-dorsale-du-penis",
+  "fiche": "penis",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -5536,6 +5472,70 @@
   "anglais": false
  },
  {
+  "fj": "FJ2219",
+  "fma": "FMA22692",
+  "en": "Left brachial artery",
+  "systeme": "arteres",
+  "centre": [
+   180.2,
+   -80.7,
+   1147.5
+  ],
+  "min": [
+   143.0301,
+   -88.9771,
+   1020.5886
+  ],
+  "max": [
+   217.468,
+   -72.3385,
+   1274.3607
+  ],
+  "cle": "artere-brachiale",
+  "fr": "Artère brachiale",
+  "la": "Arteria brachialis",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-brachiale",
+  "cote": "g",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2271",
+  "fma": "FMA22691",
+  "en": "Right brachial artery",
+  "systeme": "arteres",
+  "centre": [
+   -180.3,
+   -80.7,
+   1147.5
+  ],
+  "min": [
+   -217.479,
+   -88.987,
+   1020.5792
+  ],
+  "max": [
+   -143.0281,
+   -72.3284,
+   1274.3589
+  ],
+  "cle": "artere-brachiale",
+  "fr": "Artère brachiale",
+  "la": "Arteria brachialis",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-brachiale",
+  "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
   "fj": "FJ2225",
   "fma": "FMA22697",
   "en": "Left deep brachial artery",
@@ -5595,6 +5595,198 @@
   "groupe": "Artères du membre supérieur",
   "couche": 5,
   "fiche": "artere-brachiale-profonde",
+  "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2212",
+  "fma": "FMA22683",
+  "en": "Left anterior circumflex humeral artery",
+  "systeme": "arteres",
+  "centre": [
+   167.2,
+   -88.7,
+   1299.2
+  ],
+  "min": [
+   143.252,
+   -106.4706,
+   1265.5381
+  ],
+  "max": [
+   191.2397,
+   -70.995,
+   1332.9523
+  ],
+  "cle": "artere-circonflexe-anterieure-de-l-humerus",
+  "fr": "Artère circonflexe antérieure de l'humérus",
+  "la": "Arteria circumflexa anterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-circonflexe-anterieure-de-l-humerus",
+  "cote": "g",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2264",
+  "fma": "FMA22682",
+  "en": "Right anterior circumflex humeral artery",
+  "systeme": "arteres",
+  "centre": [
+   -167.2,
+   -88.7,
+   1299.2
+  ],
+  "min": [
+   -191.243,
+   -106.4666,
+   1265.54
+  ],
+  "max": [
+   -143.2477,
+   -70.9884,
+   1332.9498
+  ],
+  "cle": "artere-circonflexe-anterieure-de-l-humerus",
+  "fr": "Artère circonflexe antérieure de l'humérus",
+  "la": "Arteria circumflexa anterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-circonflexe-anterieure-de-l-humerus",
+  "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2239",
+  "fma": "FMA22687",
+  "en": "Left posterior circumflex humeral artery",
+  "systeme": "arteres",
+  "centre": [
+   165.7,
+   -75.6,
+   1292.2
+  ],
+  "min": [
+   140.1253,
+   -87.9434,
+   1287.2041
+  ],
+  "max": [
+   191.2714,
+   -63.285,
+   1297.1235
+  ],
+  "cle": "artere-circonflexe-posterieure-de-l-humerus",
+  "fr": "Artère circonflexe postérieure de l'humérus",
+  "la": "Arteria circumflexa posterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
+  "cote": "g",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2240",
+  "fma": "FMA22687",
+  "en": "Left posterior circumflex humeral artery",
+  "systeme": "arteres",
+  "centre": [
+   167.5,
+   -80.3,
+   1292.2
+  ],
+  "min": [
+   142.1607,
+   -98.2006,
+   1285.8613
+  ],
+  "max": [
+   192.9324,
+   -62.4116,
+   1298.464
+  ],
+  "cle": "artere-circonflexe-posterieure-de-l-humerus",
+  "fr": "Artère circonflexe postérieure de l'humérus",
+  "la": "Arteria circumflexa posterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
+  "cote": "g",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2291",
+  "fma": "FMA22685",
+  "en": "Right posterior circumflex humeral artery",
+  "systeme": "arteres",
+  "centre": [
+   -165.7,
+   -75.6,
+   1292.2
+  ],
+  "min": [
+   -191.2829,
+   -87.9462,
+   1287.213
+  ],
+  "max": [
+   -140.1281,
+   -63.2915,
+   1297.1267
+  ],
+  "cle": "artere-circonflexe-posterieure-de-l-humerus",
+  "fr": "Artère circonflexe postérieure de l'humérus",
+  "la": "Arteria circumflexa posterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
+  "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2292",
+  "fma": "FMA22685",
+  "en": "Right posterior circumflex humeral artery",
+  "systeme": "arteres",
+  "centre": [
+   -167.6,
+   -80.3,
+   1292.2
+  ],
+  "min": [
+   -192.9629,
+   -98.2017,
+   1285.8563
+  ],
+  "max": [
+   -142.159,
+   -62.3998,
+   1298.4708
+  ],
+  "cle": "artere-circonflexe-posterieure-de-l-humerus",
+  "fr": "Artère circonflexe postérieure de l'humérus",
+  "la": "Arteria circumflexa posterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -5724,6 +5916,70 @@
   "couche": 5,
   "fiche": "artere-collaterale-radiale",
   "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2373",
+  "fma": "FMA22707",
+  "en": "Right superior ulnar collateral artery",
+  "systeme": "arteres",
+  "centre": [
+   -185,
+   -69.3,
+   1081.7
+  ],
+  "min": [
+   -188.8325,
+   -84.2403,
+   1040.5013
+  ],
+  "max": [
+   -181.1599,
+   -54.4021,
+   1122.974
+  ],
+  "cle": "artere-collaterale-ulnaire",
+  "fr": "Artère collatérale ulnaire",
+  "la": "Arteria collateralis ulnaris superior",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-collaterale-ulnaire",
+  "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2374",
+  "fma": "FMA22708",
+  "en": "Left superior ulnar collateral artery",
+  "systeme": "arteres",
+  "centre": [
+   185,
+   -69.3,
+   1081.7
+  ],
+  "min": [
+   181.1545,
+   -84.2392,
+   1040.507
+  ],
+  "max": [
+   188.8215,
+   -54.401,
+   1122.9746
+  ],
+  "cle": "artere-collaterale-ulnaire",
+  "fr": "Artère collatérale ulnaire",
+  "la": "Arteria collateralis ulnaris superior",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Artères du membre supérieur",
+  "couche": 5,
+  "fiche": "artere-collaterale-ulnaire",
+  "cote": "g",
   "auto": false,
   "anglais": false
  },
@@ -12186,7 +12442,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "aorte-ascendante",
+  "fiche": "aorte",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -12218,7 +12474,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "aorte-descendante",
+  "fiche": "aorte",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -12250,7 +12506,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "aorte-thoracique",
+  "fiche": "aorte",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -12282,7 +12538,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "arcade-de-l-aorte",
+  "fiche": "aorte",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -12352,70 +12608,6 @@
   "anglais": false
  },
  {
-  "fj": "FJ2219",
-  "fma": "FMA22692",
-  "en": "Left brachial artery",
-  "systeme": "arteres",
-  "centre": [
-   180.2,
-   -80.7,
-   1147.5
-  ],
-  "min": [
-   143.0301,
-   -88.9771,
-   1020.5886
-  ],
-  "max": [
-   217.468,
-   -72.3385,
-   1274.3607
-  ],
-  "cle": "artere-brachiale",
-  "fr": "Artère brachiale",
-  "la": "Arteria brachialis",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-brachiale",
-  "cote": "g",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2271",
-  "fma": "FMA22691",
-  "en": "Right brachial artery",
-  "systeme": "arteres",
-  "centre": [
-   -180.3,
-   -80.7,
-   1147.5
-  ],
-  "min": [
-   -217.479,
-   -88.987,
-   1020.5792
-  ],
-  "max": [
-   -143.0281,
-   -72.3284,
-   1274.3589
-  ],
-  "cle": "artere-brachiale",
-  "fr": "Artère brachiale",
-  "la": "Arteria brachialis",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-brachiale",
-  "cote": "d",
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "FJ1933",
   "fma": "FMA68109",
   "en": "Bronchial artery",
@@ -12474,7 +12666,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "artere-carotide-commune-droite",
+  "fiche": "artere-carotide-commune",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -12506,72 +12698,8 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "artere-carotide-commune-gauche",
+  "fiche": "artere-carotide-commune",
   "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2212",
-  "fma": "FMA22683",
-  "en": "Left anterior circumflex humeral artery",
-  "systeme": "arteres",
-  "centre": [
-   167.2,
-   -88.7,
-   1299.2
-  ],
-  "min": [
-   143.252,
-   -106.4706,
-   1265.5381
-  ],
-  "max": [
-   191.2397,
-   -70.995,
-   1332.9523
-  ],
-  "cle": "artere-circonflexe-anterieure-de-l-humerus",
-  "fr": "Artère circonflexe antérieure de l'humérus",
-  "la": "Arteria circumflexa anterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-circonflexe-anterieure-de-l-humerus",
-  "cote": "g",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2264",
-  "fma": "FMA22682",
-  "en": "Right anterior circumflex humeral artery",
-  "systeme": "arteres",
-  "centre": [
-   -167.2,
-   -88.7,
-   1299.2
-  ],
-  "min": [
-   -191.243,
-   -106.4666,
-   1265.54
-  ],
-  "max": [
-   -143.2477,
-   -70.9884,
-   1332.9498
-  ],
-  "cle": "artere-circonflexe-anterieure-de-l-humerus",
-  "fr": "Artère circonflexe antérieure de l'humérus",
-  "la": "Arteria circumflexa anterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-circonflexe-anterieure-de-l-humerus",
-  "cote": "d",
   "auto": false,
   "anglais": false
  },
@@ -12635,134 +12763,6 @@
   "groupe": "Artères du thorax",
   "couche": 5,
   "fiche": "artere-circonflexe-de-la-scapula",
-  "cote": "d",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2239",
-  "fma": "FMA22687",
-  "en": "Left posterior circumflex humeral artery",
-  "systeme": "arteres",
-  "centre": [
-   165.7,
-   -75.6,
-   1292.2
-  ],
-  "min": [
-   140.1253,
-   -87.9434,
-   1287.2041
-  ],
-  "max": [
-   191.2714,
-   -63.285,
-   1297.1235
-  ],
-  "cle": "artere-circonflexe-posterieure-de-l-humerus",
-  "fr": "Artère circonflexe postérieure de l'humérus",
-  "la": "Arteria circumflexa posterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
-  "cote": "g",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2240",
-  "fma": "FMA22687",
-  "en": "Left posterior circumflex humeral artery",
-  "systeme": "arteres",
-  "centre": [
-   167.5,
-   -80.3,
-   1292.2
-  ],
-  "min": [
-   142.1607,
-   -98.2006,
-   1285.8613
-  ],
-  "max": [
-   192.9324,
-   -62.4116,
-   1298.464
-  ],
-  "cle": "artere-circonflexe-posterieure-de-l-humerus",
-  "fr": "Artère circonflexe postérieure de l'humérus",
-  "la": "Arteria circumflexa posterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
-  "cote": "g",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2291",
-  "fma": "FMA22685",
-  "en": "Right posterior circumflex humeral artery",
-  "systeme": "arteres",
-  "centre": [
-   -165.7,
-   -75.6,
-   1292.2
-  ],
-  "min": [
-   -191.2829,
-   -87.9462,
-   1287.213
-  ],
-  "max": [
-   -140.1281,
-   -63.2915,
-   1297.1267
-  ],
-  "cle": "artere-circonflexe-posterieure-de-l-humerus",
-  "fr": "Artère circonflexe postérieure de l'humérus",
-  "la": "Arteria circumflexa posterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
-  "cote": "d",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2292",
-  "fma": "FMA22685",
-  "en": "Right posterior circumflex humeral artery",
-  "systeme": "arteres",
-  "centre": [
-   -167.6,
-   -80.3,
-   1292.2
-  ],
-  "min": [
-   -192.9629,
-   -98.2017,
-   1285.8563
-  ],
-  "max": [
-   -142.159,
-   -62.3998,
-   1298.4708
-  ],
-  "cle": "artere-circonflexe-posterieure-de-l-humerus",
-  "fr": "Artère circonflexe postérieure de l'humérus",
-  "la": "Arteria circumflexa posterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Artères du thorax",
-  "couche": 5,
-  "fiche": "artere-circonflexe-posterieure-de-l-humerus",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -14170,7 +14170,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "artere-pulmonaire-droite",
+  "fiche": "tronc-pulmonaire",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -14202,7 +14202,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "artere-pulmonaire-gauche",
+  "fiche": "tronc-pulmonaire",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -15418,7 +15418,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "artere-subclaviere-droite",
+  "fiche": "artere-subclaviere",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -15450,7 +15450,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "artere-subclaviere-gauche",
+  "fiche": "artere-subclaviere",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -16186,7 +16186,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-anterieure-deuxieme-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -16218,7 +16218,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-anterieure-premiere-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -16250,7 +16250,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-anterieure-premiere-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -16282,7 +16282,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-anterieure-troisieme-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -16314,7 +16314,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-anterieure-troisieme-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -16442,7 +16442,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-circonflexe-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16474,7 +16474,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-circonflexe-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16506,7 +16506,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-circonflexe-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16538,7 +16538,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-circonflexe-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16570,7 +16570,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-circonflexe-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16602,7 +16602,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-circonflexe-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16698,7 +16698,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16730,7 +16730,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16762,7 +16762,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16794,7 +16794,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16826,7 +16826,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16858,7 +16858,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16890,7 +16890,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16922,7 +16922,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16954,7 +16954,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -16986,7 +16986,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-diagonale-de-la-branche-descendante-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -17018,7 +17018,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-du-cone-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -17050,7 +17050,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-du-cone-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -17210,7 +17210,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17242,7 +17242,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17274,7 +17274,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17306,7 +17306,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17338,7 +17338,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17370,7 +17370,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17402,7 +17402,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17434,7 +17434,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17466,7 +17466,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-interventriculaire-posterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17882,7 +17882,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-marginale-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17914,7 +17914,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-marginale-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17946,7 +17946,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-marginale-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -17978,7 +17978,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-marginale-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18010,7 +18010,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-marginale-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18426,7 +18426,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-septale-de-l-artere-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -18458,7 +18458,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-septale-de-l-artere-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -18490,7 +18490,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-septale-de-l-artere-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -18522,7 +18522,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-septale-deuxieme-de-l-artere-interventriculaire-posterieure",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18554,7 +18554,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-septale-premiere-de-l-artere-interventriculaire-posterieure",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18810,7 +18810,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-anterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18842,7 +18842,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-anterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18874,7 +18874,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-anterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18906,7 +18906,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18938,7 +18938,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -18970,7 +18970,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19002,7 +19002,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19034,7 +19034,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19066,7 +19066,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19098,7 +19098,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19130,7 +19130,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19162,7 +19162,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "branche-ventriculaire-posterieure-premiere-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19898,7 +19898,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "tronc-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -19930,7 +19930,7 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "tronc-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -20090,9 +20090,41 @@
   "region": "thorax",
   "groupe": "Artères du thorax",
   "couche": 5,
-  "fiche": "tronc-de-la-branche-interventriculaire-anterieure-de-l-artere-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": "g",
   "auto": true,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2966",
+  "fma": "FMA8612",
+  "en": "Pulmonary trunk",
+  "systeme": "arteres",
+  "centre": [
+   26.7,
+   -137.7,
+   1275.1
+  ],
+  "min": [
+   11.2747,
+   -158.864,
+   1256.5
+  ],
+  "max": [
+   42.075,
+   -116.516,
+   1293.61
+  ],
+  "cle": "tronc-pulmonaire",
+  "fr": "Tronc pulmonaire",
+  "la": "Truncus pulmonalis",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Artères du thorax",
+  "couche": 5,
+  "fiche": "tronc-pulmonaire",
+  "cote": null,
+  "auto": false,
   "anglais": false
  },
  {
@@ -20160,38 +20192,6 @@
   "anglais": false
  },
  {
-  "fj": "FJ2966",
-  "fma": "FMA8612",
-  "en": "Pulmonary trunk",
-  "systeme": "autres",
-  "centre": [
-   26.7,
-   -137.7,
-   1275.1
-  ],
-  "min": [
-   11.2747,
-   -158.864,
-   1256.5
-  ],
-  "max": [
-   42.075,
-   -116.516,
-   1293.61
-  ],
-  "cle": "tronc-pulmonaire",
-  "fr": "Tronc pulmonaire",
-  "la": "Truncus pulmonalis",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Autres structures",
-  "couche": 7,
-  "fiche": "tronc-pulmonaire",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "FJ2418",
   "fma": "FMA7265",
   "en": "Anterolateral head of lateral papillary muscle of left ventricle",
@@ -20218,7 +20218,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "chef-antero-lateral-du-muscle-papillaire",
+  "fiche": "coeur",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -20250,7 +20250,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "cuspide-anterieure-de-la-valve-mitrale",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20282,7 +20282,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "cuspide-anterieure-de-la-valve-tricuspide",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20314,7 +20314,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "cuspide-posterieure-de-la-valve-mitrale",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20346,7 +20346,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "cuspide-posterieure-de-la-valve-tricuspide",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20378,7 +20378,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "cuspide-septale-de-la-valve-tricuspide",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20410,7 +20410,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "muscle-papillaire-anterieur-du-ventricule-droit",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20442,7 +20442,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "muscle-papillaire-lateral-antero-lateral",
+  "fiche": "coeur",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -20474,7 +20474,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "muscle-papillaire-posterieur",
+  "fiche": "coeur",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -20506,7 +20506,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "muscle-papillaire-septal-du-ventricule-droit",
+  "fiche": "coeur",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20538,7 +20538,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "paroi-de-l-atrium",
+  "fiche": "coeur",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -20570,7 +20570,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "paroi-de-l-atrium",
+  "fiche": "coeur",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -20602,7 +20602,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "paroi-du-ventricule",
+  "fiche": "coeur",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -20634,7 +20634,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "sinus-coronaire",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20666,7 +20666,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "valvule-anterieure-du-valve-aortique",
+  "fiche": "coeur",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -20698,7 +20698,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "valvule-anterieure-du-valve-pulmonaire",
+  "fiche": "coeur",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -20730,7 +20730,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "valvule-anterieure-du-valve-pulmonaire",
+  "fiche": "coeur",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -20762,7 +20762,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "valvule-posterieure-du-valve-aortique",
+  "fiche": "coeur",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -20794,7 +20794,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "valvule-posterieure-du-valve-aortique",
+  "fiche": "coeur",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -20826,7 +20826,7 @@
   "region": "thorax",
   "groupe": "Cœur",
   "couche": 7,
-  "fiche": "valvule-posterieure-du-valve-pulmonaire",
+  "fiche": "coeur",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -20890,7 +20890,103 @@
   "region": "abdomen",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "conduit-hepatique-commun",
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2821",
+  "fma": "FMA15743",
+  "en": "Hepatovenous segment V",
+  "systeme": "digestif",
+  "centre": [
+   -65.4,
+   -153.3,
+   1081.3
+  ],
+  "min": [
+   -104.585,
+   -198.69,
+   1046.42
+  ],
+  "max": [
+   -26.3054,
+   -107.889,
+   1116.09
+  ],
+  "cle": "segment-v-du-foie",
+  "fr": "Segment V du foie",
+  "la": "Segmentum hepatis V",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2822",
+  "fma": "FMA15744",
+  "en": "Hepatovenous segment VI",
+  "systeme": "digestif",
+  "centre": [
+   -68,
+   -104.7,
+   1069.2
+  ],
+  "min": [
+   -114.575,
+   -164.947,
+   1027.96
+  ],
+  "max": [
+   -21.4193,
+   -44.5192,
+   1110.48
+  ],
+  "cle": "segment-vi-du-foie",
+  "fr": "Segment VI du foie",
+  "la": "Segmentum hepatis VI",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2409",
+  "fma": "FMA15745",
+  "en": "Hepatovenous segment VII",
+  "systeme": "digestif",
+  "centre": [
+   -67.9,
+   -104.7,
+   1069.4
+  ],
+  "min": [
+   -114.7897,
+   -165.2125,
+   1027.9264
+  ],
+  "max": [
+   -21.0907,
+   -44.2721,
+   1110.776
+  ],
+  "cle": "segment-vii-du-foie",
+  "fr": "Segment VII du foie",
+  "la": "Segmentum hepatis VII",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20922,7 +21018,7 @@
   "region": "abdomen",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "vesicule-biliaire",
+  "fiche": "foie",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20954,7 +21050,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "colon-ascendant",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -20986,7 +21082,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "colon-descendant",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21018,7 +21114,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "colon-transverse",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21050,7 +21146,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "mesocolon-transverse",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21082,7 +21178,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "tenia-libre",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21114,7 +21210,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "tenia-mesocolique",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21146,7 +21242,7 @@
   "region": "abdomen",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "tenia-omental",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21178,7 +21274,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21210,7 +21306,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21242,7 +21338,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21274,7 +21370,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21306,7 +21402,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21338,7 +21434,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21370,7 +21466,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21402,7 +21498,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21434,7 +21530,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21466,7 +21562,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21498,7 +21594,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21530,7 +21626,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21562,7 +21658,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21594,7 +21690,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21626,7 +21722,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21658,7 +21754,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21690,7 +21786,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21722,7 +21818,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21754,7 +21850,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21786,7 +21882,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21818,7 +21914,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21850,7 +21946,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21882,7 +21978,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21914,7 +22010,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21946,7 +22042,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -21978,7 +22074,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22010,7 +22106,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22042,7 +22138,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22074,7 +22170,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22106,7 +22202,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "jejunum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22138,7 +22234,7 @@
   "region": "abdomen",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "mesentere-de-l-intestin-grele",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -22170,7 +22266,7 @@
   "region": "abdomen",
   "groupe": "Pancréas",
   "couche": 7,
-  "fiche": "arbre-canalaire-du-pancreas",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22202,7 +22298,7 @@
   "region": "abdomen",
   "groupe": "Pancréas",
   "couche": 7,
-  "fiche": "canal-pancreatique",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22266,7 +22362,7 @@
   "region": "abdomen",
   "groupe": "Pancréas",
   "couche": 7,
-  "fiche": "pancreas-parenchyme",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22298,7 +22394,7 @@
   "region": "bassin",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "appendice-vermiforme",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22330,7 +22426,7 @@
   "region": "bassin",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "jonction-ileo-c-cale",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22362,7 +22458,7 @@
   "region": "bassin",
   "groupe": "Gros intestin",
   "couche": 7,
-  "fiche": "meso-appendice",
+  "fiche": "gros-intestin",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22426,7 +22522,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22458,7 +22554,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22490,7 +22586,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22522,7 +22618,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22554,7 +22650,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22586,7 +22682,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22618,7 +22714,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22650,7 +22746,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22682,7 +22778,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22714,7 +22810,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22746,7 +22842,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-distale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22778,7 +22874,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22810,7 +22906,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22842,7 +22938,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22874,7 +22970,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22906,7 +23002,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22938,7 +23034,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -22970,7 +23066,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23002,7 +23098,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23034,7 +23130,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23066,7 +23162,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-moyenne",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23098,7 +23194,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23130,7 +23226,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23162,7 +23258,7 @@
   "region": "bassin",
   "groupe": "Intestin grêle",
   "couche": 7,
-  "fiche": "ileum-partie-proximale",
+  "fiche": "intestin-grele",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -23194,7 +23290,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-molaire-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23226,7 +23322,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-molaire-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23258,7 +23354,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-molaire-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23290,7 +23386,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-molaire-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23322,7 +23418,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-premolaire-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23354,7 +23450,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-premolaire-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23386,7 +23482,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-premolaire-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23418,7 +23514,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "1re-premolaire-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23450,7 +23546,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-molaire-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23482,7 +23578,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-molaire-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23514,7 +23610,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-molaire-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23546,7 +23642,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-molaire-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23578,7 +23674,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-premolaire-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23610,7 +23706,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-premolaire-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23642,7 +23738,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-premolaire-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23674,7 +23770,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "2e-premolaire-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23706,7 +23802,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "canine-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23738,7 +23834,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "canine-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -23770,7 +23866,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "canine-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -23802,7 +23898,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "canine-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -24026,7 +24122,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-centrale-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -24058,7 +24154,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-centrale-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -24090,7 +24186,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-centrale-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -24122,7 +24218,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-centrale-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -24154,7 +24250,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-laterale-inferieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -24186,7 +24282,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-laterale-inferieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -24218,7 +24314,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-laterale-superieure",
+  "fiche": "dents",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -24250,7 +24346,7 @@
   "region": "tete",
   "groupe": "Cavité orale et glandes salivaires",
   "couche": 7,
-  "fiche": "incisive-laterale-superieure",
+  "fiche": "dents",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -24378,7 +24474,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-du-lobe-caude-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24410,7 +24506,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-inferieur-anterieur-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -24442,7 +24538,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-inferieur-lateral-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24474,7 +24570,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-inferieur-medial-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24506,7 +24602,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-inferieur-posterieur-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -24538,7 +24634,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-anterieur-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -24570,7 +24666,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-lateral-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24602,7 +24698,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-lateral-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24634,7 +24730,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-medial-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24666,7 +24762,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-medial-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24698,7 +24794,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-posterieur-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -24730,7 +24826,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "affluent-superieur-posterieur-de-l-arbre-biliaire-hepatique",
+  "fiche": "foie",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -24762,7 +24858,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "conduit-cystique",
+  "fiche": "foie",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -24794,7 +24890,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "conduit-du-lobe-caude-du-foie",
+  "fiche": "foie",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -24826,7 +24922,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "conduit-hepatique-droit",
+  "fiche": "foie",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -24858,7 +24954,7 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "conduit-hepatique-gauche",
+  "fiche": "foie",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -24890,9 +24986,201 @@
   "region": "thorax",
   "groupe": "Foie et voies biliaires",
   "couche": 7,
-  "fiche": "lobe-caude-du-foie",
+  "fiche": "foie",
   "cote": null,
   "auto": true,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2818",
+  "fma": "FMA15739",
+  "en": "Hepatovenous segment II",
+  "systeme": "digestif",
+  "centre": [
+   48.4,
+   -145.8,
+   1146.4
+  ],
+  "min": [
+   2.525,
+   -200.039,
+   1119.62
+  ],
+  "max": [
+   94.3668,
+   -91.5573,
+   1173.09
+  ],
+  "cle": "segment-ii-du-foie",
+  "fr": "Segment II du foie",
+  "la": "Segmentum hepatis II",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2819",
+  "fma": "FMA15741",
+  "en": "Hepatovenous segment III",
+  "systeme": "digestif",
+  "centre": [
+   35.9,
+   -161,
+   1119.9
+  ],
+  "min": [
+   -1.5922,
+   -202.413,
+   1086.57
+  ],
+  "max": [
+   73.4476,
+   -119.538,
+   1153.1801
+  ],
+  "cle": "segment-iii-du-foie",
+  "fr": "Segment III du foie",
+  "la": "Segmentum hepatis III",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2820",
+  "fma": "FMA15742",
+  "en": "Hepatovenous segment IV",
+  "systeme": "digestif",
+  "centre": [
+   -17.4,
+   -160.6,
+   1120.1
+  ],
+  "min": [
+   -46.3087,
+   -200.539,
+   1060.8101
+  ],
+  "max": [
+   11.4549,
+   -120.754,
+   1179.37
+  ],
+  "cle": "segment-iv-du-foie",
+  "fr": "Segment IV du foie",
+  "la": "Segmentum hepatis IV",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ1858",
+  "fma": "FMA15747",
+  "en": "Hepatovenous segment IX",
+  "systeme": "digestif",
+  "centre": [
+   -67.6,
+   -97.9,
+   1132.6
+  ],
+  "min": [
+   -115.1595,
+   -152.0991,
+   1090.1023
+  ],
+  "max": [
+   -20.0957,
+   -43.6344,
+   1175.1461
+  ],
+  "cle": "segment-ix-du-foie",
+  "fr": "Segment IX du foie",
+  "la": "Segmentum hepatis IX",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2823",
+  "fma": "FMA15746",
+  "en": "Hepatovenous segment VIII",
+  "systeme": "digestif",
+  "centre": [
+   -67.6,
+   -97.6,
+   1132.5
+  ],
+  "min": [
+   -115.064,
+   -151.812,
+   1090.15
+  ],
+  "max": [
+   -20.192,
+   -43.3287,
+   1174.84
+  ],
+  "cle": "segment-viii-du-foie",
+  "fr": "Segment VIII du foie",
+  "la": "Segmentum hepatis VIII",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2824",
+  "fma": "FMA15746",
+  "en": "Hepatovenous segment VIII",
+  "systeme": "digestif",
+  "centre": [
+   -63.4,
+   -134.8,
+   1145.7
+  ],
+  "min": [
+   -109.329,
+   -198.73,
+   1108.1801
+  ],
+  "max": [
+   -17.5186,
+   -70.8945,
+   1183.14
+  ],
+  "cle": "segment-viii-du-foie",
+  "fr": "Segment VIII du foie",
+  "la": "Segmentum hepatis VIII",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Foie et voies biliaires",
+  "couche": 7,
+  "fiche": "foie",
+  "cote": null,
+  "auto": false,
   "anglais": false
  },
  {
@@ -25115,7 +25403,7 @@
   "region": "thorax",
   "groupe": "Glandes endocrines",
   "couche": 7,
-  "fiche": "lobe-droit-du-thymus",
+  "fiche": "thymus",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -25147,7 +25435,7 @@
   "region": "thorax",
   "groupe": "Glandes endocrines",
   "couche": 7,
-  "fiche": "lobe-droit-du-thymus",
+  "fiche": "thymus",
   "cote": null,
   "systeme": "endocrine",
   "auto": false,
@@ -25180,7 +25468,7 @@
   "region": "thorax",
   "groupe": "Glandes endocrines",
   "couche": 7,
-  "fiche": "lobe-gauche-du-thymus",
+  "fiche": "thymus",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -25212,7 +25500,7 @@
   "region": "thorax",
   "groupe": "Glandes endocrines",
   "couche": 7,
-  "fiche": "lobe-gauche-du-thymus",
+  "fiche": "thymus",
   "cote": null,
   "systeme": "endocrine",
   "auto": false,
@@ -25249,6 +25537,223 @@
   "cote": null,
   "auto": false,
   "anglais": false
+ },
+ {
+  "fj": "HM-ligaments-uterus-ovaries",
+  "fma": "",
+  "en": "Ligaments of uterus and ovaries",
+  "systeme": "genital-f",
+  "centre": [
+   -10.8,
+   -83.2,
+   843.6
+  ],
+  "min": [
+   -76.43711735886609,
+   -142.38676160397955,
+   785.6533169934468
+  ],
+  "max": [
+   54.88790887860337,
+   -24.035371748580317,
+   901.5754873360463
+  ],
+  "source": "hubmap",
+  "cle": "ligaments-uterus-ovaires",
+  "fr": "Ligaments de l'utérus et des ovaires",
+  "la": "Ligamenta uteri et ovarii",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "ligaments-uterus-ovaires",
+  "cote": null
+ },
+ {
+  "fj": "HM-ovary-l",
+  "fma": "",
+  "en": "Left ovary",
+  "systeme": "genital-f",
+  "centre": [
+   44.8,
+   -103.9,
+   858.3
+  ],
+  "min": [
+   39.309631243981066,
+   -107.595218506148,
+   847.0959874330354
+  ],
+  "max": [
+   50.27101610131503,
+   -100.28698163399852,
+   869.5993849127149
+  ],
+  "source": "hubmap",
+  "cle": "ovaire",
+  "fr": "Ovaire",
+  "la": "Ovarium",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "ovaire",
+  "cote": "g"
+ },
+ {
+  "fj": "HM-ovary-r",
+  "fma": "",
+  "en": "Right ovary",
+  "systeme": "genital-f",
+  "centre": [
+   -57.8,
+   -103.9,
+   858.3
+  ],
+  "min": [
+   -63.304075261533086,
+   -107.60472162152045,
+   847.0322148290929
+  ],
+  "max": [
+   -52.313860829329364,
+   -100.23172296938645,
+   869.5731085134619
+  ],
+  "source": "hubmap",
+  "cle": "ovaire",
+  "fr": "Ovaire",
+  "la": "Ovarium",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "ovaire",
+  "cote": "d"
+ },
+ {
+  "fj": "HM-fallopian-tube-l",
+  "fma": "",
+  "en": "Left uterine tube",
+  "systeme": "genital-f",
+  "centre": [
+   33.2,
+   -105.8,
+   860.4
+  ],
+  "min": [
+   15.961723314359393,
+   -112.25631955978669,
+   839.4942139268427
+  ],
+  "max": [
+   50.444745221498124,
+   -99.38717074249043,
+   881.2850170668372
+  ],
+  "source": "hubmap",
+  "cle": "trompe-uterine",
+  "fr": "Trompe utérine",
+  "la": "Tuba uterina",
+  "genre": "f",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "trompe-uterine",
+  "cote": "g"
+ },
+ {
+  "fj": "HM-fallopian-tube-r",
+  "fma": "",
+  "en": "Right uterine tube",
+  "systeme": "genital-f",
+  "centre": [
+   -45.3,
+   -102.5,
+   859.5
+  ],
+  "min": [
+   -60.64049926491347,
+   -109.7423410733999,
+   838.5595988829091
+  ],
+  "max": [
+   -29.917089400014017,
+   -95.2622526707708,
+   880.4742574726199
+  ],
+  "source": "hubmap",
+  "cle": "trompe-uterine",
+  "fr": "Trompe utérine",
+  "la": "Tuba uterina",
+  "genre": "f",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "trompe-uterine",
+  "cote": "d"
+ },
+ {
+  "fj": "HM-uterus",
+  "fma": "",
+  "en": "Uterus",
+  "systeme": "genital-f",
+  "centre": [
+   -6.9,
+   -96,
+   829
+  ],
+  "min": [
+   -30.295066811931303,
+   -116.4102832562312,
+   806.9156188913229
+  ],
+  "max": [
+   16.56641516600943,
+   -75.68938090350315,
+   851.0758677155756
+  ],
+  "source": "hubmap",
+  "cle": "uterus",
+  "fr": "Utérus",
+  "la": "Uterus",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "uterus",
+  "cote": null
+ },
+ {
+  "fj": "HM-vagina",
+  "fma": "",
+  "en": "Vagina",
+  "systeme": "genital-f",
+  "centre": [
+   -5.7,
+   -83.6,
+   788.7
+  ],
+  "min": [
+   -25.620348586017485,
+   -94.4647017101689,
+   752.1245597818814
+  ],
+  "max": [
+   14.133864076246606,
+   -72.77843994618004,
+   825.2064935977738
+  ],
+  "source": "hubmap",
+  "cle": "vagin",
+  "fr": "Vagin",
+  "la": "Vagina",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Appareil génital féminin",
+  "couche": 7,
+  "fiche": "vagin",
+  "cote": null
  },
  {
   "fj": "FJ3135",
@@ -25341,7 +25846,7 @@
   "region": "bassin",
   "groupe": "Appareil génital masculin",
   "couche": 7,
-  "fiche": "corps-caverneux-du-penis",
+  "fiche": "penis",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -25373,7 +25878,7 @@
   "region": "bassin",
   "groupe": "Appareil génital masculin",
   "couche": 7,
-  "fiche": "corps-spongieux-du-penis",
+  "fiche": "penis",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -25469,7 +25974,7 @@
   "region": "bassin",
   "groupe": "Appareil génital masculin",
   "couche": 7,
-  "fiche": "gland-du-penis",
+  "fiche": "penis",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -25661,7 +26166,7 @@
   "region": "abdomen",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "ligne-blanche",
+  "fiche": "",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -26123,7 +26628,7 @@
   "region": "bassin",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "arcade-tendineuse-de-l-elevateur-de-l-anus",
+  "fiche": "",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -26155,7 +26660,7 @@
   "region": "bassin",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "arcade-tendineuse-de-l-elevateur-de-l-anus",
+  "fiche": "",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -30689,7 +31194,7 @@
   "region": "membre-inf",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "tractus-iliotibial",
+  "fiche": "",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -30721,7 +31226,7 @@
   "region": "membre-inf",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "tractus-iliotibial",
+  "fiche": "",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -37477,7 +37982,7 @@
   "region": "tete",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "raphe-pharyngien",
+  "fiche": "",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -37509,7 +38014,7 @@
   "region": "tete",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "raphe-pterygomandibulaire",
+  "fiche": "",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -37541,7 +38046,7 @@
   "region": "tete",
   "groupe": "Aponévroses et fascias",
   "couche": 2,
-  "fiche": "raphe-pterygomandibulaire",
+  "fiche": "",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -40339,72 +40844,6 @@
   "anglais": false
  },
  {
-  "fj": "ZA-median-nerve-d",
-  "fma": "",
-  "en": "Right Median nerve",
-  "centre": [
-   -180.9,
-   -101.6,
-   1053.6
-  ],
-  "min": [
-   -255.70106311886255,
-   -131.69859583257008,
-   791.441014227332
-  ],
-  "max": [
-   -106.1915891167519,
-   -71.45783619860062,
-   1315.8094968206399
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-median",
-  "fr": "Nerf médian",
-  "la": "Nervus medianus",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Nerfs de l'abdomen",
-  "couche": 5,
-  "fiche": "nerf-median",
-  "cote": "d",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-median-nerve-g",
-  "fma": "",
-  "en": "Left Median nerve",
-  "centre": [
-   180.4,
-   -101.6,
-   1053.6
-  ],
-  "min": [
-   105.24092573725888,
-   -131.72755640557938,
-   791.4927129473266
-  ],
-  "max": [
-   255.55048661552672,
-   -71.47378362341696,
-   1315.7697131204309
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-median",
-  "fr": "Nerf médian",
-  "la": "Nervus medianus",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Nerfs de l'abdomen",
-  "couche": 5,
-  "fiche": "nerf-median",
-  "cote": "g",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "ZA-obturator-nerve-d",
   "fma": "",
   "en": "Right Obturator nerve",
@@ -40471,72 +40910,6 @@
   "anglais": false
  },
  {
-  "fj": "ZA-ulnar-nerve-d",
-  "fma": "",
-  "en": "Right Ulnar nerve",
-  "centre": [
-   -163.1,
-   -84.3,
-   1081.3
-  ],
-  "min": [
-   -229.97833696953944,
-   -115.48370162894439,
-   844.1520557453423
-  ],
-  "max": [
-   -96.26665821375123,
-   -53.180587209944186,
-   1318.5122929263687
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-ulnaire",
-  "fr": "Nerf ulnaire",
-  "la": "Nervus ulnaris",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Nerfs de l'abdomen",
-  "couche": 5,
-  "fiche": "nerf-ulnaire",
-  "cote": "d",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-ulnar-nerve-g",
-  "fma": "",
-  "en": "Left Ulnar nerve",
-  "centre": [
-   162.3,
-   -84.3,
-   1081.3
-  ],
-  "min": [
-   95.12075719674533,
-   -115.48152855967429,
-   843.9116596217947
-  ],
-  "max": [
-   229.4212814701824,
-   -53.18186409226741,
-   1318.7801184789632
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-ulnaire",
-  "fr": "Nerf ulnaire",
-  "la": "Nervus ulnaris",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Nerfs de l'abdomen",
-  "couche": 5,
-  "fiche": "nerf-ulnaire",
-  "cote": "g",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "ZA-anterior-branch-of-obturator-nerve-d",
   "fma": "",
   "en": "Right Anterior branch of obturator nerve",
@@ -40563,7 +40936,7 @@
   "region": "bassin",
   "groupe": "Nerfs du bassin",
   "couche": 5,
-  "fiche": "branche-anterieure-du-nerf-obturateur",
+  "fiche": "nerf-obturateur",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -40596,7 +40969,7 @@
   "region": "bassin",
   "groupe": "Nerfs du bassin",
   "couche": 5,
-  "fiche": "branche-anterieure-du-nerf-obturateur",
+  "fiche": "nerf-obturateur",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -41454,7 +41827,7 @@
   "region": "cou",
   "groupe": "Nerfs du cou",
   "couche": 5,
-  "fiche": "racines-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -41487,7 +41860,7 @@
   "region": "cou",
   "groupe": "Nerfs du cou",
   "couche": 5,
-  "fiche": "racines-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -41520,7 +41893,7 @@
   "region": "cou",
   "groupe": "Nerfs du cou",
   "couche": 5,
-  "fiche": "tronc-superieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -41553,7 +41926,7 @@
   "region": "cou",
   "groupe": "Nerfs du cou",
   "couche": 5,
-  "fiche": "tronc-superieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -41586,7 +41959,7 @@
   "region": "membre-inf",
   "groupe": "Nerfs du membre inférieur",
   "couche": 5,
-  "fiche": "branche-infrapatellaire-du-nerf-saphene",
+  "fiche": "nerf-saphene",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -41619,7 +41992,7 @@
   "region": "membre-inf",
   "groupe": "Nerfs du membre inférieur",
   "couche": 5,
-  "fiche": "branche-infrapatellaire-du-nerf-saphene",
+  "fiche": "nerf-saphene",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -41652,7 +42025,7 @@
   "region": "membre-inf",
   "groupe": "Nerfs du membre inférieur",
   "couche": 5,
-  "fiche": "branche-posterieure-du-nerf-obturateur",
+  "fiche": "nerf-obturateur",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -41685,7 +42058,7 @@
   "region": "membre-inf",
   "groupe": "Nerfs du membre inférieur",
   "couche": 5,
-  "fiche": "branche-posterieure-du-nerf-obturateur",
+  "fiche": "nerf-obturateur",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -41850,7 +42223,7 @@
   "region": "membre-inf",
   "groupe": "Nerfs du membre inférieur",
   "couche": 5,
-  "fiche": "branches-cutanees-crurales-mediales-du-nerf-saphene",
+  "fiche": "nerf-saphene",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -41883,7 +42256,7 @@
   "region": "membre-inf",
   "groupe": "Nerfs du membre inférieur",
   "couche": 5,
-  "fiche": "branches-cutanees-crurales-mediales-du-nerf-saphene",
+  "fiche": "nerf-saphene",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43302,7 +43675,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-dorsale-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43335,7 +43708,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-dorsale-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43368,7 +43741,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-palmaire-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43401,7 +43774,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-palmaire-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43434,7 +43807,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-palmaire-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43467,7 +43840,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-palmaire-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43566,7 +43939,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-profonde-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43599,7 +43972,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-profonde-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43632,7 +44005,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-profonde-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43665,7 +44038,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-profonde-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43698,7 +44071,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-superficielle-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43731,7 +44104,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-superficielle-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43764,7 +44137,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-superficielle-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43797,7 +44170,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branche-superficielle-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43830,7 +44203,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-dorsales-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43863,7 +44236,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-dorsales-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43896,7 +44269,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-dorsales-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43929,7 +44302,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-dorsales-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -43962,7 +44335,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-communes-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -43995,7 +44368,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-communes-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44028,7 +44401,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-communes-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -44061,7 +44434,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-communes-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44094,7 +44467,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-propres-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -44127,7 +44500,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-propres-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44160,7 +44533,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-propres-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -44193,7 +44566,73 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-digitales-palmaires-propres-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
+  "cote": "g",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-muscular-branches-of-axillary-nerve-d",
+  "fma": "",
+  "en": "Right Muscular branches of axillary nerve",
+  "centre": [
+   -173.1,
+   -71.9,
+   1286.1
+  ],
+  "min": [
+   -189.31850656284118,
+   -82.34066977661348,
+   1275.8725186907259
+  ],
+  "max": [
+   -156.95759881748205,
+   -61.36820597309413,
+   1296.4189262660939
+  ],
+  "source": "z-anatomy",
+  "cle": "branches-musculaires-du-nerf-axillaire",
+  "fr": "Branches musculaires du nerf axillaire",
+  "la": "Rami musculares nervi axillaris",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-axillaire",
+  "cote": "d",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-muscular-branches-of-axillary-nerve-g",
+  "fma": "",
+  "en": "Left Muscular branches of axillary nerve",
+  "centre": [
+   172.5,
+   -71.9,
+   1286.2
+  ],
+  "min": [
+   156.26313325265988,
+   -82.3482366398135,
+   1275.9173145798486
+  ],
+  "max": [
+   188.808767832895,
+   -61.374287712296656,
+   1296.4609174833115
+  ],
+  "source": "z-anatomy",
+  "cle": "branches-musculaires-du-nerf-axillaire",
+  "fr": "Branches musculaires du nerf axillaire",
+  "la": "Rami musculares nervi axillaris",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-axillaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44226,7 +44665,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -44259,7 +44698,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-median",
+  "fiche": "nerf-median",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44292,7 +44731,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -44325,7 +44764,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-radial",
+  "fiche": "nerf-radial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44358,7 +44797,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -44391,7 +44830,7 @@
   "region": "membre-sup",
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-ulnaire",
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44458,6 +44897,72 @@
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
   "fiche": "nerf-cutane-antebrachial-lateral",
+  "cote": "g",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-superior-lateral-brachial-cutaneous-nerve-d",
+  "fma": "",
+  "en": "Right Superior lateral brachial cutaneous nerve",
+  "centre": [
+   -189.3,
+   -38.7,
+   1264.2
+  ],
+  "min": [
+   -221.5012039531228,
+   -65.06660639607223,
+   1237.3578090057981
+  ],
+  "max": [
+   -157.01284353406214,
+   -12.304216535511884,
+   1291.0335289496861
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-cutane-brachial-lateroposterieur",
+  "fr": "Nerf cutané brachial latéropostérieur",
+  "la": "Nervus cutaneus lateralis posterioris femoris",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-cutane-brachial-lateroposterieur",
+  "cote": "d",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-superior-lateral-brachial-cutaneous-nerve-g",
+  "fma": "",
+  "en": "Left Superior lateral brachial cutaneous nerve",
+  "centre": [
+   188.7,
+   -38.7,
+   1264.2
+  ],
+  "min": [
+   156.28612670763846,
+   -65.07601881894817,
+   1237.4060731590334
+  ],
+  "max": [
+   221.12322556328513,
+   -12.309241464785615,
+   1291.0805086789662
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-cutane-brachial-lateroposterieur",
+  "fr": "Nerf cutané brachial latéropostérieur",
+  "la": "Nervus cutaneus lateralis posterioris femoris",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-cutane-brachial-lateroposterieur",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -44728,6 +45233,72 @@
   "anglais": false
  },
  {
+  "fj": "ZA-median-nerve-d",
+  "fma": "",
+  "en": "Right Median nerve",
+  "centre": [
+   -180.9,
+   -101.6,
+   1053.6
+  ],
+  "min": [
+   -255.70106311886255,
+   -131.69859583257008,
+   791.441014227332
+  ],
+  "max": [
+   -106.1915891167519,
+   -71.45783619860062,
+   1315.8094968206399
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-median",
+  "fr": "Nerf médian",
+  "la": "Nervus medianus",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-median",
+  "cote": "d",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-median-nerve-g",
+  "fma": "",
+  "en": "Left Median nerve",
+  "centre": [
+   180.4,
+   -101.6,
+   1053.6
+  ],
+  "min": [
+   105.24092573725888,
+   -131.72755640557938,
+   791.4927129473266
+  ],
+  "max": [
+   255.55048661552672,
+   -71.47378362341696,
+   1315.7697131204309
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-median",
+  "fr": "Nerf médian",
+  "la": "Nervus medianus",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-median",
+  "cote": "g",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
   "fj": "ZA-musculocutaneous-nerve-d",
   "fma": "",
   "en": "Right Musculocutaneous nerve",
@@ -44788,6 +45359,138 @@
   "groupe": "Nerfs du membre supérieur",
   "couche": 5,
   "fiche": "nerf-musculocutane",
+  "cote": "g",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-radial-nerve-d",
+  "fma": "",
+  "en": "Right Radial nerve",
+  "centre": [
+   -176.5,
+   -67.7,
+   1168.6
+  ],
+  "min": [
+   -236.60853329073547,
+   -83.04610459591207,
+   1032.9991690167071
+  ],
+  "max": [
+   -116.35112813907173,
+   -52.405839293308254,
+   1304.103003396791
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-radial",
+  "fr": "Nerf radial",
+  "la": "Nervus radialis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-radial",
+  "cote": "d",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-radial-nerve-g",
+  "fma": "",
+  "en": "Left Radial nerve",
+  "centre": [
+   175.8,
+   -67.7,
+   1168.6
+  ],
+  "min": [
+   115.42864273832265,
+   -83.04971543358754,
+   1032.970998373439
+  ],
+  "max": [
+   236.24842382772238,
+   -52.40908900366198,
+   1304.2526897294872
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-radial",
+  "fr": "Nerf radial",
+  "la": "Nervus radialis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-radial",
+  "cote": "g",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-ulnar-nerve-d",
+  "fma": "",
+  "en": "Right Ulnar nerve",
+  "centre": [
+   -163.1,
+   -84.3,
+   1081.3
+  ],
+  "min": [
+   -229.97833696953944,
+   -115.48370162894439,
+   844.1520557453423
+  ],
+  "max": [
+   -96.26665821375123,
+   -53.180587209944186,
+   1318.5122929263687
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-ulnaire",
+  "fr": "Nerf ulnaire",
+  "la": "Nervus ulnaris",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-ulnaire",
+  "cote": "d",
+  "systeme": "nerfs",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "ZA-ulnar-nerve-g",
+  "fma": "",
+  "en": "Left Ulnar nerve",
+  "centre": [
+   162.3,
+   -84.3,
+   1081.3
+  ],
+  "min": [
+   95.12075719674533,
+   -115.48152855967429,
+   843.9116596217947
+  ],
+  "max": [
+   229.4212814701824,
+   -53.18186409226741,
+   1318.7801184789632
+  ],
+  "source": "z-anatomy",
+  "cle": "nerf-ulnaire",
+  "fr": "Nerf ulnaire",
+  "la": "Nervus ulnaris",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Nerfs du membre supérieur",
+  "couche": 5,
+  "fiche": "nerf-ulnaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -45014,7 +45717,7 @@
   "region": "tete",
   "groupe": "Nerfs de la tête",
   "couche": 5,
-  "fiche": "branche-inferieure-du-nerf-oculomoteur",
+  "fiche": "nerf-oculomoteur",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -45046,7 +45749,7 @@
   "region": "tete",
   "groupe": "Nerfs de la tête",
   "couche": 5,
-  "fiche": "branche-inferieure-du-nerf-oculomoteur",
+  "fiche": "nerf-oculomoteur",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -45078,7 +45781,7 @@
   "region": "tete",
   "groupe": "Nerfs de la tête",
   "couche": 5,
-  "fiche": "branche-meningee-du-nerf-maxillaire",
+  "fiche": "nerf-maxillaire",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -45111,7 +45814,7 @@
   "region": "tete",
   "groupe": "Nerfs de la tête",
   "couche": 5,
-  "fiche": "branche-meningee-du-nerf-maxillaire",
+  "fiche": "nerf-maxillaire",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -45144,7 +45847,7 @@
   "region": "tete",
   "groupe": "Nerfs de la tête",
   "couche": 5,
-  "fiche": "branche-superieure-du-nerf-oculomoteur",
+  "fiche": "nerf-oculomoteur",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -45176,7 +45879,7 @@
   "region": "tete",
   "groupe": "Nerfs de la tête",
   "couche": 5,
-  "fiche": "branche-superieure-du-nerf-oculomoteur",
+  "fiche": "nerf-oculomoteur",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -47043,72 +47746,6 @@
   "anglais": false
  },
  {
-  "fj": "ZA-muscular-branches-of-axillary-nerve-d",
-  "fma": "",
-  "en": "Right Muscular branches of axillary nerve",
-  "centre": [
-   -173.1,
-   -71.9,
-   1286.1
-  ],
-  "min": [
-   -189.31850656284118,
-   -82.34066977661348,
-   1275.8725186907259
-  ],
-  "max": [
-   -156.95759881748205,
-   -61.36820597309413,
-   1296.4189262660939
-  ],
-  "source": "z-anatomy",
-  "cle": "branches-musculaires-du-nerf-axillaire",
-  "fr": "Branches musculaires du nerf axillaire",
-  "la": "Rami musculares nervi axillaris",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Nerfs du thorax",
-  "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-axillaire",
-  "cote": "d",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-muscular-branches-of-axillary-nerve-g",
-  "fma": "",
-  "en": "Left Muscular branches of axillary nerve",
-  "centre": [
-   172.5,
-   -71.9,
-   1286.2
-  ],
-  "min": [
-   156.26313325265988,
-   -82.3482366398135,
-   1275.9173145798486
-  ],
-  "max": [
-   188.808767832895,
-   -61.374287712296656,
-   1296.4609174833115
-  ],
-  "source": "z-anatomy",
-  "cle": "branches-musculaires-du-nerf-axillaire",
-  "fr": "Branches musculaires du nerf axillaire",
-  "la": "Rami musculares nervi axillaris",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Nerfs du thorax",
-  "couche": 5,
-  "fiche": "branches-musculaires-du-nerf-axillaire",
-  "cote": "g",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "ZA-anterior-division-of-inferior-trunk-of-brachial-plexus-d",
   "fma": "",
   "en": "Right Anterior division of inferior trunk of brachial plexus",
@@ -47201,7 +47838,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-anterieure-du-tronc-moyen-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -47234,7 +47871,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-anterieure-du-tronc-moyen-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -47267,7 +47904,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-anterieure-du-tronc-superieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -47300,7 +47937,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-anterieure-du-tronc-superieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -47399,7 +48036,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-posterieure-du-tronc-moyen-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -47432,7 +48069,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-posterieure-du-tronc-moyen-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -47465,7 +48102,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-posterieure-du-tronc-superieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -47498,7 +48135,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "division-posterieure-du-tronc-superieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -47531,7 +48168,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "faisceau-posterieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -47564,7 +48201,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "faisceau-posterieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -47697,72 +48334,6 @@
   "groupe": "Nerfs du thorax",
   "couche": 5,
   "fiche": "nerf-axillaire",
-  "cote": "g",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-superior-lateral-brachial-cutaneous-nerve-d",
-  "fma": "",
-  "en": "Right Superior lateral brachial cutaneous nerve",
-  "centre": [
-   -189.3,
-   -38.7,
-   1264.2
-  ],
-  "min": [
-   -221.5012039531228,
-   -65.06660639607223,
-   1237.3578090057981
-  ],
-  "max": [
-   -157.01284353406214,
-   -12.304216535511884,
-   1291.0335289496861
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-cutane-brachial-lateroposterieur",
-  "fr": "Nerf cutané brachial latéropostérieur",
-  "la": "Nervus cutaneus lateralis posterioris femoris",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Nerfs du thorax",
-  "couche": 5,
-  "fiche": "nerf-cutane-brachial-lateroposterieur",
-  "cote": "d",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-superior-lateral-brachial-cutaneous-nerve-g",
-  "fma": "",
-  "en": "Left Superior lateral brachial cutaneous nerve",
-  "centre": [
-   188.7,
-   -38.7,
-   1264.2
-  ],
-  "min": [
-   156.28612670763846,
-   -65.07601881894817,
-   1237.4060731590334
-  ],
-  "max": [
-   221.12322556328513,
-   -12.309241464785615,
-   1291.0805086789662
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-cutane-brachial-lateroposterieur",
-  "fr": "Nerf cutané brachial latéropostérieur",
-  "la": "Nervus cutaneus lateralis posterioris femoris",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Nerfs du thorax",
-  "couche": 5,
-  "fiche": "nerf-cutane-brachial-lateroposterieur",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -48093,72 +48664,6 @@
   "groupe": "Nerfs du thorax",
   "couche": 5,
   "fiche": "nerf-pectoral-medial",
-  "cote": "g",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-radial-nerve-d",
-  "fma": "",
-  "en": "Right Radial nerve",
-  "centre": [
-   -176.5,
-   -67.7,
-   1168.6
-  ],
-  "min": [
-   -236.60853329073547,
-   -83.04610459591207,
-   1032.9991690167071
-  ],
-  "max": [
-   -116.35112813907173,
-   -52.405839293308254,
-   1304.103003396791
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-radial",
-  "fr": "Nerf radial",
-  "la": "Nervus radialis",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Nerfs du thorax",
-  "couche": 5,
-  "fiche": "nerf-radial",
-  "cote": "d",
-  "systeme": "nerfs",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "ZA-radial-nerve-g",
-  "fma": "",
-  "en": "Left Radial nerve",
-  "centre": [
-   175.8,
-   -67.7,
-   1168.6
-  ],
-  "min": [
-   115.42864273832265,
-   -83.04971543358754,
-   1032.970998373439
-  ],
-  "max": [
-   236.24842382772238,
-   -52.40908900366198,
-   1304.2526897294872
-  ],
-  "source": "z-anatomy",
-  "cle": "nerf-radial",
-  "fr": "Nerf radial",
-  "la": "Nervus radialis",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Nerfs du thorax",
-  "couche": 5,
-  "fiche": "nerf-radial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -48884,7 +49389,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "tronc-inferieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -48917,7 +49422,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "tronc-inferieur-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -48950,7 +49455,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "tronc-moyen-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "d",
   "systeme": "nerfs",
   "auto": false,
@@ -48983,7 +49488,7 @@
   "region": "thorax",
   "groupe": "Nerfs du thorax",
   "couche": 5,
-  "fiche": "tronc-moyen-du-plexus-brachial",
+  "fiche": "plexus-brachial",
   "cote": "g",
   "systeme": "nerfs",
   "auto": false,
@@ -49048,6 +49553,37 @@
   "fiche": "coxal",
   "cote": "g",
   "couche": 9
+ },
+ {
+  "fj": "ZA-coccyx 4",
+  "fma": "",
+  "en": "Coccyx",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -10.7,
+   777.7
+  ],
+  "min": [
+   -16.69821246143944,
+   -20.250960076537908,
+   762.2864337044731
+  ],
+  "max": [
+   15.406874632872448,
+   -1.119827962366557,
+   793.0275450927567
+  ],
+  "source": "z-anatomy",
+  "cle": "coccyx",
+  "fr": "Coccyx",
+  "la": "Os coccygis",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Sacrum et coccyx",
+  "couche": 9,
+  "fiche": "sacrum",
+  "cote": null
  },
  {
   "fj": "ZA-coccyx",
@@ -49407,7 +49943,7 @@
   "region": "membre-inf",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "ligament-plantaire-long",
+  "fiche": "",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -49439,7 +49975,7 @@
   "region": "membre-inf",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "ligament-plantaire-long",
+  "fiche": "",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -49471,7 +50007,7 @@
   "region": "membre-inf",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "membrane-interosseuse-de-la-jambe",
+  "fiche": "",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -49503,7 +50039,7 @@
   "region": "membre-inf",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "membrane-interosseuse-de-la-jambe",
+  "fiche": "",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -51995,7 +52531,7 @@
   "region": "membre-sup",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "membrane-interosseuse-de-l-avant-bras",
+  "fiche": "",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -52027,7 +52563,7 @@
   "region": "membre-sup",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "membrane-interosseuse-de-l-avant-bras",
+  "fiche": "",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -54609,7 +55145,7 @@
   "region": "tete",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "ligament-stylohyoide",
+  "fiche": "",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -54641,7 +55177,7 @@
   "region": "tete",
   "groupe": "Membranes et ligaments",
   "couche": 9,
-  "fiche": "ligament-stylohyoide",
+  "fiche": "",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -56779,7 +57315,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilage-arytenoide",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -56811,7 +57347,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilage-arytenoide",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -56843,7 +57379,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilage-cricoide",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -56875,7 +57411,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilage-cuneiforme",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -56907,7 +57443,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilage-cuneiforme",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -56939,7 +57475,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilage-thyroide",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -56971,7 +57507,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilages-cornicules",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -57003,7 +57539,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cartilages-cornicules",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -57035,7 +57571,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cone-elastique",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -57067,7 +57603,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "cone-elastique",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -57099,7 +57635,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "epiglotte",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -57131,7 +57667,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-cricothyroide-median",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -57163,7 +57699,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-hyo-epiglottique",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -57195,7 +57731,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-thyro-epiglottique",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -57227,7 +57763,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-thyrohyoide-lateral",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -57259,7 +57795,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-thyrohyoide-lateral",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -57291,7 +57827,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-thyrohyoide-median",
+  "fiche": "larynx",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -57323,7 +57859,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-vocal",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -57355,7 +57891,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "ligament-vocal",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -57387,7 +57923,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "membrane-thyrohyoide",
+  "fiche": "larynx",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -57419,7 +57955,7 @@
   "region": "cou",
   "groupe": "Larynx",
   "couche": 7,
-  "fiche": "membrane-thyrohyoide",
+  "fiche": "larynx",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -57611,7 +58147,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-lingulaire-inferieur",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -57643,7 +58179,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-lingulaire-inferieur",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -57675,7 +58211,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-lingulaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -57707,7 +58243,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-lingulaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -57739,7 +58275,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-lingulaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -57771,7 +58307,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-lingulaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -57803,7 +58339,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -57835,7 +58371,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -57867,7 +58403,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -57899,7 +58435,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -57931,7 +58467,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -57963,7 +58499,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -57995,7 +58531,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58027,7 +58563,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58059,7 +58595,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58091,7 +58627,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58123,7 +58659,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58155,7 +58691,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58187,7 +58723,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58219,7 +58755,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58251,7 +58787,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58283,7 +58819,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58315,7 +58851,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58347,7 +58883,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58379,7 +58915,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58411,7 +58947,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58443,7 +58979,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58475,7 +59011,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58507,7 +59043,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58539,7 +59075,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58571,7 +59107,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58603,7 +59139,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58635,7 +59171,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58667,7 +59203,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58699,7 +59235,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-apical",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58731,7 +59267,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58763,7 +59299,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58795,7 +59331,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58827,7 +59363,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58859,7 +59395,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58891,7 +59427,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-anterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58923,7 +59459,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -58955,7 +59491,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -58987,7 +59523,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59019,7 +59555,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59051,7 +59587,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59083,7 +59619,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59115,7 +59651,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59147,7 +59683,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-lateral",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59179,7 +59715,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-medial",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59211,7 +59747,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-medial",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59243,7 +59779,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-medial",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59275,7 +59811,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-medial",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59307,7 +59843,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59339,7 +59875,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59371,7 +59907,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59403,7 +59939,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59435,7 +59971,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59467,7 +60003,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59499,7 +60035,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -59531,7 +60067,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59563,7 +60099,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59595,7 +60131,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59627,7 +60163,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59659,7 +60195,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-basal-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59691,7 +60227,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-lateral",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59723,7 +60259,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-lateral",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59755,7 +60291,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-lateral",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59787,7 +60323,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-lateral",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59819,7 +60355,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-medial",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59851,7 +60387,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-medial",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59883,7 +60419,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-medial",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59915,7 +60451,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-medial",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -59947,7 +60483,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -59979,7 +60515,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60011,7 +60547,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60043,7 +60579,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60075,7 +60611,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60107,7 +60643,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60139,7 +60675,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60171,7 +60707,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60203,7 +60739,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-posterieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60235,7 +60771,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60267,7 +60803,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60299,7 +60835,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60331,7 +60867,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60363,7 +60899,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60395,7 +60931,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60427,7 +60963,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60459,7 +60995,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -60491,7 +61027,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60523,7 +61059,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60555,7 +61091,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60587,7 +61123,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60619,7 +61155,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60651,7 +61187,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60683,7 +61219,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60715,7 +61251,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "arbre-bronchique-segmentaire-superieur",
+  "fiche": "trachee-bronches",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -60747,7 +61283,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "bronche-principale-droite",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -60779,7 +61315,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "bronche-principale-gauche",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -60811,7 +61347,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "lobe-inferieur-du-poumon-droit",
+  "fiche": "poumons",
   "cote": null,
   "systeme": "respiratoire",
   "auto": false,
@@ -60844,7 +61380,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "lobe-inferieur-du-poumon-gauche",
+  "fiche": "poumons",
   "cote": null,
   "systeme": "respiratoire",
   "auto": false,
@@ -60877,7 +61413,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "lobe-moyen-du-poumon-droit",
+  "fiche": "poumons",
   "cote": null,
   "systeme": "respiratoire",
   "auto": false,
@@ -60910,7 +61446,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "lobe-superieur-du-poumon-droit",
+  "fiche": "poumons",
   "cote": null,
   "systeme": "respiratoire",
   "auto": false,
@@ -60943,7 +61479,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "lobe-superieur-du-poumon-gauche",
+  "fiche": "poumons",
   "cote": null,
   "systeme": "respiratoire",
   "auto": false,
@@ -60976,7 +61512,7 @@
   "region": "thorax",
   "groupe": "Trachée, bronches et poumons",
   "couche": 7,
-  "fiche": "trachee",
+  "fiche": "trachee-bronches",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -61008,7 +61544,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "aileron-ligamentaire-du-droit-lateral",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61040,7 +61576,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "aileron-ligamentaire-du-droit-lateral",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61072,7 +61608,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "aileron-ligamentaire-du-droit-medial",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61104,7 +61640,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "aileron-ligamentaire-du-droit-medial",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61136,7 +61672,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "anneau-tendineux-commun",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61168,7 +61704,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "anneau-tendineux-commun",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61200,7 +61736,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "canal-lacrymonasal",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61232,7 +61768,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "canal-lacrymonasal",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61264,7 +61800,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "canalicule-lacrymal",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61296,7 +61832,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "canalicule-lacrymal",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61328,7 +61864,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "choroide",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61360,7 +61896,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "choroide",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61392,7 +61928,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "choroide",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61424,7 +61960,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "choroide",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61456,7 +61992,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "cornee",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61488,7 +62024,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "cornee",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61520,7 +62056,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "corps-vitre",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61552,7 +62088,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "corps-vitre",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61584,7 +62120,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "couronne-ciliaire",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61616,7 +62152,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "couronne-ciliaire",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61648,7 +62184,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "cristalin",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61680,7 +62216,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "cristalin",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61712,7 +62248,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "glande-lacrymale",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61744,7 +62280,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "glande-lacrymale",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61776,7 +62312,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "iris",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61808,7 +62344,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "iris",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61840,7 +62376,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "partie-optique-de-la-retine",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61872,7 +62408,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "partie-optique-de-la-retine",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61904,7 +62440,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "sac-lacrymal",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -61936,7 +62472,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "sac-lacrymal",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -61968,7 +62504,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "sclere",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62000,7 +62536,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "sclere",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62032,7 +62568,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "tarse-inferieur",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62064,7 +62600,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "tarse-inferieur",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62096,7 +62632,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "tarse-superieur",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62128,7 +62664,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "tarse-superieur",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62160,7 +62696,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "tendon-du-muscle-elevateur-de-la-paupiere-superieure",
+  "fiche": "oeil",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -62192,7 +62728,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "trochlee-de-l-oblique-superieur",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62224,7 +62760,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "trochlee-de-l-oblique-superieur",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62256,7 +62792,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "zonule-ciliaire",
+  "fiche": "oeil",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62288,7 +62824,7 @@
   "region": "tete",
   "groupe": "Œil et annexes",
   "couche": 7,
-  "fiche": "zonule-ciliaire",
+  "fiche": "oeil",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62352,7 +62888,7 @@
   "region": "rachis",
   "groupe": "Moelle spinale",
   "couche": 7,
-  "fiche": "corne-anterieure-de-la-moelle-spinale",
+  "fiche": "moelle-spinale",
   "cote": null,
   "systeme": "snc",
   "auto": false,
@@ -62385,7 +62921,7 @@
   "region": "rachis",
   "groupe": "Moelle spinale",
   "couche": 7,
-  "fiche": "corne-posterieure-de-la-moelle-spinale",
+  "fiche": "moelle-spinale",
   "cote": null,
   "systeme": "snc",
   "auto": false,
@@ -62418,7 +62954,7 @@
   "region": "rachis",
   "groupe": "Moelle spinale",
   "couche": 7,
-  "fiche": "substance-blanche-de-la-moelle-spinale",
+  "fiche": "moelle-spinale",
   "cote": null,
   "systeme": "snc",
   "auto": false,
@@ -62515,7 +63051,7 @@
   "region": "tete",
   "groupe": "Cervelet",
   "couche": 7,
-  "fiche": "tente-du-cervelet",
+  "fiche": "cervelet",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62547,7 +63083,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "chiasma-optique",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62579,7 +63115,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "chiasma-optique",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62611,7 +63147,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "corps-genicule-lateral",
+  "fiche": "diencephale",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62643,7 +63179,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "corps-genicule-lateral",
+  "fiche": "diencephale",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62675,7 +63211,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "corps-genicule-medial",
+  "fiche": "diencephale",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -62707,7 +63243,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "corps-genicule-medial",
+  "fiche": "diencephale",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62739,7 +63275,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "corps-mamillaire",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62771,7 +63307,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "corps-mamillaire",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62803,7 +63339,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "habenula",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62835,7 +63371,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "hypothalamus",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62867,7 +63403,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "hypothalamus",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62899,7 +63435,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "lame-terminale",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62931,7 +63467,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "lame-terminale",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -62963,7 +63499,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "strie-medullaire-du-thalamus",
+  "fiche": "diencephale",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -62995,7 +63531,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "strie-medullaire-du-thalamus",
+  "fiche": "diencephale",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63027,7 +63563,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "thalamus",
+  "fiche": "diencephale",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63059,7 +63595,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "thalamus",
+  "fiche": "diencephale",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63091,7 +63627,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "tractus-optique",
+  "fiche": "diencephale",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63123,7 +63659,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "tractus-optique",
+  "fiche": "diencephale",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63155,7 +63691,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "troisieme-ventricule",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63187,7 +63723,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "tuber-cinereum",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63219,7 +63755,7 @@
   "region": "tete",
   "groupe": "Diencéphale",
   "couche": 7,
-  "fiche": "tuber-cinereum",
+  "fiche": "diencephale",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63251,7 +63787,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "capsule-interne",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63283,7 +63819,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "capsule-interne",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63315,7 +63851,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "commissure-anterieure",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63347,7 +63883,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "commissure-du-fornix",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -63379,7 +63915,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "commissure-posterieure",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63411,7 +63947,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "corps-amygdaloide",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63443,7 +63979,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "corps-amygdaloide",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63475,7 +64011,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "corps-calleux",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63507,7 +64043,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "cortex-insulaire",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63539,7 +64075,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "cortex-insulaire",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63571,7 +64107,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "fornix",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63603,7 +64139,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "fornix",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63635,7 +64171,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "globus-pallidus",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63667,7 +64203,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "globus-pallidus",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63699,7 +64235,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyri-orbitaires",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63731,7 +64267,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyri-orbitaires",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -63763,7 +64299,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-angulaire",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63795,7 +64331,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-angulaire",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63827,7 +64363,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-du-cingulum",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63859,7 +64395,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-du-cingulum",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63891,7 +64427,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-frontal-inferieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63923,7 +64459,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-frontal-inferieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -63955,7 +64491,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-frontal-moyen",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -63987,7 +64523,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-frontal-moyen",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64019,7 +64555,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-frontal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64051,7 +64587,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-frontal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64083,7 +64619,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-occipitotemporal-lateral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64115,7 +64651,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-occipitotemporal-lateral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64147,7 +64683,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-parahippocampique",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64179,7 +64715,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-parahippocampique",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64211,7 +64747,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-postcentral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64243,7 +64779,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-postcentral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64275,7 +64811,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-precentral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64307,7 +64843,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-precentral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64339,7 +64875,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-supramarginal",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64371,7 +64907,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-supramarginal",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64403,7 +64939,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-temporal-inferieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64435,7 +64971,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-temporal-inferieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64467,7 +65003,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-temporal-moyen",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64499,7 +65035,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "gyrus-temporal-moyen",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64531,7 +65067,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "hippocampe",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64563,7 +65099,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "hippocampe",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64595,7 +65131,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "lobe-occipital",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64627,7 +65163,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "lobe-occipital",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64659,7 +65195,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "lobule-parietal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64691,7 +65227,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "lobule-parietal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64723,7 +65259,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "noyau-caude",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -64755,7 +65291,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "noyau-caude",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -64787,7 +65323,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "partie-anterieure-du-gyrus-temporal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -64819,7 +65355,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "partie-anterieure-du-gyrus-temporal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -64851,7 +65387,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "partie-posterieure-du-gyrus-temporal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -64883,7 +65419,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "partie-posterieure-du-gyrus-temporal-superieur",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -64915,7 +65451,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "plexus-choroide-de-l-hemisphere-cerebral",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -64947,7 +65483,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "plexus-choroide-de-l-hemisphere-cerebral",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -64979,7 +65515,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "putamen",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65011,7 +65547,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "putamen",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65043,7 +65579,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "septum-pellucidum",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65075,7 +65611,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "strie-terminale",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65107,7 +65643,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "strie-terminale",
+  "fiche": "hemispheres-cerebraux",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65139,7 +65675,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "substance-blanche",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65171,7 +65707,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "substance-blanche",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65203,7 +65739,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "ventricule-lateral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65235,7 +65771,7 @@
   "region": "tete",
   "groupe": "Hémisphères cérébraux",
   "couche": 7,
-  "fiche": "ventricule-lateral",
+  "fiche": "hemispheres-cerebraux",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65267,7 +65803,7 @@
   "region": "tete",
   "groupe": "Moelle spinale",
   "couche": 7,
-  "fiche": "canal-central-de-la-moelle-spinale",
+  "fiche": "moelle-spinale",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -65299,7 +65835,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "aqueduc-du-mesencephale",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65331,7 +65867,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "bras-du-colliculus-inferieur",
+  "fiche": "tronc-cerebral",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65363,7 +65899,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "bras-du-colliculus-inferieur",
+  "fiche": "tronc-cerebral",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65395,7 +65931,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "bras-du-colliculus-superieur",
+  "fiche": "tronc-cerebral",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65427,7 +65963,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "bras-du-colliculus-superieur",
+  "fiche": "tronc-cerebral",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65459,7 +65995,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "colliculus-inferieur",
+  "fiche": "tronc-cerebral",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65491,7 +66027,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "colliculus-inferieur",
+  "fiche": "tronc-cerebral",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65523,7 +66059,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "colliculus-superieur",
+  "fiche": "tronc-cerebral",
   "cote": "g",
   "auto": false,
   "anglais": false
@@ -65555,7 +66091,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "colliculus-superieur",
+  "fiche": "tronc-cerebral",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -65587,7 +66123,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "mesencephale",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65619,7 +66155,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "mesencephale",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65651,7 +66187,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "moelle-allongee",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65683,7 +66219,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "moelle-allongee",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65715,7 +66251,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "pedoncule-cerebral",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65747,7 +66283,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "pedoncule-cerebral",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65779,7 +66315,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "pont",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65811,7 +66347,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "pont",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -65843,7 +66379,7 @@
   "region": "tete",
   "groupe": "Tronc cérébral",
   "couche": 7,
-  "fiche": "quatrieme-ventricule",
+  "fiche": "tronc-cerebral",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -66035,103 +66571,7 @@
   "region": "bassin",
   "groupe": "Appareil urinaire",
   "couche": 7,
-  "fiche": "vessie-urinaire",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2821",
-  "fma": "FMA15743",
-  "en": "Hepatovenous segment V",
-  "systeme": "veines",
-  "centre": [
-   -65.4,
-   -153.3,
-   1081.3
-  ],
-  "min": [
-   -104.585,
-   -198.69,
-   1046.42
-  ],
-  "max": [
-   -26.3054,
-   -107.889,
-   1116.09
-  ],
-  "cle": "segment-v-du-foie",
-  "fr": "Segment V du foie",
-  "la": "Segmentum hepatis V",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Veines de l'abdomen",
-  "couche": 5,
-  "fiche": "segment-v-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2822",
-  "fma": "FMA15744",
-  "en": "Hepatovenous segment VI",
-  "systeme": "veines",
-  "centre": [
-   -68,
-   -104.7,
-   1069.2
-  ],
-  "min": [
-   -114.575,
-   -164.947,
-   1027.96
-  ],
-  "max": [
-   -21.4193,
-   -44.5192,
-   1110.48
-  ],
-  "cle": "segment-vi-du-foie",
-  "fr": "Segment VI du foie",
-  "la": "Segmentum hepatis VI",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Veines de l'abdomen",
-  "couche": 5,
-  "fiche": "segment-vi-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2409",
-  "fma": "FMA15745",
-  "en": "Hepatovenous segment VII",
-  "systeme": "veines",
-  "centre": [
-   -67.9,
-   -104.7,
-   1069.4
-  ],
-  "min": [
-   -114.7897,
-   -165.2125,
-   1027.9264
-  ],
-  "max": [
-   -21.0907,
-   -44.2721,
-   1110.776
-  ],
-  "cle": "segment-vii-du-foie",
-  "fr": "Segment VII du foie",
-  "la": "Segmentum hepatis VII",
-  "genre": "m",
-  "region": "abdomen",
-  "groupe": "Veines de l'abdomen",
-  "couche": 5,
-  "fiche": "segment-vii-du-foie",
+  "fiche": "vessie",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -67283,7 +67723,7 @@
   "region": "abdomen",
   "groupe": "Veines de l'abdomen",
   "couche": 5,
-  "fiche": "veines-pancreaticoduodenales",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -67315,7 +67755,7 @@
   "region": "abdomen",
   "groupe": "Veines de l'abdomen",
   "couche": 5,
-  "fiche": "veines-pancreaticoduodenales",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -67347,7 +67787,7 @@
   "region": "abdomen",
   "groupe": "Veines de l'abdomen",
   "couche": 5,
-  "fiche": "veines-pancreaticoduodenales",
+  "fiche": "pancreas",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -67379,7 +67819,7 @@
   "region": "bassin",
   "groupe": "Veines du bassin",
   "couche": 5,
-  "fiche": "veine-dorsale-profonde-du-penis",
+  "fiche": "penis",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -67411,7 +67851,7 @@
   "region": "bassin",
   "groupe": "Veines du bassin",
   "couche": 5,
-  "fiche": "veine-dorsale-superficielle-des-penis",
+  "fiche": "penis",
   "cote": null,
   "auto": true,
   "anglais": false
@@ -67443,7 +67883,7 @@
   "region": "bassin",
   "groupe": "Veines du bassin",
   "couche": 5,
-  "fiche": "veine-dorsale-superficielle-des-penis",
+  "fiche": "penis",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -67475,7 +67915,7 @@
   "region": "bassin",
   "groupe": "Veines du bassin",
   "couche": 5,
-  "fiche": "veine-dorsale-superficielle-des-penis",
+  "fiche": "penis",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -70649,6 +71089,70 @@
   "anglais": false
  },
  {
+  "fj": "FJ2313",
+  "fma": "FMA22936",
+  "en": "Left medial brachial vein",
+  "systeme": "veines",
+  "centre": [
+   184.1,
+   -90,
+   1126.7
+  ],
+  "min": [
+   149.9931,
+   -97.2632,
+   1018.3881
+  ],
+  "max": [
+   218.216,
+   -82.701,
+   1234.9895
+  ],
+  "cle": "veine-brachiale-mediale",
+  "fr": "Veine brachiale médiale",
+  "la": "",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Veines du membre supérieur",
+  "couche": 5,
+  "fiche": "veine-brachiale-mediale",
+  "cote": "g",
+  "auto": true,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2341",
+  "fma": "FMA22935",
+  "en": "Right medial brachial vein",
+  "systeme": "veines",
+  "centre": [
+   -184.1,
+   -90,
+   1126.7
+  ],
+  "min": [
+   -218.2086,
+   -97.269,
+   1018.3879
+  ],
+  "max": [
+   -149.9765,
+   -82.6936,
+   1234.9901
+  ],
+  "cle": "veine-brachiale-mediale",
+  "fr": "Veine brachiale médiale",
+  "la": "",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Veines du membre supérieur",
+  "couche": 5,
+  "fiche": "veine-brachiale-mediale",
+  "cote": "d",
+  "auto": true,
+  "anglais": false
+ },
+ {
   "fj": "FJ2220",
   "fma": "FMA13326",
   "en": "Left cephalic vein",
@@ -70708,6 +71212,70 @@
   "groupe": "Veines du membre supérieur",
   "couche": 5,
   "fiche": "veine-cephalique",
+  "cote": "d",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2213",
+  "fma": "FMA77955",
+  "en": "Left anterior circumflex humeral vein",
+  "systeme": "veines",
+  "centre": [
+   169.4,
+   -90.6,
+   1299.1
+  ],
+  "min": [
+   145.7902,
+   -105.6394,
+   1267.3962
+  ],
+  "max": [
+   192.9817,
+   -75.563,
+   1330.8213
+  ],
+  "cle": "veine-circonflexe-humerale-anterieure",
+  "fr": "Veine circonflexe humérale antérieure",
+  "la": "Vena circumflexa anterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Veines du membre supérieur",
+  "couche": 5,
+  "fiche": "veine-circonflexe-humerale-anterieure",
+  "cote": "g",
+  "auto": false,
+  "anglais": false
+ },
+ {
+  "fj": "FJ2265",
+  "fma": "FMA77954",
+  "en": "Right anterior circumflex humeral vein",
+  "systeme": "veines",
+  "centre": [
+   -169.4,
+   -90,
+   1299.1
+  ],
+  "min": [
+   -192.9965,
+   -105.6408,
+   1267.3783
+  ],
+  "max": [
+   -145.7882,
+   -74.3882,
+   1330.8198
+  ],
+  "cle": "veine-circonflexe-humerale-anterieure",
+  "fr": "Veine circonflexe humérale antérieure",
+  "la": "Vena circumflexa anterior humeri",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Veines du membre supérieur",
+  "couche": 5,
+  "fiche": "veine-circonflexe-humerale-anterieure",
   "cote": "d",
   "auto": false,
   "anglais": false
@@ -73145,198 +73713,6 @@
   "anglais": false
  },
  {
-  "fj": "FJ2818",
-  "fma": "FMA15739",
-  "en": "Hepatovenous segment II",
-  "systeme": "veines",
-  "centre": [
-   48.4,
-   -145.8,
-   1146.4
-  ],
-  "min": [
-   2.525,
-   -200.039,
-   1119.62
-  ],
-  "max": [
-   94.3668,
-   -91.5573,
-   1173.09
-  ],
-  "cle": "segment-ii-du-foie",
-  "fr": "Segment II du foie",
-  "la": "Segmentum hepatis II",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "segment-ii-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2819",
-  "fma": "FMA15741",
-  "en": "Hepatovenous segment III",
-  "systeme": "veines",
-  "centre": [
-   35.9,
-   -161,
-   1119.9
-  ],
-  "min": [
-   -1.5922,
-   -202.413,
-   1086.57
-  ],
-  "max": [
-   73.4476,
-   -119.538,
-   1153.1801
-  ],
-  "cle": "segment-iii-du-foie",
-  "fr": "Segment III du foie",
-  "la": "Segmentum hepatis III",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "segment-iii-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2820",
-  "fma": "FMA15742",
-  "en": "Hepatovenous segment IV",
-  "systeme": "veines",
-  "centre": [
-   -17.4,
-   -160.6,
-   1120.1
-  ],
-  "min": [
-   -46.3087,
-   -200.539,
-   1060.8101
-  ],
-  "max": [
-   11.4549,
-   -120.754,
-   1179.37
-  ],
-  "cle": "segment-iv-du-foie",
-  "fr": "Segment IV du foie",
-  "la": "Segmentum hepatis IV",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "segment-iv-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ1858",
-  "fma": "FMA15747",
-  "en": "Hepatovenous segment IX",
-  "systeme": "veines",
-  "centre": [
-   -67.6,
-   -97.9,
-   1132.6
-  ],
-  "min": [
-   -115.1595,
-   -152.0991,
-   1090.1023
-  ],
-  "max": [
-   -20.0957,
-   -43.6344,
-   1175.1461
-  ],
-  "cle": "segment-ix-du-foie",
-  "fr": "Segment IX du foie",
-  "la": "Segmentum hepatis IX",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "segment-ix-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2823",
-  "fma": "FMA15746",
-  "en": "Hepatovenous segment VIII",
-  "systeme": "veines",
-  "centre": [
-   -67.6,
-   -97.6,
-   1132.5
-  ],
-  "min": [
-   -115.064,
-   -151.812,
-   1090.15
-  ],
-  "max": [
-   -20.192,
-   -43.3287,
-   1174.84
-  ],
-  "cle": "segment-viii-du-foie",
-  "fr": "Segment VIII du foie",
-  "la": "Segmentum hepatis VIII",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "segment-viii-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2824",
-  "fma": "FMA15746",
-  "en": "Hepatovenous segment VIII",
-  "systeme": "veines",
-  "centre": [
-   -63.4,
-   -134.8,
-   1145.7
-  ],
-  "min": [
-   -109.329,
-   -198.73,
-   1108.1801
-  ],
-  "max": [
-   -17.5186,
-   -70.8945,
-   1183.14
-  ],
-  "cle": "segment-viii-du-foie",
-  "fr": "Segment VIII du foie",
-  "la": "Segmentum hepatis VIII",
-  "genre": "m",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "segment-viii-du-foie",
-  "cote": null,
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "FJ3102",
   "fma": "FMA82697",
   "en": "Trunk of left portal vein",
@@ -73363,7 +73739,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "tronc-de-la-veine-porte",
+  "fiche": "veine-porte",
   "cote": "g",
   "auto": true,
   "anglais": false
@@ -73395,7 +73771,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "tronc-de-la-veine-porte",
+  "fiche": "veine-porte",
   "cote": "d",
   "auto": true,
   "anglais": false
@@ -73529,70 +73905,6 @@
   "anglais": false
  },
  {
-  "fj": "FJ2313",
-  "fma": "FMA22936",
-  "en": "Left medial brachial vein",
-  "systeme": "veines",
-  "centre": [
-   184.1,
-   -90,
-   1126.7
-  ],
-  "min": [
-   149.9931,
-   -97.2632,
-   1018.3881
-  ],
-  "max": [
-   218.216,
-   -82.701,
-   1234.9895
-  ],
-  "cle": "veine-brachiale-mediale",
-  "fr": "Veine brachiale médiale",
-  "la": "",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "veine-brachiale-mediale",
-  "cote": "g",
-  "auto": true,
-  "anglais": false
- },
- {
-  "fj": "FJ2341",
-  "fma": "FMA22935",
-  "en": "Right medial brachial vein",
-  "systeme": "veines",
-  "centre": [
-   -184.1,
-   -90,
-   1126.7
-  ],
-  "min": [
-   -218.2086,
-   -97.269,
-   1018.3879
-  ],
-  "max": [
-   -149.9765,
-   -82.6936,
-   1234.9901
-  ],
-  "cle": "veine-brachiale-mediale",
-  "fr": "Veine brachiale médiale",
-  "la": "",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "veine-brachiale-mediale",
-  "cote": "d",
-  "auto": true,
-  "anglais": false
- },
- {
   "fj": "FJ3583",
   "fma": "FMA4751",
   "en": "Right brachiocephalic vein",
@@ -73619,7 +73931,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-brachiocephalique-droite",
+  "fiche": "veines-brachiocephaliques",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -73651,7 +73963,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-brachiocephalique-gauche",
+  "fiche": "veines-brachiocephaliques",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74233,70 +74545,6 @@
   "anglais": false
  },
  {
-  "fj": "FJ2213",
-  "fma": "FMA77955",
-  "en": "Left anterior circumflex humeral vein",
-  "systeme": "veines",
-  "centre": [
-   169.4,
-   -90.6,
-   1299.1
-  ],
-  "min": [
-   145.7902,
-   -105.6394,
-   1267.3962
-  ],
-  "max": [
-   192.9817,
-   -75.563,
-   1330.8213
-  ],
-  "cle": "veine-circonflexe-humerale-anterieure",
-  "fr": "Veine circonflexe humérale antérieure",
-  "la": "Vena circumflexa anterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "veine-circonflexe-humerale-anterieure",
-  "cote": "g",
-  "auto": false,
-  "anglais": false
- },
- {
-  "fj": "FJ2265",
-  "fma": "FMA77954",
-  "en": "Right anterior circumflex humeral vein",
-  "systeme": "veines",
-  "centre": [
-   -169.4,
-   -90,
-   1299.1
-  ],
-  "min": [
-   -192.9965,
-   -105.6408,
-   1267.3783
-  ],
-  "max": [
-   -145.7882,
-   -74.3882,
-   1330.8198
-  ],
-  "cle": "veine-circonflexe-humerale-anterieure",
-  "fr": "Veine circonflexe humérale antérieure",
-  "la": "Vena circumflexa anterior humeri",
-  "genre": "f",
-  "region": "thorax",
-  "groupe": "Veines du thorax",
-  "couche": 5,
-  "fiche": "veine-circonflexe-humerale-anterieure",
-  "cote": "d",
-  "auto": false,
-  "anglais": false
- },
- {
   "fj": "FJ3595",
   "fma": "FMA15400",
   "en": "Right gastric vein",
@@ -74611,7 +74859,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74643,7 +74891,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74675,7 +74923,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74707,7 +74955,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74739,7 +74987,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74771,7 +75019,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74803,7 +75051,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74835,7 +75083,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -74867,7 +75115,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-interventriculaire-anterieure",
+  "fiche": "arteres-coronaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -75763,7 +76011,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-porte-du-foie",
+  "fiche": "veine-porte",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -75795,7 +76043,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-porte-du-foie",
+  "fiche": "veine-porte",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76147,7 +76395,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-inferieure-droite",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76179,7 +76427,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-inferieure-gauche",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76211,7 +76459,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-inferieure-gauche",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76243,7 +76491,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-inferieure-gauche",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76275,7 +76523,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-superieure-droite",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76307,7 +76555,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-superieure-gauche",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false
@@ -76339,7 +76587,7 @@
   "region": "thorax",
   "groupe": "Veines du thorax",
   "couche": 5,
-  "fiche": "veine-pulmonaire-superieure-gauche",
+  "fiche": "veines-pulmonaires",
   "cote": null,
   "auto": false,
   "anglais": false

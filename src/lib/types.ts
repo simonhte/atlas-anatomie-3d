@@ -25,6 +25,12 @@ export interface Structure {
   fiche: string;
   /** Couche de dissection : 0 peau, 1–3 muscles (superficiel → profond), 9 os */
   couche: number;
+  /** Origine du maillage */
+  source?: 'bodyparts3d' | 'z-anatomy' | 'hubmap';
+  /** Nom français obtenu par traduction automatique (pas de nom TA officiel) */
+  auto?: boolean;
+  /** Pas de traduction trouvée : nom anglais affiché */
+  anglais?: boolean;
   /** Paquet GLB contenant le maillage */
   paquet: string;
   /** Centre de la boîte englobante (mètres, Y en haut) */

@@ -3,7 +3,7 @@
 Atlas d'anatomie humaine en 3D pour réviser la P2 (DFGSM2) : modèles anatomiques réels
 (BodyParts3D), fiches de cours en français, et bientôt dissection par couches, coupes et quiz.
 
-> État : **étape 2 — squelette, muscles et dissection par couches**.
+> État : **étape 3 — vaisseaux, nerfs et organes** (corps entier, dissection en 7 couches).
 
 ## Lancer l'app sur le Mac
 
@@ -71,18 +71,30 @@ npm run modeles
    échelle globales calculées sur 18 os communs, puis ajustement local sur les os voisins de chaque
    structure (crâne pour les masticateurs, sacrum pour le coccyx…). Les copies en miroir de Blender sont
    corrigées. Résultat et paramètres : `pipeline/sortie/recalage-z-anatomy.json`.
-4. Construit un GLB par système × région, en deux niveaux de détail :
+4. **Appareil génital féminin** (`npm run modeles:feminin`) : organes du modèle féminin HuBMAP
+   (CC BY 4.0) recalés sur le bassin masculin (bassin, reins, vessie servent de repères) — position approximative.
+5. Construit un GLB par système × région, en deux niveaux de détail :
    `hi` (maillage d'origine) et `lo` (≈ 25 % des triangles, pour les téléphones et le premier affichage).
 
-Contenu actuel : peau, 473 maillages de muscles, 249 os et cartilages — 17,9 Mo en haute définition,
-7,1 Mo en version légère.
+Contenu actuel : environ 2 500 maillages — peau, muscles, os, artères, veines, nerfs, encéphale et moelle,
+cœur, appareils respiratoire, digestif, urinaire, génitaux masculin et féminin, glandes, organes des sens —
+41,8 Mo en haute définition, 16,4 Mo en version légère.
+
+### Noms des vaisseaux, nerfs et organes
+
+`pipeline/config/traduction.mjs` traduit automatiquement les noms anglais : table officielle
+Terminologia Anatomica 2 (fournie par Z-Anatomy), synonymes, puis règles de grammaire (« branche
+antérieure de l'artère… »). Les noms issus des règles sont signalés « traduction automatique » dans
+l'app ; une quarantaine de noms très spécialisés restent en anglais. Le classement par appareil et les
+fiches communes (un organe = une fiche pour tous ses segments) sont dans `pipeline/config/noms-organes.mjs`.
 
 **Manques de BodyParts3D comblés par Z-Anatomy** : coccyx, cartilages costaux 8 à 10, grand dorsal,
 droit de l'abdomen, pyramidal, oblique interne, transverse, carré des lombes, temporal, masséter,
 ptérygoïdiens, 16 muscles de la face, court extenseur des orteils, interosseux dorsaux du pied.
 
 **Manques restants** : muscles du périnée (sauf releveur de l'anus et sphincter externe), buccinateur ;
-nerfs, vaisseaux et organes (étape 3) ; modèle masculin uniquement.
+nerf phrénique, nerfs intercostaux et chaîne sympathique ; glandes parotides ; organes féminins
+seulement approchés (autre modèle).
 
 ### Installer Blender (pour l'étape Z-Anatomy seulement)
 
@@ -92,7 +104,8 @@ brew install --cask blender
 
 ## Dissection par couches
 
-Couches (`couche` dans l'inventaire) : 0 peau · 1 muscles superficiels · 2 intermédiaires · 3 profonds · 9 os.
+Couches (`couche` dans l'inventaire) : 0 peau · 1 muscles superficiels · 2 intermédiaires · 3 profonds ·
+5 vaisseaux et nerfs · 7 organes · 9 os.
 La couche de chaque muscle est fixée dans `pipeline/config/noms-muscles.mjs` (relative à sa région).
 Le curseur agit sur tout le corps ou sur une région ; « Retirer et voir dessous » (touche R) masque
 la structure sélectionnée et liste ce qu'elle recouvre depuis l'angle de vue actuel.

@@ -86,7 +86,7 @@ const chemin = join(import.meta.dirname, '..', 'public', 'data', 'structures.jso
 describe.skipIf(!existsSync(chemin))('données générées', () => {
   const { structures } = JSON.parse(readFileSync(chemin, 'utf8')) as { structures: Structure[] };
   const racineFiches = join(import.meta.dirname, '..', 'contenu', 'fiches');
-  const fiches = new Map(['os', 'muscles'].flatMap((sys) => {
+  const fiches = new Map(['os', 'muscles', 'organes', 'vaisseaux', 'nerfs'].flatMap((sys) => {
     const dossier = join(racineFiches, sys);
     return readdirSync(dossier).filter((f) => f.endsWith('.md')).map((f) => {
       const fi = lireFiche(readFileSync(join(dossier, f), 'utf8'), f);
@@ -96,7 +96,10 @@ describe.skipIf(!existsSync(chemin))('données générées', () => {
   it('chaque maillage a un nom français, un nom latin et une région', () => {
     for (const x of structures) {
       expect(x.fr, x.en).toBeTruthy();
-      expect(x.la, x.en).toBeTruthy();
+      // les noms traduits automatiquement n'ont pas de nom latin officiel
+      // nom latin exigé pour les os et les muscles ; les vaisseaux, nerfs et organes
+      // traduits automatiquement ou à la main n'en ont pas toujours
+      if (['os', 'muscles'].includes(x.systeme) && !(x as { auto?: boolean }).auto) expect(x.la, x.en).toBeTruthy();
       expect(x.region, x.en).toBeTruthy();
     }
   });
@@ -113,8 +116,13 @@ describe.skipIf(!existsSync(chemin))('données générées', () => {
   it('les muscles ont une couche de dissection entre 1 et 3', () => {
     for (const x of structures.filter((s) => s.systeme === 'muscles')) expect([1, 2, 3], x.en).toContain(x.couche);
   });
+  it('chaque fiche d’organe, de vaisseau ou de nerf correspond à au moins une structure 3D', () => {
+    const utilisees = new Set(structures.map((x) => x.fiche));
+    const orphelines = [...fiches.values()].filter((f) => !['os', 'muscles'].includes(f.systeme) && !utilisees.has(f.id)).map((f) => f.id);
+    expect(orphelines).toEqual([]);
+  });
   it('chaque os renvoie vers une fiche existante', () => {
-    const manquantes = [...new Set(structures.filter((x) => x.systeme === 'os' && !fiches.has(x.fiche)).map((x) => x.fiche))];
+    const manquantes = [...new Set(structures.filter((x) => x.systeme === 'os' && x.fiche && !fiches.has(x.fiche)).map((x) => x.fiche))];
     expect(manquantes).toEqual([]);
   });
   it('les identifiants de maillage sont uniques', () => {

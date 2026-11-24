@@ -21,6 +21,8 @@ export const ETAPES: EtapeDissection[] = [
   { seuil: 1, nom: 'Muscles superficiels' },
   { seuil: 2, nom: 'Muscles intermédiaires' },
   { seuil: 3, nom: 'Muscles profonds' },
+  { seuil: 5, nom: 'Vaisseaux et nerfs' },
+  { seuil: 7, nom: 'Organes' },
   { seuil: 9, nom: 'Squelette' },
 ];
 

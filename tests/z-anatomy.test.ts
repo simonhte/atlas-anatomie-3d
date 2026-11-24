@@ -35,7 +35,7 @@ describe('configuration Z-Anatomy', () => {
 
 const chemin = join(import.meta.dirname, '..', 'public', 'data', 'structures.json');
 describe.skipIf(!existsSync(chemin))('structures complémentaires intégrées', () => {
-  const { structures } = JSON.parse(readFileSync(chemin, 'utf8')) as { structures: { cle: string; cote: string | null; source: string; centre: number[] }[] };
+  const { structures } = JSON.parse(readFileSync(chemin, 'utf8')) as { structures: { cle: string; cote: string | null; source: string; systeme: string; centre: number[] }[] };
   const za = structures.filter((s) => s.source === 'z-anatomy');
   it('contient les manques comblés', () => {
     for (const cle of ['coccyx', 'cartilage-costal-8', 'cartilage-costal-9', 'cartilage-costal-10', 'grand-dorsal', 'droit-abdomen', 'oblique-interne', 'transverse-abdomen', 'carre-lombes', 'temporal-muscle', 'masseter-superficiel', 'pterygoidien-medial']) {
@@ -43,7 +43,8 @@ describe.skipIf(!existsSync(chemin))('structures complémentaires intégrées', 
     }
   });
   it('la latéralité est respectée (gauche du sujet en x positif)', () => {
-    for (const s of za.filter((x) => x.cote)) {
+    // os et muscles seulement : certains nerfs croisent la ligne médiane (ex. nerf vague droit → estomac)
+    for (const s of za.filter((x) => x.cote && ['os', 'muscles'].includes(x.systeme))) {
       if (Math.abs(s.centre[0]) < 0.01) continue; // structures très proches du plan médian
       expect(s.cote === 'g' ? s.centre[0] > 0 : s.centre[0] < 0, `${s.cle} ${s.cote}`).toBe(true);
     }

@@ -18,7 +18,7 @@ import { traduireOs } from './config/noms-os.mjs';
 import { traduireMuscle, traduirePeau } from './config/noms-muscles.mjs';
 import { STRUCTURES_ZA } from './config/z-anatomy.mjs';
 import { chargerTA2, traduireNom } from './config/traduction.mjs';
-import { classerOrgane, groupeVaisseau, regionDepuisPosition, COUCHE_VAISSEAUX_NERFS, COUCHE_ORGANES } from './config/noms-organes.mjs';
+import { classerOrgane, groupeVaisseau, regionDepuisPosition, ficheDe, COUCHE_VAISSEAUX_NERFS, COUCHE_ORGANES } from './config/noms-organes.mjs';
 
 chargerTA2(join(import.meta.dirname, '..', 'sources', 'z-anatomy', 'TA2.csv'));
 
@@ -29,7 +29,7 @@ const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,
  * Classe et traduit une structure qui n'est ni un os, ni un muscle, ni la peau.
  * `systemeFMA` : 'arteres' | 'veines' | 'nerfs' | null (d'après l'arborescence FMA)
  */
-function classerAutre(enComplet, systemeFMA, centre) {
+function classerAutre(enComplet, systemeFMA, centre, min = null, max = null) {
   const en = enComplet.toLowerCase().trim();
   // 1. Nom complet AVEC « left/right » (ex. « left gastric artery », structure impaire)
   let cote = null;
@@ -40,22 +40,25 @@ function classerAutre(enComplet, systemeFMA, centre) {
     base = sep.base; cote = sep.cote;
     t = traduireNom(base) ?? { fr: base[0].toUpperCase() + base.slice(1), la: '', auto: true, anglais: true };
   }
-  let systeme = systemeFMA, groupe = null;
+  // Les segments du foie sont décrits par la FMA comme des territoires veineux
+  // (« hepatovenous segment ») : on les range avec le foie (appareil digestif).
+  let systeme = /hepatovenous/.test(base) ? null : systemeFMA, groupe = null;
   // Certains vaisseaux ne sont pas rattachés aux artères / veines dans les arborescences FMA
-  if (!systeme && /\bveins?\b|venous|vena cava/.test(base)) systeme = 'veines';
+  if (!systeme && /\bveins?\b|\bvenous\b|vena cava/.test(base)) systeme = 'veines';
   else if (!systeme && /arter|aorta|palmar arch|arterial arch|plantar arch|pulmonary trunk|brachiocephalic trunk|celiac trunk/.test(base)) systeme = 'arteres';
   if (!systeme) {
     const c = classerOrgane(base);
     if (!c) return null;
     systeme = c.systeme; groupe = c.groupe;
   }
-  const region = systeme === 'snc' ? (centre[2] > 1380 ? 'tete' : 'rachis') : regionDepuisPosition(centre);
+  const region = systeme === 'snc' ? (centre[2] > 1380 ? 'tete' : 'rachis') : regionDepuisPosition(centre, min, max);
   if (!groupe) groupe = groupeVaisseau(systeme, region);
   const couche = systeme === 'muscles' ? 2 : systeme === 'os' ? 9 : ['arteres', 'veines', 'nerfs'].includes(systeme) ? COUCHE_VAISSEAUX_NERFS : COUCHE_ORGANES;
   const frSansRomain = t.fr.replace(/\s*\([IVX]+\)$/, '');
   const cle = slug(frSansRomain);
   return { cle, fr: t.fr, la: t.la, genre: /^(artère|veine|branche|glande|partie|moelle|racine|bronche|paroi|cavité|dent|membrane|commissure|valvule|cuspide|division|arcade|langue|vessie|rate|trachée|prostate|vésicule|trompe|vulve|gencive|incisive|canine|prémolaire|molaire|zonule|corde)/i.test(t.fr) ? 'f' : 'm',
-    region, groupe, couche, fiche: cle, cote, systeme, auto: !!t.auto, anglais: !!t.anglais };
+    // pas de fiche prévue pour les aponévroses et membranes rangées avec muscles et os
+    region, groupe, couche, fiche: ['muscles', 'os'].includes(systeme) ? '' : ficheDe(cle, groupe), cote, systeme, auto: !!t.auto, anglais: !!t.anglais };
 }
 function separerCoteAnglais(en) {
   const m = en.match(/\b(left|right) /);
@@ -68,6 +71,8 @@ const SRC = join(RACINE, 'sources', 'bodyparts3d');
 const OBJ = join(SRC, 'isa_BP3D_4.0_obj_99');
 // Structures complémentaires issues de Z-Anatomy, déjà recalées (étape 4)
 const OBJ_ZA = join(RACINE, 'sources', 'z-anatomy', 'recale');
+// Organes génitaux féminins HuBMAP, recalés (étape 5)
+const OBJ_HM = join(RACINE, 'sources', 'hubmap', 'recale');
 const SORTIE = join(import.meta.dirname, 'sortie');
 
 // --- 1. Décompresser l'archive si besoin -----------------------------------
@@ -178,7 +183,7 @@ for (const f of fichiers) {
     const anc = ancetres(h.fma);
     const sysFMA = anc.has('FMA50720') ? 'arteres' : anc.has('FMA50723') ? 'veines' : anc.has('FMA65132') ? 'nerfs' : null;
     const centreMm = h.min.map((v, i) => (v + h.max[i]) / 2);
-    const a = classerAutre(h.en, sysFMA, centreMm);
+    const a = classerAutre(h.en, sysFMA, centreMm, h.min, h.max);
     if (!a) continue;
     systeme = a.systeme;
     t = a;
@@ -203,7 +208,7 @@ if (existsSync(OBJ_ZA)) {
     if (!def) {
       // nerfs et organes recalés automatiquement (Concept ID : ZA-AUTO)
       const nerf = /nerve|plexus|ganglion|trunk|division|cord|root/i.test(m[2]) && !/spinal cord/i.test(m[2]);
-      const a = classerAutre(h.en, nerf ? 'nerfs' : null, h.min.map((v, i) => (v + h.max[i]) / 2));
+      const a = classerAutre(h.en, nerf ? 'nerfs' : null, h.min.map((v, i) => (v + h.max[i]) / 2), h.min, h.max);
       if (!a) continue;
       const centre = h.min.map((v, i) => +((v + h.max[i]) / 2).toFixed(1));
       inventaire.push({ fj: f.replace('.obj', ''), fma: '', en: h.en, centre, min: h.min, max: h.max, source: 'z-anatomy', ...a });
@@ -219,6 +224,30 @@ if (existsSync(OBJ_ZA)) {
   console.log(`Compléments Z-Anatomy : ${n} maillages`);
 } else {
   console.log("(Compléments Z-Anatomy absents : lancer « npm run modeles:z-anatomy » pour les ajouter)");
+}
+
+// --- 5 ter. Appareil génital féminin (HuBMAP, si l'étape 5 a été lancée) -------
+const NOMS_FEMININS = {
+  uterus: ['uterus', 'Utérus', 'Uterus', 'm'],
+  vagina: ['vagin', 'Vagin', 'Vagina', 'm'],
+  ovary: ['ovaire', 'Ovaire', 'Ovarium', 'm'],
+  'uterine tube': ['trompe-uterine', 'Trompe utérine', 'Tuba uterina', 'f'],
+  'ligaments of uterus and ovaries': ['ligaments-uterus-ovaires', "Ligaments de l'utérus et des ovaires", 'Ligamenta uteri et ovarii', 'mp'],
+};
+if (existsSync(OBJ_HM)) {
+  for (const f of readdirSync(OBJ_HM).filter((x) => x.endsWith('.obj')).sort()) {
+    const h = entete(join(OBJ_HM, f));
+    const m = h.en.match(/^(Left |Right )?(.+)$/);
+    const def = NOMS_FEMININS[m[2].toLowerCase()];
+    if (!def) { nonTraduits.push(`${f} (HuBMAP) ${h.en}`); continue; }
+    const [cle, fr, la, genre] = def;
+    const centre = h.min.map((v, i) => +((v + h.max[i]) / 2).toFixed(1));
+    inventaire.push({
+      fj: f.replace('.obj', ''), fma: '', en: h.en, systeme: 'genital-f', centre, min: h.min, max: h.max, source: 'hubmap',
+      cle, fr, la, genre: genre === 'mp' ? 'm' : genre, region: 'bassin', groupe: 'Appareil génital féminin', couche: COUCHE_ORGANES,
+      fiche: cle, cote: m[1] === 'Left ' ? 'g' : m[1] === 'Right ' ? 'd' : null,
+    });
+  }
 }
 
 // --- 6. Disques intervertébraux : nommés d'après les vertèbres voisines -----

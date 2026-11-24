@@ -8,8 +8,22 @@ export const SYSTEMES: Systeme[] = [
   { id: 'peau', nom: 'Peau', couleur: '#dbb09a' },
   { id: 'muscles', nom: 'Muscles', couleur: '#b3423d' },
   { id: 'os', nom: 'Squelette', couleur: '#e9dfc8' },
-  // Étape 3 : artères, veines, nerfs, organes…
+  { id: 'arteres', nom: 'Artères', couleur: '#d63a3a' },
+  { id: 'veines', nom: 'Veines', couleur: '#3d63c9' },
+  { id: 'nerfs', nom: 'Nerfs', couleur: '#f2d14b' },
+  { id: 'snc', nom: 'Encéphale et moelle', couleur: '#efc7b5' },
+  { id: 'coeur', nom: 'Cœur', couleur: '#c0504d' },
+  { id: 'respiratoire', nom: 'Respiratoire', couleur: '#e7a3a6' },
+  { id: 'digestif', nom: 'Digestif', couleur: '#d8a15c' },
+  { id: 'urinaire', nom: 'Urinaire', couleur: '#b9774a' },
+  { id: 'genital-m', nom: 'Génital masculin', couleur: '#c48fb0' },
+  { id: 'genital-f', nom: 'Génital féminin', couleur: '#d98fbb' },
+  { id: 'endocrine', nom: 'Endocrine, lymphoïde', couleur: '#8bc48a' },
+  { id: 'sens', nom: 'Organes des sens', couleur: '#9bc3d9' },
 ];
+
+/** Systèmes chargés en premier (les autres suivent en arrière-plan). */
+export const SYSTEMES_PRIORITAIRES = ['peau', 'muscles', 'os'];
 
 export const REGIONS: Region[] = [
   { id: 'tete', nom: 'Tête' },

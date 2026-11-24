@@ -47,7 +47,12 @@
 {:else}
   <article>
     <h3>{nomComplet(structure)}</h3>
-    <div class="latin">{structure.la}</div>
+    <div class="latin">{structure.la || structure.en}</div>
+    {#if structure.anglais}
+      <p class="auto">Nom anglais (FMA) : pas encore de traduction française.</p>
+    {:else if structure.auto}
+      <p class="auto">Traduction automatique du nom anglais « {structure.en} » : à vérifier.</p>
+    {/if}
     <div class="etiquettes">
       <span class="tag">{nomSysteme(structure.systeme)}</span>
       <span class="tag">{nomRegion(structure.region)}</span>
@@ -101,6 +106,7 @@
   small { color: var(--mut); }
   .statut { font-size: 13px; color: var(--warn); background: #3a2e17; border: 1px solid #5c4a22; border-radius: 8px; padding: 6px 10px; }
   .commune { font-size: 13px; color: var(--mut); }
+  .auto { font-size: 12px; color: var(--mut); font-style: italic; margin: 4px 0; }
   section { margin-top: 14px; }
   h4 { font-size: 12px; color: var(--acc); font-weight: 600; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
   section :global(p), section :global(li) { font-size: 14.5px; margin: 4px 0; }

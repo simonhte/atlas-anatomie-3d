@@ -30,13 +30,22 @@ import { MeshoptEncoder, MeshoptSimplifier } from 'meshoptimizer';
 const RACINE = join(import.meta.dirname, '..');
 const OBJ = join(RACINE, 'sources', 'bodyparts3d', 'isa_BP3D_4.0_obj_99');
 const OBJ_ZA = join(RACINE, 'sources', 'z-anatomy', 'recale');
+const OBJ_HM = join(RACINE, 'sources', 'hubmap', 'recale');
+const dossierDe = (it) => (it.source === 'z-anatomy' ? OBJ_ZA : it.source === 'hubmap' ? OBJ_HM : OBJ);
 const MODELES = join(RACINE, 'public', 'models');
 const DONNEES = join(RACINE, 'public', 'data');
 
 const LODS = { hi: null, lo: 0.25 }; // ratio de triangles conservés (null = original)
 
 // Couleurs par système (sRGB 0–1), reprises du prototype
-const COULEURS = { os: [0.91, 0.87, 0.78], muscles: [0.7, 0.26, 0.24], peau: [0.86, 0.69, 0.6] };
+const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
+// Couleurs par système (mêmes teintes que src/lib/data.ts)
+const COULEURS = {
+  os: [0.91, 0.87, 0.78], muscles: [0.7, 0.26, 0.24], peau: [0.86, 0.69, 0.6],
+  arteres: hex('#d63a3a'), veines: hex('#3d63c9'), nerfs: hex('#f2d14b'), snc: hex('#efc7b5'),
+  coeur: hex('#c0504d'), respiratoire: hex('#e7a3a6'), digestif: hex('#d8a15c'), urinaire: hex('#b9774a'),
+  'genital-m': hex('#c48fb0'), 'genital-f': hex('#d98fbb'), endocrine: hex('#8bc48a'), sens: hex('#9bc3d9'), autres: hex('#aaaaaa'),
+};
 // Cartilages, disques, tendons et rétinaculums : teintes distinctes
 const COULEUR_CARTILAGE = [0.72, 0.82, 0.86];
 const COULEUR_TENDON = [0.88, 0.85, 0.76];
@@ -112,7 +121,7 @@ for (const [nomPaquet, items] of Object.entries(paquets)) {
       return materiaux.get(k);
     };
     for (const it of items) {
-      const { pos, nor, idx } = lireObj(join(it.source === 'z-anatomy' ? OBJ_ZA : OBJ, `${it.fj}.obj`));
+      const { pos, nor, idx } = lireObj(join(dossierDe(it), `${it.fj}.obj`));
       const prim = doc.createPrimitive()
         .setAttribute('POSITION', doc.createAccessor().setType('VEC3').setArray(pos).setBuffer(buffer))
         .setAttribute('NORMAL', doc.createAccessor().setType('VEC3').setArray(nor ?? calculerNormales(pos, idx)).setBuffer(buffer))
@@ -140,13 +149,13 @@ for (const [nomPaquet, items] of Object.entries(paquets)) {
     const c = it.centre; // mm, LPS -> m, Y en haut
     structures.push({
       id: it.fj, fma: it.fma, en: it.en, cle: it.cle, fr: it.fr, la: it.la, cote: it.cote, genre: it.genre,
-      source: it.source ?? 'bodyparts3d', systeme: it.systeme, region: it.region, groupe: it.groupe, fiche: it.fiche, couche: it.couche, paquet: nomPaquet,
+      source: it.source ?? 'bodyparts3d', auto: it.auto || undefined, anglais: it.anglais || undefined, systeme: it.systeme, region: it.region, groupe: it.groupe, fiche: it.fiche, couche: it.couche, paquet: nomPaquet,
       centre: [c[0] / 1000, c[2] / 1000, -c[1] / 1000].map((x) => +x.toFixed(4)),
     });
   }
 }
 
-writeFileSync(join(DONNEES, 'structures.json'), JSON.stringify({ source: 'BodyParts3D 4.0 (DBCLS), CC BY 4.0', structures }));
+writeFileSync(join(DONNEES, 'structures.json'), JSON.stringify({ sources: ['BodyParts3D 4.0 (DBCLS), CC BY 4.0', 'Z-Anatomy, CC BY-SA 4.0', 'HuBMAP HRA 3D Reference Object Library, CC BY 4.0'], structures }));
 console.table(bilan);
 const total = (l) => bilan.filter((b) => b.paquet.endsWith(l)).reduce((s, b) => s + b.Mo, 0).toFixed(1);
 console.log(`Total : hi ${total('.hi')} Mo, lo ${total('.lo')} Mo`);

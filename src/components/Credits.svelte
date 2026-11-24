@@ -44,6 +44,21 @@
     sous licence non commerciale (oreille interne, rein) ne sont pas utilisés.
   </p>
 
+  <p>
+    <b>HRA 3D Reference Object Library – HuBMAP (Human BioMolecular Atlas Program)</b>, modèle féminin
+    du Visible Human Project, licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank" rel="noopener">CC BY 4.0</a>.
+    Source : <a href="https://github.com/hubmapconsortium/ccf-3d-reference-object-library" target="_blank" rel="noopener">hubmapconsortium/ccf-3d-reference-object-library</a>.
+  </p>
+  <p class="petit">
+    Structures issues de HuBMAP : utérus, vagin, ovaires, trompes utérines, ligaments de l'utérus et des ovaires.
+    Modifications : recalage sur le bassin du modèle masculin (position approximative), conversion et compression.
+  </p>
+  <p class="petit">
+    Nerfs (Z-Anatomy) : plexus brachial, nerfs des membres, nerfs crâniens… ; poumons, glande thyroïde, thymus,
+    moelle spinale. Noms français et latins des vaisseaux, nerfs et organes : table de la Terminologia Anatomica 2
+    fournie par Z-Anatomy (CC BY-SA 4.0), complétée par des traductions automatiques signalées dans les fiches.
+  </p>
+
   <h3>Contenu des fiches</h3>
   <p class="petit">
     Fiches rédigées pour ce projet à partir du programme d'anatomie de DFGSM2. Elles sont marquées

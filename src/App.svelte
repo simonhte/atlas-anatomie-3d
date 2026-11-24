@@ -5,7 +5,7 @@
   // `modifier()` pour pouvoir être annulée.
   import { onMount } from 'svelte';
   import { Viewer, type EtatAffichage, type NomVue } from './lib/viewer/Viewer';
-  import { chargerStructures, construireArbre, nomComplet, SYSTEMES, type NoeudArbre } from './lib/data';
+  import { chargerStructures, construireArbre, nomComplet, SYSTEMES, SYSTEMES_PRIORITAIRES, type NoeudArbre } from './lib/data';
   import { chargerFiches } from './lib/fiches';
   import { Historique } from './lib/history';
   import { IndexRecherche } from './lib/search';
@@ -16,7 +16,7 @@
   import Etiquettes from './components/Etiquettes.svelte';
   import Credits from './components/Credits.svelte';
   import Dissection from './components/Dissection.svelte';
-  import { DISSECTION_INITIALE, deplacer } from './lib/dissection';
+  import { DISSECTION_INITIALE, ETAPES, deplacer, etapeEffective } from './lib/dissection';
 
   let canvas: HTMLCanvasElement;
   let scene: HTMLElement;
@@ -31,7 +31,8 @@
   let etat: EtatAffichage = $state({
     masques: [],
     opacites: Object.fromEntries(SYSTEMES.map((s) => [s.id, 1])),
-    systemesVisibles: Object.fromEntries(SYSTEMES.map((s) => [s.id, true])),
+    // Modèle masculin par défaut : l'appareil génital féminin est masqué
+    systemesVisibles: Object.fromEntries(SYSTEMES.map((s) => [s.id, s.id !== 'genital-f'])),
     rayonsX: false,
     selection: null,
     dissection: structuredClone(DISSECTION_INITIALE),
@@ -47,6 +48,8 @@
   let etiquettes = $state(false);
   let survol: { id: string; x: number; y: number } | null = $state(null);
   let chargement = $state('Chargement des modèles…');
+  /** Chargement en arrière-plan (n'empêche pas d'utiliser l'app) */
+  let chargementFond = $state('');
   let erreur = $state('');
   let creditsOuverts = $state(false);
   /** Sur téléphone : panneau ouvert en surimpression */
@@ -87,7 +90,15 @@
       // Sélectionner une structure masquée la ré-affiche
       if (id) e.masques = e.masques.filter((m) => m !== id);
     });
-    if (id && cadrer) viewer?.cadrer([id]);
+    if (id && cadrer) {
+      viewer?.cadrer([id]);
+      // Structure profonde (sous des couches encore visibles) : rayons X pour la voir
+      const s = parId.get(id);
+      if (s && s.couche > ETAPES[etapeEffective(etat.dissection, s.region)].seuil && !etat.rayonsX) {
+        etat.rayonsX = true;
+        pousser();
+      }
+    }
     if (id && matchMedia('(max-width: 900px)').matches) panneau = 'fiche';
   }
   function masquerSelection() {
@@ -165,14 +176,27 @@
     if (q !== 'basse') chargerHi();
   }
 
+  // ------------------------------------------------------------ sexe du modèle
+  /** Le modèle de base est masculin ; « féminin » remplace l'appareil génital
+   *  masculin par les organes féminins (HuBMAP, recalés sur le bassin). */
+  const sexe = $derived(etat.systemesVisibles['genital-f'] && !etat.systemesVisibles['genital-m'] ? 'f' : 'm');
+  function choisirSexe(x: 'm' | 'f') {
+    modifier((e) => { e.systemesVisibles['genital-m'] = x === 'm'; e.systemesVisibles['genital-f'] = x === 'f'; });
+  }
+
   // ------------------------------------------------------------ chargement
+  /** Système de chaque paquet GLB (ex. « genital-f-bassin » -> « genital-f ») */
+  let systemeDuPaquet = new Map<string, string>();
   const paquetsHiCharges = new Set<string>();
   async function chargerHi() {
     if (!viewer) return;
-    const paquets = [...new Set(structures.map((s) => s.paquet))].filter((p) => !paquetsHiCharges.has(p));
+    // les systèmes prioritaires d'abord
+    const paquets = [...systemeDuPaquet.keys()]
+      .filter((p) => !paquetsHiCharges.has(p))
+      .sort((a, b) => +!SYSTEMES_PRIORITAIRES.includes(systemeDuPaquet.get(a)!) - +!SYSTEMES_PRIORITAIRES.includes(systemeDuPaquet.get(b)!));
     for (const p of paquets) {
       paquetsHiCharges.add(p);
-      await viewer.chargerPaquet(`${import.meta.env.BASE_URL}models/${p}.hi.glb`, p.split('-')[0]);
+      await viewer.chargerPaquet(`${import.meta.env.BASE_URL}models/${p}.hi.glb`, systemeDuPaquet.get(p)!);
     }
   }
 
@@ -195,16 +219,25 @@
           const f = fiches.get(s.fiche);
           return { id: s.id, noms: [nomComplet(s), s.fr, s.la, s.en, f && f.structures.length === 1 ? f.titre : ''] };
         }));
-        // 1) niveau de détail bas, tous les paquets en parallèle : affichage rapide
-        const paquets = [...new Set(structures.map((s) => s.paquet))];
+        systemeDuPaquet = new Map(structures.map((s) => [s.paquet, s.systeme]));
+        const tous = [...systemeDuPaquet.keys()];
+        const prioritaires = tous.filter((p) => SYSTEMES_PRIORITAIRES.includes(systemeDuPaquet.get(p)!));
+        const autres = tous.filter((p) => !prioritaires.includes(p));
+        const lo = (p: string) => v.chargerPaquet(`${import.meta.env.BASE_URL}models/${p}.lo.glb`, systemeDuPaquet.get(p)!);
+        // 1) peau, muscles, squelette en version légère : affichage rapide
         let n = 0;
-        await Promise.all(paquets.map(async (p) => {
-          await v.chargerPaquet(`${import.meta.env.BASE_URL}models/${p}.lo.glb`, p.split('-')[0]);
-          chargement = `Chargement des modèles… ${++n}/${paquets.length}`;
-        }));
+        await Promise.all(prioritaires.map(async (p) => { await lo(p); chargement = `Chargement des modèles… ${++n}/${prioritaires.length}`; }));
         pousser();
         v.vue('ant');
         chargement = '';
+        // 2) vaisseaux, nerfs et organes en arrière-plan (4 paquets à la fois)
+        let m = 0;
+        chargementFond = `Vaisseaux, nerfs et organes : 0/${autres.length}`;
+        for (let i = 0; i < autres.length; i += 4) {
+          await Promise.all(autres.slice(i, i + 4).map(async (p) => { await lo(p); chargementFond = `Vaisseaux, nerfs et organes : ${++m}/${autres.length}`; }));
+          pousser();
+        }
+        chargementFond = '';
         // 2) haute définition en arrière-plan (sauf téléphone en mode auto, ou mode « basse »)
         const petitEcran = matchMedia('(max-width: 900px)').matches;
         if (qualite === 'haute' || (qualite === 'auto' && !petitEcran)) await chargerHi();
@@ -271,6 +304,15 @@
       </div>
     {/each}
 
+    <div class="sexe" role="group" aria-label="Modèle">
+      <span>Modèle</span>
+      <button class="chip" class:on={sexe === 'm'} onclick={() => choisirSexe('m')}>Masculin</button>
+      <button class="chip" class:on={sexe === 'f'} onclick={() => choisirSexe('f')}>Féminin</button>
+    </div>
+    {#if sexe === 'f'}
+      <p class="petit">Organes génitaux féminins issus d'un autre modèle (HuBMAP), recalés sur ce bassin masculin : position approximative.</p>
+    {/if}
+
     <h2 class="titre-section">Dissection par couches</h2>
     <Dissection dissection={etat.dissection} bind:region={regionDissection} onDeplacer={dissequer} onEtape={etapeDirecte} />
 
@@ -317,6 +359,7 @@
       </div>
     </div>
     {#if chargement}<div class="etat">{chargement}</div>{/if}
+    {#if chargementFond}<div class="fond-chargement">{chargementFond}</div>{/if}
     {#if erreur}<div class="etat erreur">Erreur : {erreur}</div>{/if}
     <div class="aide">Glisser : tourner · Clic droit ou 2 doigts : déplacer · Molette ou pincer : zoom · Clic ou appui : sélectionner</div>
     <div class="couches" aria-label="Dissection rapide">
@@ -370,11 +413,14 @@
   #cote-gauche { border-right: 1px solid var(--line); }
   #cote-droit { border-left: 1px solid var(--line); }
   .fermer { display: none; }
-  .systeme { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--pan2); margin-bottom: 8px; }
-  .systeme label { flex: 1; display: flex; align-items: center; gap: 8px; cursor: pointer; }
-  .systeme input[type='checkbox'] { width: 18px; height: 18px; accent-color: var(--acc); }
-  .systeme input[type='range'] { width: 80px; accent-color: var(--acc); }
-  .pastille { width: 12px; height: 12px; border-radius: 3px; }
+  .systeme { display: flex; align-items: center; gap: 8px; padding: 3px 8px; border-bottom: 1px solid var(--line); }
+  .systeme label { flex: 1; display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 30px; }
+  .systeme input[type='checkbox'] { width: 16px; height: 16px; flex: none; accent-color: var(--acc); }
+  .systeme input[type='range'] { width: 64px; accent-color: var(--acc); }
+  .pastille { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+  .sexe { display: flex; align-items: center; gap: 6px; margin: 10px 0 4px; }
+  .sexe span { font-size: 13.5px; color: var(--mut); margin-right: 4px; }
+  .fond-chargement { position: absolute; left: 12px; top: 92px; font-size: 12px; color: var(--mut); background: #0e1418b0; padding: 4px 8px; border-radius: 6px; z-index: 2; }
   .rangee { display: flex; flex-wrap: wrap; gap: 6px; }
   .petit { font-size: 12.5px; color: var(--mut); margin: 8px 0 0; }
 
