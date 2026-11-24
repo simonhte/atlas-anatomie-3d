@@ -1,13 +1,14 @@
 # Export de maillages depuis l'atlas Z-Anatomy (fichier Blender), sans interface.
 #
-# Lancé par pipeline/04-z-anatomy.mjs :
-#   blender -b sources/z-anatomy/Z-Anatomy/Startup.blend \
-#           --python pipeline/z-anatomy/exporter.py -- <noms.json> <dossier_sortie>
+# Lancé par pipeline/04-z-anatomy.mjs, en deux temps :
+#   1. lister :  blender -b Startup.blend --python exporter.py -- lister <sortie.json>
+#      → noms de tous les objets maillage (MESH) et courbe (CURVE : nerfs)
+#   2. exporter : blender -b Startup.blend --python exporter.py -- exporter <noms.json> <dossier>
 #
-# Pour chaque objet demandé : maillage évalué (modificateurs appliqués),
-# transformé en coordonnées « monde », triangulé, écrit en OBJ (sommets + faces).
-# Un fichier bornes.json récapitule les boîtes englobantes (utile au recalage
-# sur BodyParts3D) et la liste des objets introuvables.
+# Pour chaque objet demandé : géométrie évaluée (modificateurs et épaisseur des
+# courbes appliqués), transformée en coordonnées « monde », triangulée, écrite
+# en OBJ. bornes.json récapitule les boîtes englobantes (recalage) et les
+# objets introuvables.
 
 import bpy
 import json
@@ -15,8 +16,16 @@ import os
 import sys
 
 argv = sys.argv[sys.argv.index('--') + 1:]
-noms = json.load(open(argv[0], encoding='utf-8'))
-sortie = argv[1]
+mode = argv[0]
+
+if mode == 'lister':
+    objets = {o.name: o.type for o in bpy.data.objects if o.type in ('MESH', 'CURVE')}
+    json.dump(objets, open(argv[1], 'w', encoding='utf-8'))
+    print(f'Z-Anatomy : {len(objets)} objets listés')
+    sys.exit(0)
+
+noms = json.load(open(argv[1], encoding='utf-8'))
+sortie = argv[2]
 os.makedirs(sortie, exist_ok=True)
 
 depsgraph = bpy.context.evaluated_depsgraph_get()
@@ -30,11 +39,19 @@ def nom_fichier(nom):
 
 for nom in noms:
     obj = bpy.data.objects.get(nom)
-    if obj is None or obj.type != 'MESH':
+    if obj is None or obj.type not in ('MESH', 'CURVE'):  # les nerfs sont des courbes
         introuvables.append(nom)
         continue
     ev = obj.evaluated_get(depsgraph)
-    mesh = ev.to_mesh()
+    try:
+        mesh = ev.to_mesh()
+    except RuntimeError:
+        introuvables.append(nom)
+        continue
+    if mesh is None or len(mesh.polygons) == 0:
+        introuvables.append(nom)
+        ev.to_mesh_clear()
+        continue
     mesh.calc_loop_triangles()
     mw = obj.matrix_world
     verts = [mw @ v.co for v in mesh.vertices]
@@ -54,6 +71,7 @@ for nom in noms:
     xs = [v.x for v in verts]; ys = [v.y for v in verts]; zs = [v.z for v in verts]
     bornes[nom] = {
         'fichier': nom_fichier(nom),
+        'type': obj.type,
         'min': [min(xs), min(ys), min(zs)],
         'max': [max(xs), max(ys), max(zs)],
         'sommets': len(verts),

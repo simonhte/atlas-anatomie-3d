@@ -160,7 +160,10 @@ export function avecCote(fr, genre, cote) {
 
 /** Traduit un nom FMA anglais d'os. Renvoie null si le nom n'est pas connu. */
 export function traduireOs(en) {
-  const { cote, base } = separerCote(en);
+  const { cote, base: b0 } = separerCote(en);
+  // Nommage Z-Anatomy des vertèbres : « vertebra l3 » -> « third lumbar vertebra »
+  const v = b0.match(/^vertebra ([ctl])(\d+)$/);
+  const base = v ? `${ORD[+v[2] - 1]} ${{ c: 'cervical', t: 'thoracic', l: 'lumbar' }[v[1]]} vertebra` : b0;
   const s = SIMPLES[base];
   if (s) {
     const [cle, fr, la, genre, region, groupe, fiche] = s;

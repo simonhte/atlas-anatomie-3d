@@ -19,7 +19,9 @@ import { execFileSync } from 'node:child_process';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { join } from 'node:path';
-import { STRUCTURES_ZA, REPERES, OS_ANCRAGE, GROUPES_ANCRAGE, groupeAncrage, nomsAExporter, decouperNomZA } from './config/z-anatomy.mjs';
+import { STRUCTURES_ZA, REPERES, OS_ANCRAGE, GROUPES_ANCRAGE, groupeAncrage, nomsAExporter, decouperNomZA,
+  MOTIF_NERFS, EXCLUS_NERFS, ORGANES_ZA, K_VOISINS } from './config/z-anatomy.mjs';
+import { traduireOs } from './config/noms-os.mjs';
 
 const RACINE = join(import.meta.dirname, '..');
 const DOSSIER = join(RACINE, 'sources', 'z-anatomy');
@@ -50,10 +52,29 @@ if (!blender) {
 }
 rmSync(EXPORT, { recursive: true, force: true });
 mkdirSync(EXPORT, { recursive: true });
+const script = join(import.meta.dirname, 'z-anatomy', 'exporter.py');
+// 2a. Liste de tous les objets disponibles
+const fichierListe = join(EXPORT, 'disponibles.json');
+execFileSync(blender, ['-b', BLEND, '--python', script, '--', 'lister', fichierListe], { stdio: ['ignore', 'ignore', 'inherit'] });
+const disponibles = JSON.parse(readFileSync(fichierListe, 'utf8'));
+// 2b. Choix : structures nommées, nerfs (courbes), organes manquants, et tous
+//     les os reconnus (repères du recalage local)
+const OS_ZA = new Map(); // nom Z-Anatomy -> { cle, cote } BodyParts3D
+for (const [nom, type] of Object.entries(disponibles)) {
+  if (type !== 'MESH') continue;
+  const { base, cote } = decouperNomZA(nom);
+  const t = traduireOs(base.toLowerCase());
+  if (t) OS_ZA.set(nom, { cle: t.cle, cote });
+}
+const nerfs = Object.entries(disponibles)
+  .filter(([nom, type]) => type === 'CURVE' && MOTIF_NERFS.test(nom) && !EXCLUS_NERFS.test(nom) && !/\.(j|t|g|i|s)$/.test(nom))
+  .map(([nom]) => nom);
+const organes = ORGANES_ZA.flatMap((b) => [b, `${b}.l`, `${b}.r`]).filter((n) => disponibles[n]);
+const aExporter = [...new Set([...nomsAExporter().filter((n) => disponibles[n]), ...OS_ZA.keys(), ...nerfs, ...organes])];
 const fichierNoms = join(EXPORT, 'noms.json');
-writeFileSync(fichierNoms, JSON.stringify(nomsAExporter()));
-console.log('Export depuis Blender (1 à 2 minutes) …');
-execFileSync(blender, ['-b', BLEND, '--python', join(import.meta.dirname, 'z-anatomy', 'exporter.py'), '--', fichierNoms, EXPORT], { stdio: ['ignore', 'ignore', 'inherit'] });
+writeFileSync(fichierNoms, JSON.stringify(aExporter));
+console.log(`Export depuis Blender : ${aExporter.length} objets (dont ${nerfs.length} nerfs, ${organes.length} organes, ${OS_ZA.size} os repères) …`);
+execFileSync(blender, ['-b', BLEND, '--python', script, '--', 'exporter', fichierNoms, EXPORT], { stdio: ['ignore', 'ignore', 'inherit'] });
 const { bornes } = JSON.parse(readFileSync(join(EXPORT, 'bornes.json'), 'utf8'));
 
 // --- 3. Recalage ------------------------------------------------------------
@@ -164,6 +185,48 @@ function recalageLocal(groupe, cote) {
 }
 const bilanLocal = {};
 
+/**
+ * Recalage local AUTOMATIQUE (nerfs, organes) : on prend les K os repères les
+ * plus proches du centre de la structure (dans le repère global), du même côté
+ * ou médians, et on ajuste échelle et translation par axe sur ces os.
+ */
+const reperesAuto = [];
+for (const [nom, { cle, cote: c0 }] of OS_ZA) {
+  const a = bornes[nom];
+  if (!a) continue;
+  const cote = c0 && inverserCotes ? (c0 === 'g' ? 'd' : 'g') : c0;
+  const b = inventaire.find((x) => x.cle === cle && x.cote === cote && x.systeme === 'os');
+  if (!b) continue;
+  const centreGlobal = appliquer(a.min.map((v, i) => (v + a.max[i]) / 2));
+  reperesAuto.push({ nom, a, b, cote, centreGlobal });
+}
+function recalageAuto(centreZA, cote) {
+  const c = appliquer(centreZA);
+  const voisins = reperesAuto
+    .filter((r) => !cote || !r.cote || r.cote === cote)
+    .map((r) => ({ r, d: Math.hypot(...r.centreGlobal.map((v, i) => v - c[i])) }))
+    .sort((x, y) => x.d - y.d)
+    .slice(0, K_VOISINS)
+    .map((x) => x.r);
+  if (!voisins.length) return null;
+  const P = [], Q = [];
+  for (const { a, b } of voisins) { const bo = boiteOrientee(o, a.min, a.max); P.push(bo.min, bo.max); Q.push(b.min, b.max); }
+  const ech = [], tr = [];
+  for (let i = 0; i < 3; i++) {
+    const n = P.length;
+    const mp = P.reduce((acc, v) => acc + v[i], 0) / n, mq = Q.reduce((acc, v) => acc + v[i], 0) / n;
+    let num = 0, den = 0;
+    for (let k = 0; k < n; k++) { num += (P[k][i] - mp) * (Q[k][i] - mq); den += (P[k][i] - mp) ** 2; }
+    let si = den > 0 ? num / den : s;
+    if (!(si > s * 0.85 && si < s * 1.15)) si = s;
+    ech.push(si); tr.push(mq - si * mp);
+  }
+  let err = 0;
+  for (let k = 0; k < P.length; k++) err += Math.hypot(...[0, 1, 2].map((i) => ech[i] * P[k][i] + tr[i] - Q[k][i])) ** 2;
+  return { ech, tr, rms: Math.sqrt(err / P.length), noms: voisins.map((v) => v.nom) };
+}
+const ecartsAuto = [];
+
 // --- 4. Écriture des OBJ recalés --------------------------------------------
 rmSync(RECALE, { recursive: true, force: true });
 mkdirSync(RECALE, { recursive: true });
@@ -172,11 +235,19 @@ let ecrits = 0;
 for (const nom of Object.keys(bornes)) {
   const { base, cote: c0 } = decouperNomZA(nom);
   const def = STRUCTURES_ZA[base];
-  if (!def) continue; // os repère : pas réécrit
+  const auto = !def && (nerfs.includes(nom) || organes.includes(nom));
+  if (!def && !auto) continue; // os repère : pas réécrit
   const cote = c0 && inverserCotes ? (c0 === 'g' ? 'd' : 'g') : c0;
-  const loc = recalageLocal(groupeAncrage(base), cote);
+  let loc;
+  if (def) {
+    loc = recalageLocal(groupeAncrage(base), cote);
+    bilanLocal[`${groupeAncrage(base)}${cote ? `/${cote}` : ''}`] = loc ? `${loc.rms.toFixed(1)} mm (${loc.noms.length} os)` : 'global';
+  } else {
+    const bz = bornes[nom];
+    loc = recalageAuto(bz.min.map((v, i) => (v + bz.max[i]) / 2), cote);
+    if (loc) ecartsAuto.push(loc.rms);
+  }
   const transformer = loc ? (v) => orienter(o, v).map((x, i) => loc.ech[i] * x + loc.tr[i]) : appliquer;
-  bilanLocal[`${groupeAncrage(base)}${cote ? `/${cote}` : ''}`] = loc ? `${loc.rms.toFixed(1)} mm (${loc.noms.length} os)` : 'global';
   const lignes = readFileSync(join(EXPORT, bornes[nom].fichier), 'utf8').split('\n');
   const sortie = [];
   const mins = [Infinity, Infinity, Infinity], maxs = [-Infinity, -Infinity, -Infinity];
@@ -194,12 +265,13 @@ for (const nom of Object.keys(bornes)) {
     const [a, b, c] = l.slice(2).split(' ');
     sortie.push(parite ? `f ${a} ${c} ${b}` : `f ${a} ${b} ${c}`);
   }
-  const fj = `ZA-${def[1]}${cote ? `-${cote}` : ''}`;
+  const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const fj = `ZA-${def ? def[1] : slug(base)}${cote ? `-${cote}` : ''}`;
   const anglais = `${cote === 'g' ? 'Left ' : cote === 'd' ? 'Right ' : ''}${base}`;
   writeFileSync(join(RECALE, `${fj}.obj`), [
     '# Source : Z-Anatomy, The libre 3D atlas of anatomy (CC BY-SA 4.0), dérivé de BodyParts3D',
     `# File ID : ${fj}`,
-    '# Concept ID : ZA',
+    `# Concept ID : ${def ? 'ZA' : 'ZA-AUTO'}`,
     `# English name : ${anglais}`,
     `# Bounds(mm): (${mins.join(',')})-(${maxs.join(',')})`,
     ...sortie,
@@ -210,6 +282,10 @@ for (const base of Object.keys(STRUCTURES_ZA)) {
   if (![base, `${base}.l`, `${base}.r`].some((n) => bornes[n])) manquants.push(base);
 }
 console.log(`${ecrits} structures recalées écrites dans sources/z-anatomy/recale/`);
+if (ecartsAuto.length) {
+  const tri = [...ecartsAuto].sort((a, b) => a - b);
+  console.log(`Recalage local automatique (nerfs, organes) : ${ecartsAuto.length} structures, écart médian ${tri[tri.length >> 1].toFixed(1)} mm`);
+}
 console.log('Recalage local (écart moyen sur les os voisins) :');
 for (const [k, v] of Object.entries(bilanLocal).sort()) console.log(`  ${k.padEnd(14)} ${v}`);
 if (manquants.length) console.warn(`⚠ Introuvables dans Z-Anatomy : ${manquants.join(', ')}`);

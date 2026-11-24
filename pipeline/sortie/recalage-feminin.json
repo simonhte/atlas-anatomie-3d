@@ -1,0 +1,31 @@
+{
+ "orientation": {
+  "p": [
+   0,
+   2,
+   1
+  ],
+  "sg": [
+   1,
+   -1,
+   1
+  ]
+ },
+ "echelles": [
+  892.810345691078,
+  693.76478336323,
+  939.7171883180472
+ ],
+ "translation": [
+  5.189719628354934,
+  -135.48647186855692,
+  801.0716628925315
+ ],
+ "ecartMoyenMm": 20.769406801492398,
+ "reperes": [
+  "VH_F_Pelvis.glb",
+  "VH_F_Kidney_L.glb",
+  "VH_F_Kidney_R.glb",
+  "VH_F_Urinary_Bladder.glb"
+ ]
+}

@@ -116,3 +116,24 @@ export function groupeAncrage(base) {
   if (cle === 'grand-dorsal') return 'dos';
   return { abdomen: 'abdomen', tete: 'tete', 'membre-inf': 'pied' }[region] ?? 'abdomen';
 }
+
+// ---------------------------------------------------------------------------
+// ÉTAPE 3 : nerfs et organes absents de BodyParts3D, pris dans Z-Anatomy.
+// Ils sont classés et traduits automatiquement (voir noms-organes.mjs et
+// traduction.mjs) et recalés sur les os les plus proches.
+
+/** Nerfs : objets « courbe » de Z-Anatomy dont le nom correspond à ce motif. */
+export const MOTIF_NERFS = /nerve|plexus|ganglion|trunk of brachial plexus|division of .*trunk|cord of brachial plexus|roots? of /i;
+/** Noms de courbes à écarter (textes parasites, structures non nerveuses). */
+export const EXCLUS_NERFS = /, which|venous plexus|choroid plexus|^nucleus|nucleus of|accessory nucleus|motor nucleus|posterior nucleus/i;
+
+/** Organes absents de BodyParts3D (noms exacts des objets, sans suffixe). */
+export const ORGANES_ZA = [
+  'Superior lobe of right lung', 'Middle lobe of right lung', 'Inferior lobe of right lung',
+  'Superior lobe of left lung', 'Inferior lobe of left lung',
+  'Thyroid gland', 'Left lobe of thymus', 'Right lobe of thymus',
+  'White matter of spinal cord', 'Anterior horn of spinal cord', 'Posterior horn of spinal cord',
+];
+
+/** Nombre d'os voisins utilisés pour le recalage local automatique. */
+export const K_VOISINS = 8;

@@ -39,4 +39,14 @@ for (const nom of FICHIERS) {
   await pipeline(Readable.fromWeb(rep.body), createWriteStream(cible));
   console.log(`${(statSync(cible).size / 1e6).toFixed(1)} Mo`);
 }
+// Table Terminologia Anatomica 2 (anglais / latin / français) fournie par Z-Anatomy (CC BY-SA 4.0) :
+// sert à traduire les noms des vaisseaux, nerfs et organes.
+const TA2 = join(import.meta.dirname, '..', 'sources', 'z-anatomy', 'TA2.csv');
+if (!existsSync(TA2)) {
+  mkdirSync(join(import.meta.dirname, '..', 'sources', 'z-anatomy'), { recursive: true });
+  const rep = await fetch('https://raw.githubusercontent.com/Z-Anatomy/Models-of-human-anatomy/master/TA2.csv');
+  if (!rep.ok) throw new Error(`TA2.csv : HTTP ${rep.status}`);
+  await pipeline(Readable.fromWeb(rep.body), createWriteStream(TA2));
+  console.log('↓ TA2.csv');
+}
 console.log('Téléchargement terminé.');

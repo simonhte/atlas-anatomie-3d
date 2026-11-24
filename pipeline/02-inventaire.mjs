@@ -17,6 +17,51 @@ import { join } from 'node:path';
 import { traduireOs } from './config/noms-os.mjs';
 import { traduireMuscle, traduirePeau } from './config/noms-muscles.mjs';
 import { STRUCTURES_ZA } from './config/z-anatomy.mjs';
+import { chargerTA2, traduireNom } from './config/traduction.mjs';
+import { classerOrgane, groupeVaisseau, regionDepuisPosition, COUCHE_VAISSEAUX_NERFS, COUCHE_ORGANES } from './config/noms-organes.mjs';
+
+chargerTA2(join(import.meta.dirname, '..', 'sources', 'z-anatomy', 'TA2.csv'));
+
+/** Identifiant ASCII à partir d'un nom français : « Artère fémorale » -> « artere-femorale » */
+const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/œ/g, 'oe').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+/**
+ * Classe et traduit une structure qui n'est ni un os, ni un muscle, ni la peau.
+ * `systemeFMA` : 'arteres' | 'veines' | 'nerfs' | null (d'après l'arborescence FMA)
+ */
+function classerAutre(enComplet, systemeFMA, centre) {
+  const en = enComplet.toLowerCase().trim();
+  // 1. Nom complet AVEC « left/right » (ex. « left gastric artery », structure impaire)
+  let cote = null;
+  let t = traduireNom(en);
+  let base = en;
+  if (!t || t.auto || !/\b(left|right)\b/.test(en)) {
+    const sep = separerCoteAnglais(en);
+    base = sep.base; cote = sep.cote;
+    t = traduireNom(base) ?? { fr: base[0].toUpperCase() + base.slice(1), la: '', auto: true, anglais: true };
+  }
+  let systeme = systemeFMA, groupe = null;
+  // Certains vaisseaux ne sont pas rattachés aux artères / veines dans les arborescences FMA
+  if (!systeme && /\bveins?\b|venous|vena cava/.test(base)) systeme = 'veines';
+  else if (!systeme && /arter|aorta|palmar arch|arterial arch|plantar arch|pulmonary trunk|brachiocephalic trunk|celiac trunk/.test(base)) systeme = 'arteres';
+  if (!systeme) {
+    const c = classerOrgane(base);
+    if (!c) return null;
+    systeme = c.systeme; groupe = c.groupe;
+  }
+  const region = systeme === 'snc' ? (centre[2] > 1380 ? 'tete' : 'rachis') : regionDepuisPosition(centre);
+  if (!groupe) groupe = groupeVaisseau(systeme, region);
+  const couche = systeme === 'muscles' ? 2 : systeme === 'os' ? 9 : ['arteres', 'veines', 'nerfs'].includes(systeme) ? COUCHE_VAISSEAUX_NERFS : COUCHE_ORGANES;
+  const frSansRomain = t.fr.replace(/\s*\([IVX]+\)$/, '');
+  const cle = slug(frSansRomain);
+  return { cle, fr: t.fr, la: t.la, genre: /^(artère|veine|branche|glande|partie|moelle|racine|bronche|paroi|cavité|dent|membrane|commissure|valvule|cuspide|division|arcade|langue|vessie|rate|trachée|prostate|vésicule|trompe|vulve|gencive|incisive|canine|prémolaire|molaire|zonule|corde)/i.test(t.fr) ? 'f' : 'm',
+    region, groupe, couche, fiche: cle, cote, systeme, auto: !!t.auto, anglais: !!t.anglais };
+}
+function separerCoteAnglais(en) {
+  const m = en.match(/\b(left|right) /);
+  // certains noms contiennent deux fois la latéralité (« … of left X to left Y »)
+  return m ? { cote: m[1] === 'left' ? 'g' : 'd', base: en.replace(/\b(left|right) /g, '') } : { cote: null, base: en };
+}
 
 const RACINE = join(import.meta.dirname, '..');
 const SRC = join(RACINE, 'sources', 'bodyparts3d');
@@ -126,7 +171,17 @@ for (const f of fichiers) {
     const tp = traduirePeau(en);
     if (tm) { systeme = 'muscles'; t = tm; }
     else if (tp) { systeme = 'peau'; t = tp; }
-    else if (systeme === 'muscles' && /papillary|intestin|taenia/.test(en)) systeme = null; // muscles d'organes : étape 3
+    else if (systeme === 'muscles' && /papillary|intestin|taenia/.test(en)) systeme = null; // muscles d'organes : classés plus bas
+  }
+  // Vaisseaux, nerfs et organes (étape 3) — les disques (os) sont nommés plus loin
+  if (!t && systeme !== 'os') {
+    const anc = ancetres(h.fma);
+    const sysFMA = anc.has('FMA50720') ? 'arteres' : anc.has('FMA50723') ? 'veines' : anc.has('FMA65132') ? 'nerfs' : null;
+    const centreMm = h.min.map((v, i) => (v + h.max[i]) / 2);
+    const a = classerAutre(h.en, sysFMA, centreMm);
+    if (!a) continue;
+    systeme = a.systeme;
+    t = a;
   }
   if (!systeme) continue;
   if (t && systeme === 'os') t.couche = COUCHE_OS;
@@ -145,7 +200,16 @@ if (existsSync(OBJ_ZA)) {
     const h = entete(join(OBJ_ZA, f));
     const m = h.en.match(/^(Left |Right )?(.+)$/);
     const def = STRUCTURES_ZA[m[2]];
-    if (!def) { nonTraduits.push(`${f} (Z-Anatomy) ${h.en}`); continue; }
+    if (!def) {
+      // nerfs et organes recalés automatiquement (Concept ID : ZA-AUTO)
+      const nerf = /nerve|plexus|ganglion|trunk|division|cord|root/i.test(m[2]) && !/spinal cord/i.test(m[2]);
+      const a = classerAutre(h.en, nerf ? 'nerfs' : null, h.min.map((v, i) => (v + h.max[i]) / 2));
+      if (!a) continue;
+      const centre = h.min.map((v, i) => +((v + h.max[i]) / 2).toFixed(1));
+      inventaire.push({ fj: f.replace('.obj', ''), fma: '', en: h.en, centre, min: h.min, max: h.max, source: 'z-anatomy', ...a });
+      n++;
+      continue;
+    }
     const [systeme, cle, fr, la, genre, region, groupe, couche, fiche] = def;
     const cote = m[1] === 'Left ' ? 'g' : m[1] === 'Right ' ? 'd' : null;
     const centre = h.min.map((v, i) => +((v + h.max[i]) / 2).toFixed(1));
@@ -199,6 +263,13 @@ for (let i = inventaire.length - 1; i >= 0; i--) {
   const k = `${x.fma}|${r(x.min)}|${r(x.max)}`;
   if (vus.has(k)) { console.log(`Doublon ignoré : ${x.fj} (${x.en})`); inventaire.splice(i, 1); }
   else vus.add(k);
+}
+
+// --- 6 quater. Nerfs en double (orbite) : on garde la version Z-Anatomy ---------
+const nerfsZA = new Set(inventaire.filter((x) => x.systeme === 'nerfs' && x.source === 'z-anatomy').map((x) => `${x.cle}|${x.cote}`));
+for (let i = inventaire.length - 1; i >= 0; i--) {
+  const x = inventaire[i];
+  if (x.systeme === 'nerfs' && x.source !== 'z-anatomy' && nerfsZA.has(`${x.cle}|${x.cote}`)) inventaire.splice(i, 1);
 }
 
 // --- 7. Écriture ------------------------------------------------------------
