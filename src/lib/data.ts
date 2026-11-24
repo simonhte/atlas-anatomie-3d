@@ -5,19 +5,23 @@ import type { Region, Structure, Systeme } from './types';
 import { avecCote } from './nommage';
 
 export const SYSTEMES: Systeme[] = [
+  { id: 'peau', nom: 'Peau', couleur: '#dbb09a' },
+  { id: 'muscles', nom: 'Muscles', couleur: '#b3423d' },
   { id: 'os', nom: 'Squelette', couleur: '#e9dfc8' },
-  // Étapes suivantes : muscles, artères, veines, nerfs, organes…
+  // Étape 3 : artères, veines, nerfs, organes…
 ];
 
 export const REGIONS: Region[] = [
   { id: 'tete', nom: 'Tête' },
   { id: 'cou', nom: 'Cou' },
   { id: 'rachis', nom: 'Rachis' },
+  { id: 'dos', nom: 'Dos et nuque' },
   { id: 'thorax', nom: 'Thorax' },
   { id: 'abdomen', nom: 'Abdomen' },
   { id: 'bassin', nom: 'Bassin et périnée' },
   { id: 'membre-sup', nom: 'Membre supérieur' },
   { id: 'membre-inf', nom: 'Membre inférieur' },
+  { id: 'corps', nom: 'Corps entier' },
 ];
 
 export const nomRegion = (id: string) => REGIONS.find((r) => r.id === id)?.nom ?? id;
@@ -47,7 +51,8 @@ export function construireArbre(structures: Structure[]): NoeudArbre[] {
     const i = REGIONS.findIndex((x) => x.id === r);
     return i < 0 ? 99 : i;
   };
-  return SYSTEMES.map((sys) => {
+  // On n'affiche que les systèmes qui ont au moins une structure chargée
+  return SYSTEMES.filter((sys) => structures.some((s) => s.systeme === sys.id)).map((sys) => {
     const duSys = structures.filter((s) => s.systeme === sys.id);
     const regions = [...new Set(duSys.map((s) => s.region))].sort((a, b) => ordreRegion(a) - ordreRegion(b));
     return {

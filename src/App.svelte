@@ -15,6 +15,8 @@
   import FicheVue from './components/Fiche.svelte';
   import Etiquettes from './components/Etiquettes.svelte';
   import Credits from './components/Credits.svelte';
+  import Dissection from './components/Dissection.svelte';
+  import { DISSECTION_INITIALE, deplacer } from './lib/dissection';
 
   let canvas: HTMLCanvasElement;
   let scene: HTMLElement;
@@ -32,7 +34,12 @@
     systemesVisibles: Object.fromEntries(SYSTEMES.map((s) => [s.id, true])),
     rayonsX: false,
     selection: null,
+    dissection: structuredClone(DISSECTION_INITIALE),
   });
+  /** Région ciblée par le curseur de dissection (null = tout le corps) */
+  let regionDissection: string | null = $state(null);
+  /** Résultat de « Retirer et voir dessous » */
+  let dessous: { muscle: string; ids: { id: string; part: number }[] } | null = $state(null);
   const historique = new Historique<EtatAffichage>();
   let peutAnnuler = $state(false);
   let peutRetablir = $state(false);
@@ -74,6 +81,7 @@
 
   // ------------------------------------------------------------ actions
   function selectionner(id: string | null, cadrer = false) {
+    if (dessous && id !== null && !dessous.ids.some((x) => x.id === id)) effacerDessous();
     modifier((e) => {
       e.selection = id;
       // Sélectionner une structure masquée la ré-affiche
@@ -110,11 +118,37 @@
   }
   function vue(nom: NomVue) { viewer?.vue(nom); }
 
+  // ------------------------------------------------------------ dissection
+  function dissequer(sens: 1 | -1) {
+    modifier((e) => { e.dissection = deplacer(e.dissection, sens, regionDissection); });
+  }
+  function etapeDirecte(etape: number) {
+    modifier((e) => {
+      if (regionDissection) e.dissection = { ...e.dissection, regions: { ...e.dissection.regions, [regionDissection]: etape } };
+      else e.dissection = { global: etape, regions: {} };
+    });
+  }
+  /** Retire la structure sélectionnée et met en évidence ce qu'elle recouvrait. */
+  function retirerEtVoirDessous() {
+    const id = etat.selection;
+    if (!id || !viewer) return;
+    const ids = viewer.structuresRecouvertes(id).slice(0, 10);
+    modifier((e) => { e.masques = [...e.masques, id]; e.selection = null; });
+    dessous = { muscle: id, ids };
+    viewer.mettreEnEvidence(ids.map((x) => x.id));
+    if (matchMedia('(max-width: 900px)').matches) panneau = 'fiche';
+  }
+  function effacerDessous() {
+    dessous = null;
+    viewer?.mettreEnEvidence([]);
+  }
+
   /** Vues régionales : cadrage sur les structures de la région */
   const VUES_REGIONALES: { id: string; nom: string; filtre: (s: Structure) => boolean; vue?: NomVue }[] = [
     { id: 'tete', nom: 'Tête', filtre: (s) => s.region === 'tete' },
     { id: 'cou', nom: 'Cou', filtre: (s) => /^vertebre-c|^atlas$|^axis$|^hyoide$/.test(s.cle) },
-    { id: 'thorax', nom: 'Thorax', filtre: (s) => s.region === 'thorax' },
+    { id: 'dos', nom: 'Dos', filtre: (s) => s.region === 'dos' || s.region === 'rachis', vue: 'post' },
+    { id: 'thorax', nom: 'Thorax', filtre: (s) => s.region === 'thorax' && s.systeme === 'os' },
     { id: 'abdomen', nom: 'Abdomen', filtre: (s) => /^vertebre-l|^cote-1[12]$/.test(s.cle) },
     { id: 'bassin', nom: 'Pelvis', filtre: (s) => s.region === 'bassin' },
     { id: 'msup', nom: 'Membre sup.', filtre: (s) => s.region === 'membre-sup' && s.cote === 'd' },
@@ -156,6 +190,7 @@
       try {
         structures = await chargerStructures();
         arbre = construireArbre(structures);
+        v.setMeta(new Map(structures.map((s) => [s.id, { couche: s.couche, region: s.region }])));
         index = new IndexRecherche(structures.map((s) => {
           const f = fiches.get(s.fiche);
           return { id: s.id, noms: [nomComplet(s), s.fr, s.la, s.en, f && f.structures.length === 1 ? f.titre : ''] };
@@ -198,6 +233,8 @@
       case 'l': etiquettes = !etiquettes; viewer?.demanderRendu(); break;
       case 'x': modifier((s) => { s.rayonsX = !s.rayonsX; }); break;
       case 'f': if (etat.selection) viewer?.cadrer([etat.selection]); break;
+      case 'd': dissequer(e.shiftKey ? -1 : 1); break;
+      case 'r': retirerEtVoirDessous(); break;
       case 'escape': if (creditsOuverts) creditsOuverts = false; else selectionner(null); break;
       case '/': e.preventDefault(); document.querySelector<HTMLInputElement>('#recherche')?.focus(); break;
     }
@@ -233,6 +270,9 @@
           oninput={(e) => { etat.opacites[sys.id] = +(e.target as HTMLInputElement).value; pousser(); }} />
       </div>
     {/each}
+
+    <h2 class="titre-section">Dissection par couches</h2>
+    <Dissection dissection={etat.dissection} bind:region={regionDissection} onDeplacer={dissequer} onEtape={etapeDirecte} />
 
     <h2 class="titre-section">Affichage</h2>
     <div class="rangee">
@@ -279,6 +319,10 @@
     {#if chargement}<div class="etat">{chargement}</div>{/if}
     {#if erreur}<div class="etat erreur">Erreur : {erreur}</div>{/if}
     <div class="aide">Glisser : tourner · Clic droit ou 2 doigts : déplacer · Molette ou pincer : zoom · Clic ou appui : sélectionner</div>
+    <div class="couches" aria-label="Dissection rapide">
+      <button class="btn" title="Recouvrir (⇧D)" onclick={() => dissequer(-1)}>▲ Recouvrir</button>
+      <button class="btn" title="Disséquer (D)" onclick={() => dissequer(1)}>▼ Disséquer</button>
+    </div>
     <nav class="barre-mobile">
       <button class="btn" class:on={panneau === 'arbre'} onclick={() => (panneau = panneau === 'arbre' ? null : 'arbre')}>Structures</button>
       <button class="btn" class:on={panneau === 'fiche'} onclick={() => (panneau = panneau === 'fiche' ? null : 'fiche')}>Fiche</button>
@@ -291,7 +335,11 @@
     <button class="fermer" aria-label="Fermer" onclick={() => (panneau = null)}>✕</button>
     <FicheVue structure={selection} fiche={ficheSel}
       onMasquer={masquerSelection} onIsoler={isolerSelection}
-      onCadrer={() => etat.selection && viewer?.cadrer([etat.selection])} />
+      onCadrer={() => etat.selection && viewer?.cadrer([etat.selection])}
+      onRetirer={retirerEtVoirDessous}
+      dessous={dessous ? { muscle: parId.get(dessous.muscle) ?? null, liste: dessous.ids.map((x) => ({ structure: parId.get(x.id)!, part: x.part })).filter((x) => x.structure) } : null}
+      onChoisirDessous={(id) => selectionner(id, false)}
+      onFermerDessous={() => { if (dessous) { const m = dessous.muscle; effacerDessous(); modifier((e) => { e.masques = e.masques.filter((x) => x !== m); }); } }} />
   </aside>
 </div>
 
@@ -340,8 +388,10 @@
   .vues :global(.chip) { background: #151d23e6; }
   .etat { position: absolute; inset: auto 0 50% 0; text-align: center; color: var(--mut); }
   .erreur { color: var(--bad); }
-  .aide { position: absolute; left: 12px; bottom: 12px; font-size: 12.5px; color: var(--mut); background: #0e1418b0; padding: 6px 10px; border-radius: 8px; }
+  .aide { position: absolute; left: 12px; right: 140px; bottom: 12px; font-size: 12.5px; color: var(--mut); background: #0e1418b0; padding: 6px 10px; border-radius: 8px; }
   .barre-mobile { display: none; }
+  .couches { position: absolute; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
+  .couches .btn { background: #151d23ee; justify-content: center; }
 
   @media (max-width: 1100px) { .app { grid-template-columns: 260px minmax(0, 1fr) 320px; } }
 
@@ -369,5 +419,7 @@
     }
     .barre-mobile .btn { flex: 1; justify-content: center; background: #151d23ee; height: 44px; }
     .barre-mobile .btn.on { background: var(--acc); }
+    .couches { right: 8px; bottom: calc(max(8px, env(safe-area-inset-bottom)) + 54px); flex-direction: row; }
+    .couches .btn { height: 40px; }
   }
 </style>

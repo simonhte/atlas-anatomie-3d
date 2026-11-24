@@ -3,7 +3,7 @@
 Atlas d'anatomie humaine en 3D pour réviser la P2 (DFGSM2) : modèles anatomiques réels
 (BodyParts3D), fiches de cours en français, et bientôt dissection par couches, coupes et quiz.
 
-> État : **étape 1 — squelette complet + visualiseur**.
+> État : **étape 2 — squelette, muscles et dissection par couches**.
 
 ## Lancer l'app sur le Mac
 
@@ -69,10 +69,22 @@ npm run modeles
 3. Construit un GLB par système × région, en deux niveaux de détail :
    `hi` (maillage d'origine) et `lo` (≈ 25 % des triangles, pour les téléphones et le premier affichage).
 
-Squelette actuel : 242 maillages, 3,3 Mo en haute définition, 1,4 Mo en version légère.
+Contenu actuel : peau, 413 maillages de muscles, 242 os — 16,4 Mo en haute définition,
+6,7 Mo en version légère.
 
-**Manques connus de BodyParts3D** : pas de coccyx, pas de cartilages costaux 8 à 10,
-très peu de nerfs (seulement des branches orbitaires), modèle masculin uniquement.
+**Manques connus de BodyParts3D** :
+- os : pas de coccyx, pas de cartilages costaux 8 à 10 ;
+- muscles : pas de **grand dorsal**, **droit de l'abdomen**, **oblique interne**, **transverse de l'abdomen**,
+  **carré des lombes**, **masséter**, **temporal**, **ptérygoïdiens**, ni muscles de la face (sauf platysma),
+  ni muscles du périnée (sauf releveur de l'anus et sphincter externe) ;
+- très peu de nerfs (seulement des branches orbitaires) ; modèle masculin uniquement.
+
+## Dissection par couches
+
+Couches (`couche` dans l'inventaire) : 0 peau · 1 muscles superficiels · 2 intermédiaires · 3 profonds · 9 os.
+La couche de chaque muscle est fixée dans `pipeline/config/noms-muscles.mjs` (relative à sa région).
+Le curseur agit sur tout le corps ou sur une région ; « Retirer et voir dessous » (touche R) masque
+la structure sélectionnée et liste ce qu'elle recouvre depuis l'angle de vue actuel.
 
 ## Pourquoi cette stack
 

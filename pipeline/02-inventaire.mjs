@@ -15,6 +15,7 @@ import { readFileSync, readdirSync, existsSync, mkdirSync, writeFileSync, openSy
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { traduireOs } from './config/noms-os.mjs';
+import { traduireMuscle, traduirePeau } from './config/noms-muscles.mjs';
 
 const RACINE = join(import.meta.dirname, '..');
 const SRC = join(RACINE, 'sources', 'bodyparts3d');
@@ -64,8 +65,21 @@ const SYSTEMES = [
       FMA10446: 'disque intervertébral',
     },
   },
-  // Les étapes suivantes ajouteront : muscles, vaisseaux, nerfs, organes…
+  {
+    // Les muscles sont surtout reconnus par la table pipeline/config/noms-muscles.mjs ;
+    // ces concepts servent à repérer les muscles qui manqueraient dans la table.
+    id: 'muscles',
+    concepts: {
+      FMA5022: 'organe musculaire (muscle organ)',
+      FMA10474: 'zone de muscle (zone of muscle organ)',
+    },
+  },
+  // Les étapes suivantes ajouteront : vaisseaux, nerfs, organes…
 ];
+
+// Couche de dissection des os (la plus profonde) et de la peau (la plus superficielle)
+const COUCHE_OS = 9;
+const COUCHE_PEAU = 0;
 
 function systemeDe(fma) {
   const anc = ancetres(fma);
@@ -98,11 +112,22 @@ for (const f of fichiers) {
   const fj = f.replace('.obj', '');
   const h = entete(join(OBJ, f));
   if (!h.fma) continue;
-  const systeme = systemeDe(h.fma);
-  if (!systeme) continue;
   const en = h.en.toLowerCase();
+  let systeme = systemeDe(h.fma);
   let t = null;
   if (systeme === 'os') t = traduireOs(en);
+  // Muscles et peau : reconnus d'abord par leur nom (les arborescences FMA de
+  // BodyParts3D ne rattachent pas toujours les chefs et parties de muscles)
+  if (systeme !== 'os') {
+    const tm = traduireMuscle(en);
+    const tp = traduirePeau(en);
+    if (tm) { systeme = 'muscles'; t = tm; }
+    else if (tp) { systeme = 'peau'; t = tp; }
+    else if (systeme === 'muscles' && /papillary|intestin|taenia/.test(en)) systeme = null; // muscles d'organes : étape 3
+  }
+  if (!systeme) continue;
+  if (t && systeme === 'os') t.couche = COUCHE_OS;
+  if (t && systeme === 'peau') t.couche = COUCHE_PEAU;
   const centre = h.min.map((v, i) => +((v + h.max[i]) / 2).toFixed(1));
   const item = { fj, fma: h.fma, en: h.en, systeme, centre, min: h.min, max: h.max };
   if (t) Object.assign(item, t);
@@ -127,7 +152,7 @@ for (const d of inventaire.filter((x) => /intervertebral disk/i.test(x.en))) {
       cle: `disque-${dessus.nom}-${dessous.nom}`.toLowerCase(),
       fr: `Disque intervertébral ${n}`,
       la: 'Discus intervertebralis',
-      genre: 'm', cote: null, region: 'rachis', groupe: 'Disques intervertébraux', fiche: 'disques-intervertebraux',
+      genre: 'm', cote: null, region: 'rachis', groupe: 'Disques intervertébraux', fiche: 'disques-intervertebraux', couche: COUCHE_OS,
     });
   } else nonTraduits.push(`${d.fj}  ${d.fma}  ${d.en} (position non résolue)`);
 }
@@ -147,7 +172,9 @@ for (const cote of ['d', 'g']) {
 const vus = new Set();
 for (let i = inventaire.length - 1; i >= 0; i--) {
   const x = inventaire[i];
-  const k = `${x.fma}|${x.min.join()}|${x.max.join()}`;
+  // arrondi à 2 mm près : certains doublons diffèrent d'une fraction de millimètre
+  const r = (v) => v.map((a) => Math.round(a / 2)).join();
+  const k = `${x.fma}|${r(x.min)}|${r(x.max)}`;
   if (vus.has(k)) { console.log(`Doublon ignoré : ${x.fj} (${x.en})`); inventaire.splice(i, 1); }
   else vus.add(k);
 }

@@ -9,6 +9,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { computeBoundsTree, disposeBoundsTree, acceleratedRaycast } from 'three-mesh-bvh';
+import { DISSECTION_INITIALE, estDisseque, type Dissection } from '../dissection';
 
 // Accélère le lancer de rayons (sélection) avec une hiérarchie de volumes englobants
 THREE.BufferGeometry.prototype.computeBoundsTree = computeBoundsTree;
@@ -28,7 +29,12 @@ export interface EtatAffichage {
   systemesVisibles: Record<string, boolean>;
   rayonsX: boolean;
   selection: string | null;
+  /** Dissection par couches (globale et par région) */
+  dissection: Dissection;
 }
+
+/** Métadonnées utiles au visualiseur pour la dissection */
+export interface MetaMaillage { couche: number; region: string }
 
 export interface Ancre {
   id: string;
@@ -39,6 +45,7 @@ export interface Ancre {
 }
 
 const ACCENT = new THREE.Color('#4fd1e0');
+const AMBRE = new THREE.Color('#e8b45a');
 
 interface InfoMaillage {
   mesh: THREE.Mesh;
@@ -58,7 +65,10 @@ export class Viewer {
   private maillages = new Map<string, InfoMaillage>();
   private racine = new THREE.Group();
   private raycaster = new THREE.Raycaster();
-  private etat: EtatAffichage = { masques: [], opacites: {}, systemesVisibles: {}, rayonsX: false, selection: null };
+  private etat: EtatAffichage = { masques: [], opacites: {}, systemesVisibles: {}, rayonsX: false, selection: null, dissection: DISSECTION_INITIALE };
+  private meta = new Map<string, MetaMaillage>();
+  /** Structures mises en évidence temporairement (ex. « ce que recouvre ce muscle ») */
+  private evidence = new Set<string>();
   private survol: string | null = null;
   private aRendre = true;
   private anim: { t0: number; duree: number; de: [THREE.Vector3, THREE.Vector3]; vers: [THREE.Vector3, THREE.Vector3] } | null = null;
@@ -185,8 +195,25 @@ export class Viewer {
     this.appliquerEtat();
   }
 
-  private estVisible(id: string, info: InfoMaillage) {
-    return this.etat.systemesVisibles[info.systeme] !== false && !this.etat.masques.includes(id);
+  /** Couche et région de chaque maillage (pour la dissection). */
+  setMeta(meta: Map<string, MetaMaillage>) {
+    this.meta = meta;
+    this.appliquerEtat();
+  }
+
+  /** Met en évidence (couleur ambre) un ensemble de structures ; [] pour effacer. */
+  mettreEnEvidence(ids: string[]) {
+    this.evidence = new Set(ids);
+    this.appliquerEtat();
+  }
+
+  /** Visible = système affiché, non masqué, non retiré par la dissection. */
+  private visibleSelonEtat(id: string, info: InfoMaillage, masques: Set<string>) {
+    if (this.etat.systemesVisibles[info.systeme] === false || masques.has(id)) return false;
+    const m = this.meta.get(id);
+    // La structure sélectionnée reste visible même si sa couche est retirée
+    if (m && id !== this.etat.selection && estDisseque(m.couche, m.region, this.etat.dissection)) return false;
+    return true;
   }
 
   private appliquerEtat() {
@@ -194,7 +221,7 @@ export class Viewer {
     for (const [id, info] of this.maillages) {
       const mat = info.mesh.material as THREE.MeshStandardMaterial;
       const sel = id === this.etat.selection;
-      info.mesh.visible = this.etat.systemesVisibles[info.systeme] !== false && !masques.has(id);
+      info.mesh.visible = this.visibleSelonEtat(id, info, masques);
       let op = this.etat.opacites[info.systeme] ?? 1;
       // Rayons X : tout devient translucide sauf la sélection
       if (this.etat.rayonsX && !sel) op = Math.min(op, 0.18);
@@ -208,6 +235,9 @@ export class Viewer {
       if (sel) {
         mat.emissive.copy(ACCENT).multiplyScalar(0.45);
         mat.color.lerp(ACCENT, 0.35);
+      } else if (this.evidence.has(id)) {
+        mat.emissive.copy(AMBRE).multiplyScalar(0.4);
+        mat.color.lerp(AMBRE, 0.3);
       } else if (id === this.survol) {
         mat.emissive.copy(ACCENT).multiplyScalar(0.18);
       } else {
@@ -330,6 +360,37 @@ export class Viewer {
       vers: [pos, cible],
     };
     this.demanderRendu();
+  }
+
+  /**
+   * Structures que recouvre un maillage, vues depuis la caméra : on lance des
+   * rayons depuis la caméra vers des points de sa surface, et on note la
+   * première structure touchée JUSTE DERRIÈRE lui. Renvoie les ids triés par
+   * surface recouverte (nombre de rayons), sans le maillage lui-même.
+   */
+  structuresRecouvertes(id: string, maxPoints = 400): { id: string; part: number }[] {
+    const info = this.maillages.get(id);
+    if (!info) return [];
+    const pos = info.mesh.geometry.attributes.position;
+    const pas = Math.max(1, Math.floor(pos.count / maxPoints));
+    const cibles = [...this.maillages.values()].filter((i) => i.mesh.visible && i.mesh !== info.mesh).map((i) => i.mesh);
+    const compte = new Map<string, number>();
+    const p = new THREE.Vector3(), dir = new THREE.Vector3();
+    let total = 0;
+    for (let i = 0; i < pos.count; i += pas) {
+      p.fromBufferAttribute(pos, i).applyMatrix4(info.mesh.matrixWorld);
+      const dist = p.distanceTo(this.camera.position);
+      dir.copy(p).sub(this.camera.position).normalize();
+      this.raycaster.set(this.camera.position, dir);
+      // on ne garde que ce qui est derrière la surface du muscle (pas devant)
+      const hit = this.raycaster.intersectObjects(cibles, false).find((h) => h.distance > dist - 0.002);
+      total++;
+      if (hit) compte.set(hit.object.userData.id, (compte.get(hit.object.userData.id) ?? 0) + 1);
+    }
+    return [...compte.entries()]
+      .map(([k, n]) => ({ id: k, part: n / Math.max(1, total) }))
+      .filter((x) => x.part >= 0.02)
+      .sort((a, b) => b.part - a.part);
   }
 
   // ------------------------------------------------------------------ étiquettes

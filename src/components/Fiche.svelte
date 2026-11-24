@@ -4,12 +4,17 @@
   import type { Fiche, Structure } from '../lib/types';
   import { nomComplet, nomRegion, nomSysteme } from '../lib/data';
 
-  let { structure, fiche, onMasquer, onIsoler, onCadrer }: {
+  let { structure, fiche, onMasquer, onIsoler, onCadrer, onRetirer, dessous, onChoisirDessous, onFermerDessous }: {
     structure: Structure | null;
     fiche: Fiche | null;
     onMasquer: () => void;
     onIsoler: () => void;
     onCadrer: () => void;
+    /** Retirer la structure et montrer ce qu'elle recouvre */
+    onRetirer: () => void;
+    dessous: { muscle: Structure | null; liste: { structure: Structure; part: number }[] } | null;
+    onChoisirDessous: (id: string) => void;
+    onFermerDessous: () => void;
   } = $props();
 
   marked.setOptions({ gfm: true, breaks: false });
@@ -17,10 +22,27 @@
   const estARetenir = (t: string) => /retenir/i.test(t);
 </script>
 
+{#if dessous && dessous.muscle}
+  <section class="dessous">
+    <h4>Sous {nomComplet(dessous.muscle)}</h4>
+    {#if dessous.liste.length}
+      <p class="petit">Structures recouvertes, vues depuis l'angle actuel (en ambre sur le modèle) :</p>
+      <ul>
+        {#each dessous.liste as d (d.structure.id)}
+          <li><button class="lien" onclick={() => onChoisirDessous(d.structure.id)}>{nomComplet(d.structure)}</button> <small>{Math.round(d.part * 100)} %</small></li>
+        {/each}
+      </ul>
+    {:else}
+      <p class="petit">Rien n'est visible sous cette structure depuis cet angle. Tourne le modèle et réessaie.</p>
+    {/if}
+    <button class="chip" onclick={onFermerDessous}>Remettre {dessous.muscle.fr.toLowerCase()}</button>
+  </section>
+{/if}
+
 {#if !structure}
   <div class="vide">
     <p>Clique sur une structure du modèle ou cherche-la par son nom pour ouvrir sa fiche.</p>
-    <p>Raccourcis : <kbd>H</kbd> masquer · <kbd>I</kbd> isoler · <kbd>A</kbd> tout afficher · <kbd>F</kbd> cadrer · <kbd>L</kbd> étiquettes · <kbd>X</kbd> rayons X · <kbd>⌘Z</kbd> annuler · <kbd>/</kbd> rechercher · <kbd>Échap</kbd> désélectionner</p>
+    <p>Raccourcis : <kbd>D</kbd> disséquer · <kbd>⇧D</kbd> recouvrir · <kbd>R</kbd> retirer et voir dessous · <kbd>H</kbd> masquer · <kbd>I</kbd> isoler · <kbd>A</kbd> tout afficher · <kbd>F</kbd> cadrer · <kbd>L</kbd> étiquettes · <kbd>X</kbd> rayons X · <kbd>⌘Z</kbd> annuler · <kbd>/</kbd> rechercher · <kbd>Échap</kbd> désélectionner</p>
   </div>
 {:else}
   <article>
@@ -35,6 +57,9 @@
       <button class="chip" onclick={onCadrer}>Cadrer</button>
       <button class="chip" onclick={onIsoler}>Isoler</button>
       <button class="chip" onclick={onMasquer}>Masquer</button>
+      {#if structure.systeme !== 'os'}
+        <button class="chip" title="Touche R" onclick={onRetirer}>Retirer et voir dessous</button>
+      {/if}
     </div>
 
     {#if fiche}
@@ -66,7 +91,14 @@
   .latin { color: var(--mut); font-style: italic; font-size: 14px; }
   .etiquettes { margin: 8px 0; display: flex; flex-wrap: wrap; gap: 6px; }
   .tag { font-size: 12px; padding: 2px 8px; border-radius: 20px; background: var(--pan2); border: 1px solid var(--line); }
-  .actions { display: flex; gap: 6px; margin-bottom: 10px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .dessous { margin: 0 0 16px; padding: 10px 12px; border-radius: 8px; background: #3a2e17; border: 1px solid #5c4a22; }
+  .dessous h4 { color: var(--warn); }
+  .dessous ul { list-style: none; padding: 0; margin: 6px 0 10px; }
+  .dessous li { display: flex; justify-content: space-between; align-items: center; }
+  .lien { border: 0; background: none; color: var(--ink); text-align: left; padding: 4px 0; text-decoration: underline; text-decoration-color: #e8b45a88; }
+  .petit { font-size: 12.5px; color: var(--mut); margin: 0; }
+  small { color: var(--mut); }
   .statut { font-size: 13px; color: var(--warn); background: #3a2e17; border: 1px solid #5c4a22; border-radius: 8px; padding: 6px 10px; }
   .commune { font-size: 13px; color: var(--mut); }
   section { margin-top: 14px; }

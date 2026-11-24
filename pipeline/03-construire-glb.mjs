@@ -35,9 +35,15 @@ const DONNEES = join(RACINE, 'public', 'data');
 const LODS = { hi: null, lo: 0.25 }; // ratio de triangles conservés (null = original)
 
 // Couleurs par système (sRGB 0–1), reprises du prototype
-const COULEURS = { os: [0.91, 0.87, 0.78] };
-// Les cartilages et disques sont colorés un peu différemment de l'os
+const COULEURS = { os: [0.91, 0.87, 0.78], muscles: [0.7, 0.26, 0.24], peau: [0.86, 0.69, 0.6] };
+// Cartilages, disques, tendons et rétinaculums : teintes distinctes
 const COULEUR_CARTILAGE = [0.72, 0.82, 0.86];
+const COULEUR_TENDON = [0.88, 0.85, 0.76];
+function couleurDe(it) {
+  if (/cartilage|disque/.test(it.cle ?? '')) return COULEUR_CARTILAGE;
+  if (/tendon|retinaculum/.test(it.cle ?? '')) return COULEUR_TENDON;
+  return COULEURS[it.systeme];
+}
 
 /** Lit un OBJ BodyParts3D : sommets, normales, faces triangulaires. */
 function lireObj(chemin) {
@@ -110,8 +116,7 @@ for (const [nomPaquet, items] of Object.entries(paquets)) {
         .setAttribute('POSITION', doc.createAccessor().setType('VEC3').setArray(pos).setBuffer(buffer))
         .setAttribute('NORMAL', doc.createAccessor().setType('VEC3').setArray(nor ?? calculerNormales(pos, idx)).setBuffer(buffer))
         .setIndices(doc.createAccessor().setType('SCALAR').setArray(idx).setBuffer(buffer));
-      const cartilage = /cartilage|disque/.test(it.cle ?? '');
-      prim.setMaterial(materiau(cartilage ? COULEUR_CARTILAGE : COULEURS[it.systeme]));
+      prim.setMaterial(materiau(couleurDe(it)));
       // Le nœud porte l'identifiant FJ : l'app retrouve les métadonnées par ce nom.
       const mesh = doc.createMesh(it.fj).addPrimitive(prim);
       scene.addChild(doc.createNode(it.fj).setMesh(mesh));
@@ -134,7 +139,7 @@ for (const [nomPaquet, items] of Object.entries(paquets)) {
     const c = it.centre; // mm, LPS -> m, Y en haut
     structures.push({
       id: it.fj, fma: it.fma, en: it.en, cle: it.cle, fr: it.fr, la: it.la, cote: it.cote, genre: it.genre,
-      systeme: it.systeme, region: it.region, groupe: it.groupe, fiche: it.fiche, paquet: nomPaquet,
+      systeme: it.systeme, region: it.region, groupe: it.groupe, fiche: it.fiche, couche: it.couche, paquet: nomPaquet,
       centre: [c[0] / 1000, c[2] / 1000, -c[1] / 1000].map((x) => +x.toFixed(4)),
     });
   }

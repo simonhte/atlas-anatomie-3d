@@ -67,7 +67,7 @@ describe('noms des os', () => {
 
 describe('arborescence', () => {
   const s = (id: string, fr: string, region: string, groupe: string, cote: 'd' | 'g' | null): Structure => ({
-    id, fr, region, groupe, cote, fma: '', en: '', cle: fr, la: '', genre: 'm', systeme: 'os', fiche: '', paquet: '', centre: [0, 0, 0],
+    id, fr, region, groupe, cote, fma: '', en: '', cle: fr, la: '', genre: 'm', systeme: 'os', fiche: '', couche: 9, paquet: '', centre: [0, 0, 0],
   });
   it('range système → région → groupe → structures (droite puis gauche)', () => {
     const a = construireArbre([
@@ -85,10 +85,13 @@ describe('arborescence', () => {
 const chemin = join(import.meta.dirname, '..', 'public', 'data', 'structures.json');
 describe.skipIf(!existsSync(chemin))('données générées', () => {
   const { structures } = JSON.parse(readFileSync(chemin, 'utf8')) as { structures: Structure[] };
-  const dossier = join(import.meta.dirname, '..', 'contenu', 'fiches', 'os');
-  const fiches = new Map(readdirSync(dossier).filter((f) => f.endsWith('.md')).map((f) => {
-    const fi = lireFiche(readFileSync(join(dossier, f), 'utf8'), f);
-    return [fi.id, fi];
+  const racineFiches = join(import.meta.dirname, '..', 'contenu', 'fiches');
+  const fiches = new Map(['os', 'muscles'].flatMap((sys) => {
+    const dossier = join(racineFiches, sys);
+    return readdirSync(dossier).filter((f) => f.endsWith('.md')).map((f) => {
+      const fi = lireFiche(readFileSync(join(dossier, f), 'utf8'), f);
+      return [fi.id, fi] as const;
+    });
   }));
   it('chaque maillage a un nom français, un nom latin et une région', () => {
     for (const x of structures) {
@@ -96,6 +99,19 @@ describe.skipIf(!existsSync(chemin))('données générées', () => {
       expect(x.la, x.en).toBeTruthy();
       expect(x.region, x.en).toBeTruthy();
     }
+  });
+  it('chaque muscle qui annonce une fiche la trouve', () => {
+    const manquantes = [...new Set(structures.filter((x) => x.systeme === 'muscles' && x.fiche && !fiches.has(x.fiche)).map((x) => x.fiche))];
+    expect(manquantes).toEqual([]);
+  });
+  it('chaque fiche a un statut et au moins une rubrique', () => {
+    for (const f of fiches.values()) expect(f.sections.length, f.id).toBeGreaterThan(0);
+  });
+  it('les fiches de muscles donnent toujours l’innervation', () => {
+    for (const f of fiches.values()) if (f.systeme === 'muscles') expect(f.sections.some((s) => s.titre === 'Innervation'), f.id).toBe(true);
+  });
+  it('les muscles ont une couche de dissection entre 1 et 3', () => {
+    for (const x of structures.filter((s) => s.systeme === 'muscles')) expect([1, 2, 3], x.en).toContain(x.couche);
   });
   it('chaque os renvoie vers une fiche existante', () => {
     const manquantes = [...new Set(structures.filter((x) => x.systeme === 'os' && !fiches.has(x.fiche)).map((x) => x.fiche))];

@@ -23,6 +23,8 @@ export interface Structure {
   groupe: string;
   /** Identifiant de la fiche de cours */
   fiche: string;
+  /** Couche de dissection : 0 peau, 1–3 muscles (superficiel → profond), 9 os */
+  couche: number;
   /** Paquet GLB contenant le maillage */
   paquet: string;
   /** Centre de la boîte englobante (mètres, Y en haut) */
