@@ -14,7 +14,8 @@
     "modeles:telecharger": "node pipeline/01-telecharger.mjs",
     "modeles:inventaire": "node pipeline/02-inventaire.mjs",
     "modeles:construire": "node pipeline/03-construire-glb.mjs",
-    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:construire"
+    "modeles:z-anatomy": "node pipeline/04-z-anatomy.mjs",
+    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:z-anatomy && npm run modeles:inventaire && npm run modeles:construire"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.1.0",

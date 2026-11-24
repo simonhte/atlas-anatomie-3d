@@ -28,4 +28,3 @@ Soutient les viscères pelviens ; **continence** (le pubo-rectal maintient l'ang
 ## À retenir pour l'examen
 - Les déchirures obstétricales du périnée et du sphincter externe sont une cause d'incontinence.
 - Le **muscle pubo-rectal** est le principal acteur de la continence fécale au repos (angle ano-rectal).
-- *Le coccyx n'existe pas dans le modèle BodyParts3D.*

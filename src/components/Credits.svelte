@@ -28,6 +28,22 @@
     <i>BodyParts3D: 3D structure database for anatomical concepts.</i> Nucleic Acids Res. 2009;37:D782–D785.
   </p>
 
+  <p>
+    <b>Z-Anatomy – The libre 3D atlas of anatomy – CC BY-SA 4.0</b>, lui-même dérivé de
+    « BodyParts3D – The Database Center for Life Science ».<br />
+    Source : <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank" rel="noopener">Z-Anatomy (GitHub)</a>.
+    Licence : <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>.
+  </p>
+  <p class="petit">
+    Structures issues de Z-Anatomy (absentes de BodyParts3D) : coccyx, cartilages costaux 8 à 10,
+    grand dorsal, droit de l'abdomen, pyramidal, oblique interne, transverse de l'abdomen, carré des lombes,
+    muscles masticateurs (temporal, masséter, ptérygoïdiens), muscles de la face, court extenseur des orteils,
+    interosseux dorsaux du pied. Modifications : export depuis Blender, recalage sur le repère de
+    BodyParts3D, conversion glTF, simplification et compression. Conformément à la licence CC BY-SA,
+    ces modèles dérivés sont redistribués sous la même licence CC BY-SA 4.0. Les éléments de Z-Anatomy
+    sous licence non commerciale (oreille interne, rein) ne sont pas utilisés.
+  </p>
+
   <h3>Contenu des fiches</h3>
   <p class="petit">
     Fiches rédigées pour ce projet à partir du programme d'anatomie de DFGSM2. Elles sont marquées

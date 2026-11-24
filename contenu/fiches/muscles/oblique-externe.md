@@ -24,4 +24,4 @@ Nerfs **intercostaux** (T7–T11) et nerf **subcostal** (T12).
 
 ## À retenir pour l'examen
 - Son aponévrose forme la paroi antérieure du **canal inguinal** et l'**anneau inguinal superficiel**.
-- *Le modèle BodyParts3D ne contient ni l'oblique interne, ni le transverse, ni le droit de l'abdomen.*
+- Sous lui : l'**oblique interne** puis le **transverse** (utilise « Retirer et voir dessous »).

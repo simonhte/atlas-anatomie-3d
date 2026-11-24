@@ -4,11 +4,11 @@ titre: Sacrum (et coccyx)
 latin: Os sacrum
 systeme: os
 statut: a-verifier
-structures: [sacrum]
+structures: [sacrum, coccyx]
 ---
 
 ## Description et situation
-Os impair et médian formé par la soudure des **5 vertèbres sacrales**. Triangulaire, base en haut, il est encastré entre les deux os coxaux et forme la paroi postérieure du bassin. Le **coccyx** (3 à 5 vertèbres coccygiennes soudées) prolonge son apex. *Le coccyx n'existe pas dans le modèle BodyParts3D.*
+Os impair et médian formé par la soudure des **5 vertèbres sacrales**. Triangulaire, base en haut, il est encastré entre les deux os coxaux et forme la paroi postérieure du bassin. Le **coccyx** (3 à 5 vertèbres coccygiennes soudées) prolonge son apex. *Dans l'app, le maillage du coccyx provient de l'atlas Z-Anatomy (absent de BodyParts3D).*
 
 ## Parties
 - **Base** : face supérieure de S1, dont le bord antérieur saillant est le **promontoire** ; de chaque côté, les **ailes du sacrum**.

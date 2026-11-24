@@ -66,18 +66,29 @@ npm run modeles
 2. Lit l'en-tête de chaque fichier OBJ (identifiant FMA, nom anglais), classe par système grâce aux
    arborescences FMA, traduit en français et en latin. Les disques intervertébraux sont nommés
    d'après leur position réelle entre les vertèbres ; les doublons exacts sont écartés.
-3. Construit un GLB par système × région, en deux niveaux de détail :
+3. **Compléments Z-Anatomy** (`npm run modeles:z-anatomy`, nécessite Blender) : exporte depuis l'atlas
+   Z-Anatomy (CC BY-SA 4.0) les structures absentes de BodyParts3D, puis les **recale** : orientation et
+   échelle globales calculées sur 18 os communs, puis ajustement local sur les os voisins de chaque
+   structure (crâne pour les masticateurs, sacrum pour le coccyx…). Les copies en miroir de Blender sont
+   corrigées. Résultat et paramètres : `pipeline/sortie/recalage-z-anatomy.json`.
+4. Construit un GLB par système × région, en deux niveaux de détail :
    `hi` (maillage d'origine) et `lo` (≈ 25 % des triangles, pour les téléphones et le premier affichage).
 
-Contenu actuel : peau, 413 maillages de muscles, 242 os — 16,4 Mo en haute définition,
-6,7 Mo en version légère.
+Contenu actuel : peau, 473 maillages de muscles, 249 os et cartilages — 17,9 Mo en haute définition,
+7,1 Mo en version légère.
 
-**Manques connus de BodyParts3D** :
-- os : pas de coccyx, pas de cartilages costaux 8 à 10 ;
-- muscles : pas de **grand dorsal**, **droit de l'abdomen**, **oblique interne**, **transverse de l'abdomen**,
-  **carré des lombes**, **masséter**, **temporal**, **ptérygoïdiens**, ni muscles de la face (sauf platysma),
-  ni muscles du périnée (sauf releveur de l'anus et sphincter externe) ;
-- très peu de nerfs (seulement des branches orbitaires) ; modèle masculin uniquement.
+**Manques de BodyParts3D comblés par Z-Anatomy** : coccyx, cartilages costaux 8 à 10, grand dorsal,
+droit de l'abdomen, pyramidal, oblique interne, transverse, carré des lombes, temporal, masséter,
+ptérygoïdiens, 16 muscles de la face, court extenseur des orteils, interosseux dorsaux du pied.
+
+**Manques restants** : muscles du périnée (sauf releveur de l'anus et sphincter externe), buccinateur ;
+nerfs, vaisseaux et organes (étape 3) ; modèle masculin uniquement.
+
+### Installer Blender (pour l'étape Z-Anatomy seulement)
+
+```bash
+brew install --cask blender
+```
 
 ## Dissection par couches
 

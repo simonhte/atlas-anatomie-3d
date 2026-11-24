@@ -1,0 +1,356 @@
+{
+ "orientation": {
+  "p": [
+   0,
+   1,
+   2
+  ],
+  "sg": [
+   1,
+   1,
+   1
+  ]
+ },
+ "echelle": 997.1491578800321,
+ "translation": [
+  -0.08375412741120285,
+  -104.21329220587437,
+  -61.49937862264949
+ ],
+ "ecartMoyenMm": 12.170068940000533,
+ "osReperes": [
+  "Femur.l",
+  "Femur.r",
+  "Tibia.l",
+  "Tibia.r",
+  "Fibula.l",
+  "Fibula.r",
+  "Humerus.l",
+  "Humerus.r",
+  "Radius.l",
+  "Radius.r",
+  "Ulna.l",
+  "Ulna.r",
+  "Clavicle.l",
+  "Clavicle.r",
+  "Scapula.l",
+  "Scapula.r",
+  "Patella.l",
+  "Patella.r"
+ ],
+ "inverserCotes": false,
+ "recalageLocal": {
+  "sacrum|null": {
+   "ech": [
+    958.2177912046527,
+    969.8926293622993,
+    997.1491578800321
+   ],
+   "tr": [
+    -0.656688418882351,
+    -84.88848446775899,
+    -80.4486425618934
+   ],
+   "rms": 20.937604220406616,
+   "noms": [
+    "Sacrum"
+   ]
+  },
+  "thorax-bas|g": {
+   "ech": [
+    964.5665839000925,
+    974.2855394692955,
+    920.8943783265812
+   ],
+   "tr": [
+    -1.4685192247363688,
+    -97.52539983160068,
+    32.29528976443885
+   ],
+   "rms": 7.3576129787607645,
+   "noms": [
+    "Body of sternum",
+    "Xiphoid process",
+    "Seventh rib.l",
+    "Eighth rib.l",
+    "Ninth rib.l",
+    "Tenth rib.l"
+   ]
+  },
+  "thorax-bas|d": {
+   "ech": [
+    971.9306064747398,
+    974.3027517366555,
+    920.8831476201423
+   ],
+   "tr": [
+    1.071991417474841,
+    -97.5242145739189,
+    32.31398836313588
+   ],
+   "rms": 7.264819423789952,
+   "noms": [
+    "Body of sternum",
+    "Xiphoid process",
+    "Seventh rib.r",
+    "Eighth rib.r",
+    "Ninth rib.r",
+    "Tenth rib.r"
+   ]
+  },
+  "abdomen|g": {
+   "ech": [
+    977.979366893588,
+    985.4705521860293,
+    945.2053837322406
+   ],
+   "tr": [
+    -0.7823032390004769,
+    -94.8035072917405,
+    2.0223326369941788
+   ],
+   "rms": 7.8375412102632405,
+   "noms": [
+    "Body of sternum",
+    "Xiphoid process",
+    "Seventh rib.l",
+    "Eighth rib.l",
+    "Ninth rib.l",
+    "Tenth rib.l",
+    "Twelfth rib.l",
+    "Hip bone.l",
+    "Vertebra L1",
+    "Vertebra L2",
+    "Vertebra L3",
+    "Vertebra L4",
+    "Vertebra L5"
+   ]
+  },
+  "abdomen|d": {
+   "ech": [
+    979.2189487231052,
+    985.5736142033969,
+    945.1148993574479
+   ],
+   "tr": [
+    -0.1614204378440789,
+    -94.79336381709287,
+    2.1259416230338957
+   ],
+   "rms": 7.7586303900822795,
+   "noms": [
+    "Body of sternum",
+    "Xiphoid process",
+    "Seventh rib.r",
+    "Eighth rib.r",
+    "Ninth rib.r",
+    "Tenth rib.r",
+    "Twelfth rib.r",
+    "Hip bone.r",
+    "Vertebra L1",
+    "Vertebra L2",
+    "Vertebra L3",
+    "Vertebra L4",
+    "Vertebra L5"
+   ]
+  },
+  "lombes|g": {
+   "ech": [
+    987.0280454703762,
+    968.1417276825957,
+    943.7684630235644
+   ],
+   "tr": [
+    -0.510076852594338,
+    -92.35460876503409,
+    2.990484015344123
+   ],
+   "rms": 7.0968499644793575,
+   "noms": [
+    "Eleventh rib.l",
+    "Twelfth rib.l",
+    "Hip bone.l",
+    "Vertebra L1",
+    "Vertebra L2",
+    "Vertebra L3",
+    "Vertebra L4",
+    "Vertebra L5"
+   ]
+  },
+  "lombes|d": {
+   "ech": [
+    984.721003215322,
+    968.3280144899322,
+    943.4142061655214
+   ],
+   "tr": [
+    -0.7291474373905693,
+    -92.34367577759798,
+    3.3611552132352926
+   ],
+   "rms": 6.987981269559364,
+   "noms": [
+    "Eleventh rib.r",
+    "Twelfth rib.r",
+    "Hip bone.r",
+    "Vertebra L1",
+    "Vertebra L2",
+    "Vertebra L3",
+    "Vertebra L4",
+    "Vertebra L5"
+   ]
+  },
+  "dos|g": {
+   "ech": [
+    970.7757595441132,
+    964.2691996725241,
+    967.5154378272417
+   ],
+   "tr": [
+    -0.7951341691394447,
+    -93.76905101170829,
+    -23.75405221925689
+   ],
+   "rms": 10.329481915024493,
+   "noms": [
+    "Humerus.l",
+    "Scapula.l",
+    "Ninth rib.l",
+    "Tenth rib.l",
+    "Eleventh rib.l",
+    "Twelfth rib.l",
+    "Hip bone.l",
+    "Sacrum",
+    "Vertebra L1",
+    "Vertebra L2",
+    "Vertebra L3",
+    "Vertebra L4",
+    "Vertebra L5"
+   ]
+  },
+  "dos|d": {
+   "ech": [
+    966.8424372013019,
+    964.3723424088121,
+    967.4443923611124
+   ],
+   "tr": [
+    -0.4375553994883461,
+    -93.76183093596171,
+    -23.6745277056757
+   ],
+   "rms": 10.29110563529083,
+   "noms": [
+    "Humerus.r",
+    "Scapula.r",
+    "Ninth rib.r",
+    "Tenth rib.r",
+    "Eleventh rib.r",
+    "Twelfth rib.r",
+    "Hip bone.r",
+    "Sacrum",
+    "Vertebra L1",
+    "Vertebra L2",
+    "Vertebra L3",
+    "Vertebra L4",
+    "Vertebra L5"
+   ]
+  },
+  "tete|g": {
+   "ech": [
+    1023.2209519992176,
+    1022.3654148902341,
+    1023.7896735572243
+   ],
+   "tr": [
+    -0.7174709469051201,
+    -87.86102392198785,
+    -109.88432812519159
+   ],
+   "rms": 1.1806450632242809,
+   "noms": [
+    "Mandible",
+    "Maxilla.l",
+    "Zygomatic bone.l",
+    "Temporal bone.l",
+    "Frontal bone",
+    "Occipital bone",
+    "Parietal bone.l",
+    "Sphenoid bone"
+   ]
+  },
+  "tete|d": {
+   "ech": [
+    1023.0196707738548,
+    1025.2730273298932,
+    1023.5225637076352
+   ],
+   "tr": [
+    -0.7120020507482252,
+    -88.03250204385823,
+    -109.45833863599978
+   ],
+   "rms": 0.7862403238742971,
+   "noms": [
+    "Mandible",
+    "Maxilla.r",
+    "Zygomatic bone.r",
+    "Temporal bone.r",
+    "Frontal bone",
+    "Occipital bone",
+    "Parietal bone.r",
+    "Sphenoid bone"
+   ]
+  },
+  "pied|g": {
+   "ech": [
+    997.1491578800321,
+    914.6658438124765,
+    963.659108932224
+   ],
+   "tr": [
+    8.18400636627365,
+    -108.05381115454219,
+    -79.31671592588671
+   ],
+   "rms": 9.852476336293243,
+   "noms": [
+    "Calcaneus.l",
+    "Talus.l",
+    "Navicular bone.l",
+    "Cuboid bone.l",
+    "Medial cuneiform bone.l",
+    "First metatarsal bone.l",
+    "Second metatarsal bone.l",
+    "Third metatarsal bone.l",
+    "Fourth metatarsal bone.l",
+    "Fifth metatarsal bone.l"
+   ]
+  },
+  "pied|d": {
+   "ech": [
+    997.1491578800321,
+    915.1749826886414,
+    963.4021209275661
+   ],
+   "tr": [
+    -8.211793394537608,
+    -108.0817924593016,
+    -79.28773043607865
+   ],
+   "rms": 9.816973362857318,
+   "noms": [
+    "Calcaneus.r",
+    "Talus.r",
+    "Navicular bone.r",
+    "Cuboid bone.r",
+    "Medial cuneiform bone.r",
+    "First metatarsal bone.r",
+    "Second metatarsal bone.r",
+    "Third metatarsal bone.r",
+    "Fourth metatarsal bone.r",
+    "Fifth metatarsal bone.r"
+   ]
+  }
+ }
+}

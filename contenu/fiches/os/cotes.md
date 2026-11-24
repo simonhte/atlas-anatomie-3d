@@ -4,7 +4,7 @@ titre: Côtes et cartilages costaux
 latin: Costae et cartilagines costales
 systeme: os
 statut: a-verifier
-structures: [cote-1, cote-2, cote-3, cote-4, cote-5, cote-6, cote-7, cote-8, cote-9, cote-10, cote-11, cote-12, cartilage-costal-1, cartilage-costal-2, cartilage-costal-3, cartilage-costal-4, cartilage-costal-5, cartilage-costal-6, cartilage-costal-7]
+structures: [cote-1, cote-2, cote-3, cote-4, cote-5, cote-6, cote-7, cote-8, cote-9, cote-10, cote-11, cote-12, cartilage-costal-1, cartilage-costal-2, cartilage-costal-3, cartilage-costal-4, cartilage-costal-5, cartilage-costal-6, cartilage-costal-7, cartilage-costal-8, cartilage-costal-9, cartilage-costal-10]
 ---
 
 ## Description et situation
@@ -13,7 +13,7 @@ structures: [cote-1, cote-2, cote-3, cote-4, cote-5, cote-6, cote-7, cote-8, cot
 - **Côtes fausses** (8 à 10) : cartilage rejoignant celui de la côte sus-jacente (forment le **rebord costal**).
 - **Côtes flottantes** (11 et 12) : extrémité antérieure libre.
 
-*Dans le modèle BodyParts3D, seuls les cartilages costaux 1 à 7 sont présents.*
+*Les cartilages costaux 8 à 10, absents de BodyParts3D, proviennent de l'atlas Z-Anatomy.*
 
 ## Parties
 Côte typique (3e à 9e) :

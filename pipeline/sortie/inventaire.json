@@ -1,5 +1,67 @@
 [
  {
+  "fj": "ZA-droit-abdomen-d",
+  "fma": "",
+  "en": "Right Rectus abdominis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -41.6,
+   -176,
+   998.3
+  ],
+  "min": [
+   -80.14304495059858,
+   -212.75174183302641,
+   805.2637905692073
+  ],
+  "max": [
+   -3.1108279113980717,
+   -139.18458497442805,
+   1191.319599084241
+  ],
+  "source": "z-anatomy",
+  "cle": "droit-abdomen",
+  "fr": "Droit de l'abdomen",
+  "la": "M. rectus abdominis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 1,
+  "fiche": "droit-abdomen",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-droit-abdomen-g",
+  "fma": "",
+  "en": "Left Rectus abdominis muscle",
+  "systeme": "muscles",
+  "centre": [
+   40.6,
+   -176,
+   998.3
+  ],
+  "min": [
+   2.1633706140830102,
+   -212.74955033012543,
+   805.2361280088264
+  ],
+  "max": [
+   79.09807346950089,
+   -139.19008643275146,
+   1191.3298423342371
+  ],
+  "source": "z-anatomy",
+  "cle": "droit-abdomen",
+  "fr": "Droit de l'abdomen",
+  "la": "M. rectus abdominis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 1,
+  "fiche": "droit-abdomen",
+  "cote": "g"
+ },
+ {
   "fj": "FJ1452",
   "fma": "FMA13336",
   "en": "Right external oblique",
@@ -57,6 +119,254 @@
   "groupe": "Paroi antérolatérale",
   "couche": 1,
   "fiche": "oblique-externe",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-oblique-interne-d",
+  "fma": "",
+  "en": "Right Internal abdominal oblique muscle",
+  "systeme": "muscles",
+  "centre": [
+   -64,
+   -128.7,
+   990.5
+  ],
+  "min": [
+   -124.93349888414215,
+   -215.17625292396679,
+   805.3847652763251
+  ],
+  "max": [
+   -2.9825502291153447,
+   -42.29087181486371,
+   1175.5947773887315
+  ],
+  "source": "z-anatomy",
+  "cle": "oblique-interne",
+  "fr": "Oblique interne de l'abdomen",
+  "la": "M. obliquus internus abdominis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 2,
+  "fiche": "oblique-interne",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-oblique-interne-g",
+  "fma": "",
+  "en": "Left Internal abdominal oblique muscle",
+  "systeme": "muscles",
+  "centre": [
+   62.9,
+   -128.7,
+   990.5
+  ],
+  "min": [
+   2.03525531701995,
+   -215.17380788850306,
+   805.3580595033279
+  ],
+  "max": [
+   123.83182769058052,
+   -42.30650550623854,
+   1175.6035151597
+  ],
+  "source": "z-anatomy",
+  "cle": "oblique-interne",
+  "fr": "Oblique interne de l'abdomen",
+  "la": "M. obliquus internus abdominis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 2,
+  "fiche": "oblique-interne",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-pyramidal-d",
+  "fma": "",
+  "en": "Right Pyramidalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -16.9,
+   -155.3,
+   839.7
+  ],
+  "min": [
+   -30.56812723359394,
+   -168.55369310407508,
+   805.8166827853314
+  ],
+  "max": [
+   -3.2508562210654754,
+   -142.01121009996342,
+   873.5937075629521
+  ],
+  "source": "z-anatomy",
+  "cle": "pyramidal",
+  "fr": "Pyramidal de l'abdomen",
+  "la": "M. pyramidalis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 1,
+  "fiche": "droit-abdomen",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-pyramidal-g",
+  "fma": "",
+  "en": "Left Pyramidalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   15.9,
+   -155.3,
+   839.7
+  ],
+  "min": [
+   2.303221663548793,
+   -168.55612341734292,
+   805.7900183636935
+  ],
+  "max": [
+   29.58591206177922,
+   -142.01641597642097,
+   873.5725868418999
+  ],
+  "source": "z-anatomy",
+  "cle": "pyramidal",
+  "fr": "Pyramidal de l'abdomen",
+  "la": "M. pyramidalis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 1,
+  "fiche": "droit-abdomen",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-transverse-abdomen-d",
+  "fma": "",
+  "en": "Right Transversus abdominis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -67,
+   -114.9,
+   996.1
+  ],
+  "min": [
+   -130.41320812119662,
+   -197.37777902506764,
+   797.0649188172815
+  ],
+  "max": [
+   -3.6298139542213175,
+   -32.36023207815028,
+   1195.0688698899917
+  ],
+  "source": "z-anatomy",
+  "cle": "transverse-abdomen",
+  "fr": "Transverse de l'abdomen",
+  "la": "M. transversus abdominis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 3,
+  "fiche": "transverse-abdomen",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-transverse-abdomen-g",
+  "fma": "",
+  "en": "Left Transversus abdominis muscle",
+  "systeme": "muscles",
+  "centre": [
+   66,
+   -114.9,
+   996.1
+  ],
+  "min": [
+   2.681699678536612,
+   -197.37719518657553,
+   797.0374165103331
+  ],
+  "max": [
+   129.30460022771703,
+   -32.3769042224121,
+   1195.0794720915028
+  ],
+  "source": "z-anatomy",
+  "cle": "transverse-abdomen",
+  "fr": "Transverse de l'abdomen",
+  "la": "M. transversus abdominis",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi antérolatérale",
+  "couche": 3,
+  "fiche": "transverse-abdomen",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-carre-lombes-d",
+  "fma": "",
+  "en": "Right Quadratus lumborum muscle",
+  "systeme": "muscles",
+  "centre": [
+   -43.5,
+   -42.7,
+   987.9
+  ],
+  "min": [
+   -68.80094094765934,
+   -64.63787462701204,
+   890.5610824901779
+  ],
+  "max": [
+   -18.155755031292124,
+   -20.851050139791795,
+   1085.2695102580615
+  ],
+  "source": "z-anatomy",
+  "cle": "carre-lombes",
+  "fr": "Carré des lombes",
+  "la": "M. quadratus lumborum",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi postérieure",
+  "couche": 3,
+  "fiche": "carre-lombes",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-carre-lombes-g",
+  "fma": "",
+  "en": "Left Quadratus lumborum muscle",
+  "systeme": "muscles",
+  "centre": [
+   42.3,
+   -42.8,
+   987.9
+  ],
+  "min": [
+   16.95735846809491,
+   -64.65413765257966,
+   890.5235594011864
+  ],
+  "max": [
+   67.72119787468182,
+   -20.87573686850037,
+   1085.3051011792309
+  ],
+  "source": "z-anatomy",
+  "cle": "carre-lombes",
+  "fr": "Carré des lombes",
+  "la": "M. quadratus lumborum",
+  "genre": "m",
+  "region": "abdomen",
+  "groupe": "Paroi postérieure",
+  "couche": 3,
+  "fiche": "carre-lombes",
   "cote": "g"
  },
  {
@@ -3930,6 +4240,68 @@
   "cote": "g"
  },
  {
+  "fj": "ZA-grand-dorsal-d",
+  "fma": "",
+  "en": "Right Latissimus dorsi muscle",
+  "systeme": "muscles",
+  "centre": [
+   -88.6,
+   -27.1,
+   1076
+  ],
+  "min": [
+   -178.9437408950903,
+   -76.14467698483753,
+   877.509598222624
+  ],
+  "max": [
+   1.725271132530966,
+   21.928132748769016,
+   1274.566190846687
+  ],
+  "source": "z-anatomy",
+  "cle": "grand-dorsal",
+  "fr": "Grand dorsal",
+  "la": "M. latissimus dorsi",
+  "genre": "m",
+  "region": "dos",
+  "groupe": "Plan superficiel du dos",
+  "couche": 1,
+  "fiche": "grand-dorsal",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-grand-dorsal-g",
+  "fma": "",
+  "en": "Left Latissimus dorsi muscle",
+  "systeme": "muscles",
+  "centre": [
+   87.7,
+   -27.1,
+   1076
+  ],
+  "min": [
+   -2.966759543239626,
+   -76.15378127209061,
+   877.496253271197
+  ],
+  "max": [
+   178.43725276397106,
+   21.908539257806396,
+   1274.582004233378
+  ],
+  "source": "z-anatomy",
+  "cle": "grand-dorsal",
+  "fr": "Grand dorsal",
+  "la": "M. latissimus dorsi",
+  "genre": "m",
+  "region": "dos",
+  "groupe": "Plan superficiel du dos",
+  "couche": 1,
+  "fiche": "grand-dorsal",
+  "cote": "g"
+ },
+ {
   "fj": "FJ1536",
   "fma": "FMA13381",
   "en": "Right rhomboid major",
@@ -6780,6 +7152,68 @@
   "cote": "g"
  },
  {
+  "fj": "ZA-court-extenseur-orteils-d",
+  "fma": "",
+  "en": "Right Extensor digitorum brevis",
+  "systeme": "muscles",
+  "centre": [
+   -119.9,
+   -144.9,
+   -36.3
+  ],
+  "min": [
+   -141.29032285604882,
+   -215.35860393006413,
+   -64.59584809193326
+  ],
+  "max": [
+   -98.57644152909975,
+   -74.36583092206936,
+   -8.023912148945655
+  ],
+  "source": "z-anatomy",
+  "cle": "court-extenseur-orteils",
+  "fr": "Court extenseur des orteils",
+  "la": "M. extensor digitorum brevis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Pied – face dorsale",
+  "couche": 1,
+  "fiche": "muscles-pied",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-court-extenseur-orteils-g",
+  "fma": "",
+  "en": "Left Extensor digitorum brevis",
+  "systeme": "muscles",
+  "centre": [
+   119.9,
+   -144.8,
+   -36.3
+  ],
+  "min": [
+   98.5486545008358,
+   -215.2709413662407,
+   -64.62091451467029
+  ],
+  "max": [
+   141.26253582778486,
+   -74.35660680264675,
+   -8.033887979061177
+  ],
+  "source": "z-anatomy",
+  "cle": "court-extenseur-orteils",
+  "fr": "Court extenseur des orteils",
+  "la": "M. extensor digitorum brevis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Pied – face dorsale",
+  "couche": 1,
+  "fiche": "muscles-pied",
+  "cote": "g"
+ },
+ {
   "fj": "FJ1384",
   "fma": "FMA37745",
   "en": "First plantar interosseous of right foot",
@@ -7732,6 +8166,68 @@
   "cle": "court-flechisseur-5e-orteil",
   "fr": "Court fléchisseur du 5e orteil",
   "la": "M. flexor digiti minimi brevis (pedis)",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Pied – plante",
+  "couche": 3,
+  "fiche": "muscles-pied",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-interosseux-dorsaux-pied-d",
+  "fma": "",
+  "en": "Right Dorsal interossei muscles of foot",
+  "systeme": "muscles",
+  "centre": [
+   -109.7,
+   -156.6,
+   -44.6
+  ],
+  "min": [
+   -135.27252768824283,
+   -189.60832544215384,
+   -62.37713300743708
+  ],
+  "max": [
+   -84.08886141426076,
+   -123.53360686701662,
+   -26.86131381944235
+  ],
+  "source": "z-anatomy",
+  "cle": "interosseux-dorsaux-pied",
+  "fr": "Interosseux dorsaux du pied",
+  "la": "Mm. interossei dorsales pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Pied – plante",
+  "couche": 3,
+  "fiche": "muscles-pied",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-interosseux-dorsaux-pied-g",
+  "fma": "",
+  "en": "Left Dorsal interossei muscles of foot",
+  "systeme": "muscles",
+  "centre": [
+   109.7,
+   -156.5,
+   -44.6
+  ],
+  "min": [
+   84.0610743859968,
+   -189.534988518889,
+   -62.401607586799386
+  ],
+  "max": [
+   135.24474065997887,
+   -123.49702926147204,
+   -26.87631453601295
+  ],
+  "source": "z-anatomy",
+  "cle": "interosseux-dorsaux-pied",
+  "fr": "Interosseux dorsaux du pied",
+  "la": "Mm. interossei dorsales pedis",
   "genre": "m",
   "region": "membre-inf",
   "groupe": "Pied – plante",
@@ -11700,6 +12196,1370 @@
   "cote": "d"
  },
  {
+  "fj": "ZA-abaisseur-angle-bouche-d",
+  "fma": "",
+  "en": "Right Depressor anguli oris",
+  "systeme": "muscles",
+  "centre": [
+   -25.1,
+   -152.3,
+   1445.1
+  ],
+  "min": [
+   -37.59288420181647,
+   -164.60809390907332,
+   1423.774367707783
+  ],
+  "max": [
+   -12.69770051353471,
+   -140.02614780581177,
+   1466.4040824862059
+  ],
+  "source": "z-anatomy",
+  "cle": "abaisseur-angle-bouche",
+  "fr": "Abaisseur de l'angle de la bouche",
+  "la": "M. depressor anguli oris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-abaisseur-angle-bouche-g",
+  "fma": "",
+  "en": "Left Depressor anguli oris",
+  "systeme": "muscles",
+  "centre": [
+   23.7,
+   -152,
+   1445.1
+  ],
+  "min": [
+   11.270585726717714,
+   -164.21945202930965,
+   1423.7485077048364
+  ],
+  "max": [
+   36.170667593618674,
+   -139.7072188419014,
+   1466.3893476084947
+  ],
+  "source": "z-anatomy",
+  "cle": "abaisseur-angle-bouche",
+  "fr": "Abaisseur de l'angle de la bouche",
+  "la": "M. depressor anguli oris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-abaisseur-levre-inf-d",
+  "fma": "",
+  "en": "Right Depressor labii inferioris",
+  "systeme": "muscles",
+  "centre": [
+   -16.9,
+   -161.9,
+   1441.3
+  ],
+  "min": [
+   -32.58929499206154,
+   -175.82765664714432,
+   1426.175551642241
+  ],
+  "max": [
+   -1.2869391057231316,
+   -147.87256228396745,
+   1456.3725378393074
+  ],
+  "source": "z-anatomy",
+  "cle": "abaisseur-levre-inf",
+  "fr": "Abaisseur de la lèvre inférieure",
+  "la": "M. depressor labii inferioris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-abaisseur-levre-inf-g",
+  "fma": "",
+  "en": "Left Depressor labii inferioris",
+  "systeme": "muscles",
+  "centre": [
+   15.5,
+   -161.5,
+   1441.3
+  ],
+  "min": [
+   -0.14242077188155988,
+   -175.4071967644535,
+   1426.1503182790016
+  ],
+  "max": [
+   31.1660939173905,
+   -147.53138136205638,
+   1456.3551850179601
+  ],
+  "source": "z-anatomy",
+  "cle": "abaisseur-levre-inf",
+  "fr": "Abaisseur de la lèvre inférieure",
+  "la": "M. depressor labii inferioris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-abaisseur-septum-d",
+  "fma": "",
+  "en": "Right Depressor septi nasi",
+  "systeme": "muscles",
+  "centre": [
+   -9.3,
+   -175.7,
+   1476.8
+  ],
+  "min": [
+   -17.792338473988504,
+   -179.53299336791457,
+   1468.5186801028258
+  ],
+  "max": [
+   -0.762130014616144,
+   -171.76860073194527,
+   1485.0291225779938
+  ],
+  "source": "z-anatomy",
+  "cle": "abaisseur-septum",
+  "fr": "Abaisseur du septum nasal",
+  "la": "M. depressor septi nasi",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-abaisseur-septum-g",
+  "fma": "",
+  "en": "Left Depressor septi nasi",
+  "systeme": "muscles",
+  "centre": [
+   7.8,
+   -175.2,
+   1476.8
+  ],
+  "min": [
+   -0.6673331202571585,
+   -179.1020253738668,
+   1468.5044970740637
+  ],
+  "max": [
+   16.366226067673818,
+   -171.35965208690305,
+   1485.0192482982154
+  ],
+  "source": "z-anatomy",
+  "cle": "abaisseur-septum",
+  "fr": "Abaisseur du septum nasal",
+  "la": "M. depressor septi nasi",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-corrugateur-sourcil-d",
+  "fma": "",
+  "en": "Right Corrugator supercilii",
+  "systeme": "muscles",
+  "centre": [
+   -21.4,
+   -170.6,
+   1540
+  ],
+  "min": [
+   -32.995433801358764,
+   -174.16876488892456,
+   1530.2882668225818
+  ],
+  "max": [
+   -9.824038258330951,
+   -166.95904496074075,
+   1549.7126780366252
+  ],
+  "source": "z-anatomy",
+  "cle": "corrugateur-sourcil",
+  "fr": "Corrugateur du sourcil",
+  "la": "M. corrugator supercilii",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-corrugateur-sourcil-g",
+  "fma": "",
+  "en": "Left Corrugator supercilii",
+  "systeme": "muscles",
+  "centre": [
+   20,
+   -170.2,
+   1540
+  ],
+  "min": [
+   8.39635807255191,
+   -173.7530095231611,
+   1530.2902038732425
+  ],
+  "max": [
+   31.57231263533419,
+   -166.56373592565296,
+   1549.7196842980113
+  ],
+  "source": "z-anatomy",
+  "cle": "corrugateur-sourcil",
+  "fr": "Corrugateur du sourcil",
+  "la": "M. corrugator supercilii",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-grand-zygomatique-d",
+  "fma": "",
+  "en": "Right Zygomaticus major muscle",
+  "systeme": "muscles",
+  "centre": [
+   -42.4,
+   -152.8,
+   1478.6
+  ],
+  "min": [
+   -57.46606432626937,
+   -165.94710048276613,
+   1450.726787377896
+  ],
+  "max": [
+   -27.406677339921192,
+   -139.65499896991835,
+   1506.5394727768735
+  ],
+  "source": "z-anatomy",
+  "cle": "grand-zygomatique",
+  "fr": "Grand zygomatique",
+  "la": "M. zygomaticus major",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-grand-zygomatique-g",
+  "fma": "",
+  "en": "Left Zygomaticus major muscle",
+  "systeme": "muscles",
+  "centre": [
+   41,
+   -152.4,
+   1478.6
+  ],
+  "min": [
+   25.982456574562462,
+   -165.5546612611563,
+   1450.7079611786187
+  ],
+  "max": [
+   56.04775780715548,
+   -139.33712256171114,
+   1506.535212077694
+  ],
+  "source": "z-anatomy",
+  "cle": "grand-zygomatique",
+  "fr": "Grand zygomatique",
+  "la": "M. zygomaticus major",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-mentonnier-d",
+  "fma": "",
+  "en": "Right Mentalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -8.5,
+   -168.9,
+   1431.4
+  ],
+  "min": [
+   -15.523280844212096,
+   -172.547808232716,
+   1423.8746729190264
+  ],
+  "max": [
+   -1.5150724923057013,
+   -165.28579938013837,
+   1438.9787953916598
+  ],
+  "source": "z-anatomy",
+  "cle": "mentonnier",
+  "fr": "Mentonnier",
+  "la": "M. mentalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-mentonnier-g",
+  "fma": "",
+  "en": "Left Mentalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   7.1,
+   -168.5,
+   1431.4
+  ],
+  "min": [
+   0.08575750041426566,
+   -172.13664980221964,
+   1423.8488390928449
+  ],
+  "max": [
+   14.096721996139552,
+   -164.8952355685521,
+   1438.9569033055286
+  ],
+  "source": "z-anatomy",
+  "cle": "mentonnier",
+  "fr": "Mentonnier",
+  "la": "M. mentalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-nasal-muscle-d",
+  "fma": "",
+  "en": "Right Nasalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -9.1,
+   -179.5,
+   1511.1
+  ],
+  "min": [
+   -15.911005299435388,
+   -190.65207934930726,
+   1490.493709545629
+  ],
+  "max": [
+   -2.3539486223402624,
+   -168.30215262654292,
+   1531.761115791757
+  ],
+  "source": "z-anatomy",
+  "cle": "nasal-muscle",
+  "fr": "Nasal (muscle)",
+  "la": "M. nasalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-nasal-muscle-g",
+  "fma": "",
+  "en": "Left Nasalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   7.7,
+   -179,
+   1511.1
+  ],
+  "min": [
+   0.9247986810536242,
+   -190.18957829835136,
+   1490.4852613653375
+  ],
+  "max": [
+   14.484522736947257,
+   -167.90303461915917,
+   1531.7634372134912
+  ],
+  "source": "z-anatomy",
+  "cle": "nasal-muscle",
+  "fr": "Nasal (muscle)",
+  "la": "M. nasalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-occipito-frontal-frontal-d",
+  "fma": "",
+  "en": "Right Frontalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -30.6,
+   -155.8,
+   1568.4
+  ],
+  "min": [
+   -60.544330515627905,
+   -179.8057159931843,
+   1532.4949814699353
+  ],
+  "max": [
+   -0.7549688769207271,
+   -131.7368153798496,
+   1604.270524772497
+  ],
+  "source": "z-anatomy",
+  "cle": "occipito-frontal-frontal",
+  "fr": "Occipito-frontal, ventre frontal",
+  "la": "M. occipitofrontalis, venter frontalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-occipito-frontal-frontal-g",
+  "fma": "",
+  "en": "Left Frontalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   29.2,
+   -155.4,
+   1568.4
+  ],
+  "min": [
+   -0.674495666921153,
+   -179.3739745742276,
+   1532.4974944094315
+  ],
+  "max": [
+   59.12662965172113,
+   -131.44139446251387,
+   1604.2917690573056
+  ],
+  "source": "z-anatomy",
+  "cle": "occipito-frontal-frontal",
+  "fr": "Occipito-frontal, ventre frontal",
+  "la": "M. occipitofrontalis, venter frontalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-occipito-frontal-occipital-d",
+  "fma": "",
+  "en": "Right Occipitalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -39.7,
+   -4.6,
+   1529.9
+  ],
+  "min": [
+   -63.56223854441077,
+   -28.431330419116875,
+   1512.9845943605403
+  ],
+  "max": [
+   -15.902821142069195,
+   19.319735555745567,
+   1546.806897478259
+  ],
+  "source": "z-anatomy",
+  "cle": "occipito-frontal-occipital",
+  "fr": "Occipito-frontal, ventre occipital",
+  "la": "M. occipitofrontalis, venter occipitalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-occipito-frontal-occipital-g",
+  "fma": "",
+  "en": "Left Occipitalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   38.3,
+   -4.6,
+   1529.9
+  ],
+  "min": [
+   14.476336969331262,
+   -28.42887762358876,
+   1512.9820156520839
+  ],
+  "max": [
+   62.145131460118805,
+   19.186769209508995,
+   1546.8131454147824
+  ],
+  "source": "z-anatomy",
+  "cle": "occipito-frontal-occipital",
+  "fr": "Occipito-frontal, ventre occipital",
+  "la": "M. occipitofrontalis, venter occipitalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-orbiculaire-oeil-orbitaire-d",
+  "fma": "",
+  "en": "Right Orbital part of orbicularis oculi",
+  "systeme": "muscles",
+  "centre": [
+   -32.7,
+   -161,
+   1520.3
+  ],
+  "min": [
+   -55.306469801265756,
+   -177.09079301681476,
+   1494.8262805578033
+  ],
+  "max": [
+   -10.010227838411792,
+   -144.93720560672196,
+   1545.7096812899647
+  ],
+  "source": "z-anatomy",
+  "cle": "orbiculaire-oeil-orbitaire",
+  "fr": "Orbiculaire de l'œil, partie orbitaire",
+  "la": "M. orbicularis oculi, pars orbitalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-orbiculaire-oeil-orbitaire-g",
+  "fma": "",
+  "en": "Left Orbital part of orbicularis oculi",
+  "systeme": "muscles",
+  "centre": [
+   31.2,
+   -160.6,
+   1520.3
+  ],
+  "min": [
+   8.582584285815768,
+   -176.66675095559825,
+   1494.818963053505
+  ],
+  "max": [
+   53.88773837748512,
+   -144.60434917922564,
+   1545.715642884729
+  ],
+  "source": "z-anatomy",
+  "cle": "orbiculaire-oeil-orbitaire",
+  "fr": "Orbiculaire de l'œil, partie orbitaire",
+  "la": "M. orbicularis oculi, pars orbitalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-orbiculaire-oeil-palpebral-d",
+  "fma": "",
+  "en": "Right Palpebral part of orbicularis oculi",
+  "systeme": "muscles",
+  "centre": [
+   -31,
+   -162.1,
+   1519.3
+  ],
+  "min": [
+   -48.15147022387342,
+   -170.98734268511987,
+   1506.8895174936615
+  ],
+  "max": [
+   -13.756525872785648,
+   -153.29933241762458,
+   1531.6372695615485
+  ],
+  "source": "z-anatomy",
+  "cle": "orbiculaire-oeil-palpebral",
+  "fr": "Orbiculaire de l'œil, partie palpébrale",
+  "la": "M. orbicularis oculi, pars palpebralis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-orbiculaire-oeil-palpebral-g",
+  "fma": "",
+  "en": "Left Palpebral part of orbicularis oculi",
+  "systeme": "muscles",
+  "centre": [
+   29.5,
+   -161.8,
+   1519.3
+  ],
+  "min": [
+   12.329619412036903,
+   -170.58060964075668,
+   1506.8853481460508
+  ],
+  "max": [
+   46.7313310392026,
+   -152.94276150307036,
+   1531.6395586629908
+  ],
+  "source": "z-anatomy",
+  "cle": "orbiculaire-oeil-palpebral",
+  "fr": "Orbiculaire de l'œil, partie palpébrale",
+  "la": "M. orbicularis oculi, pars palpebralis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-orbiculaire-bouche-d",
+  "fma": "",
+  "en": "Right Orbicularis oris muscle",
+  "systeme": "muscles",
+  "centre": [
+   -17.2,
+   -171.4,
+   1457.9
+  ],
+  "min": [
+   -33.59492332843224,
+   -185.55749767650502,
+   1434.717870958945
+  ],
+  "max": [
+   -0.7508767982376316,
+   -157.2548357570633,
+   1481.1796542158893
+  ],
+  "source": "z-anatomy",
+  "cle": "orbiculaire-bouche",
+  "fr": "Orbiculaire de la bouche",
+  "la": "M. orbicularis oris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-orbiculaire-bouche-g",
+  "fma": "",
+  "en": "Left Orbicularis oris muscle",
+  "systeme": "muscles",
+  "centre": [
+   15.7,
+   -171,
+   1457.9
+  ],
+  "min": [
+   -0.6785885507291499,
+   -185.1094445517618,
+   1434.6948668945101
+  ],
+  "max": [
+   32.17192011320573,
+   -156.88704727371692,
+   1481.1687753359668
+  ],
+  "source": "z-anatomy",
+  "cle": "orbiculaire-bouche",
+  "fr": "Orbiculaire de la bouche",
+  "la": "M. orbicularis oris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-petit-zygomatique-d",
+  "fma": "",
+  "en": "Right Zygomaticus minor muscle",
+  "systeme": "muscles",
+  "centre": [
+   -33,
+   -162.2,
+   1489.3
+  ],
+  "min": [
+   -52.214904356187176,
+   -174.835192356689,
+   1473.5994461090704
+  ],
+  "max": [
+   -13.742203597394814,
+   -149.59707151593634,
+   1504.9591539385087
+  ],
+  "source": "z-anatomy",
+  "cle": "petit-zygomatique",
+  "fr": "Petit zygomatique",
+  "la": "M. zygomaticus minor",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-petit-zygomatique-g",
+  "fma": "",
+  "en": "Left Zygomaticus minor muscle",
+  "systeme": "muscles",
+  "centre": [
+   31.6,
+   -161.8,
+   1489.3
+  ],
+  "min": [
+   12.315294318708915,
+   -174.41754704283974,
+   1473.5865890136017
+  ],
+  "max": [
+   50.79556466054349,
+   -149.25099998990174,
+   1504.9544808217217
+  ],
+  "source": "z-anatomy",
+  "cle": "petit-zygomatique",
+  "fr": "Petit zygomatique",
+  "la": "M. zygomaticus minor",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-procerus-d",
+  "fma": "",
+  "en": "Right Procerus muscle",
+  "systeme": "muscles",
+  "centre": [
+   -12.6,
+   -176.6,
+   1540.5
+  ],
+  "min": [
+   -24.500278455252673,
+   -179.74317433851718,
+   1521.8063353371365
+  ],
+  "max": [
+   -0.7549688769207271,
+   -173.50233742116012,
+   1559.2058498150134
+  ],
+  "source": "z-anatomy",
+  "cle": "procerus",
+  "fr": "Procérus",
+  "la": "M. procerus",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-procerus-g",
+  "fma": "",
+  "en": "Left Procerus muscle",
+  "systeme": "muscles",
+  "centre": [
+   11.2,
+   -176.2,
+   1540.5
+  ],
+  "min": [
+   -0.674495666921153,
+   -179.3116102839193,
+   1521.8060588484736
+  ],
+  "max": [
+   23.075485849932686,
+   -173.08847200348242,
+   1559.2153335202545
+  ],
+  "source": "z-anatomy",
+  "cle": "procerus",
+  "fr": "Procérus",
+  "la": "M. procerus",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-releveur-levre-sup-d",
+  "fma": "",
+  "en": "Right Levator labii superioris",
+  "systeme": "muscles",
+  "centre": [
+   -26.6,
+   -166.4,
+   1489.1
+  ],
+  "min": [
+   -40.433809827555464,
+   -174.03445412234433,
+   1474.249382937025
+  ],
+  "max": [
+   -12.823531933039893,
+   -158.78249256778486,
+   1503.867055363033
+  ],
+  "source": "z-anatomy",
+  "cle": "releveur-levre-sup",
+  "fr": "Releveur de la lèvre supérieure",
+  "la": "M. levator labii superioris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-releveur-levre-sup-g",
+  "fma": "",
+  "en": "Left Levator labii superioris",
+  "systeme": "muscles",
+  "centre": [
+   25.2,
+   -166,
+   1489
+  ],
+  "min": [
+   11.396441903813617,
+   -173.61907965381045,
+   1474.2366954563108
+  ],
+  "max": [
+   39.0121521773205,
+   -158.41037174190336,
+   1503.8620972400363
+  ],
+  "source": "z-anatomy",
+  "cle": "releveur-levre-sup",
+  "fr": "Releveur de la lèvre supérieure",
+  "la": "M. levator labii superioris",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-risorius-d",
+  "fma": "",
+  "en": "Right Risorius muscle",
+  "systeme": "muscles",
+  "centre": [
+   -40.2,
+   -147.1,
+   1455.1
+  ],
+  "min": [
+   -50.2455914899475,
+   -161.2031621853107,
+   1441.2264509415618
+  ],
+  "max": [
+   -30.066528483933215,
+   -132.9855979271374,
+   1469.0283943395523
+  ],
+  "source": "z-anatomy",
+  "cle": "risorius",
+  "fr": "Risorius",
+  "la": "M. risorius",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-risorius-g",
+  "fma": "",
+  "en": "Left Risorius muscle",
+  "systeme": "muscles",
+  "centre": [
+   38.7,
+   -146.8,
+   1455.1
+  ],
+  "min": [
+   28.64283104976043,
+   -160.82417648645918,
+   1441.2051454286604
+  ],
+  "max": [
+   48.825864327945,
+   -132.68663553785018,
+   1469.0143443314955
+  ],
+  "source": "z-anatomy",
+  "cle": "risorius",
+  "fr": "Risorius",
+  "la": "M. risorius",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles de la face",
+  "couche": 1,
+  "fiche": "muscles-face",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-masseter-profond-d",
+  "fma": "",
+  "en": "Right Deep part of masseter",
+  "systeme": "muscles",
+  "centre": [
+   -50.1,
+   -115.5,
+   1473.1
+  ],
+  "min": [
+   -63.94484790128019,
+   -133.2562700063525,
+   1439.5468504145176
+  ],
+  "max": [
+   -36.287511101909026,
+   -97.76951998441022,
+   1506.5732490214757
+  ],
+  "source": "z-anatomy",
+  "cle": "masseter-profond",
+  "fr": "Masséter, partie profonde",
+  "la": "M. masseter, pars profunda",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 2,
+  "fiche": "masseter",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-masseter-profond-g",
+  "fma": "",
+  "en": "Left Deep part of masseter",
+  "systeme": "muscles",
+  "centre": [
+   48.7,
+   -115.3,
+   1473
+  ],
+  "min": [
+   34.86503765886768,
+   -132.9565400073812,
+   1439.525106574353
+  ],
+  "max": [
+   62.52781609616652,
+   -97.5704282672004,
+   1506.5689971369213
+  ],
+  "source": "z-anatomy",
+  "cle": "masseter-profond",
+  "fr": "Masséter, partie profonde",
+  "la": "M. masseter, pars profunda",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 2,
+  "fiche": "masseter",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-masseter-superficiel-d",
+  "fma": "",
+  "en": "Right Superficial part of masseter",
+  "systeme": "muscles",
+  "centre": [
+   -51.3,
+   -125.9,
+   1470.1
+  ],
+  "min": [
+   -64.85635842793971,
+   -146.1419014138346,
+   1438.3135057252498
+  ],
+  "max": [
+   -37.6696106771245,
+   -105.64771792641312,
+   1501.9008685181504
+  ],
+  "source": "z-anatomy",
+  "cle": "masseter-superficiel",
+  "fr": "Masséter, partie superficielle",
+  "la": "M. masseter, pars superficialis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 1,
+  "fiche": "masseter",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-masseter-superficiel-g",
+  "fma": "",
+  "en": "Left Superficial part of masseter",
+  "systeme": "muscles",
+  "centre": [
+   49.8,
+   -125.6,
+   1470.1
+  ],
+  "min": [
+   36.24740916501861,
+   -145.80562854172166,
+   1438.2914400177165
+  ],
+  "max": [
+   63.439505964397824,
+   -105.42628411521696,
+   1501.8953972771328
+  ],
+  "source": "z-anatomy",
+  "cle": "masseter-superficiel",
+  "fr": "Masséter, partie superficielle",
+  "la": "M. masseter, pars superficialis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 1,
+  "fiche": "masseter",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-pterygoidien-lateral-inf-d",
+  "fma": "",
+  "en": "Right Inferior head of lateral pterygoid muscle",
+  "systeme": "muscles",
+  "centre": [
+   -35.8,
+   -107.7,
+   1493.7
+  ],
+  "min": [
+   -44.80517288077214,
+   -119.43251377886354,
+   1482.199082689342
+  ],
+  "max": [
+   -26.745806632601283,
+   -96.00502510437548,
+   1505.255975481984
+  ],
+  "source": "z-anatomy",
+  "cle": "pterygoidien-lateral-inf",
+  "fr": "Ptérygoïdien latéral, chef inférieur",
+  "la": "M. pterygoideus lateralis, caput inferius",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 3,
+  "fiche": "pterygoidiens",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-pterygoidien-lateral-inf-g",
+  "fma": "",
+  "en": "Left Inferior head of lateral pterygoid muscle",
+  "systeme": "muscles",
+  "centre": [
+   34.4,
+   -107.5,
+   1493.7
+  ],
+  "min": [
+   25.32145583957097,
+   -119.17198711841615,
+   1482.1884698508297
+  ],
+  "max": [
+   43.384375305213155,
+   -95.81093738817431,
+   1505.2513798270531
+  ],
+  "source": "z-anatomy",
+  "cle": "pterygoidien-lateral-inf",
+  "fr": "Ptérygoïdien latéral, chef inférieur",
+  "la": "M. pterygoideus lateralis, caput inferius",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 3,
+  "fiche": "pterygoidiens",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-pterygoidien-lateral-sup-d",
+  "fma": "",
+  "en": "Right Superior head of lateral pterygoid muscle",
+  "systeme": "muscles",
+  "centre": [
+   -33.8,
+   -109.8,
+   1504.3
+  ],
+  "min": [
+   -44.65171993015607,
+   -121.28620741227599,
+   1496.7801851319211
+  ],
+  "max": [
+   -22.926874201602484,
+   -98.34777397182428,
+   1511.8679312435354
+  ],
+  "source": "z-anatomy",
+  "cle": "pterygoidien-lateral-sup",
+  "fr": "Ptérygoïdien latéral, chef supérieur",
+  "la": "M. pterygoideus lateralis, caput superius",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 3,
+  "fiche": "pterygoidiens",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-pterygoidien-lateral-sup-g",
+  "fma": "",
+  "en": "Left Superior head of lateral pterygoid muscle",
+  "systeme": "muscles",
+  "centre": [
+   32.4,
+   -109.6,
+   1504.3
+  ],
+  "min": [
+   21.50177202575789,
+   -121.0204237885377,
+   1496.7733775403258
+  ],
+  "max": [
+   43.230892162413284,
+   -98.1470423611985,
+   1511.865061118233
+  ],
+  "source": "z-anatomy",
+  "cle": "pterygoidien-lateral-sup",
+  "fr": "Ptérygoïdien latéral, chef supérieur",
+  "la": "M. pterygoideus lateralis, caput superius",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 3,
+  "fiche": "pterygoidiens",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-pterygoidien-medial-d",
+  "fma": "",
+  "en": "Right Medial pterygoid muscle",
+  "systeme": "muscles",
+  "centre": [
+   -27.1,
+   -115.3,
+   1478.5
+  ],
+  "min": [
+   -38.56372986938085,
+   -131.02322535282798,
+   1453.307087761003
+  ],
+  "max": [
+   -15.56420163104305,
+   -99.58425324278414,
+   1503.6807742564379
+  ],
+  "source": "z-anatomy",
+  "cle": "pterygoidien-medial",
+  "fr": "Ptérygoïdien médial",
+  "la": "M. pterygoideus medialis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 3,
+  "fiche": "pterygoidiens",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-pterygoidien-medial-g",
+  "fma": "",
+  "en": "Left Medial pterygoid muscle",
+  "systeme": "muscles",
+  "centre": [
+   25.6,
+   -115.1,
+   1478.5
+  ],
+  "min": [
+   14.13765083421952,
+   -130.72982813375026,
+   1453.2889349456564
+  ],
+  "max": [
+   37.14170427706593,
+   -99.38001505155611,
+   1503.6757675194488
+  ],
+  "source": "z-anatomy",
+  "cle": "pterygoidien-medial",
+  "fr": "Ptérygoïdien médial",
+  "la": "M. pterygoideus medialis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 3,
+  "fiche": "pterygoidiens",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-temporal-muscle-d",
+  "fma": "",
+  "en": "Right Temporalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   -59.3,
+   -94.6,
+   1532.3
+  ],
+  "min": [
+   -79.3136724153158,
+   -153.01225596997222,
+   1472.9310858749693
+  ],
+  "max": [
+   -39.341224819168986,
+   -36.224430699851396,
+   1591.6238799753255
+  ],
+  "source": "z-anatomy",
+  "cle": "temporal-muscle",
+  "fr": "Temporal (muscle)",
+  "la": "M. temporalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 1,
+  "fiche": "temporal-muscle",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-temporal-muscle-g",
+  "fma": "",
+  "en": "Left Temporalis muscle",
+  "systeme": "muscles",
+  "centre": [
+   57.9,
+   -94.4,
+   1532.3
+  ],
+  "min": [
+   37.91935220058534,
+   -152.6564991869011,
+   1472.918054356769
+  ],
+  "max": [
+   77.89966445805076,
+   -36.199877142169434,
+   1591.6418238508325
+  ],
+  "source": "z-anatomy",
+  "cle": "temporal-muscle",
+  "fr": "Temporal (muscle)",
+  "la": "M. temporalis",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Muscles masticateurs",
+  "couche": 1,
+  "fiche": "temporal-muscle",
+  "cote": "g"
+ },
+ {
   "fj": "FJ2741",
   "fma": "FMA46729",
   "en": "Left levator veli palatini",
@@ -12448,6 +14308,37 @@
   "fiche": "coxal",
   "cote": "g",
   "couche": 9
+ },
+ {
+  "fj": "ZA-coccyx",
+  "fma": "",
+  "en": "Coccyx",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -10.7,
+   762.9
+  ],
+  "min": [
+   -16.69821246143944,
+   -20.250960076537908,
+   747.4813117784236
+  ],
+  "max": [
+   15.406874632872448,
+   -1.119827962366557,
+   778.2224231667071
+  ],
+  "source": "z-anatomy",
+  "cle": "coccyx",
+  "fr": "Coccyx",
+  "la": "Os coccygis",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Sacrum et coccyx",
+  "couche": 9,
+  "fiche": "sacrum",
+  "cote": null
  },
  {
   "fj": "FJ3393",
@@ -18420,6 +20311,68 @@
   "couche": 9
  },
  {
+  "fj": "ZA-cartilage-costal-10-d",
+  "fma": "",
+  "en": "Right Costal cartilage of tenth rib",
+  "systeme": "os",
+  "centre": [
+   -100,
+   -146.2,
+   1027.7
+  ],
+  "min": [
+   -122.93760659324369,
+   -178.98664194937243,
+   1011.1602839439328
+  ],
+  "max": [
+   -77.13051711008919,
+   -113.32448229883224,
+   1044.25314073681
+  ],
+  "source": "z-anatomy",
+  "cle": "cartilage-costal-10",
+  "fr": "10e cartilage costal",
+  "la": "Cartilago costalis X",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "couche": 9,
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-cartilage-costal-10-g",
+  "fma": "",
+  "en": "Left Costal cartilage of tenth rib",
+  "systeme": "os",
+  "centre": [
+   98.9,
+   -146.2,
+   1027.7
+  ],
+  "min": [
+   76.14147268244898,
+   -178.98638807216795,
+   1011.1535229460301
+  ],
+  "max": [
+   121.60149578166035,
+   -113.32538842517424,
+   1044.2467833255741
+  ],
+  "source": "z-anatomy",
+  "cle": "cartilage-costal-10",
+  "fr": "10e cartilage costal",
+  "la": "Cartilago costalis X",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "couche": 9,
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
   "fj": "FJ3239",
   "fma": "FMA8005",
   "en": "Left first costal cartilage",
@@ -18838,6 +20791,130 @@
   "fiche": "cotes",
   "cote": "d",
   "couche": 9
+ },
+ {
+  "fj": "ZA-cartilage-costal-8-d",
+  "fma": "",
+  "en": "Right Costal cartilage of eighth rib",
+  "systeme": "os",
+  "centre": [
+   -74.6,
+   -178.7,
+   1101.7
+  ],
+  "min": [
+   -114.25049083257244,
+   -203.18637369700747,
+   1072.9635146301632
+  ],
+  "max": [
+   -35.01190427850635,
+   -154.30852755063466,
+   1130.3695282865078
+  ],
+  "source": "z-anatomy",
+  "cle": "cartilage-costal-8",
+  "fr": "8e cartilage costal",
+  "la": "Cartilago costalis VIII",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "couche": 9,
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-cartilage-costal-8-g",
+  "fma": "",
+  "en": "Left Costal cartilage of eighth rib",
+  "systeme": "os",
+  "centre": [
+   73.7,
+   -178.7,
+   1101.7
+  ],
+  "min": [
+   34.34197976913846,
+   -203.18569230150632,
+   1072.9575073586618
+  ],
+  "max": [
+   112.98019965476131,
+   -154.30870964295016,
+   1130.3642211147842
+  ],
+  "source": "z-anatomy",
+  "cle": "cartilage-costal-8",
+  "fr": "8e cartilage costal",
+  "la": "Cartilago costalis VIII",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "couche": 9,
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "ZA-cartilage-costal-9-d",
+  "fma": "",
+  "en": "Right Costal cartilage of ninth rib",
+  "systeme": "os",
+  "centre": [
+   -92.2,
+   -159.4,
+   1059.1
+  ],
+  "min": [
+   -122.2174060138459,
+   -191.91661376766956,
+   1041.009790290892
+  ],
+  "max": [
+   -62.09475062792497,
+   -126.91697998831032,
+   1077.2483839160398
+  ],
+  "source": "z-anatomy",
+  "cle": "cartilage-costal-9",
+  "fr": "9e cartilage costal",
+  "la": "Cartilago costalis IX",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "couche": 9,
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "ZA-cartilage-costal-9-g",
+  "fma": "",
+  "en": "Left Costal cartilage of ninth rib",
+  "systeme": "os",
+  "centre": [
+   91.1,
+   -159.4,
+   1059.1
+  ],
+  "min": [
+   61.219627629514534,
+   -191.91613146646495,
+   1041.003393325108
+  ],
+  "max": [
+   120.88675194299036,
+   -126.91764598631039,
+   1077.2424289010155
+  ],
+  "source": "z-anatomy",
+  "cle": "cartilage-costal-9",
+  "fr": "9e cartilage costal",
+  "la": "Cartilago costalis IX",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "couche": 9,
+  "fiche": "cotes",
+  "cote": "g"
  },
  {
   "fj": "FJ3225",

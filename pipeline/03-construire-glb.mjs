@@ -29,6 +29,7 @@ import { MeshoptEncoder, MeshoptSimplifier } from 'meshoptimizer';
 
 const RACINE = join(import.meta.dirname, '..');
 const OBJ = join(RACINE, 'sources', 'bodyparts3d', 'isa_BP3D_4.0_obj_99');
+const OBJ_ZA = join(RACINE, 'sources', 'z-anatomy', 'recale');
 const MODELES = join(RACINE, 'public', 'models');
 const DONNEES = join(RACINE, 'public', 'data');
 
@@ -111,7 +112,7 @@ for (const [nomPaquet, items] of Object.entries(paquets)) {
       return materiaux.get(k);
     };
     for (const it of items) {
-      const { pos, nor, idx } = lireObj(join(OBJ, `${it.fj}.obj`));
+      const { pos, nor, idx } = lireObj(join(it.source === 'z-anatomy' ? OBJ_ZA : OBJ, `${it.fj}.obj`));
       const prim = doc.createPrimitive()
         .setAttribute('POSITION', doc.createAccessor().setType('VEC3').setArray(pos).setBuffer(buffer))
         .setAttribute('NORMAL', doc.createAccessor().setType('VEC3').setArray(nor ?? calculerNormales(pos, idx)).setBuffer(buffer))
@@ -139,7 +140,7 @@ for (const [nomPaquet, items] of Object.entries(paquets)) {
     const c = it.centre; // mm, LPS -> m, Y en haut
     structures.push({
       id: it.fj, fma: it.fma, en: it.en, cle: it.cle, fr: it.fr, la: it.la, cote: it.cote, genre: it.genre,
-      systeme: it.systeme, region: it.region, groupe: it.groupe, fiche: it.fiche, couche: it.couche, paquet: nomPaquet,
+      source: it.source ?? 'bodyparts3d', systeme: it.systeme, region: it.region, groupe: it.groupe, fiche: it.fiche, couche: it.couche, paquet: nomPaquet,
       centre: [c[0] / 1000, c[2] / 1000, -c[1] / 1000].map((x) => +x.toFixed(4)),
     });
   }

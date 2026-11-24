@@ -16,10 +16,13 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { traduireOs } from './config/noms-os.mjs';
 import { traduireMuscle, traduirePeau } from './config/noms-muscles.mjs';
+import { STRUCTURES_ZA } from './config/z-anatomy.mjs';
 
 const RACINE = join(import.meta.dirname, '..');
 const SRC = join(RACINE, 'sources', 'bodyparts3d');
 const OBJ = join(SRC, 'isa_BP3D_4.0_obj_99');
+// Structures complémentaires issues de Z-Anatomy, déjà recalées (étape 4)
+const OBJ_ZA = join(RACINE, 'sources', 'z-anatomy', 'recale');
 const SORTIE = join(import.meta.dirname, 'sortie');
 
 // --- 1. Décompresser l'archive si besoin -----------------------------------
@@ -133,6 +136,25 @@ for (const f of fichiers) {
   if (t) Object.assign(item, t);
   else if (!/intervertebral disk/.test(en)) nonTraduits.push(`${fj}  ${h.fma}  ${h.en}`);
   inventaire.push(item);
+}
+
+// --- 5 bis. Compléments Z-Anatomy (si l'étape 4 a été lancée) ---------------
+if (existsSync(OBJ_ZA)) {
+  let n = 0;
+  for (const f of readdirSync(OBJ_ZA).filter((x) => x.endsWith('.obj')).sort()) {
+    const h = entete(join(OBJ_ZA, f));
+    const m = h.en.match(/^(Left |Right )?(.+)$/);
+    const def = STRUCTURES_ZA[m[2]];
+    if (!def) { nonTraduits.push(`${f} (Z-Anatomy) ${h.en}`); continue; }
+    const [systeme, cle, fr, la, genre, region, groupe, couche, fiche] = def;
+    const cote = m[1] === 'Left ' ? 'g' : m[1] === 'Right ' ? 'd' : null;
+    const centre = h.min.map((v, i) => +((v + h.max[i]) / 2).toFixed(1));
+    inventaire.push({ fj: f.replace('.obj', ''), fma: '', en: h.en, systeme, centre, min: h.min, max: h.max, source: 'z-anatomy', cle, fr, la, genre, region, groupe, couche, fiche, cote });
+    n++;
+  }
+  console.log(`Compléments Z-Anatomy : ${n} maillages`);
+} else {
+  console.log("(Compléments Z-Anatomy absents : lancer « npm run modeles:z-anatomy » pour les ajouter)");
 }
 
 // --- 6. Disques intervertébraux : nommés d'après les vertèbres voisines -----
