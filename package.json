@@ -17,7 +17,8 @@
     "modeles:z-anatomy": "node pipeline/04-z-anatomy.mjs",
     "modeles:feminin": "node pipeline/05-hubmap-feminin.mjs",
     "modeles:coupes": "node pipeline/06-coupes-scanner.mjs",
-    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:z-anatomy && npm run modeles:feminin && npm run modeles:inventaire && npm run modeles:construire && npm run modeles:coupes"
+    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:z-anatomy && npm run modeles:feminin && npm run modeles:inventaire && npm run modeles:construire && npm run modeles:coupes",
+    "test:hors-ligne": "node outils/tester-hors-ligne.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.1.0",
@@ -37,6 +38,7 @@
     "@types/three": "^0.171.0",
     "jpeg-js": "^0.4.4",
     "meshoptimizer": "^0.22.0",
+    "playwright-core": "^1.65.1",
     "svelte": "^5.15.0",
     "svelte-check": "^4.1.0",
     "typescript": "^5.7.0",

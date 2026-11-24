@@ -15,6 +15,8 @@
   import FicheVue from './components/Fiche.svelte';
   import Etiquettes from './components/Etiquettes.svelte';
   import Credits from './components/Credits.svelte';
+  import HorsLigne from './components/HorsLigne.svelte';
+  import { enregistrer } from './lib/horsLigne';
   import Dissection from './components/Dissection.svelte';
   import Coupes from './components/Coupes.svelte';
   import Scanner from './components/Scanner.svelte';
@@ -87,6 +89,11 @@
   let chargementFond = $state('');
   let erreur = $state('');
   let creditsOuverts = $state(false);
+  let horsLigneOuvert = $state(false);
+  /** Nouvelle version prête : fonction qui l'active (puis recharge) */
+  let miseAJour = $state<(() => void) | null>(null);
+  let enLigne = $state(navigator.onLine);
+  enregistrer((appliquer) => (miseAJour = appliquer)).catch((e) => console.warn('Service worker :', e));
 
   // ------------------------------------------------------------ quiz et progression
   let modeApp: 'explorer' | 'quiz' = $state('explorer');
@@ -378,13 +385,13 @@
       case 'f': if (etat.selection) viewer?.cadrer([etat.selection]); break;
       case 'd': dissequer(e.shiftKey ? -1 : 1); break;
       case 'r': retirerEtVoirDessous(); break;
-      case 'escape': if (creditsOuverts) creditsOuverts = false; else selectionner(null); break;
+      case 'escape': if (horsLigneOuvert) horsLigneOuvert = false; else if (creditsOuverts) creditsOuverts = false; else selectionner(null); break;
       case '/': e.preventDefault(); document.querySelector<HTMLInputElement>('#recherche')?.focus(); break;
     }
   }
 </script>
 
-<svelte:window onkeydown={clavier} />
+<svelte:window onkeydown={clavier} ononline={() => (enLigne = true)} onoffline={() => (enLigne = false)} />
 
 <div class="app" class:panneau-arbre={panneau === 'arbre'} class:panneau-fiche={panneau === 'fiche'}>
   <header>
@@ -397,8 +404,9 @@
         <button class="btn" class:on={modeApp === 'explorer'} onclick={() => modeApp === 'quiz' && sortirQuiz()}>Explorer</button>
         <button class="btn" class:on={modeApp === 'quiz'} onclick={() => modeApp === 'explorer' && entrerQuiz()}>Quiz</button>
       </div>
-      <button class="btn" onclick={async () => { progressionOuverte = true; await chargerIndexScanner(); }}>Progression</button>
-      <button class="btn" onclick={() => (creditsOuverts = true)}>Crédits</button>
+      <button class="btn" aria-label="Ma progression" onclick={async () => { progressionOuverte = true; await chargerIndexScanner(); }}><span class="long">Progression</span><span class="court" aria-hidden="true">Bilan</span></button>
+      <button class="btn icone" class:horsligne={!enLigne} title={enLigne ? 'Utiliser sans connexion' : 'Pas de connexion : tu utilises la version gardée sur l’appareil'} aria-label="Utiliser sans connexion" onclick={() => (horsLigneOuvert = true)}>⤓</button>
+      <button class="btn" aria-label="Crédits et licences" onclick={() => (creditsOuverts = true)}><span class="long">Crédits</span><span class="court" aria-hidden="true">ⓘ</span></button>
     </div>
   </header>
 
@@ -521,6 +529,18 @@
   <Credits onFermer={() => (creditsOuverts = false)} />
 {/if}
 
+{#if horsLigneOuvert}
+  <HorsLigne onFermer={() => (horsLigneOuvert = false)} />
+{/if}
+
+{#if miseAJour}
+  <div class="maj" role="status">
+    Une nouvelle version de l'atlas est disponible.
+    <button class="btn" onclick={() => miseAJour?.()}>Mettre à jour</button>
+    <button class="btn" aria-label="Plus tard" onclick={() => (miseAJour = null)}>Plus tard</button>
+  </div>
+{/if}
+
 <style>
   .app {
     display: grid;
@@ -540,8 +560,12 @@
   h1 { font: 600 19px/1 var(--serif); margin: 0; white-space: nowrap; }
   h1 span { color: var(--acc); }
   .outils { display: flex; gap: 6px; margin-left: auto; }
+  .outils > :global(*) { flex: none; }
+  .court { display: none; }
   .modes { display: flex; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 10px; }
   .modes .btn { border: 0; height: 32px; }
+  .horsligne { border-color: var(--warn); color: var(--warn); }
+  .maj { position: fixed; z-index: 40; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; background: var(--pan2); border: 1px solid var(--acc); border-radius: 12px; padding: 8px 12px; box-shadow: 0 10px 30px #000a; width: max-content; max-width: calc(100vw - 20px); font-size: 14px; }
   aside { overflow: auto; background: var(--pan); padding: 14px; position: relative; }
   #cote-gauche { border-right: 1px solid var(--line); }
   #cote-droit { border-left: 1px solid var(--line); }
@@ -580,6 +604,12 @@
     .app { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); }
     header { flex-wrap: wrap; padding: 8px 10px; gap: 8px; padding-top: max(8px, env(safe-area-inset-top)); }
     h1 { font-size: 17px; }
+    .outils { margin-left: 0; flex: 1 1 100%; justify-content: space-between; overflow-x: auto; scrollbar-width: none; }
+    .long { display: none; }
+    .outils { gap: 4px; }
+    .outils :global(.btn) { padding: 0 9px; }
+    .outils :global(.btn.icone) { width: 34px; padding: 0; }
+    .court { display: inline; }
     header :global(.recherche) { order: 3; flex-basis: 100%; max-width: none; }
     .scene { grid-row: 2; }
     aside {

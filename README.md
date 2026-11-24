@@ -1,9 +1,10 @@
 # Atlas 3D · Anatomie P2
 
 Atlas d'anatomie humaine en 3D pour réviser la P2 (DFGSM2) : modèles anatomiques réels
-(BodyParts3D), fiches de cours en français, et bientôt dissection par couches, coupes et quiz.
+(BodyParts3D, Z-Anatomy, HuBMAP), fiches de cours en français, dissection par couches, coupes
+3D et de scanner, quiz avec répétition espacée. Installable et utilisable hors ligne.
 
-> État : **étape 5 — quiz et répétition espacée**.
+> État : **étape 6 — application installable, hors ligne, mise en ligne**.
 
 ## Lancer l'app sur le Mac
 
@@ -37,6 +38,8 @@ Au doigt : 1 doigt = tourner · 2 doigts = pincer pour zoomer et déplacer · ap
 | `npm test` | Lance les tests automatiques (recherche, noms, fiches, données…) |
 | `npm run check` | Vérifie les types du code |
 | `npm run build` | Fabrique la version à mettre en ligne dans `dist/` |
+| `npm run preview` | Sert la version fabriquée sur http://localhost:4173 (pour tester le hors ligne) |
+| `npm run test:hors-ligne` | Test automatique du hors ligne avec Google Chrome (`npm run build` et `npm run preview` d'abord) |
 | `npm run modeles` | Refait tout le pipeline des modèles 3D (voir ci-dessous) |
 
 ## Organisation du dépôt
@@ -52,9 +55,35 @@ pipeline/            Scripts de fabrication des modèles 3D
 public/models/       Modèles 3D générés (GLB)
 public/data/         Métadonnées des structures (générées)
 src/                 Code de l'application (Svelte + Three.js)
+outils/              Service worker (hors ligne) et son test automatique
+.github/workflows/   Mise en ligne automatique sur GitHub Pages
 tests/               Tests automatiques
 reference/           Prototype d'origine
 ```
+
+## Hors ligne et installation (étape 6)
+
+- **Installer** : sur iPhone/iPad, ouvre l'adresse en ligne dans Safari → bouton Partager → « Sur l'écran
+  d'accueil ». Sur Mac (Chrome) : icône d'installation dans la barre d'adresse ; (Safari) : Fichier →
+  « Ajouter au Dock ». L'atlas s'ouvre alors comme une app, en plein écran.
+- **Hors ligne** : bouton **⤓** en haut. Il montre ce qui est déjà sur l'appareil et télécharge le reste
+  (application 2,8 Mo, modèles légers 17 Mo, coupes 13 Mo, modèles HD 42 Mo). Le bouton devient orange
+  quand il n'y a pas de connexion.
+- **Mises à jour** : quand une nouvelle version est en ligne, un bandeau « Mettre à jour » apparaît. Seuls
+  les fichiers modifiés sont retéléchargés.
+- **Fonctionnement** : `outils/vite-hors-ligne.ts` recense les fichiers de `dist/` avec une empreinte à chaque
+  `npm run build` et fabrique `dist/sw.js` à partir de `outils/sw.js` (le « service worker », un petit
+  programme que le navigateur garde pour servir l'app sans réseau).
+- Le hors ligne ne marche qu'en **https** (version en ligne) ou sur `localhost` : pas via l'adresse
+  `192.168.x.x` du réseau local.
+- Sur iPhone/iPad, Safari peut effacer les données d'un site non installé après quelques semaines sans
+  visite : **installe l'atlas sur l'écran d'accueil**, et exporte régulièrement ta progression.
+
+## Mise en ligne (GitHub Pages, gratuit)
+
+Le fichier `.github/workflows/mise-en-ligne.yml` demande à GitHub de tester, construire et publier l'app à
+chaque envoi sur la branche `main`. L'adresse est `https://<ton-compte>.github.io/atlas-anatomie-3d/`.
+Pour publier une modification : `git push` (après un commit).
 
 ## Pipeline des modèles
 
