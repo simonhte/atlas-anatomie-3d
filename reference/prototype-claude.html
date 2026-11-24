@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas 3D – Anatomie P2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: clinique, précis, calme — un logiciel de salle de dissection
+   IDEA: la table d'anatomie virtuelle, corps au centre, atlas annoté autour
+   PICTURE: le modèle 3D lui-même, plein cadre, sur fond sombre de salle de TP
+   COLOUR and TYPE: ardoise profonde, ivoire os, rouge muscle, accent cyan scialytique ; IBM Plex
+   LAYOUT: systèmes à gauche, scène au centre, fiche à droite ; empilé sous 900px */
+:root{color-scheme:dark;--bg:#0e1418;--pan:#151d23;--pan2:#1c262e;--line:#2a3640;--ink:#e6ecef;--mut:#93a3ad;--acc:#4fd1e0;--good:#5ad18a;--bad:#ef6b6b}
+*{box-sizing:border-box;min-width:0}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;overflow:hidden}
+button,input,select{font:inherit;color:inherit}
+.app{display:grid;grid-template-columns:300px minmax(0,1fr) 360px;grid-template-rows:56px minmax(0,1fr);height:100vh}
+header{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--pan)}
+header h1{font:600 19px/1 "IBM Plex Serif",serif;margin:0;white-space:nowrap}
+header h1 span{color:var(--acc)}
+.search{position:relative;flex:1;max-width:420px}
+.search input{width:100%;height:38px;border-radius:8px;border:1px solid var(--line);background:var(--bg);padding:0 12px;font-size:16px}
+.search input:focus{outline:2px solid var(--acc);outline-offset:1px}
+.res{position:absolute;top:42px;left:0;right:0;background:var(--pan2);border:1px solid var(--line);border-radius:8px;max-height:320px;overflow:auto;z-index:20;display:none}
+.res button{display:block;width:100%;text-align:left;padding:8px 12px;border:0;background:none;cursor:pointer}
+.res button:hover,.res button:focus{background:#24313a;outline:none}
+.res small{color:var(--mut);margin-left:6px}
+.modes{display:flex;gap:4px;margin-left:auto}
+.btn{height:38px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:var(--pan2);cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:#3b4b57}.btn.on{background:var(--acc);color:#04272b;border-color:var(--acc);font-weight:600}
+.btn:focus-visible,.chip:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+aside{overflow:auto;background:var(--pan);border-right:1px solid var(--line);padding:14px}
+#info{border-right:0;border-left:1px solid var(--line)}
+h2{font-size:12px;color:var(--mut);margin:16px 0 8px;font-weight:600}
+h2:first-child{margin-top:0}
+.sys{border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--pan2)}
+.sys>div{display:flex;align-items:center;gap:8px;padding:8px 10px}
+.sw{width:12px;height:12px;border-radius:3px;flex:none}
+.sys label{flex:1;cursor:pointer;display:flex;align-items:center;gap:8px}
+.sys input[type=checkbox]{width:18px;height:18px;accent-color:var(--acc)}
+.sys input[type=range]{width:70px;accent-color:var(--acc)}
+.sys details{border-top:1px solid var(--line)}
+.sys summary{padding:6px 10px;color:var(--mut);cursor:pointer;font-size:13px}
+.list{max-height:220px;overflow:auto;padding:0 6px 8px}
+.list button{display:block;width:100%;text-align:left;border:0;background:none;padding:4px 8px;border-radius:6px;cursor:pointer;font-size:13.5px}
+.list button:hover{background:#26323b}.list button.off{opacity:.4;text-decoration:line-through}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.chip{height:34px;padding:0 10px;border-radius:7px;border:1px solid var(--line);background:var(--pan2);cursor:pointer;font-size:13.5px}
+.chip:hover{border-color:var(--acc)}
+.sl{display:grid;grid-template-columns:90px minmax(0,1fr) 34px;align-items:center;gap:8px;font-size:13.5px;margin:6px 0}
+.sl input{accent-color:var(--acc)}
+.stage{position:relative;background:radial-gradient(ellipse at 50% 35%,#1d2a33 0%,#0e1418 70%)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#tip{position:absolute;pointer-events:none;background:#000c;border:1px solid var(--line);padding:4px 9px;border-radius:6px;font-size:13px;display:none;white-space:nowrap}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#labels div{position:absolute;font-size:12px;background:#0e1418cc;border-left:2px solid var(--acc);padding:1px 6px;white-space:nowrap;transform:translate(8px,-50%)}
+.hud{position:absolute;left:12px;bottom:12px;font-size:12.5px;color:var(--mut);background:#0e1418b0;padding:6px 10px;border-radius:8px}
+.views{position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.views .chip{background:#151d23e0}
+.card h3{font:600 22px/1.15 "IBM Plex Serif",serif;margin:2px 0 4px;text-wrap:balance}
+.card .lat{color:var(--mut);font-style:italic;font-size:13.5px}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:20px;background:var(--pan2);border:1px solid var(--line);margin:8px 6px 0 0}
+dl{margin:12px 0 0}dt{font-size:12px;color:var(--acc);font-weight:600;margin-top:10px}dd{margin:2px 0 0;font-size:14.5px}
+.pearl{margin-top:14px;padding:10px 12px;border-radius:8px;background:#14323a;border:1px solid #23535c;font-size:14px}
+.pearl b{color:var(--acc)}
+.empty{color:var(--mut);font-size:14.5px}
+.empty kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font-size:12px}
+.quiz{display:none}.quiz.show{display:block}
+.qq{font-size:17px;font-weight:600;margin:6px 0 12px}
+.opts{display:grid;gap:6px}
+.opts button{text-align:left;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--pan2);cursor:pointer}
+.opts button.ok{background:#173a28;border-color:var(--good)}.opts button.ko{background:#3d1b1b;border-color:var(--bad)}
+.score{display:flex;gap:16px;font-size:13.5px;color:var(--mut);margin-top:12px}
+.score b{color:var(--ink);font-size:20px;display:block}
+.fb{margin-top:10px;font-size:14px;min-height:22px}
+.small{font-size:12.5px;color:var(--mut);margin-top:16px}
+@media(max-width:1100px){.app{grid-template-columns:260px minmax(0,1fr) 300px}}
+@media(max-width:900px){body{overflow:auto}.app{grid-template-columns:1fr;grid-template-rows:auto 62vh auto auto;height:auto}
+ header{flex-wrap:wrap;padding:10px;gap:8px}.search{order:3;max-width:none;flex-basis:100%}
+ .stage{grid-row:2}#info{grid-row:3;border:0;border-top:1px solid var(--line)}#side{grid-row:4;border:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="app">
+<header><h1>Atlas <span>3D</span> · Anatomie P2</h1>
+ <div class="search"><input id="q" type="search" placeholder="Rechercher une structure (ex. nerf médian, aorte…)" autocomplete="off" aria-label="Rechercher"><div class="res" id="res"></div></div>
+ <div class="modes"><button class="btn on" id="mExp">Explorer</button><button class="btn" id="mQcm">Quiz QCM</button><button class="btn" id="mFind">Pointer</button></div>
+</header>
+<aside id="side">
+ <h2>Systèmes</h2><div id="systems"></div>
+ <h2>Coupes</h2>
+ <div class="sl"><span>Transversale</span><input type="range" id="cutY" min="0" max="180" value="180"><output id="oY">—</output></div>
+ <div class="sl"><span>Frontale</span><input type="range" id="cutZ" min="-20" max="20" value="20"><output id="oZ">—</output></div>
+ <div class="sl"><span>Sagittale</span><input type="range" id="cutX" min="-30" max="30" value="30"><output id="oX">—</output></div>
+ <h2>Affichage</h2>
+ <div class="row"><button class="chip" id="bLab">Étiquettes</button><button class="chip" id="bIso">Isoler la sélection</button><button class="chip" id="bHide">Masquer la sélection</button><button class="chip" id="bShow">Tout réafficher</button><button class="chip" id="bXray">Rayons X</button></div>
+ <p class="small">Modèle schématique construit pour la révision : les formes sont simplifiées, la topographie et les rapports respectent l'anatomie descriptive. Vérifie toujours avec ton cours.</p>
+</aside>
+<main class="stage"><canvas id="cv"></canvas><div id="labels"></div><div id="tip"></div>
+ <div class="views"><button class="chip" data-v="ant">Antérieure</button><button class="chip" data-v="post">Postérieure</button><button class="chip" data-v="latd">Latérale D</button><button class="chip" data-v="latg">Latérale G</button><button class="chip" data-v="sup">Supérieure</button><button class="chip" data-v="head">Tête</button><button class="chip" data-v="tho">Thorax</button><button class="chip" data-v="abd">Abdomen</button></div>
+ <div class="hud">Glisser : tourner · Clic droit / Maj+glisser : déplacer · Molette / pincer : zoom · Clic : sélectionner</div></main>
+<aside id="info">
+ <div id="card" class="card"><p class="empty">Clique sur une structure du modèle ou cherche-la par son nom pour ouvrir sa fiche : description, rapports, vascularisation, innervation, insertions et points à retenir.<br><br>Raccourcis : <kbd>H</kbd> masquer · <kbd>I</kbd> isoler · <kbd>A</kbd> tout afficher · <kbd>L</kbd> étiquettes · <kbd>Échap</kbd> désélectionner</p></div>
+ <div id="quiz" class="quiz"><h2 id="qTitle">Quiz</h2><div class="qq" id="qq"></div><div class="opts" id="opts"></div><div class="fb" id="fb"></div>
+  <div class="row" style="margin-top:12px"><button class="chip" id="qNext">Question suivante</button><select class="chip" id="qSys" aria-label="Système du quiz"></select></div>
+  <div class="score"><div><b id="sOk">0</b>bonnes</div><div><b id="sTot">0</b>questions</div><div><b id="sPct">–</b>réussite</div></div></div>
+</aside>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+{
+const SYS={
+ os:{n:"Squelette",c:0xe9dfc8},mus:{n:"Muscles",c:0xb8453f},art:{n:"Artères",c:0xd93a3a},vei:{n:"Veines",c:0x3d63c9},
+ coe:{n:"Cœur",c:0xc0504d},resp:{n:"Respiratoire",c:0xe7a3a6},dig:{n:"Digestif",c:0xd8a15c},uro:{n:"Urinaire",c:0xb06a3b},
+ snc:{n:"Système nerveux central",c:0xf1c9b8},nerf:{n:"Nerfs périphériques",c:0xf2d14b},endo:{n:"Endocrine & lymphoïde",c:0x8bc48a},peau:{n:"Peau",c:0xd9b49c}
+};
+// [nom, latin, région, description, {O,T,A,R,V,N,F}, à retenir]
+const D={
+// ---------- SQUELETTE ----------
+crane:["Crâne","Cranium","Tête","Neurocrâne (8 os : frontal, 2 pariétaux, 2 temporaux, occipital, sphénoïde, ethmoïde) et viscérocrâne (14 os de la face).",{R:"Base : étages antérieur (fosses crâniennes ant., lame criblée), moyen (selle turcique, foramens rond, ovale, épineux) et postérieur (foramen magnum, foramens jugulaires, canaux hypoglosses).",V:"A. méningée moyenne (branche de l'a. maxillaire) entrant par le foramen épineux.",F:"Protection de l'encéphale, insertion des muscles masticateurs et de la nuque."},"Foramen ovale = V3 ; rond = V2 ; fissure orbitaire sup. = III, IV, V1, VI ; foramen jugulaire = IX, X, XI + v. jugulaire interne."],
+mandibule:["Mandibule","Mandibula","Tête","Seul os mobile de la face : corps en fer à cheval et deux branches (rami) portant processus coronoïde et condylaire.",{R:"Le condyle s'articule avec la fosse mandibulaire du temporal (ATM, bicondylienne). Foramen mandibulaire sur la face médiale du ramus.",V:"A. alvéolaire inférieure (de l'a. maxillaire).",N:"N. alvéolaire inférieur (V3) dans le canal mandibulaire, sort par le foramen mentonnier (n. mentonnier).",F:"Mastication, phonation."},"Processus coronoïde = insertion du temporal ; angle = masséter (latéral) et ptérygoïdien médial (médial)."],
+c_cerv:["Vertèbres cervicales (C1–C7)","Vertebrae cervicales","Rachis","7 vertèbres à corps petit, foramens transversaires, processus épineux bifides (C2–C6). C1 atlas sans corps, C2 axis avec la dent (processus odontoïde).",{R:"L'a. vertébrale traverse les foramens transversaires de C6 à C1. Lordose cervicale.",F:"Mobilité de la tête : flexion-extension (atlanto-occipitale), rotation (atlanto-axoïdienne)."},"C7 = vertèbre proéminente (épineuse longue, non bifide). L'a. vertébrale entre en C6, pas en C7."],
+c_thor:["Vertèbres thoraciques (T1–T12)","Vertebrae thoracicae","Rachis","12 vertèbres portant des fossettes costales sur le corps et les processus transverses ; épineuses longues obliques en bas.",{R:"Articulées aux côtes (articulations costo-vertébrales et costo-transversaires). Cyphose thoracique. Canal vertébral étroit et circulaire.",F:"Rigidité thoracique, protection de la moelle."},"Les côtes 11 et 12 n'ont pas d'articulation costo-transversaire."],
+c_lomb:["Vertèbres lombales (L1–L5)","Vertebrae lumbales","Rachis","5 vertèbres massives, corps réniforme, processus costiformes, épineuses quadrilatères horizontales.",{R:"Le cône médullaire s'arrête en L1–L2 : en dessous, la queue de cheval. Lordose lombale.",F:"Support du poids du tronc, flexion-extension."},"Ponction lombaire entre L4–L5 (ligne de Tuffier : sommets des crêtes iliaques ≈ L4)."],
+sacrum:["Sacrum et coccyx","Os sacrum, os coccygis","Bassin","5 vertèbres sacrales soudées en un os triangulaire, base en haut (promontoire), apex en bas articulé au coccyx.",{R:"4 paires de foramens sacraux antérieurs et postérieurs ; hiatus sacral en bas. S'articule avec les os coxaux (articulations sacro-iliaques).",F:"Clé de voûte de la ceinture pelvienne."},"Promontoire = repère du détroit supérieur du bassin."],
+cotes:["Côtes (1 à 12)","Costae","Thorax","12 paires : 1–7 vraies (sternales), 8–10 fausses (cartilage commun), 11–12 flottantes.",{R:"Sillon costal au bord inférieur abritant de haut en bas : veine, artère, nerf intercostaux (VAN).",F:"Cage thoracique, mécanique ventilatoire."},"Ponction pleurale au bord supérieur de la côte inférieure pour éviter le paquet VAN."],
+sternum:["Sternum","Sternum","Thorax","Os plat médian : manubrium, corps, processus xiphoïde.",{R:"Angle sternal (de Louis) = jonction manubrium–corps, en regard de la 2e côte et de T4–T5 (bifurcation trachéale, début/fin de la crosse aortique).",F:"Articulation avec clavicules et 7 premiers cartilages costaux."},"Angle de Louis : repère pour compter les côtes et plan de la carène."],
+clavicule:["Clavicule","Clavicula","Ceinture scapulaire","Os long en S, horizontal, entre manubrium et acromion.",{R:"Au-dessous : vaisseaux subclaviers et plexus brachial. Insertions : SCM, trapèze, deltoïde, grand pectoral, subclavier.",F:"Arc-boutant de l'épaule."},"Fracture la plus fréquente à la jonction tiers moyen–tiers latéral."],
+scapula:["Scapula","Scapula","Ceinture scapulaire","Os plat triangulaire postérieur (T2–T7) : épine, acromion, processus coracoïde, cavité glénoïdale.",{R:"Fosses supra- et infra-épineuses, fosse subscapulaire. Coracoïde : petit pectoral, coracobrachial, chef court du biceps.",F:"Articulation glénohumérale, insertion de la coiffe des rotateurs."},"Coiffe : supra-épineux, infra-épineux, petit rond (trochiter) ; subscapulaire (trochin)."],
+humerus:["Humérus","Humerus","Bras","Os long du bras : tête, col anatomique et chirurgical, tubercules majeur et mineur, sillon intertuberculaire, diaphyse, palette humérale.",{R:"Col chirurgical : n. axillaire et a. circonflexes. Sillon du n. radial sur la diaphyse. N. ulnaire derrière l'épicondyle médial.",F:"Épaule et coude."},"Fracture diaphysaire → atteinte du n. radial (main tombante)."],
+radius:["Radius","Radius","Avant-bras","Os latéral de l'avant-bras ; tête proximale, processus styloïde distal.",{R:"Tubérosité radiale : biceps brachial. S'articule avec ulna (radio-ulnaires sup. et inf.) et carpe (scaphoïde, lunatum).",F:"Pronosupination."},"Fracture de Pouteau-Colles : extrémité distale, déplacement postérieur."],
+ulna:["Ulna","Ulna","Avant-bras","Os médial de l'avant-bras ; olécrâne et processus coronoïde en haut, tête distale.",{R:"Incisure trochléaire s'articulant avec la trochlée humérale. Olécrâne : triceps.",F:"Flexion-extension du coude."},"Le n. ulnaire passe derrière l'épicondyle médial, pas sur l'ulna elle-même."],
+main_os:["Squelette de la main","Ossa manus","Main","8 os du carpe (scaphoïde, lunatum, triquetrum, pisiforme / trapèze, trapézoïde, capitatum, hamatum), 5 métacarpiens, 14 phalanges.",{R:"Canal carpien sous le rétinaculum des fléchisseurs : n. médian + 9 tendons fléchisseurs.",F:"Préhension."},"Moyen mnémotechnique : « Sur La Table Pose Ton Trapèze Comme Un Hameçon »."],
+coxal:["Os coxal","Os coxae","Bassin","Os pair formé de l'ilium, de l'ischium et du pubis soudés à l'acétabulum.",{R:"Crête iliaque, épines iliaques antéro-sup. et inf., grande incisure ischiatique, foramen obturé, symphyse pubienne.",F:"Ceinture pelvienne, transmission du poids au membre inférieur."},"EIAS = origine du sartorius et du ligament inguinal."],
+femur:["Fémur","Femur","Cuisse","Plus long os du corps : tête, col, grand et petit trochanters, ligne âpre, condyles.",{R:"Tête vascularisée surtout par les a. circonflexes fémorales (branche médiale +++). Grand trochanter : moyen et petit fessiers.",F:"Hanche et genou."},"Fracture du col → risque de nécrose de la tête (a. circonflexe médiale)."],
+patella:["Patella","Patella","Genou","Plus grand os sésamoïde, dans le tendon du quadriceps.",{F:"Augmente le bras de levier du quadriceps."},"Le tendon sous la patella est le ligament patellaire (insertion sur la tubérosité tibiale)."],
+tibia:["Tibia","Tibia","Jambe","Os médial et porteur de la jambe : plateau tibial, tubérosité, malléole médiale.",{R:"Face médiale sous-cutanée. A. tibiale antérieure en avant de la membrane interosseuse.",F:"Transmission du poids au pied."},"Fractures ouvertes fréquentes (face médiale sous-cutanée)."],
+fibula:["Fibula","Fibula","Jambe","Os latéral grêle : tête, col, malléole latérale.",{R:"Le n. fibulaire commun contourne le col de la fibula.",F:"Insertions musculaires, stabilité de la cheville."},"Traumatisme du col fibulaire → pied tombant (steppage)."],
+pied_os:["Squelette du pied","Ossa pedis","Pied","7 os du tarse (talus, calcanéus, naviculaire, cuboïde, 3 cunéiformes), 5 métatarsiens, 14 phalanges.",{R:"Le talus s'articule avec la pince bimalléolaire ; calcanéus = insertion du tendon calcanéen (Achille).",F:"Appui et propulsion."},"Le talus n'a aucune insertion musculaire."],
+// ---------- MUSCLES ----------
+temporal:["Muscle temporal","M. temporalis","Tête","Muscle masticateur en éventail de la fosse temporale.",{O:"Fosse temporale, fascia temporal.",T:"Processus coronoïde de la mandibule.",A:"Élévation et rétropulsion de la mandibule.",N:"N. temporaux profonds (V3)."},"Les 4 masticateurs (temporal, masséter, ptérygoïdiens) sont innervés par le V3."],
+masseter:["Muscle masséter","M. masseter","Tête","Muscle masticateur quadrilatère superficiel.",{O:"Arcade zygomatique.",T:"Face latérale de l'angle et du ramus mandibulaire.",A:"Élévation de la mandibule (fermeture).",N:"N. massétérique (V3)."},"Muscle le plus puissant de la mastication."],
+scm:["Sterno-cléido-mastoïdien","M. sternocleidomastoideus","Cou","Muscle superficiel du cou, oblique, à deux chefs inférieurs.",{O:"Manubrium sternal et tiers médial de la clavicule.",T:"Processus mastoïde et ligne nucale supérieure.",A:"Unilatéral : inclinaison homolatérale, rotation controlatérale de la tête. Bilatéral : flexion ou extension selon le point fixe, inspiration accessoire.",N:"N. accessoire (XI) + rameaux de C2–C3."},"Délimite les trigones antérieur et postérieur du cou."],
+trapeze:["Muscle trapèze","M. trapezius","Dos","Muscle triangulaire superficiel du dos et de la nuque.",{O:"Ligne nucale sup., protubérance occipitale externe, ligament nucal, épineuses C7–T12.",T:"Tiers latéral de la clavicule, acromion, épine de la scapula.",A:"Élévation (faisceau sup.), adduction, rotation de la scapula.",N:"N. accessoire (XI) + C3–C4."},"Paralysie du XI → épaule tombante, difficulté à hausser l'épaule."],
+deltoide:["Muscle deltoïde","M. deltoideus","Épaule","Muscle du galbe de l'épaule à 3 faisceaux.",{O:"Tiers latéral de la clavicule, acromion, épine de la scapula.",T:"Tubérosité deltoïdienne de l'humérus.",A:"Abduction du bras (au-delà de 15° après le supra-épineux), flexion (ant.), extension (post.).",N:"N. axillaire (C5–C6)."},"Fracture du col chirurgical → paralysie du deltoïde et anesthésie du « moignon de l'épaule »."],
+gdpect:["Grand pectoral","M. pectoralis major","Thorax","Muscle superficiel en éventail de la paroi antérieure du thorax.",{O:"Moitié médiale de la clavicule, sternum, cartilages costaux 1–6, gaine des droits.",T:"Lèvre latérale du sillon intertuberculaire.",A:"Adduction, rotation médiale et antépulsion du bras ; inspiratoire accessoire.",N:"N. pectoraux latéral et médial."},"Le bord inférieur forme le pli axillaire antérieur."],
+gddorsal:["Grand dorsal","M. latissimus dorsi","Dos","Muscle large du dos.",{O:"Épineuses T7–L5, fascia thoracolombal, crête iliaque, dernières côtes.",T:"Fond du sillon intertuberculaire.",A:"Adduction, extension et rotation médiale du bras (grimper).",N:"N. thoracodorsal (C6–C8)."},"Forme le pli axillaire postérieur avec le grand rond."],
+dentele:["Dentelé antérieur","M. serratus anterior","Thorax","Muscle de la paroi latérale du thorax.",{O:"Faces latérales des côtes 1–9 (digitations).",T:"Bord médial de la scapula (face costale).",A:"Plaque la scapula contre le thorax, rotation latérale (élévation du bras > 90°).",N:"N. thoracique long (C5–C7)."},"Atteinte du n. thoracique long → scapula alata."],
+biceps:["Biceps brachial","M. biceps brachii","Bras","Muscle antérieur du bras à 2 chefs.",{O:"Chef long : tubercule supraglénoïdal ; chef court : processus coracoïde.",T:"Tubérosité radiale + expansion aponévrotique (lacertus fibrosus).",A:"Flexion du coude, supination (+++).",N:"N. musculocutané (C5–C6)."},"Réflexe bicipital = C5–C6."],
+triceps:["Triceps brachial","M. triceps brachii","Bras","Seul muscle de la loge postérieure du bras, 3 chefs.",{O:"Chef long : tubercule infraglénoïdal ; chef latéral et médial : face postérieure de l'humérus.",T:"Olécrâne.",A:"Extension du coude.",N:"N. radial (C6–C8)."},"Réflexe tricipital = C7."],
+flechisseurs:["Loge antérieure de l'avant-bras","Mm. flexores antebrachii","Avant-bras","Muscles fléchisseurs et pronateurs : rond pronateur, fléchisseur radial du carpe, long palmaire, fléchisseur ulnaire du carpe, FSD, FPD, long fléchisseur du pouce, carré pronateur.",{O:"Épicondyle médial (tendon commun) et faces antérieures radius/ulna.",T:"Carpe, phalanges moyennes (FSD), distales (FPD).",A:"Flexion du poignet et des doigts, pronation.",N:"N. médian, sauf FUC et moitié médiale du FPD : n. ulnaire."},"Épicondylite médiale = « golfer's elbow »."],
+extenseurs:["Loge postérieure de l'avant-bras","Mm. extensores antebrachii","Avant-bras","Muscles extenseurs et supinateur : brachio-radial, long et court extenseurs radiaux du carpe, extenseur des doigts, extenseur ulnaire du carpe, supinateur, muscles du pouce.",{O:"Épicondyle latéral (tendon commun).",T:"Métacarpiens et phalanges.",A:"Extension du poignet et des doigts, supination.",N:"N. radial (et sa branche profonde)."},"Brachio-radial : innervé par le radial mais fléchisseur du coude."],
+droitabd:["Droit de l'abdomen","M. rectus abdominis","Abdomen","Muscle vertical paramédian, intersections tendineuses, dans la gaine des droits.",{O:"Symphyse et crête pubiennes.",T:"Cartilages costaux 5–7, processus xiphoïde.",A:"Flexion du tronc, expiration forcée, pression abdominale.",N:"N. intercostaux T7–T12."},"Ligne blanche entre les deux droits ; ligne arquée = fin du feuillet postérieur de la gaine."],
+oblique:["Oblique externe de l'abdomen","M. obliquus externus abdominis","Abdomen","Muscle large le plus superficiel de la paroi antérolatérale (fibres « mains dans les poches »).",{O:"Faces externes des côtes 5–12.",T:"Crête iliaque, ligne blanche ; bord inférieur = ligament inguinal.",A:"Rotation controlatérale, flexion latérale, pression abdominale.",N:"N. intercostaux T7–T11, subcostal, ilio-hypogastrique."},"Sous lui : oblique interne puis transverse."],
+diaphragme:["Diaphragme","Diaphragma","Thorax / abdomen","Muscle en double coupole séparant thorax et abdomen, centre tendineux.",{O:"Processus xiphoïde, côtes 7–12, piliers sur L1–L3, arcades.",T:"Centre phrénique.",A:"Principal muscle inspiratoire.",N:"N. phréniques (C3–C5).",R:"Orifices : v. cave inf. (T8), œsophage + n. vagues (T10), aorte + conduit thoracique (T12)."},"« C3, C4, C5 keep the diaphragm alive » ; orifices 8–10–12."],
+gdfessier:["Grand fessier","M. gluteus maximus","Fesse","Muscle le plus volumineux du corps.",{O:"Face postérieure de l'ilium, sacrum, coccyx, ligament sacro-tubéral.",T:"Tubérosité glutéale du fémur, tractus ilio-tibial.",A:"Extension et rotation latérale de la hanche (se relever, monter).",N:"N. glutéal inférieur (L5–S2)."},"Injection IM dans le quadrant supéro-latéral pour éviter le n. ischiatique."],
+moyfessier:["Moyen fessier","M. gluteus medius","Fesse","Muscle profond au grand fessier.",{O:"Face glutéale de l'ilium.",T:"Grand trochanter.",A:"Abduction de la hanche, stabilise le bassin en appui unipodal.",N:"N. glutéal supérieur (L4–S1)."},"Paralysie → signe de Trendelenburg (bascule du bassin côté opposé)."],
+quadriceps:["Quadriceps fémoral","M. quadriceps femoris","Cuisse","4 chefs : droit fémoral, vaste latéral, vaste médial, vaste intermédiaire.",{O:"Droit fémoral : EIAI ; vastes : fémur.",T:"Patella puis tubérosité tibiale par le ligament patellaire.",A:"Extension du genou ; droit fémoral : flexion de la hanche.",N:"N. fémoral (L2–L4)."},"Réflexe rotulien = L3–L4."],
+sartorius:["Sartorius","M. sartorius","Cuisse","Muscle le plus long du corps, en écharpe sur la face antérieure de la cuisse.",{O:"EIAS.",T:"Face médiale du tibia (patte d'oie).",A:"Flexion, abduction, rotation latérale de la hanche ; flexion du genou.",N:"N. fémoral."},"Patte d'oie : Sartorius, Gracile, semi-Tendineux (« SGT »)."],
+adducteurs:["Loge médiale de la cuisse","Mm. adductores","Cuisse","Long, court et grand adducteurs, gracile, pectiné, obturateur externe.",{O:"Pubis et ischium.",T:"Ligne âpre du fémur, tubercule de l'adducteur.",A:"Adduction de la hanche.",N:"N. obturateur (L2–L4) ; grand adducteur aussi par le n. ischiatique."},"Le hiatus du grand adducteur laisse passer les vaisseaux fémoraux qui deviennent poplités."],
+ischio:["Ischio-jambiers","Mm. ischiocrurales","Cuisse","Loge postérieure : biceps fémoral, semi-tendineux, semi-membraneux.",{O:"Tubérosité ischiatique (+ ligne âpre pour le chef court du biceps).",T:"Tête de la fibula (biceps) ; tibia médial (semi-tendineux, semi-membraneux).",A:"Flexion du genou, extension de la hanche.",N:"N. ischiatique (contingent tibial ; chef court du biceps : contingent fibulaire)."},"Lésion fréquente chez le sportif (sprint)."],
+triceps_sural:["Triceps sural","M. triceps surae","Jambe","Gastrocnémien (2 chefs) et soléaire, réunis dans le tendon calcanéen.",{O:"Condyles fémoraux (gastrocnémien), tête de la fibula et tibia (soléaire).",T:"Tubérosité du calcanéus.",A:"Flexion plantaire de la cheville ; gastrocnémien : flexion du genou.",N:"N. tibial (S1–S2)."},"Réflexe achilléen = S1."],
+tibant:["Tibial antérieur","M. tibialis anterior","Jambe","Muscle de la loge antérieure de la jambe.",{O:"Face latérale du tibia, membrane interosseuse.",T:"Cunéiforme médial, base du 1er métatarsien.",A:"Flexion dorsale et inversion du pied.",N:"N. fibulaire profond (L4–L5)."},"Paralysie → pied tombant, marche en steppage."],
+// ---------- CŒUR ----------
+coeur:["Cœur","Cor","Médiastin moyen","Muscle creux à 4 cavités dans le péricarde, pointe en bas, en avant, à gauche (5e espace intercostal, ligne médioclaviculaire).",{R:"Face antérieure (sterno-costale) = VD surtout ; face inférieure (diaphragmatique) = ventricules ; base = atriums (AG en arrière, contre l'œsophage).",V:"A. coronaires droite et gauche (interventriculaire antérieure, circonflexe) nées des sinus aortiques ; retour par le sinus coronaire dans l'AD.",N:"Plexus cardiaque : sympathique (accélère) et vagal (ralentit). Tissu nodal : nœud sinusal, nœud atrioventriculaire, faisceau de His.",F:"Pompe double : circulation pulmonaire (droite) et systémique (gauche)."},"L'AG est la cavité la plus postérieure : une dilatation de l'AG peut comprimer l'œsophage (dysphagie)."],
+ad:["Atrium droit","Atrium dextrum","Cœur","Cavité recevant le sang veineux systémique.",{R:"Reçoit VCS, VCI et sinus coronaire. Contient la fosse ovale (septum interatrial) et le nœud sinusal (près de l'abouchement de la VCS).",V:"A. coronaire droite (artère du nœud sinusal dans ~60 %)."},"Valve tricuspide entre AD et VD."],
+vd:["Ventricule droit","Ventriculus dexter","Cœur","Cavité antérieure du cœur éjectant dans le tronc pulmonaire.",{R:"Paroi fine, trabéculations, bande modératrice (trabécule septomarginale, branche droite du faisceau de His).",V:"A. coronaire droite et IVA."},"Le VD forme l'essentiel de la face antérieure du cœur."],
+ag:["Atrium gauche","Atrium sinistrum","Cœur","Cavité postérieure recevant les 4 veines pulmonaires.",{R:"En rapport en arrière avec l'œsophage et l'aorte descendante ; auricule gauche.",V:"A. circonflexe."},"Valve mitrale (bicuspide) entre AG et VG."],
+vg:["Ventricule gauche","Ventriculus sinister","Cœur","Cavité à paroi épaisse (≈3× le VD) formant la pointe, éjectant dans l'aorte.",{R:"Deux muscles papillaires (antérieur et postérieur) reliés à la mitrale par les cordages.",V:"IVA et circonflexe (branches de la coronaire gauche)."},"Valve aortique tricuspide (sigmoïdes) ; les coronaires naissent au-dessus des valvules."],
+// ---------- ARTÈRES ----------
+aorte_asc:["Aorte ascendante et crosse","Aorta ascendens, arcus aortae","Médiastin","Naît du VG, monte puis forme la crosse en passant au-dessus de la bronche principale gauche.",{R:"La crosse naît derrière l'angle de Louis et se termine en T4 ; le n. laryngé récurrent gauche la contourne.",F:"Branches de la crosse : tronc brachiocéphalique, carotide commune gauche, subclavière gauche."},"Seule branche de l'aorte ascendante : les a. coronaires."],
+aorte_desc:["Aorte thoracique descendante","Aorta thoracica","Médiastin postérieur","Fait suite à la crosse en T4, descend à gauche des corps vertébraux jusqu'au hiatus aortique (T12).",{R:"À gauche de l'œsophage puis en arrière de lui en bas ; conduit thoracique et v. azygos à sa droite.",F:"Branches : a. intercostales postérieures, bronchiques, œsophagiennes."},"Traverse le diaphragme en T12 avec le conduit thoracique."],
+aorte_abd:["Aorte abdominale","Aorta abdominalis","Abdomen","De T12 à sa bifurcation en L4 en a. iliaques communes.",{R:"Rétropéritonéale, à gauche de la VCI. La v. rénale gauche passe devant elle, sous l'AMS (pince aorto-mésentérique).",F:"Branches viscérales : tronc cœliaque (T12), AMS (L1), a. rénales (L1–L2), AMI (L3) ; gonadiques ; pariétales : phréniques inf., lombales."},"Bifurcation aortique en L4 ≈ niveau de l'ombilic."],
+tbc:["Tronc brachiocéphalique","Truncus brachiocephalicus","Médiastin sup.","Première branche de la crosse, se divise derrière l'articulation sterno-claviculaire droite.",{F:"Donne a. subclavière droite et a. carotide commune droite."},"N'existe qu'à droite."],
+carotide:["Artère carotide commune","A. carotis communis","Cou","Monte dans le cou dans la gaine carotidienne et se divise au bord supérieur du cartilage thyroïde (C4) en carotides interne et externe.",{R:"Gaine carotidienne : carotide (médiale), v. jugulaire interne (latérale), n. vague (postérieur, entre les deux).",F:"Carotide interne : encéphale, œil (pas de branche au cou). Carotide externe : face et cou."},"Sinus carotidien (barorécepteur) et glomus carotidien (chémorécepteur) à la bifurcation (IX)."],
+subclaviere:["Artère subclavière","A. subclavia","Cou / thorax","Passe entre les scalènes antérieur et moyen, devient axillaire au bord latéral de la 1re côte.",{F:"Branches : a. vertébrale, thoracique interne, tronc thyro-cervical, tronc costo-cervical.",R:"La v. subclavière passe en avant du scalène antérieur."},"Défilé des scalènes : artère + plexus brachial entre les scalènes ant. et moyen."],
+brachiale:["Artère axillaire et brachiale","A. axillaris, a. brachialis","Membre sup.","Axillaire (de la 1re côte au bord inf. du grand rond) puis brachiale, médiale au biceps, se divise au pli du coude.",{R:"Accompagnée du n. médian, qui la croise d'en dehors en dedans au bras.",F:"Division en a. radiale et ulnaire sous l'aponévrose bicipitale."},"Prise de la tension artérielle sur l'a. brachiale au pli du coude."],
+radiale:["Artères radiale et ulnaire","A. radialis, a. ulnaris","Avant-bras","Branches terminales de la brachiale formant les arcades palmaires superficielle (ulnaire surtout) et profonde (radiale surtout).",{R:"Pouls radial en dehors du tendon du fléchisseur radial du carpe ; a. radiale dans la tabatière anatomique.",F:"Vascularisation de la main."},"Test d'Allen avant ponction artérielle radiale."],
+tc:["Tronc cœliaque","Truncus coeliacus","Abdomen","Première branche viscérale de l'aorte abdominale (T12), courte, se trifurque.",{F:"A. gastrique gauche, a. hépatique commune, a. splénique.",V:"Vascularise l'intestin antérieur : estomac, duodénum proximal, foie, voies biliaires, pancréas (en partie), rate."},"Trépied de Haller : gastrique gauche, hépatique commune, splénique."],
+ams:["Artère mésentérique supérieure","A. mesenterica superior","Abdomen","Naît en L1, passe derrière le pancréas puis devant le processus unciné et le 3e duodénum.",{F:"A. pancréatico-duodénale inf., jéjunales et iléales, iléo-colique, colique droite, colique moyenne.",V:"Intestin moyen : du 2e duodénum aux 2/3 droits du transverse."},"La v. rénale gauche et le D3 passent dans la pince aorto-mésentérique."],
+ami:["Artère mésentérique inférieure","A. mesenterica inferior","Abdomen","Naît en L3 sur la face antérieure gauche de l'aorte.",{F:"A. colique gauche, sigmoïdiennes, rectale supérieure.",V:"Intestin postérieur : tiers gauche du transverse jusqu'au haut rectum."},"Arcade de Riolan : anastomose AMS–AMI."],
+renale:["Artère rénale","A. renalis","Rétropéritoine","Naît de l'aorte en L1–L2 ; la droite, plus longue, passe derrière la VCI.",{F:"Branches segmentaires, a. surrénale inf., urétérique.",R:"Dans le pédicule rénal d'avant en arrière : veine, artère, bassinet (VAU)."},"Artères segmentaires terminales : infarctus segmentaire en cas d'occlusion."],
+iliaque:["Artères iliaques","Aa. iliacae communes, externae, internae","Bassin","Iliaque commune (de L4 à l'articulation sacro-iliaque) → iliaque interne (viscères pelviens, fesse) et externe (membre inférieur).",{R:"L'uretère croise la bifurcation iliaque. L'iliaque externe devient fémorale sous le ligament inguinal.",F:"Iliaque interne : branches viscérales (vésicales, utérine, rectale moy.) et pariétales (glutéales, obturatrice, pudendale interne)."},"Uretère croisé en avant par l'a. utérine chez la femme (« l'eau sous le pont »)."],
+femorale:["Artère fémorale et poplitée","A. femoralis, a. poplitea","Membre inf.","Fémorale dans le trigone fémoral puis le canal des adducteurs, devient poplitée au hiatus du grand adducteur.",{R:"Trigone fémoral, de latéral en médial : nerf, artère, veine (NAV). La poplitée est l'élément le plus profond du creux poplité.",F:"Fémorale profonde (circonflexes, perforantes) ; poplitée → a. tibiales antérieure et postérieure (tronc tibio-fibulaire)."},"Pouls fémoral à mi-distance EIAS–symphyse, sous le ligament inguinal."],
+pulm:["Tronc et artères pulmonaires","Truncus pulmonalis","Médiastin","Naît du VD, se divise sous la crosse aortique en a. pulmonaires droite et gauche.",{R:"Ligament artériel (reliquat du canal artériel) entre la bifurcation pulmonaire et la crosse ; le récurrent gauche passe sous lui.",F:"Transporte du sang désoxygéné vers les poumons."},"Seules artères transportant du sang pauvre en O₂ (chez l'adulte)."],
+// ---------- VEINES ----------
+vcs:["Veine cave supérieure","V. cava superior","Médiastin","Formée par l'union des deux troncs veineux brachiocéphaliques derrière le 1er cartilage costal droit, se jette dans l'AD.",{R:"Reçoit la v. azygos (qui fait une crosse au-dessus de la bronche principale droite).",F:"Draine tête, cou, membres sup., thorax."},"Syndrome cave supérieur : œdème en pèlerine (compression tumorale médiastinale)."],
+vci:["Veine cave inférieure","V. cava inferior","Abdomen / thorax","Formée en L5 par l'union des iliaques communes, à droite de l'aorte, traverse le diaphragme en T8.",{R:"Passe derrière le foie (aire nue), reçoit les v. hépatiques, rénales, gonadique droite.",F:"Draine sous-diaphragmatique vers l'AD."},"La v. gonadique gauche se jette dans la v. rénale gauche, la droite dans la VCI."],
+jugulaire:["Veine jugulaire interne","V. jugularis interna","Cou","Fait suite au sinus sigmoïde au foramen jugulaire, descend dans la gaine carotidienne.",{R:"Latérale à la carotide ; s'unit à la subclavière pour former le tronc brachiocéphalique (confluent de Pirogoff), où se jette le conduit thoracique à gauche.",F:"Drainage de l'encéphale et du cou."},"Voie d'abord fréquente des cathéters veineux centraux."],
+porte:["Veine porte","V. portae hepatis","Abdomen","Formée derrière le col du pancréas par l'union de la v. mésentérique sup. et du tronc spléno-mésaraïque.",{R:"Dans le pédicule hépatique (ligament hépatoduodénal) : veine porte (en arrière), artère hépatique propre (à gauche), conduit cholédoque (à droite).",F:"Amène au foie le sang veineux des viscères digestifs."},"Anastomoses porto-caves : œsophage (varices), rectum, paraombilicale (tête de méduse)."],
+vfem:["Veines fémorale et grande saphène","V. femoralis, v. saphena magna","Membre inf.","Fémorale médiale à l'artère ; la grande saphène, superficielle, passe devant la malléole médiale et se jette dans la fémorale (crosse) sous le ligament inguinal.",{F:"Drainage du membre inférieur.",R:"La petite saphène se jette dans la poplitée."},"Grande saphène = greffon des pontages coronariens."],
+// ---------- RESPIRATOIRE ----------
+larynx:["Larynx","Larynx","Cou","Organe de la phonation et carrefour aéro-digestif, de C3 à C6 : cartilages thyroïde, cricoïde, aryténoïdes, épiglotte.",{R:"En avant : muscles infra-hyoïdiens ; thyroïde sur ses faces latérales ; pharynx en arrière.",V:"A. laryngées sup. et inf. (thyroïdiennes sup. et inf.).",N:"N. laryngé sup. (sensitif sus-glottique + crico-thyroïdien) et n. laryngé récurrent (tous les autres muscles intrinsèques), branches du X."},"Le crico-aryténoïdien postérieur est le seul abducteur (ouvre la glotte)."],
+trachee:["Trachée","Trachea","Cou / médiastin","Tube de 16–20 anneaux cartilagineux en C ouverts en arrière, de C6 à la carène (T4–T5).",{R:"Œsophage en arrière, isthme thyroïdien devant les anneaux 2–4, crosse aortique à gauche, v. azygos à droite.",V:"A. thyroïdiennes inf. et a. bronchiques.",N:"Vague et sympathique."},"Carène en regard de l'angle de Louis."],
+bronches:["Bronches principales","Bronchi principales","Médiastin","Bronche droite courte, large, verticale ; gauche longue, horizontale, passant sous la crosse aortique.",{R:"Crosse de l'azygos au-dessus de la bronche droite, crosse aortique au-dessus de la gauche.",F:"Bronches lobaires : 3 à droite, 2 à gauche."},"Corps étranger inhalé → bronche droite (plus verticale)."],
+poumon_d:["Poumon droit","Pulmo dexter","Thorax","3 lobes (supérieur, moyen, inférieur) séparés par les fissures oblique et horizontale. 10 segments.",{R:"Face médiale : empreintes de la VCS, de l'azygos, de l'œsophage, de l'AD. Hile : bronche en haut et en arrière (épartérielle pour le lobe sup.).",V:"Fonctionnelle : a. pulmonaire ; nourricière : a. bronchiques.",N:"Plexus pulmonaire (X et sympathique)."},"Le lobe moyen se projette en avant : à l'auscultation antérieure droite."],
+poumon_g:["Poumon gauche","Pulmo sinister","Thorax","2 lobes (supérieur avec la lingula, inférieur) séparés par la fissure oblique. Incisure cardiaque.",{R:"Face médiale : empreinte cardiaque, sillon de la crosse aortique et de l'aorte descendante.",V:"A. pulmonaire gauche ; a. bronchiques.",N:"Plexus pulmonaire."},"La lingula est l'équivalent du lobe moyen droit."],
+// ---------- DIGESTIF ----------
+oesophage:["Œsophage","Oesophagus","Cou / thorax / abdomen","Conduit musculaire de 25 cm de C6 au cardia (T11), 3 portions : cervicale, thoracique, abdominale.",{R:"Rétrotrachéal ; rétrocardiaque (contre l'AG) ; traverse le diaphragme en T10 avec les n. vagues. 4 rétrécissements : cricoïdien, aortique, bronchique, diaphragmatique.",V:"A. thyroïdiennes inf., aortiques, gastrique gauche. Veines : anastomose porto-cave.",N:"Vague (plexus œsophagien), sympathique."},"Varices œsophagiennes en cas d'hypertension portale."],
+estomac:["Estomac","Gaster","Abdomen (loge sous-phrénique gauche)","Segment dilaté : cardia, fundus, corps, antre, pylore. Petite et grande courbures.",{R:"En arrière : bourse omentale, pancréas, rein et surrénale gauches, rate. Petit omentum sur la petite courbure, grand omentum sur la grande.",V:"Cercle de la petite courbure (gastriques gauche et droite), de la grande courbure (gastro-omentales droite et gauche), a. gastriques courtes.",N:"N. vagues (antérieur = gauche, postérieur = droit), plexus cœliaque."},"Ulcère de la face postérieure du bulbe → érosion de l'a. gastroduodénale."],
+foie:["Foie","Hepar","Abdomen (hypochondre droit)","Plus gros viscère ; lobes droit, gauche, carré et caudé. 8 segments de Couinaud.",{R:"Face diaphragmatique sous la coupole droite ; face viscérale : vésicule, VCI, hile (pédicule hépatique). Ligament falciforme, ligament rond, ligaments coronaires.",V:"Double afflux : a. hépatique propre (25 %) et v. porte (75 %) ; drainage par 3 v. hépatiques dans la VCI.",N:"Plexus hépatique (vague, sympathique). Capsule de Glisson : n. phrénique droit (douleur scapulaire)."},"Segment I (caudé) : drainage veineux direct dans la VCI."],
+vb:["Vésicule biliaire","Vesica biliaris","Abdomen","Réservoir piriforme sous la face viscérale du foie : fond, corps, col, conduit cystique.",{R:"Fond en regard de l'intersection du bord latéral du droit et du rebord costal (point de Murphy).",V:"A. cystique (branche de l'hépatique droite), dans le trigone de Calot (cystique, hépatique commun, bord du foie).",N:"Plexus cœliaque ; douleur projetée à l'épaule droite (phrénique)."},"Cystique + hépatique commun = cholédoque, qui s'abouche avec le Wirsung dans l'ampoule de Vater (D2)."],
+pancreas:["Pancréas","Pancreas","Rétropéritoine","Glande mixte : tête dans le cadre duodénal, processus unciné, col, corps, queue vers le hile splénique.",{R:"En arrière : VCI, v. rénale gauche, aorte ; v. porte derrière le col ; AMS et VMS passent entre col et processus unciné. Cholédoque derrière la tête.",V:"Arcades pancréatico-duodénales (TC + AMS), a. splénique (corps, queue).",F:"Exocrine (Wirsung, Santorini) et endocrine (îlots de Langerhans)."},"Cancer de la tête → ictère par compression du cholédoque."],
+rate:["Rate","Lien (splen)","Hypochondre gauche","Organe lymphoïde intrapéritonéal sous les côtes 9–11 gauches.",{R:"En rapport avec estomac, rein gauche, angle colique gauche, queue du pancréas. Ligaments gastro-splénique et spléno-rénal.",V:"A. splénique (du tronc cœliaque, trajet sinueux au bord sup. du pancréas) ; v. splénique vers la porte.",F:"Filtration du sang, immunité."},"Rupture de rate après traumatisme des côtes gauches basses."],
+duodenum:["Duodénum","Duodenum","Abdomen","Premier segment de l'intestin grêle (25 cm) en C autour de la tête du pancréas : D1 (bulbe), D2, D3, D4.",{R:"D2 : papille majeure (ampoule de Vater). D3 croisé en avant par les vaisseaux mésentériques sup. D4 → angle duodéno-jéjunal (muscle de Treitz).",V:"TC (gastroduodénale) et AMS (pancréatico-duodénale inf.).",F:"Digestion (bile, suc pancréatique)."},"Seul le bulbe (D1) est mobile ; le reste est rétropéritonéal fixé (fascia de Treitz)."],
+grele:["Jéjunum et iléon","Jejunum et ileum","Abdomen","Intestin grêle mésentérique (≈6 m), anses suspendues au mésentère dont la racine va de l'angle duodéno-jéjunal à la fosse iliaque droite.",{V:"Branches jéjunales et iléales de l'AMS formant des arcades (plus nombreuses dans l'iléon).",F:"Absorption ; iléon terminal : vitamine B12 et sels biliaires."},"Diverticule de Meckel : iléon, ≈60 cm de la valve iléo-cæcale."],
+colon:["Côlon","Intestinum crassum","Abdomen","Cæcum + appendice, côlon ascendant, angle droit, transverse, angle gauche, descendant, sigmoïde, puis rectum. Bandelettes, haustrations, appendices épiploïques.",{R:"Ascendant et descendant rétropéritonéaux (accolés par fascias de Toldt) ; transverse et sigmoïde mobiles (mésos).",V:"AMS jusqu'aux 2/3 du transverse, AMI ensuite ; arcade paracolique (de Drummond).",N:"Vague jusqu'à l'angle gauche (point de Cannon-Böhm), puis parasympathique sacré (S2–S4)."},"Appendice : base au confluent des 3 bandelettes ; point de McBurney."],
+rectum:["Rectum","Rectum","Pelvis","Segment terminal de 15 cm, de S3 au canal anal ; ampoule rectale.",{R:"Chez l'homme : vessie, vésicules séminales, prostate en avant ; chez la femme : utérus, vagin (cul-de-sac de Douglas).",V:"A. rectales sup. (AMI), moyennes (iliaques int.), inf. (pudendales int.).",N:"Plexus hypogastrique inférieur."},"Toucher rectal : palpation de la prostate et du cul-de-sac de Douglas."],
+// ---------- URINAIRE ----------
+rein:["Rein","Ren","Rétropéritoine","Organe en haricot de 12 cm, de T11 à L3 (droit plus bas), dans la loge rénale (fascia de Gerota).",{R:"Rein droit : foie, D2, angle colique droit. Rein gauche : rate, estomac, queue du pancréas, angle colique gauche. En arrière : diaphragme, carré des lombes, psoas, 12e côte.",V:"A. rénale (aorte, L1–L2) ; v. rénale dans la VCI (gauche plus longue, passe devant l'aorte).",F:"Filtration du plasma (néphrons), sécrétion de rénine, EPO."},"Rein gauche plus haut que le droit (le foie abaisse le droit)."],
+uretere:["Uretère","Ureter","Rétropéritoine / pelvis","Conduit de 25–30 cm du bassinet à la vessie.",{R:"Descend sur le psoas, croise les vaisseaux iliaques en avant, puis croisé par l'a. utérine (femme) ou le conduit déférent (homme). 3 rétrécissements : jonction pyélo-urétérale, croisement iliaque, méat urétéral.",V:"Branches rénales, gonadiques, iliaques, vésicales."},"Calculs bloqués aux 3 rétrécissements → colique néphrétique."],
+vessie:["Vessie","Vesica urinaria","Pelvis","Réservoir musculaire sous-péritonéal derrière la symphyse pubienne ; trigone vésical (2 méats urétéraux, col).",{R:"En avant : espace rétropubien (de Retzius). En arrière : rectum (homme) ou utérus/vagin (femme). Prostate sous le col chez l'homme.",V:"A. vésicales sup. et inf. (iliaques internes).",N:"Parasympathique S2–S4 (détrusor : miction), sympathique T10–L2 (continence)."},"Vessie pleine accessible par ponction sus-pubienne sans traverser le péritoine."],
+// ---------- SNC ----------
+cerveau:["Cerveau (hémisphères)","Cerebrum","Crâne","Deux hémisphères reliés par le corps calleux ; lobes frontal, pariétal, temporal, occipital, insula.",{R:"Sillon central (Rolando) : gyrus précentral moteur (aire 4) en avant, postcentral sensitif (3,1,2) en arrière. Sillon latéral (Sylvius).",V:"Cercle artériel (de Willis) : carotides internes (a. cérébrales ant. et moy.) et système vertébro-basilaire (a. cérébrales post.).",F:"Aire de Broca (frontale inf. gauche, expression) ; Wernicke (temporale sup., compréhension)."},"A. cérébrale moyenne : face latérale ; antérieure : face médiale (membre inférieur de l'homonculus)."],
+cervelet:["Cervelet","Cerebellum","Fosse crânienne post.","Vermis médian et deux hémisphères, sous la tente du cervelet.",{R:"Relié au tronc cérébral par les pédoncules cérébelleux sup., moyens, inf. ; toit du 4e ventricule.",V:"A. cérébelleuses sup., antéro-inf. et postéro-inf. (PICA).",F:"Équilibre (archéocervelet), tonus (paléo), coordination (néo)."},"Atteinte hémisphérique → syndrome cérébelleux homolatéral."],
+tronc:["Tronc cérébral","Truncus encephali","Fosse crânienne post.","Mésencéphale, pont, moelle allongée ; contient les noyaux des nerfs III à XII.",{R:"Mésencéphale : III, IV ; pont : V, VI, VII, VIII ; bulbe : IX, X, XI, XII. Le IV est le seul nerf à émerger de la face postérieure.",V:"Système vertébro-basilaire.",F:"Centres vitaux (respiration, cardio-vasculaire), voies ascendantes et descendantes."},"Décussation pyramidale à la jonction bulbo-médullaire."],
+moelle:["Moelle spinale","Medulla spinalis","Canal vertébral","Cordon de 45 cm du foramen magnum au cône médullaire (L1–L2) ; 31 paires de nerfs spinaux.",{R:"Renflements cervical (C5–T1, plexus brachial) et lombo-sacral (L2–S3). Substance grise en H : cornes ant. (motrices), post. (sensitives).",V:"A. spinale antérieure (1) et postérieures (2) ; a. radiculaire d'Adamkiewicz (T9–L2).",F:"Voies : cordon post. (tact épicritique, homolatéral), spinothalamique (douleur, croise au niveau), pyramidale (motrice, croisée au bulbe)."},"Syndrome de Brown-Séquard : hémisection → déficit moteur + proprioceptif homolatéral, thermo-algique controlatéral."],
+// ---------- NERFS ----------
+plexbrach:["Plexus brachial","Plexus brachialis","Cou / aisselle","Formé des racines C5–T1 : troncs (sup., moyen, inf.), divisions, faisceaux (latéral, médial, postérieur), branches terminales.",{R:"Passe entre les scalènes antérieur et moyen avec l'a. subclavière, puis sous la clavicule.",F:"Faisceau latéral : musculocutané + racine latérale du médian ; médial : ulnaire + racine médiale du médian ; postérieur : axillaire et radial."},"Paralysie d'Erb (C5–C6) : « main de serveur ». Klumpke (C8–T1) : griffe."],
+median:["Nerf médian","N. medianus","Membre sup.","Branche du plexus brachial (C6–T1), trajet axial du bras et de l'avant-bras, passe dans le canal carpien.",{N:"Moteur : loge antérieure de l'avant-bras (sauf FUC et ½ FPD), thénar latéral, lombricaux 1–2. Sensitif : face palmaire des 3,5 premiers doigts.",R:"Accompagne l'a. brachiale ; traverse le rond pronateur."},"Syndrome du canal carpien : paresthésies des 3 premiers doigts, amyotrophie thénarienne."],
+ulnaire:["Nerf ulnaire","N. ulnaris","Membre sup.","Branche du faisceau médial (C8–T1), passe derrière l'épicondyle médial (gouttière ulnaire) puis dans le canal de Guyon.",{N:"Moteur : FUC, ½ médiale du FPD, hypothénar, interosseux, lombricaux 3–4, adducteur du pouce. Sensitif : 5e doigt et ½ médiale du 4e."},"Atteinte → griffe ulnaire (4e–5e doigts), signe de Froment."],
+radial:["Nerf radial","N. radialis","Membre sup.","Branche du faisceau postérieur (C5–T1), contourne l'humérus dans le sillon radial puis se divise au coude.",{N:"Moteur : tous les extenseurs (triceps, brachio-radial, extenseurs du poignet et des doigts, supinateur). Sensitif : face dorsale latérale de la main."},"Atteinte (fracture de l'humérus, « paralysie des amoureux ») → main tombante."],
+femoral_n:["Nerf fémoral","N. femoralis","Membre inf.","Branche du plexus lombal (L2–L4), passe sous le ligament inguinal latéralement à l'artère.",{N:"Moteur : iliaque, quadriceps, sartorius, pectiné. Sensitif : face antérieure de la cuisse, n. saphène (face médiale de la jambe)."},"Déficit → impossibilité d'étendre le genou, abolition du réflexe rotulien."],
+sciatique:["Nerf ischiatique (sciatique)","N. ischiadicus","Membre inf.","Plus gros nerf du corps (L4–S3), sort par la grande incisure ischiatique sous le piriforme, descend à la face postérieure de la cuisse.",{N:"Ischio-jambiers ; se divise au sommet du creux poplité en n. tibial (loge postérieure de jambe, plante) et n. fibulaire commun (loges antérieure et latérale)."},"Sciatique L5 : face latérale jambe, dos du pied, gros orteil ; S1 : face postérieure, plante, bord latéral."],
+phrenique:["Nerf phrénique","N. phrenicus","Cou / thorax","Branche du plexus cervical (C3–C5), descend sur le scalène antérieur puis dans le médiastin en avant du hile pulmonaire.",{N:"Moteur du diaphragme ; sensitif : péricarde, plèvre médiastinale et diaphragmatique, péritoine sous-diaphragmatique."},"Passe en avant du hile ; le vague passe en arrière."],
+vague:["Nerf vague (X)","N. vagus","Cou / thorax / abdomen","Nerf crânien mixte sortant par le foramen jugulaire, principal nerf parasympathique.",{R:"Dans la gaine carotidienne ; en arrière du hile pulmonaire ; donne les récurrents (droit autour de la subclavière, gauche autour de la crosse aortique) ; traverse le diaphragme avec l'œsophage (T10).",N:"Larynx (récurrent, laryngé sup.), pharynx, cœur, poumons, tube digestif jusqu'à l'angle colique gauche."},"Lésion du récurrent (chirurgie thyroïdienne) → dysphonie."],
+// ---------- ENDOCRINE / LYMPHOÏDE ----------
+thyroide:["Glande thyroïde","Glandula thyroidea","Cou","Deux lobes reliés par l'isthme (anneaux trachéaux 2–4), dans la loge thyroïdienne.",{R:"Parathyroïdes à la face postérieure des lobes ; n. laryngé récurrent dans le sillon trachéo-œsophagien.",V:"A. thyroïdiennes sup. (carotide externe) et inf. (tronc thyro-cervical) ; veines sup., moy., inf.",F:"T3, T4 (cellules folliculaires), calcitonine (cellules C)."},"Mobile à la déglutition (attachée au larynx)."],
+surrenale:["Glande surrénale","Glandula suprarenalis","Rétropéritoine","Glande coiffant le pôle supérieur du rein : droite triangulaire, gauche semi-lunaire.",{R:"Droite derrière la VCI ; gauche derrière l'estomac et le pancréas.",V:"3 artères (sup., moy., inf.) ; une veine : droite → VCI, gauche → v. rénale gauche.",F:"Corticosurrénale (minéralo-, gluco-corticoïdes, androgènes) et médullosurrénale (catécholamines)."},"Zones du cortex : glomérulée, fasciculée, réticulée (« GFR » = sel, sucre, sexe)."],
+thymus:["Thymus","Thymus","Médiastin antérieur","Organe lymphoïde central, volumineux chez l'enfant, involué chez l'adulte.",{R:"Derrière le manubrium, devant les gros vaisseaux et le péricarde.",F:"Maturation des lymphocytes T."},"Thymome associé à la myasthénie."],
+peau:["Peau et silhouette","Cutis","Corps entier","Enveloppe transparente indiquant les contours de surface pour repérer les projections des organes.",{F:"Repères de surface : angle sternal, ligne médioclaviculaire, ombilic (L3–L4), EIAS, plan transpylorique (L1)."},"Plan transpylorique (mi-distance incisure jugulaire–symphyse) ≈ L1 : pylore, hile rénal, col du pancréas, origine de l'AMS."]
+};
+// ================= CONSTRUCTION 3D =================
+const V3=(x,y,z)=>new THREE.Vector3(x,y,z);
+const scene=new THREE.Scene();
+const meshes=[];const PARENT={ad:"coeur",vd:"coeur",ag:"coeur",vg:"coeur"};
+const SIDE=s=>s<0?"droit":"gauche";
+function mkMat(sys,col){const m=new THREE.MeshStandardMaterial({color:col??SYS[sys].c,roughness:sys==="os"?0.75:0.5,metalness:0.02,transparent:true,opacity:1,side:sys==="mus"&&false?THREE.DoubleSide:THREE.FrontSide});m.userData.base=m.color.getHex();return m}
+function put(geo,id,sys,side,o={}){const m=new THREE.Mesh(geo,mkMat(sys,o.col));if(o.p)m.position.copy(o.p);if(o.s)m.scale.copy(o.s);if(o.r)m.rotation.set(...o.r);if(o.q)m.quaternion.copy(o.q);if(o.ds)m.material.side=THREE.DoubleSide;
+ m.userData={id,sys,side:side||"",sub:o.sub||"",key:id+"|"+(side||"")+"|"+(o.sub||"")};scene.add(m);meshes.push(m);return m}
+const SPH=new THREE.SphereGeometry(1,28,18);
+function ell(id,sys,p,s,side,o={}){return put(SPH,id,sys,side,{...o,p:V3(...p),s:V3(...s)})}
+function tube(id,sys,pts,r,side,o={}){const c=new THREE.CatmullRomCurve3(pts.map(a=>V3(...a)));const g=new THREE.TubeGeometry(c,Math.max(16,pts.length*14),r,12,false);const m=put(g,id,sys,side,o);
+ if(o.caps!==false){[pts[0],pts[pts.length-1]].forEach(e=>put(SPH,id,sys,side,{...o,p:V3(...e),s:V3(r,r,r)}))}return m}
+function spindle(id,sys,a,b,rx,rz,side,o={}){const A=V3(...a),B=V3(...b),d=B.clone().sub(A),L=d.length();
+ const q=new THREE.Quaternion().setFromUnitVectors(V3(0,1,0),d.normalize());return put(SPH,id,sys,side,{...o,p:A.clone().add(B).multiplyScalar(.5),s:V3(rx,L/2,rz??rx),q})}
+const BOTH=f=>[-1,1].forEach(s=>f(s,SIDE(s)));
+// rachis : profondeur du corps vertébral selon la hauteur
+const SP=[[152,-3.5],[140,-5],[130,-8],[120,-8.5],[110,-6.5],[100,-3.5],[93,-4.5],[86,-8.5],[79,-8]];
+function spZ(y){for(let i=0;i<SP.length-1;i++){const[a,za]=SP[i],[b,zb]=SP[i+1];if(y<=a&&y>=b)return za+(zb-za)*(a-y)/(a-b)}return y>152?-3.5:-8}
+
+// ---------- SQUELETTE ----------
+ell("crane","os",[0,165,-1],[7.6,9.2,9.6]);ell("crane","os",[0,155.5,3.5],[5.8,5.5,4.8]);
+BOTH(s=>{ell("crane","os",[s*5.8,157,5],[1.6,1.1,1.6]);});
+tube("mandibule","os",[[-5.6,155,-1.5],[-5.2,149,1],[-3.4,146.3,5.5],[0,145.8,7],[3.4,146.3,5.5],[5.2,149,1],[5.6,155,-1.5]],1);
+for(let i=0;i<7;i++){const y=150-i*1.45;put(new THREE.CylinderGeometry(1.25,1.25,1.05,16),"c_cerv","os","",{p:V3(0,y,spZ(y)),sub:"C"+(i+1)});spindle("c_cerv","os",[0,y,spZ(y)-1.3],[0,y-.4,spZ(y)-(i==6?5:3.6)],.35,.35,"",{sub:"C"+(i+1)})}
+for(let i=0;i<12;i++){const y=139.5-i*2.5;put(new THREE.CylinderGeometry(1.7,1.75,2,16),"c_thor","os","",{p:V3(0,y,spZ(y)),sub:"T"+(i+1)});spindle("c_thor","os",[0,y,spZ(y)-1.8],[0,y-2,spZ(y)-5],.4,.4,"",{sub:"T"+(i+1)})}
+for(let i=0;i<5;i++){const y=108.5-i*3.3;put(new THREE.CylinderGeometry(2.3,2.35,2.6,18),"c_lomb","os","",{p:V3(0,y,spZ(y)),sub:"L"+(i+1)});spindle("c_lomb","os",[0,y,spZ(y)-2.2],[0,y-.3,spZ(y)-5.2],.6,.5,"",{sub:"L"+(i+1)});BOTH(s=>spindle("c_lomb","os",[0,y,spZ(y)-1.5],[s*4.5,y,spZ(y)-2],.4,.4,"",{sub:"L"+(i+1)}))}
+ell("sacrum","os",[0,87.5,-8.3],[4.4,5.8,1.6],"",{r:[-.45,0,0]});tube("sacrum","os",[[0,82,-9.8],[0,79.5,-8.6]],.6);
+const RW=[.5,.66,.78,.87,.94,1,1,1,.98,.95,.85,.72];
+for(let i=0;i<12;i++){const y=138.5-i*2.5,z=spZ(y),w=RW[i];BOTH(s=>{let pts=[[s*1.8,y,z-1],[s*6*w+s*2,y-1,z-2.5],[s*13*w,y-4,z+3],[s*13*w,y-7.5,z+9]];
+ if(i<7){const ys=139-i*2.6;pts.push([s*(8-i*.5)*w+s*1,ys-1.5,9]);pts.push([s*1.4,ys,8.3+i*.18])}else if(i<10){pts.push([s*(9-(i-7)*-.5),y-11,8]);pts.push([s*(6+(i-7)),y-11-(i-7),8.5-(i-7)*.5])}else{pts=[[s*1.8,y,z-1],[s*6,y-1,z-2],[s*10.5*w+s*1,y-4,z+2]]}
+ tube("cotes","os",pts,.5,SIDE(s),{sub:"côte "+(i+1)})})}
+tube("sternum","os",[[0,139.5,6.5],[0,136.5,7.3]],1.6,"",{sub:"manubrium"});tube("sternum","os",[[0,135.5,7.5],[0,124,9.3]],1.2,"",{sub:"corps"});tube("sternum","os",[[0,123,9.5],[0,120,9.4]],.5,"",{sub:"xiphoïde"});
+BOTH((s,S)=>{
+ tube("clavicule","os",[[s*1.8,140.5,6.6],[s*7,141.5,6],[s*12,142.5,1.5],[s*15,143.2,-1.2]],.75,S);
+ ell("scapula","os",[s*10.5,131,-10.2],[4.8,7,.55],S,{r:[0,s*-.45,s*.12]});tube("scapula","os",[[s*7,135.8,-12],[s*12,137,-10],[s*15.5,142.6,-3.5]],.55,S,{sub:"épine / acromion"});
+ ell("scapula","os",[s*15.7,139.5,-2.4],[.8,1.8,1.3],S,{sub:"cavité glénoïdale"});tube("scapula","os",[[s*13,140,-4],[s*13.5,140.5,1]],.5,S,{sub:"processus coracoïde"});
+ ell("humerus","os",[s*17.2,139.6,-1.8],[2.3,2.4,2.3],S,{sub:"tête"});tube("humerus","os",[[s*18,137.5,-1.5],[s*18.8,124,-1.8],[s*19.5,112,-2]],1.1,S);
+ tube("humerus","os",[[s*16.8,111,-2.2],[s*22.2,111.3,-1.6]],1.1,S,{sub:"palette humérale (épicondyles)"});
+ tube("radius","os",[[s*21.2,109.5,-1.2],[s*22.8,98,0],[s*24.2,86.5,1.2]],.75,S);ell("radius","os",[s*24.2,86,1.2],[1.4,1,1.2],S,{sub:"extrémité distale"});
+ tube("ulna","os",[[s*18.3,112,-3.8],[s*18.6,108,-2.8],[s*19.6,97,-1.4],[s*20.7,86.5,-.4]],.7,S);
+ ell("main_os","os",[s*22.4,83.8,.4],[2.8,1.4,1.1],S,{sub:"carpe"});
+ for(let f=0;f<5;f++){if(f===0){tube("main_os","os",[[s*24.6,83.5,1.2],[s*26,80.5,2.5],[s*26.4,77,3.4]],.45,S,{sub:"pouce"});continue}
+  const x=s*(24.2-f*1.25);tube("main_os","os",[[x,82.4,.6],[x+s*.1*(2-f),76.5,.9],[x+s*.15*(2-f),71.5-(f===2?1:0)+(f===4?2:0),.8]],.42,S,{sub:["","index","majeur","annulaire","auriculaire"][f]})}
+ ell("coxal","os",[s*9.3,100,-3.3],[5.8,6.4,1.6],S,{r:[.1,s*.55,s*-.25],sub:"ilium"});
+ tube("coxal","os",[[s*4.5,96.5,-6.5],[s*8.5,92,-2.5],[s*9.6,89.3,.6]],1.1,S);tube("coxal","os",[[s*9.4,89.6,.6],[s*6,88,3.8],[s*1,87,5.2]],.9,S,{sub:"pubis"});
+ tube("coxal","os",[[s*9.4,88.5,.3],[s*8.2,83.4,-2.5],[s*5.2,83.8,-.5],[s*2.4,85.8,3.5]],.95,S,{sub:"ischium"});tube("coxal","os",[[s*14.3,105,2.5],[s*14.5,103.5,4]],.6,S,{sub:"EIAS"});
+ ell("femur","os",[s*9.6,89.5,.6],[2.3,2.3,2.3],S,{sub:"tête"});tube("femur","os",[[s*10.5,89,.4],[s*13.8,90.5,-.5]],1.4,S,{sub:"col"});ell("femur","os",[s*14,90.6,-.8],[1.9,2.1,2],S,{sub:"grand trochanter"});
+ tube("femur","os",[[s*13.2,88.5,-.2],[s*11.3,70,.6],[s*9.4,52,0]],1.45,S);ell("femur","os",[s*9.2,49.4,-.3],[4.4,2.4,3.5],S,{sub:"condyles"});
+ ell("patella","os",[s*9.3,51,4.2],[2.1,2.6,1],S);
+ ell("tibia","os",[s*8.9,46.5,-.2],[4,1.3,3.2],S,{sub:"plateau"});tube("tibia","os",[[s*8.7,45,.6],[s*8.3,27,.4],[s*7.9,9,0]],1.35,S);ell("tibia","os",[s*7.1,7.4,0],[1.1,1.6,1.2],S,{sub:"malléole médiale"});
+ tube("fibula","os",[[s*11.6,45.2,-1.8],[s*11.5,25,-1.4],[s*11.1,7.6,-.9]],.55,S);
+ ell("pied_os","os",[s*9,4.2,-2.2],[2.2,2.3,3.8],S,{sub:"talus / calcanéus"});ell("pied_os","os",[s*9.3,2,5.5],[3.6,1.1,5.6],S,{sub:"métatarse / orteils"})});
+// ---------- MUSCLES ----------
+BOTH((s,S)=>{
+ ell("temporal","mus",[s*6.9,165.5,1],[1,4.2,4.6],S);spindle("masseter","mus",[s*6,153.5,3],[s*5.3,146.8,2.2],1.6,1.1,S);
+ spindle("scm","mus",[s*6.4,154,-2.5],[s*2.1,140.8,5.6],1.1,1.3,S);
+ spindle("trapeze","mus",[s*2.2,155,-6.8],[s*14,142.8,-4.2],1.6,1.2,S,{sub:"faisceau supérieur"});ell("trapeze","mus",[s*4.5,131,-12.4],[4.5,9.5,.9],S,{r:[0,0,s*-.25],sub:"faisceaux moyen et inférieur"});
+ ell("deltoide","mus",[s*18,138,-1.4],[2.7,5.4,4.4],S,{r:[0,0,s*.12]});
+ ell("gdpect","mus",[s*7.3,133,8.4],[6.8,4.6,1.4],S,{r:[0,s*.32,s*-.2]});
+ ell("gddorsal","mus",[s*9.5,116,-9.5],[5.8,9,1.3],S,{r:[0,s*-.45,s*.35]});
+ ell("dentele","mus",[s*13.2,125,1.5],[1,6.5,5],S);
+ spindle("biceps","mus",[s*18.6,134,1.8],[s*20.3,111.5,2.4],1.7,1.6,S);spindle("triceps","mus",[s*17.8,136,-4.5],[s*19.4,112,-4.4],2,1.9,S);
+ spindle("flechisseurs","mus",[s*20,110,1.4],[s*22.6,88,1.6],2.1,1.4,S);spindle("extenseurs","mus",[s*21.6,110,-2.2],[s*23.4,88,-.4],1.9,1.4,S);
+ spindle("droitabd","mus",[s*3.4,122,9.4],[s*2.2,88.5,6.4],2.7,.8,S);ell("oblique","mus",[s*12.3,106,3],[1.4,9,6.5],S,{r:[0,s*.35,0]});
+ ell("gdfessier","mus",[s*8.5,88,-9.5],[6,7,3.2],S,{r:[0,s*.3,s*.25]});ell("moyfessier","mus",[s*11.5,97.5,-5.5],[3.6,4,2.8],S,{r:[0,s*.4,0]});
+ spindle("quadriceps","mus",[s*11.8,86,2.6],[s*9.4,53,3.4],3.9,3.3,S);
+ tube("sartorius","mus",[[s*14.4,103.5,4],[s*12,88,5.5],[s*8,72,5],[s*6.2,54,.5],[s*7.2,44.5,2]],.75,S);
+ spindle("adducteurs","mus",[s*4.4,86,1.5],[s*7.6,57,-.5],2.9,2.6,S);spindle("ischio","mus",[s*7.6,84,-4.6],[s*9.2,50,-3.6],3,2.8,S);
+ spindle("triceps_sural","mus",[s*8.8,48,-3.2],[s*8.3,9,-3.8],2.7,2.3,S);spindle("tibant","mus",[s*10,44,2.4],[s*8,9,3.1],1.2,1,S)});
+const dome=new THREE.SphereGeometry(1,32,14,0,Math.PI*2,0,1.25);
+put(dome,"diaphragme","mus","",{p:V3(-5,110.5,-.5),s:V3(8.5,9.5,9),ds:true,sub:"coupole droite"});put(dome,"diaphragme","mus","",{p:V3(5,109.5,-.5),s:V3(8.5,8.6,9),ds:true,sub:"coupole gauche"});
+
+// ---------- CŒUR ----------
+ell("ad","coe",[-3.6,129,2.5],[2.7,3.2,2.7],"",{col:0x8f3b3e});ell("vd","coe",[-.2,125.2,5.4],[3.9,3.7,2.3],"",{col:0xb24a48,r:[0,0,-.35]});
+ell("ag","coe",[1.6,130,-1.6],[3,2.1,2.1],"",{col:0x9c4547});ell("vg","coe",[3.4,124.3,2.5],[3.4,4.3,3],"",{col:0xc9585a,r:[0,0,-.65]});
+
+// ---------- ARTÈRES ----------
+const az=y=>spZ(y)+2.5;
+tube("aorte_asc","art",[[1,127,3],[.4,132.5,3.2],[-.4,136,1.2],[1.4,136.8,-2],[2.4,134.5,az(134)]],1.25);
+tube("aorte_desc","art",[[2.4,134.5,az(134)],[2.6,125,az(125)],[1.8,111,az(111)]],1.15,"",{caps:false});
+tube("aorte_abd","art",[[1.8,111,az(111)],[1.2,102,az(102)],[.8,93.5,az(93.5)]],1.1,"",{caps:false});
+tube("tbc","art",[[-.3,136.4,1],[-2.6,141,2]],.75);
+tube("carotide","art",[[-2.6,141,2],[-3,149,1.3],[-3.4,156,-.3]],.55,"droit");tube("carotide","art",[[.7,136.8,0],[2.8,145,1.5],[3.4,156,-.3]],.55,"gauche");
+tube("subclaviere","art",[[-2.6,141,2],[-6,143.2,1],[-11,142.3,-.5],[-15,140.8,-1]],.55,"droit");tube("subclaviere","art",[[1.7,136.6,-1],[4,142,0],[8,143.2,.2],[15,140.8,-1]],.55,"gauche");
+BOTH((s,S)=>{
+ tube("brachiale","art",[[s*15,140.8,-1],[s*17,133,.4],[s*18.8,122,.8],[s*20.2,110.5,1.4]],.45,S);
+ tube("radiale","art",[[s*20.2,110.5,1.4],[s*22.6,97,1.8],[s*24.2,86,1.6]],.32,S,{sub:"a. radiale"});tube("radiale","art",[[s*20.2,110.5,1.4],[s*20.2,97,1],[s*21,86,.9]],.32,S,{sub:"a. ulnaire"});
+ tube("renale","art",[[1.2,105.5,az(105.5)],[s*3,105.4,az(105)-.5],[s*4.6,s<0?102:104,-4.4]],.38,S);
+ tube("iliaque","art",[[.8,93.5,az(93.5)],[s*4.6,88.5,-1.2],[s*8,84,1.8]],.65,S,{sub:"iliaque commune / externe"});tube("iliaque","art",[[s*4.6,88.5,-1.2],[s*5,84,-4.5]],.45,S,{sub:"iliaque interne"});
+ tube("femorale","art",[[s*8,84,1.8],[s*9,80,3.2],[s*8.4,62,1.6],[s*7.6,52,-2.8],[s*8.4,45,-2.6],[s*9,30,-1.5]],.5,S)});
+tube("tc","art",[[1.6,110.8,az(110.8)],[1.2,111,az(111)+2.5]],.5);
+tube("tc","art",[[1.2,111,az(111)+2.5],[-2.5,111.5,az(111)+3.4]],.35,"",{sub:"a. hépatique commune"});tube("tc","art",[[1.2,111,az(111)+2.5],[5,109,-3],[9.5,110,-4.6]],.35,"",{sub:"a. splénique"});tube("tc","art",[[1.2,111,az(111)+2.5],[3,113,0]],.3,"",{sub:"a. gastrique gauche"});
+tube("ams","art",[[1.4,108,az(108)],[1.2,104,az(104)+3.5],[.4,98,4],[-1,92,4]],.48);
+tube("ami","art",[[1.2,99,az(99)],[3.5,95,az(95)+1],[4.2,88,-1]],.36);
+tube("pulm","art",[[-.2,127.5,6.3],[.4,132,4.8],[1.4,133.6,2]],1.05,"",{sub:"tronc pulmonaire"});tube("pulm","art",[[1.4,133.6,2],[-2,133.6,.6],[-6,132.2,-.3]],.75,"",{sub:"a. pulmonaire droite"});tube("pulm","art",[[1.4,133.6,2],[4,133.6,.2],[6.4,132.5,-.6]],.75,"",{sub:"a. pulmonaire gauche"});
+
+// ---------- VEINES ----------
+tube("vcs","vei",[[-3.6,139,1.2],[-3.6,131,2.3]],1.05);tube("vcs","vei",[[-3.6,139,1.2],[-6.3,141.6,2.4]],.75,"",{sub:"tronc brachiocéphalique droit"});tube("vcs","vei",[[-3.6,139,1.2],[1,140.6,3.6],[6.3,141.6,2.4]],.75,"",{sub:"tronc brachiocéphalique gauche"});
+tube("vci","vei",[[-2.4,93.5,az(93.5)-.5],[-2.6,105,az(105)],[-2.4,113,-1.5],[-3,121,.8],[-3.6,126,2]],1.2);
+tube("porte","vei",[[-.8,102.5,1.5],[-3,107,2],[-5.8,111,1.5]],.7);
+BOTH((s,S)=>{
+ tube("jugulaire","vei",[[s*5,156,-1.5],[s*4.5,148,1],[s*6.3,141.6,2.4]],.75,S);
+ tube("vfem","vei",[[-2.4*(s<0?1:-1)*0+s*2.4,93.5,az(93.5)-.5],[s*7.2,84,1.5],[s*8,80,2.8],[s*7.6,62,1],[s*7,52,-3.2],[s*7.8,45,-3]],.55,S,{sub:"v. iliaque / fémorale / poplitée"});
+ tube("vfem","vei",[[s*7.8,80.2,4],[s*4.6,62,3.4],[s*5.2,46,-.4],[s*6.6,25,1.4],[s*6.4,8,1.8]],.3,S,{sub:"v. grande saphène"})});
+
+// ---------- RESPIRATOIRE ----------
+ell("larynx","resp",[0,150,4.2],[1.8,2.5,1.6],"",{col:0xd9c4b0});tube("trachee","resp",[[0,147.4,3.4],[0,140,1.8],[0,134.2,.2]],.9,"",{col:0xdcc0b0});
+tube("bronches","resp",[[0,134.2,.2],[-3,132.4,-.4],[-5,131.4,-.6]],.65,"droit",{col:0xdcc0b0});tube("bronches","resp",[[0,134.2,.2],[2.6,133,-.9],[5.2,131.6,-1]],.6,"gauche",{col:0xdcc0b0});
+ell("poumon_d","resp",[-7.6,133.6,-.8],[5.1,5.6,6.2],"",{sub:"lobe supérieur"});ell("poumon_d","resp",[-7.9,124.6,3.4],[4.8,2.9,3.6],"",{sub:"lobe moyen",col:0xdc9396});ell("poumon_d","resp",[-8.2,122.8,-3.2],[5.4,6.4,5],"",{sub:"lobe inférieur",col:0xd98a8e});
+ell("poumon_g","resp",[7.8,132,-.2],[4.9,6.8,6.2],"",{sub:"lobe supérieur (et lingula)"});ell("poumon_g","resp",[8.4,121.6,-2.6],[5.2,6.4,5.4],"",{sub:"lobe inférieur",col:0xd98a8e});
+
+// ---------- DIGESTIF ----------
+tube("oesophage","dig",[[0,147.5,1.4],[0,139,-1.6],[.4,128,-3.8],[1.2,118,-3.6],[2.8,113.5,-1],[4,112,1]],.75,"",{col:0xc98a6a});
+tube("estomac","dig",[[4,112,1],[7.2,113.4,1],[8.8,110,2],[7.4,104,4],[3.2,101.8,5],[-1,103.6,4.2],[-2.2,104.8,3]],2.5);
+tube("duodenum","dig",[[-2.2,104.8,3],[-4.3,104,1.2],[-5,100.2,0],[-3.6,97.6,0],[1,97.6,0],[2.6,100,-.5]],1.05,"",{col:0xdfae74});
+ell("foie","dig",[-4.6,114,1.8],[9.4,5,6.6],"",{col:0x8a3b2e,r:[0,0,.28]});ell("vb","dig",[-6,108.4,6],[1.2,2.2,1.2],"",{col:0x4f8a47,r:[.4,0,.2]});
+tube("pancreas","dig",[[-2.8,101,0],[1,102.8,-.8],[5,104.6,-1.6],[9.2,106.6,-3.4]],1.25,"",{col:0xe8c27e});
+ell("rate","dig",[11.2,111,-5],[2,4.2,3],"",{col:0x6d2a49,r:[0,-.5,-.3]});
+{const g=[];for(let r=0;r<6;r++){const y=99-r*2,dir=r%2?-1:1;for(let k=0;k<=8;k++){const t=k/8;g.push([dir*(-5.5+11*t),y+Math.sin(t*Math.PI*3)*.5,3.5+Math.cos(t*Math.PI*4+r)*1.8])}}
+ tube("grele","dig",[[2.6,100,-.5],...g,[-6.5,88.5,2.5]],1.05,"",{col:0xe2a98f})}
+tube("colon","dig",[[-7.8,87,3],[-8.6,93,2],[-9,100,1],[-8,105,2],[-3,99.8,6.4],[3,100.6,6.2],[8.8,107.4,0],[9.6,96,-1],[8.2,88,1],[3.4,86,3],[1,85,-3.4]],1.85,"",{col:0xc79868});
+tube("colon","dig",[[-7.4,86,3.2],[-6.4,83,3.8]],.45,"",{sub:"appendice",col:0xc79868});
+tube("rectum","dig",[[1,85,-3.4],[0,82,-6],[0,77.5,-4.8]],1.7,"",{col:0xb98a60});
+
+// ---------- URINAIRE / ENDOCRINE ----------
+BOTH((s,S)=>{const y=s<0?101.5:103.5;ell("rein","uro",[s*5.6,y,-5],[2.3,5.4,2.4],S,{r:[0,s*-.3,s*-.18]});ell("surrenale","endo",[s*4.9,y+6,-4.6],[1.4,1.1,.8],S,{col:0xd8b04a});
+ tube("uretere","uro",[[s*4.6,y-1,-3.3],[s*4,92,-2],[s*4.8,84,-.4],[s*2.2,80.5,3]],.3,S,{col:0xd7b28a});ell("thyroide","endo",[s*1.7,145.5,3.7],[.9,2.2,1],S)});
+ell("thyroide","endo",[0,144.8,4.4],[1.3,.5,.45],"",{sub:"isthme"});ell("vessie","uro",[0,81,4.6],[3.4,3,3],"",{col:0xd3a46e});ell("thymus","endo",[0,137.5,6.3],[2,3,.8],"",{col:0xa7c57d});
+
+// ---------- SNC ----------
+BOTH((s,S)=>ell("cerveau","snc",[s*3.3,166.5,-1.2],[3.3,6.6,8.4],S));
+ell("cervelet","snc",[0,157.2,-6.2],[4.8,2.6,3],"",{col:0xe3b5a4});tube("tronc","snc",[[0,161,-2.6],[0,155,-3.6],[0,151.5,-3.8]],1.25,"",{col:0xe8bfae});
+{const P=[];for(let y=151;y>=105;y-=3)P.push([0,y,spZ(y)-2.9]);tube("moelle","snc",P,.55,"",{col:0xf3d26a});
+ BOTH(s=>tube("moelle","snc",[[0,105,spZ(105)-2.9],[s*.6,95,spZ(95)-2.9],[s*1,86,-10.5]],.18,"",{sub:"queue de cheval",col:0xf3d26a}))}
+
+// ---------- NERFS ----------
+BOTH((s,S)=>{
+ tube("plexbrach","nerf",[[s*1.8,146,-4],[s*7,143,-.8],[s*14.6,139.4,-1]],.42,S);
+ tube("median","nerf",[[s*14.6,139.4,-1],[s*18.8,124,1.4],[s*20.8,110.5,2],[s*22.2,90,1.8],[s*22.6,82,1.4]],.24,S);
+ tube("ulnaire","nerf",[[s*14.6,139.4,-1],[s*17.2,124,-1.4],[s*17.4,111.2,-3.9],[s*20.4,90,.2],[s*21,82,.5]],.24,S);
+ tube("radial","nerf",[[s*14.6,139.4,-1],[s*18.2,128,-4.1],[s*21.2,118,-1.6],[s*21.8,110,0],[s*23.6,92,.4]],.26,S);
+ tube("femoral_n","nerf",[[s*3.6,101,-2.5],[s*7.5,92,1],[s*10.3,84,3.4],[s*11,78,3.6]],.32,S);
+ tube("sciatique","nerf",[[s*2.6,87,-7.6],[s*7,84.5,-7.4],[s*9.2,70,-5],[s*8.8,50,-3.9]],.48,S);
+ tube("sciatique","nerf",[[s*8.8,50,-3.9],[s*8.3,30,-2.8],[s*7.4,8,-1.5]],.3,S,{sub:"n. tibial"});tube("sciatique","nerf",[[s*8.8,50,-3.9],[s*11.8,45.4,-2.4],[s*11.4,38,1],[s*10.4,10,2.6]],.26,S,{sub:"n. fibulaire commun"});
+ tube("phrenique","nerf",[[s*3,147,0],[s*3.8,138,2.4],[s*(s<0?5.4:5.8),127,3.8],[s*5.2,118,1.8]],.18,S);
+ tube("vague","nerf",[[s*4.3,156,-1.5],[s*3.6,145,1.2],[s*2.4,133,-2.8],[s*1.1,119,-3.4],[s*1.4,113,-1]],.2,S)});
+
+// ---------- PEAU ----------
+{const o={col:0xd9b49c};ell("peau","peau",[0,163,0],[8.8,11.5,10.8],"",o);spindle("peau","peau",[0,155,-1],[0,140,0],5.6,5.6,"",o);ell("peau","peau",[0,117,0],[15.8,28,10.8],"",o);ell("peau","peau",[0,90,-.5],[15,9,10],"",o);
+ BOTH(s=>{spindle("peau","peau",[s*17.6,142,-1],[s*20,110,-.6],3.6,3.5,"",o);spindle("peau","peau",[s*20,111,-.5],[s*23.3,85,.5],2.9,2.4,"",o);ell("peau","peau",[s*23,78,1],[2.4,6,1.4],"",o);
+  spindle("peau","peau",[s*10.5,94,0],[s*9.3,48,0],7,6.8,"",o);spindle("peau","peau",[s*9.1,50,-.5],[s*8,6,-.5],4.6,4.6,"",o);ell("peau","peau",[s*9.2,2.6,3],[3.8,2.4,8],"",o)})}
+// ================= RENDU & CONTRÔLES =================
+const cv=document.getElementById("cv"),stage=cv.parentElement;
+const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));R.localClippingEnabled=true;
+const cam=new THREE.PerspectiveCamera(35,1,1,2000);
+scene.add(new THREE.HemisphereLight(0xdfefff,0x2a2320,.75));const dl=new THREE.DirectionalLight(0xffffff,.85);dl.position.set(60,120,140);scene.add(dl);const dl2=new THREE.DirectionalLight(0x9fc8ff,.35);dl2.position.set(-80,40,-120);scene.add(dl2);
+const planes=[new THREE.Plane(V3(0,-1,0),180),new THREE.Plane(V3(0,0,-1),20),new THREE.Plane(V3(-1,0,0),30)];R.clippingPlanes=planes;
+const C={t:V3(0,92,0),th:0,ph:1.5,r:310,goal:null};
+function camUpd(){const{t,th,ph,r}=C;cam.position.set(t.x+r*Math.sin(ph)*Math.sin(th),t.y+r*Math.cos(ph),t.z+r*Math.sin(ph)*Math.cos(th));cam.lookAt(t)}
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+const roStage=new ResizeObserver(resize);roStage.observe(stage);
+const VIEWS={ant:[0,1.5,310,[0,92,0]],post:[Math.PI,1.5,310,[0,92,0]],latd:[-Math.PI/2,1.5,310,[0,92,0]],latg:[Math.PI/2,1.5,310,[0,92,0]],sup:[0,.12,120,[0,140,0]],head:[.5,1.45,60,[0,158,0]],tho:[.35,1.45,85,[0,126,0]],abd:[.25,1.5,85,[0,100,0]]};
+function goView(k){const v=VIEWS[k];C.goal={th:v[0],ph:v[1],r:v[2],t:V3(...v[3])}}
+document.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>goView(b.dataset.v));
+let drag=null,moved=0;const ptrs=new Map();
+cv.addEventListener("contextmenu",e=>e.preventDefault());
+cv.addEventListener("pointerdown",e=>{cv.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});drag={x:e.clientX,y:e.clientY,pan:e.button===2||e.shiftKey};moved=0;C.goal=null;cv.style.cursor="grabbing"});
+cv.addEventListener("pointermove",e=>{if(!drag){hover(e);return}
+ if(ptrs.size===2){const p=[...ptrs.values()],d0=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});const q=[...ptrs.values()],d1=Math.hypot(q[0].x-q[1].x,q[0].y-q[1].y);if(d0>0)C.r=Math.min(600,Math.max(15,C.r*d0/d1));moved+=9;return}
+ ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.x=e.clientX;drag.y=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);
+ if(drag.pan){const k=C.r/stage.clientHeight*.75,right=V3(Math.cos(C.th),0,-Math.sin(C.th));C.t.addScaledVector(right,-dx*k);C.t.y+=dy*k}
+ else{C.th-=dx*.008;C.ph=Math.min(3.1,Math.max(.05,C.ph-dy*.008))}});
+const up=e=>{ptrs.delete(e.pointerId);if(drag&&moved<5&&ptrs.size===0)click(e);if(ptrs.size===0){drag=null;cv.style.cursor="grab"}};
+cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",up);
+cv.addEventListener("wheel",e=>{e.preventDefault();C.goal=null;C.r=Math.min(600,Math.max(15,C.r*Math.exp(e.deltaY*.0012)))},{passive:false});
+
+// ================= ÉTAT =================
+const hidden=new Set();let sel=null,mode="exp",xray=false,showLab=false;
+const sysOp={};const sysOn={};Object.keys(SYS).forEach(k=>{sysOp[k]=k==="mus"?.45:k==="peau"?.15:1;sysOn[k]=k!=="peau"});
+const gk=m=>m.userData.id+"|"+m.userData.side;
+const label=u=>D[u.id][0]+(u.side?" "+u.side:"")+(u.sub?" — "+u.sub:"");
+function vis(m){return sysOn[m.userData.sys]&&!hidden.has(gk(m))}
+function refresh(){meshes.forEach(m=>{const u=m.userData,o=sysOp[u.sys]*(xray&&u.sys!=="nerf"&&u.sys!=="art"&&u.sys!=="vei"?.25:1);m.visible=vis(m);
+ const isSel=sel&&gk(m)===sel;m.material.opacity=isSel?Math.max(o,.95):o;m.material.depthWrite=m.material.opacity>.9;m.renderOrder=m.material.opacity>.9?0:1;
+ m.material.emissive.setHex(isSel?0x1f8f9c:0x000000)});buildLists()}
+const ray=new THREE.Raycaster(),ndc=new THREE.Vector2();
+function pick(e){const b=cv.getBoundingClientRect();ndc.set((e.clientX-b.left)/b.width*2-1,-(e.clientY-b.top)/b.height*2+1);ray.setFromCamera(ndc,cam);
+ const hits=ray.intersectObjects(meshes.filter(m=>m.visible&&m.material.opacity>.05));for(const h of hits){const p=h.point;if(planes.every(pl=>pl.distanceToPoint(p)>=0))return h.object}return null}
+const tip=document.getElementById("tip");let lastHover=null;
+function hover(e){const m=pick(e);if(m!==lastHover){if(lastHover&&gk(lastHover)!==sel)lastHover.material.emissive.setHex(0);lastHover=m;if(m&&gk(m)!==sel)m.material.emissive.setHex(0x203a3f)}
+ if(m&&mode!=="find"){const b=stage.getBoundingClientRect();tip.style.display="block";tip.textContent=label(m.userData);tip.style.left=Math.min(e.clientX-b.left+14,b.width-tip.offsetWidth-6)+"px";tip.style.top=(e.clientY-b.top+14)+"px"}else tip.style.display="none"}
+cv.addEventListener("pointerleave",()=>{tip.style.display="none"});
+function click(e){const m=pick(e);if(mode==="find"){findAnswer(m);return}if(mode==="qcm")return;if(m)select(gk(m),m.userData.sub);else{sel=null;refresh();card(null)}}
+function center(key){const box=new THREE.Box3();meshes.forEach(m=>{if(gk(m)===key)box.expandByObject(m)});return box}
+function select(key,sub,fly){sel=key;refresh();const[id,side]=key.split("|");card(id,side,sub);if(fly){const b=center(key),c=b.getCenter(V3(0,0,0)),sz=b.getSize(V3(0,0,0)).length();C.goal={th:C.th,ph:C.ph,r:Math.max(40,sz*2.6),t:c}}}
+
+// ================= FICHE =================
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const FL={O:"Origine",T:"Terminaison",A:"Action",F:"Fonction / généralités",R:"Rapports",V:"Vascularisation",N:"Innervation"};
+const cardEl=document.getElementById("card"),emptyHTML=cardEl.innerHTML;
+function card(id,side,sub){if(!id){cardEl.innerHTML=emptyHTML;return}const d=D[id],sysK=meshes.find(m=>m.userData.id===id).userData.sys;
+ cardEl.innerHTML=`<h3>${esc(d[0])}${side?" <span style='color:var(--mut);font-size:16px'>("+esc(side)+")</span>":""}</h3><div class="lat">${esc(d[1])}</div>
+ <span class="tag">${esc(SYS[sysK].n)}</span><span class="tag">${esc(d[2])}</span>${sub?`<span class="tag">${esc(sub)}</span>`:""}
+ <p style="margin:12px 0 0">${esc(d[3])}</p><dl>${["O","T","A","F","R","V","N"].filter(k=>d[4][k]).map(k=>`<dt>${FL[k]}</dt><dd>${esc(d[4][k])}</dd>`).join("")}</dl>
+ <div class="pearl"><b>À retenir · </b>${esc(d[5])}</div>${PARENT[id]?`<div class="row" style="margin-top:12px"><button class="chip" id="par">Vue d'ensemble : ${esc(D[PARENT[id]][0])}</button></div>`:""}`;
+ const p=document.getElementById("par");if(p)p.onclick=()=>{const k=PARENT[id];cardEl.innerHTML="";card2(k)}}
+function card2(k){const d=D[k];cardEl.innerHTML=`<h3>${esc(d[0])}</h3><div class="lat">${esc(d[1])}</div><span class="tag">${esc(d[2])}</span><p>${esc(d[3])}</p><dl>${["F","R","V","N"].filter(x=>d[4][x]).map(x=>`<dt>${FL[x]}</dt><dd>${esc(d[4][x])}</dd>`).join("")}</dl><div class="pearl"><b>À retenir · </b>${esc(d[5])}</div>`}
+// ================= PANNEAU SYSTÈMES =================
+const groups={};meshes.forEach(m=>{const u=m.userData,k=gk(m);(groups[u.sys]=groups[u.sys]||{});if(!groups[u.sys][k])groups[u.sys][k]=label({id:u.id,side:u.side,sub:""})});
+const sysEl=document.getElementById("systems");
+sysEl.innerHTML=Object.keys(SYS).map(k=>`<div class="sys"><div><span class="sw" style="background:#${SYS[k].c.toString(16).padStart(6,"0")}"></span><label><input type="checkbox" data-s="${k}" ${sysOn[k]?"checked":""}>${SYS[k].n}</label><input type="range" min="5" max="100" value="${Math.round(sysOp[k]*100)}" data-o="${k}" aria-label="Opacité ${SYS[k].n}"></div><details><summary>${Object.keys(groups[k]||{}).length} structures</summary><div class="list" data-l="${k}"></div></details></div>`).join("");
+sysEl.querySelectorAll("[data-s]").forEach(i=>i.onchange=()=>{sysOn[i.dataset.s]=i.checked;refresh()});
+sysEl.querySelectorAll("[data-o]").forEach(i=>i.oninput=()=>{sysOp[i.dataset.o]=i.value/100;refresh()});
+function buildLists(){sysEl.querySelectorAll("[data-l]").forEach(l=>{const g=groups[l.dataset.l]||{};l.innerHTML=Object.keys(g).sort((a,b)=>g[a].localeCompare(g[b],"fr")).map(k=>`<button data-k="${esc(k)}" class="${hidden.has(k)?"off":""}" title="Clic : sélectionner · double-clic : masquer/afficher">${esc(g[k])}</button>`).join("")})}
+sysEl.addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(b){if(hidden.has(b.dataset.k))hidden.delete(b.dataset.k);select(b.dataset.k,"",true)}});
+sysEl.addEventListener("dblclick",e=>{const b=e.target.closest("[data-k]");if(b){const k=b.dataset.k;hidden.has(k)?hidden.delete(k):hidden.add(k);refresh()}});
+
+// ================= RECHERCHE =================
+const qI=document.getElementById("q"),resEl=document.getElementById("res");
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const allKeys=[...new Set(meshes.map(gk))];
+qI.oninput=()=>{const q=norm(qI.value.trim());if(!q){resEl.style.display="none";return}
+ const r=allKeys.filter(k=>{const[id]=k.split("|"),d=D[id];return norm(label({id,side:k.split("|")[1],sub:""})+" "+d[1]+" "+d[2]).includes(q)}).slice(0,14);
+ resEl.innerHTML=r.length?r.map(k=>{const[id,side]=k.split("|");return`<button data-k="${esc(k)}">${esc(label({id,side,sub:""}))}<small>${esc(D[id][2])}</small></button>`}).join(""):`<button disabled>Aucun résultat</button>`;resEl.style.display="block"};
+resEl.onclick=e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=b.dataset.k,[id]=k.split("|");const sk=meshes.find(m=>m.userData.id===id).userData.sys;
+ if(!sysOn[sk]){sysOn[sk]=true;sysEl.querySelector(`[data-s="${sk}"]`).checked=true}hidden.delete(k);setMode("exp");select(k,"",true);resEl.style.display="none";qI.value=""};
+qI.addEventListener("keydown",e=>{if(e.key==="Enter"){const b=resEl.querySelector("[data-k]");if(b)b.click()}if(e.key==="Escape"){resEl.style.display="none";qI.blur()}});
+document.addEventListener("click",e=>{if(!e.target.closest(".search"))resEl.style.display="none"});
+
+// ================= COUPES & AFFICHAGE =================
+const cutDefs=[["cutY","oY",0,v=>v>=180?"—":v+" cm"],["cutZ","oZ",1,v=>v>=20?"—":(v>=0?"ant. ":"post. ")+Math.abs(v)],["cutX","oX",2,v=>v>=30?"—":(v<0?"D ":"G ")+Math.abs(v)]];
+cutDefs.forEach(([i,o,p,f])=>{const el=document.getElementById(i),out=document.getElementById(o);el.oninput=()=>{planes[p].constant=+el.value+(+el.value>=+el.max?500:0);out.textContent=f(+el.value)}});
+const bLab=document.getElementById("bLab"),bX=document.getElementById("bXray");
+bLab.onclick=()=>{showLab=!showLab;bLab.classList.toggle("on",showLab);if(!showLab)labEl.innerHTML=""};
+bX.onclick=()=>{xray=!xray;bX.classList.toggle("on",xray);refresh()};
+function isolate(){if(!sel)return;allKeys.forEach(k=>{if(k!==sel)hidden.add(k)});hidden.delete(sel);refresh()}
+function hideSel(){if(!sel)return;hidden.add(sel);sel=null;card(null);refresh()}
+function showAll(){hidden.clear();refresh()}
+document.getElementById("bIso").onclick=isolate;document.getElementById("bHide").onclick=hideSel;document.getElementById("bShow").onclick=showAll;
+document.addEventListener("keydown",e=>{if(e.target.matches("input,select"))return;const k=e.key.toLowerCase();if(k==="h")hideSel();else if(k==="i")isolate();else if(k==="a")showAll();else if(k==="l")bLab.click();else if(e.key==="Escape"){sel=null;card(null);refresh()}});
+
+// ================= ÉTIQUETTES =================
+const labEl=document.getElementById("labels");const centers={};allKeys.forEach(k=>centers[k]=center(k).getCenter(V3(0,0,0)));
+function drawLabels(){if(!showLab)return;const w=stage.clientWidth,h=stage.clientHeight,used=[];let html="";
+ for(const k of allKeys){const m=meshes.find(x=>gk(x)===k);if(!m.visible||m.material.opacity<.2&&k!==sel)continue;const c=centers[k];if(!planes.every(p=>p.distanceToPoint(c)>=0))continue;
+  const p=c.clone().project(cam);if(p.z>1)continue;const x=(p.x+1)/2*w,y=(1-p.y)/2*h;if(x<0||y<0||x>w-60||y>h)continue;if(used.some(u=>Math.abs(u[0]-x)<90&&Math.abs(u[1]-y)<16))continue;used.push([x,y]);
+  const[id,side]=k.split("|");html+=`<div style="left:${x}px;top:${y}px">${esc(D[id][0].replace(/^(Muscle |Artère |Nerf |Veine )/,"")+(side?" "+side[0].toUpperCase():""))}</div>`}labEl.innerHTML=html}
+
+// ================= QUIZ =================
+const quizEl=document.getElementById("quiz"),qq=document.getElementById("qq"),opts=document.getElementById("opts"),fb=document.getElementById("fb"),qSys=document.getElementById("qSys");
+qSys.innerHTML=`<option value="">Tous les systèmes</option>`+Object.keys(SYS).filter(k=>k!=="peau").map(k=>`<option value="${k}">${SYS[k].n}</option>`).join("");
+let score={ok:0,tot:0},cur=null,answered=false;
+function setMode(m){mode=m;["mExp","mQcm","mFind"].forEach((b,i)=>document.getElementById(b).classList.toggle("on",["exp","qcm","find"][i]===m));
+ cardEl.style.display=m==="exp"?"":"none";quizEl.classList.toggle("show",m!=="exp");document.getElementById("qTitle").textContent=m==="qcm"?"Quiz QCM":"Pointe la structure sur le modèle";if(m!=="exp")nextQ();else{sel=null;refresh();card(null)}}
+document.getElementById("mExp").onclick=()=>setMode("exp");document.getElementById("mQcm").onclick=()=>setMode("qcm");document.getElementById("mFind").onclick=()=>setMode("find");
+document.getElementById("qNext").onclick=()=>nextQ();qSys.onchange=()=>nextQ();
+const shuf=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function pool(){const f=qSys.value;return allKeys.filter(k=>{const m=meshes.find(x=>gk(x)===k);return m.userData.sys!=="peau"&&(!f||m.userData.sys===f)&&(f||sysOn[m.userData.sys])})}
+function updScore(){document.getElementById("sOk").textContent=score.ok;document.getElementById("sTot").textContent=score.tot;document.getElementById("sPct").textContent=score.tot?Math.round(score.ok/score.tot*100)+" %":"–"}
+function nextQ(){answered=false;fb.textContent="";const P=pool();if(!P.length){qq.textContent="Active au moins un système.";opts.innerHTML="";return}
+ const k=P[Math.random()*P.length|0],[id,side]=k.split("|");hidden.delete(k);const sk=meshes.find(m=>m.userData.id===id).userData.sys;sysOn[sk]=true;sysEl.querySelector(`[data-s="${sk}"]`).checked=true;
+ if(mode==="find"){cur={k,id};sel=null;refresh();qq.textContent="Clique sur : "+label({id,side,sub:""});opts.innerHTML="";return}
+ const ids=[...new Set(P.map(x=>x.split("|")[0]))];const facts=["N","V","T","A","O"].filter(f=>D[id][4][f]);
+ if(Math.random()<.45&&facts.length){const f=facts[Math.random()*facts.length|0];const others=shuf(Object.keys(D).filter(x=>x!==id&&D[x][4][f]&&D[x][4][f]!==D[id][4][f])).slice(0,3);
+  cur={k,id,good:D[id][4][f],ch:shuf([D[id][4][f],...others.map(x=>D[x][4][f])]),txt:FL[f]};select(k,"",true);qq.textContent=`${FL[f]} de : ${label({id,side,sub:""})} ?`}
+ else{const pool2=ids.filter(x=>x!==id);const sameSys=pool2.filter(x=>meshes.find(m=>m.userData.id===x).userData.sys===sk);const pickFrom=shuf(sameSys.length>=3?sameSys:pool2).slice(0,3);
+  cur={k,id,good:D[id][0],ch:shuf([D[id][0],...pickFrom.map(x=>D[x][0])])};select(k,"",true);cardEl.innerHTML="";qq.textContent="Quelle est la structure surlignée en cyan ?"}
+ opts.innerHTML=cur.ch.map((c,i)=>`<button data-i="${i}">${esc(c)}</button>`).join("")}
+opts.onclick=e=>{const b=e.target.closest("button");if(!b||answered)return;answered=true;const ok=cur.ch[b.dataset.i]===cur.good;score.tot++;if(ok)score.ok++;updScore();
+ opts.querySelectorAll("button").forEach((x,i)=>{if(cur.ch[i]===cur.good)x.classList.add("ok");else if(x===b)x.classList.add("ko")});
+ fb.textContent=ok?"Exact.":"Non : "+(cur.txt?"la bonne réponse est surlignée.":"c'est "+D[cur.id][0]+".");fb.style.color=ok?"var(--good)":"var(--bad)"};
+function findAnswer(m){if(!cur||answered)return;if(!m){fb.textContent="Clique sur une structure.";return}answered=true;const ok=m.userData.id===cur.id&&(gk(m)===cur.k||!cur.k.split("|")[1]);
+ score.tot++;if(ok)score.ok++;updScore();select(cur.k,"",!ok);fb.style.color=ok?"var(--good)":"var(--bad)";fb.textContent=ok?"Bien vu !":"Raté : tu as cliqué sur "+label(m.userData)+". La bonne structure est maintenant surlignée.";setTimeout(()=>{if(mode==="find"&&answered)nextQ()},ok?1100:2600)}
+
+// ================= BOUCLE =================
+refresh();resize();
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+(function loop(){requestAnimationFrame(loop);if(C.goal){const g=C.goal,a=rm?1:.12;let d=g.th-C.th;d=Math.atan2(Math.sin(d),Math.cos(d));C.th+=d*a;C.ph+=(g.ph-C.ph)*a;C.r+=(g.r-C.r)*a;C.t.lerp(g.t,a);if(Math.abs(d)+Math.abs(g.r-C.r)<.01)C.goal=null}
+ camUpd();R.render(scene,cam);drawLabels()})();
+}
+</script></body></html>

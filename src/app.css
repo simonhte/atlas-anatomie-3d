@@ -1,0 +1,55 @@
+/* Thème : salle de dissection sombre — ardoise, ivoire os, accent cyan scialytique */
+:root {
+  color-scheme: dark;
+  --bg: #0e1418;
+  --pan: #151d23;
+  --pan2: #1c262e;
+  --line: #2a3640;
+  --ink: #e6ecef;
+  --mut: #93a3ad;
+  --acc: #4fd1e0;
+  --acc-ink: #04272b;
+  --good: #5ad18a;
+  --warn: #e8b45a;
+  --bad: #ef6b6b;
+  --r: 8px;
+  --serif: 'IBM Plex Serif', Georgia, serif;
+  --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; min-width: 0; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 var(--sans);
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+#app { height: 100%; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+
+.btn, .chip {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  background: var(--pan2);
+  white-space: nowrap;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.chip { height: 32px; padding: 0 10px; font-size: 13.5px; border-radius: 7px; }
+.btn:hover, .chip:hover { border-color: #3b4b57; }
+.btn.on, .chip.on { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); font-weight: 600; }
+.btn:disabled, .chip:disabled { opacity: 0.4; cursor: default; }
+.icone { width: 36px; padding: 0; justify-content: center; }
+
+h2.titre-section { font-size: 12px; color: var(--mut); margin: 18px 0 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+h2.titre-section:first-child { margin-top: 0; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

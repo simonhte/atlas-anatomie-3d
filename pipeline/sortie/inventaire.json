@@ -1,0 +1,7020 @@
+[
+ {
+  "fj": "FJ3152",
+  "fma": "FMA16586",
+  "en": "Right hip bone",
+  "systeme": "os",
+  "centre": [
+   -73.8,
+   -70.1,
+   855
+  ],
+  "min": [
+   -144.872,
+   -139.019,
+   752.153
+  ],
+  "max": [
+   -2.7903,
+   -1.1188,
+   957.869
+  ],
+  "cle": "coxal",
+  "fr": "Os coxal",
+  "la": "Os coxae",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Ceinture pelvienne",
+  "fiche": "coxal",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3288",
+  "fma": "FMA16587",
+  "en": "Left hip bone",
+  "systeme": "os",
+  "centre": [
+   73.8,
+   -70.2,
+   855
+  ],
+  "min": [
+   2.7503,
+   -139.095,
+   751.951
+  ],
+  "max": [
+   144.754,
+   -1.3149,
+   958.09
+  ],
+  "cle": "coxal",
+  "fr": "Os coxal",
+  "la": "Os coxae",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Ceinture pelvienne",
+  "fiche": "coxal",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3393",
+  "fma": "FMA16202",
+  "en": "Sacrum",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -37.1,
+   855
+  ],
+  "min": [
+   -59.5912,
+   -81.3964,
+   782.837
+  ],
+  "max": [
+   58.2029,
+   7.2538,
+   927.2
+  ],
+  "cle": "sacrum",
+  "fr": "Sacrum",
+  "la": "Os sacrum",
+  "genre": "m",
+  "region": "bassin",
+  "groupe": "Sacrum et coccyx",
+  "fiche": "sacrum",
+  "cote": null
+ },
+ {
+  "fj": "FJ3201",
+  "fma": "FMA52749",
+  "en": "Hyoid bone",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -111.7,
+   1431.6
+  ],
+  "min": [
+   -19.5242,
+   -129,
+   1422.37
+  ],
+  "max": [
+   18.2825,
+   -94.4187,
+   1440.86
+  ],
+  "cle": "hyoide",
+  "fr": "Os hyoïde",
+  "la": "Os hyoideum",
+  "genre": "m",
+  "region": "cou",
+  "groupe": "Os hyoïde",
+  "fiche": "hyoide",
+  "cote": null
+ },
+ {
+  "fj": "FJ3259",
+  "fma": "FMA24475",
+  "en": "Left femur",
+  "systeme": "os",
+  "centre": [
+   91.1,
+   -80.9,
+   601.1
+  ],
+  "min": [
+   31.9662,
+   -112.276,
+   368.056
+  ],
+  "max": [
+   150.237,
+   -49.4822,
+   834.239
+  ],
+  "cle": "femur",
+  "fr": "Fémur",
+  "la": "Femur",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Cuisse",
+  "fiche": "femur",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3365",
+  "fma": "FMA24474",
+  "en": "Right femur",
+  "systeme": "os",
+  "centre": [
+   -91,
+   -80.9,
+   601.2
+  ],
+  "min": [
+   -150.134,
+   -112.192,
+   368.15
+  ],
+  "max": [
+   -31.8943,
+   -49.5302,
+   834.252
+  ],
+  "cle": "femur",
+  "fr": "Fémur",
+  "la": "Femur",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Cuisse",
+  "fiche": "femur",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3275",
+  "fma": "FMA24487",
+  "en": "Left patella",
+  "systeme": "os",
+  "centre": [
+   81.4,
+   -111.8,
+   381.1
+  ],
+  "min": [
+   60.5925,
+   -122.751,
+   361.497
+  ],
+  "max": [
+   102.224,
+   -100.901,
+   400.763
+  ],
+  "cle": "patella",
+  "fr": "Patella",
+  "la": "Patella",
+  "genre": "f",
+  "region": "membre-inf",
+  "groupe": "Genou",
+  "fiche": "patella",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3381",
+  "fma": "FMA24486",
+  "en": "Right patella",
+  "systeme": "os",
+  "centre": [
+   -81.5,
+   -111.9,
+   381.1
+  ],
+  "min": [
+   -102.288,
+   -122.727,
+   361.486
+  ],
+  "max": [
+   -60.6208,
+   -100.992,
+   400.796
+  ],
+  "cle": "patella",
+  "fr": "Patella",
+  "la": "Patella",
+  "genre": "f",
+  "region": "membre-inf",
+  "groupe": "Genou",
+  "fiche": "patella",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3260",
+  "fma": "FMA24481",
+  "en": "Left fibula",
+  "systeme": "os",
+  "centre": [
+   102.3,
+   -63.3,
+   167
+  ],
+  "min": [
+   84.529,
+   -78.119,
+   -25.1906
+  ],
+  "max": [
+   120.108,
+   -48.534,
+   359.131
+  ],
+  "cle": "fibula",
+  "fr": "Fibula",
+  "la": "Fibula",
+  "genre": "f",
+  "region": "membre-inf",
+  "groupe": "Jambe",
+  "fiche": "fibula",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3366",
+  "fma": "FMA24480",
+  "en": "Right fibula",
+  "systeme": "os",
+  "centre": [
+   -102.3,
+   -63.3,
+   166.9
+  ],
+  "min": [
+   -120.165,
+   -78.1688,
+   -25.2799
+  ],
+  "max": [
+   -84.3445,
+   -48.4874,
+   359.15
+  ],
+  "cle": "fibula",
+  "fr": "Fibula",
+  "la": "Fibula",
+  "genre": "f",
+  "region": "membre-inf",
+  "groupe": "Jambe",
+  "fiche": "fibula",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3282",
+  "fma": "FMA24478",
+  "en": "Left tibia",
+  "systeme": "os",
+  "centre": [
+   72.2,
+   -83.2,
+   183.9
+  ],
+  "min": [
+   35.0342,
+   -114.515,
+   -6.0953
+  ],
+  "max": [
+   109.455,
+   -51.9821,
+   373.862
+  ],
+  "cle": "tibia",
+  "fr": "Tibia",
+  "la": "Tibia",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Jambe",
+  "fiche": "tibia",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3387",
+  "fma": "FMA24477",
+  "en": "Right tibia",
+  "systeme": "os",
+  "centre": [
+   -72.3,
+   -83.5,
+   183.9
+  ],
+  "min": [
+   -109.353,
+   -114.835,
+   -6.0372
+  ],
+  "max": [
+   -35.216,
+   -52.0729,
+   373.92
+  ],
+  "cle": "tibia",
+  "fr": "Tibia",
+  "la": "Tibia",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Jambe",
+  "fiche": "tibia",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3241",
+  "fma": "FMA24508",
+  "en": "Left first metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   89.6,
+   -161.1,
+   -43.8
+  ],
+  "min": [
+   74.837,
+   -192.241,
+   -65.3757
+  ],
+  "max": [
+   104.378,
+   -129.971,
+   -22.1406
+  ],
+  "cle": "metatarsien-1",
+  "fr": "1er métatarsien",
+  "la": "Os metatarsi I",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3351",
+  "fma": "FMA24507",
+  "en": "Right first metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   -89.6,
+   -161.1,
+   -43.7
+  ],
+  "min": [
+   -104.365,
+   -192.182,
+   -65.3292
+  ],
+  "max": [
+   -74.8137,
+   -129.944,
+   -22.1202
+  ],
+  "cle": "metatarsien-1",
+  "fr": "1er métatarsien",
+  "la": "Os metatarsi I",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3244",
+  "fma": "FMA24510",
+  "en": "Left second metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   106,
+   -154.9,
+   -42.2
+  ],
+  "min": [
+   90.5894,
+   -187.371,
+   -66.1637
+  ],
+  "max": [
+   121.348,
+   -122.489,
+   -18.3069
+  ],
+  "cle": "metatarsien-2",
+  "fr": "2e métatarsien",
+  "la": "Os metatarsi II",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3353",
+  "fma": "FMA24509",
+  "en": "Right second metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   -106,
+   -154.9,
+   -42.3
+  ],
+  "min": [
+   -121.273,
+   -187.406,
+   -66.3178
+  ],
+  "max": [
+   -90.6566,
+   -122.448,
+   -18.3247
+  ],
+  "cle": "metatarsien-2",
+  "fr": "2e métatarsien",
+  "la": "Os metatarsi II",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3247",
+  "fma": "FMA24512",
+  "en": "Left third metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   116,
+   -149.5,
+   -45.1
+  ],
+  "min": [
+   98.3199,
+   -180.795,
+   -66.5048
+  ],
+  "max": [
+   133.61,
+   -118.141,
+   -23.6681
+  ],
+  "cle": "metatarsien-3",
+  "fr": "3e métatarsien",
+  "la": "Os metatarsi III",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3355",
+  "fma": "FMA24511",
+  "en": "Right third metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   -116,
+   -149.6,
+   -45
+  ],
+  "min": [
+   -133.596,
+   -180.857,
+   -66.3774
+  ],
+  "max": [
+   -98.3222,
+   -118.361,
+   -23.6725
+  ],
+  "cle": "metatarsien-3",
+  "fr": "3e métatarsien",
+  "la": "Os metatarsi III",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3250",
+  "fma": "FMA24514",
+  "en": "Left fourth metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   122.2,
+   -138.2,
+   -49.7
+  ],
+  "min": [
+   101.773,
+   -169.425,
+   -67.3905
+  ],
+  "max": [
+   142.638,
+   -106.966,
+   -32.0211
+  ],
+  "cle": "metatarsien-4",
+  "fr": "4e métatarsien",
+  "la": "Os metatarsi IV",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3357",
+  "fma": "FMA24513",
+  "en": "Right fourth metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   -122.3,
+   -138.3,
+   -49.7
+  ],
+  "min": [
+   -142.67,
+   -169.684,
+   -67.3439
+  ],
+  "max": [
+   -101.867,
+   -106.976,
+   -31.9585
+  ],
+  "cle": "metatarsien-4",
+  "fr": "4e métatarsien",
+  "la": "Os metatarsi IV",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3253",
+  "fma": "FMA24516",
+  "en": "Left fifth metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   129.4,
+   -122.2,
+   -54.8
+  ],
+  "min": [
+   106.437,
+   -155.086,
+   -69.814
+  ],
+  "max": [
+   152.375,
+   -89.2924,
+   -39.7727
+  ],
+  "cle": "metatarsien-5",
+  "fr": "5e métatarsien",
+  "la": "Os metatarsi V",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3359",
+  "fma": "FMA24515",
+  "en": "Right fifth metatarsal bone",
+  "systeme": "os",
+  "centre": [
+   -129.4,
+   -122.2,
+   -54.8
+  ],
+  "min": [
+   -152.331,
+   -155.078,
+   -69.8196
+  ],
+  "max": [
+   -106.458,
+   -89.3821,
+   -39.8794
+  ],
+  "cle": "metatarsien-5",
+  "fr": "5e métatarsien",
+  "la": "Os metatarsi V",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3182",
+  "fma": "FMA32651",
+  "en": "Distal phalanx of left big toe",
+  "systeme": "os",
+  "centre": [
+   113.8,
+   -223.3,
+   -64.5
+  ],
+  "min": [
+   102.504,
+   -235.919,
+   -70.0065
+  ],
+  "max": [
+   125.056,
+   -210.725,
+   -59.0411
+  ],
+  "cle": "phalange-distal-big-toe",
+  "fr": "Phalange distale de l'hallux",
+  "la": "Phalanx distalis hallucis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3192",
+  "fma": "FMA32650",
+  "en": "Distal phalanx of right big toe",
+  "systeme": "os",
+  "centre": [
+   -113.8,
+   -223.4,
+   -64.5
+  ],
+  "min": [
+   -125.119,
+   -236.044,
+   -69.8979
+  ],
+  "max": [
+   -102.398,
+   -210.782,
+   -59.0054
+  ],
+  "cle": "phalange-distal-big-toe",
+  "fr": "Phalange distale de l'hallux",
+  "la": "Phalanx distalis hallucis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3179",
+  "fma": "FMA32653",
+  "en": "Distal phalanx of left second toe",
+  "systeme": "os",
+  "centre": [
+   137.8,
+   -227.4,
+   -66.6
+  ],
+  "min": [
+   132.153,
+   -234.017,
+   -70.2268
+  ],
+  "max": [
+   143.397,
+   -220.864,
+   -63.0226
+  ],
+  "cle": "phalange-distal-second-toe",
+  "fr": "Phalange distale du 2e orteil",
+  "la": "Phalanx distalis digiti II pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3189",
+  "fma": "FMA32652",
+  "en": "Distal phalanx of right second toe",
+  "systeme": "os",
+  "centre": [
+   -137.8,
+   -227.6,
+   -66.7
+  ],
+  "min": [
+   -143.346,
+   -234.096,
+   -70.2885
+  ],
+  "max": [
+   -132.348,
+   -221.012,
+   -63.0534
+  ],
+  "cle": "phalange-distal-second-toe",
+  "fr": "Phalange distale du 2e orteil",
+  "la": "Phalanx distalis digiti II pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3180",
+  "fma": "FMA32655",
+  "en": "Distal phalanx of left third toe",
+  "systeme": "os",
+  "centre": [
+   150.3,
+   -218,
+   -67.3
+  ],
+  "min": [
+   145.842,
+   -223.651,
+   -70.2613
+  ],
+  "max": [
+   154.841,
+   -212.314,
+   -64.3681
+  ],
+  "cle": "phalange-distal-third-toe",
+  "fr": "Phalange distale du 3e orteil",
+  "la": "Phalanx distalis digiti III pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3190",
+  "fma": "FMA32654",
+  "en": "Distal phalanx of right third toe",
+  "systeme": "os",
+  "centre": [
+   -150.4,
+   -218,
+   -67.3
+  ],
+  "min": [
+   -154.825,
+   -223.666,
+   -70.1976
+  ],
+  "max": [
+   -145.891,
+   -212.259,
+   -64.3866
+  ],
+  "cle": "phalange-distal-third-toe",
+  "fr": "Phalange distale du 3e orteil",
+  "la": "Phalanx distalis digiti III pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3181",
+  "fma": "FMA32657",
+  "en": "Distal phalanx of left fourth toe",
+  "systeme": "os",
+  "centre": [
+   159.6,
+   -201,
+   -66.9
+  ],
+  "min": [
+   155.212,
+   -206.553,
+   -70.3093
+  ],
+  "max": [
+   164.075,
+   -195.431,
+   -63.4546
+  ],
+  "cle": "phalange-distal-fourth-toe",
+  "fr": "Phalange distale du 4e orteil",
+  "la": "Phalanx distalis digiti IV pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3191",
+  "fma": "FMA32656",
+  "en": "Distal phalanx of right fourth toe",
+  "systeme": "os",
+  "centre": [
+   -159.7,
+   -201,
+   -66.9
+  ],
+  "min": [
+   -164.127,
+   -206.535,
+   -70.3923
+  ],
+  "max": [
+   -155.335,
+   -195.368,
+   -63.396
+  ],
+  "cle": "phalange-distal-fourth-toe",
+  "fr": "Phalange distale du 4e orteil",
+  "la": "Phalanx distalis digiti IV pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3185",
+  "fma": "FMA32659",
+  "en": "Distal phalanx of left little toe",
+  "systeme": "os",
+  "centre": [
+   165.3,
+   -181.4,
+   -67.8
+  ],
+  "min": [
+   161.261,
+   -186.545,
+   -70.4799
+  ],
+  "max": [
+   169.358,
+   -176.16,
+   -65.129
+  ],
+  "cle": "phalange-distal-little-toe",
+  "fr": "Phalange distale du 5e orteil",
+  "la": "Phalanx distalis digiti minimi pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3195",
+  "fma": "FMA32658",
+  "en": "Distal phalanx of right little toe",
+  "systeme": "os",
+  "centre": [
+   -165.2,
+   -181.4,
+   -67.7
+  ],
+  "min": [
+   -169.327,
+   -186.579,
+   -70.3538
+  ],
+  "max": [
+   -161.169,
+   -176.2,
+   -65.1419
+  ],
+  "cle": "phalange-distal-little-toe",
+  "fr": "Phalange distale du 5e orteil",
+  "la": "Phalanx distalis digiti minimi pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3293",
+  "fma": "FMA32643",
+  "en": "Middle phalanx of left second toe",
+  "systeme": "os",
+  "centre": [
+   132.2,
+   -216.1,
+   -63.6
+  ],
+  "min": [
+   125.127,
+   -224.629,
+   -67.9536
+  ],
+  "max": [
+   139.212,
+   -207.529,
+   -59.3413
+  ],
+  "cle": "phalange-middle-second-toe",
+  "fr": "Phalange moyenne du 2e orteil",
+  "la": "Phalanx media digiti II pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3300",
+  "fma": "FMA32642",
+  "en": "Middle phalanx of right second toe",
+  "systeme": "os",
+  "centre": [
+   -132.3,
+   -216.2,
+   -63.7
+  ],
+  "min": [
+   -139.355,
+   -224.688,
+   -68.0103
+  ],
+  "max": [
+   -125.237,
+   -207.648,
+   -59.4039
+  ],
+  "cle": "phalange-middle-second-toe",
+  "fr": "Phalange moyenne du 2e orteil",
+  "la": "Phalanx media digiti II pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3294",
+  "fma": "FMA32645",
+  "en": "Middle phalanx of left third toe",
+  "systeme": "os",
+  "centre": [
+   145.4,
+   -207.4,
+   -65
+  ],
+  "min": [
+   138.915,
+   -215.852,
+   -68.9836
+  ],
+  "max": [
+   151.811,
+   -198.911,
+   -61.1089
+  ],
+  "cle": "phalange-middle-third-toe",
+  "fr": "Phalange moyenne du 3e orteil",
+  "la": "Phalanx media digiti III pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3301",
+  "fma": "FMA32644",
+  "en": "Middle phalanx of right third toe",
+  "systeme": "os",
+  "centre": [
+   -145.3,
+   -207.3,
+   -64.9
+  ],
+  "min": [
+   -151.726,
+   -215.745,
+   -68.8311
+  ],
+  "max": [
+   -138.889,
+   -198.867,
+   -60.9144
+  ],
+  "cle": "phalange-middle-third-toe",
+  "fr": "Phalange moyenne du 3e orteil",
+  "la": "Phalanx media digiti III pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3295",
+  "fma": "FMA32647",
+  "en": "Middle phalanx of left fourth toe",
+  "systeme": "os",
+  "centre": [
+   155.2,
+   -192.1,
+   -65.9
+  ],
+  "min": [
+   149.044,
+   -198.779,
+   -69.7919
+  ],
+  "max": [
+   161.39,
+   -185.433,
+   -61.9695
+  ],
+  "cle": "phalange-middle-fourth-toe",
+  "fr": "Phalange moyenne du 4e orteil",
+  "la": "Phalanx media digiti IV pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3302",
+  "fma": "FMA32646",
+  "en": "Middle phalanx of right fourth toe",
+  "systeme": "os",
+  "centre": [
+   -155.2,
+   -192.1,
+   -65.9
+  ],
+  "min": [
+   -161.342,
+   -198.806,
+   -69.8888
+  ],
+  "max": [
+   -149.071,
+   -185.435,
+   -61.9355
+  ],
+  "cle": "phalange-middle-fourth-toe",
+  "fr": "Phalange moyenne du 4e orteil",
+  "la": "Phalanx media digiti IV pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3298",
+  "fma": "FMA230988",
+  "en": "Middle phalanx of left little toe",
+  "systeme": "os",
+  "centre": [
+   162.4,
+   -175.3,
+   -66.9
+  ],
+  "min": [
+   158.1,
+   -178.954,
+   -70.0543
+  ],
+  "max": [
+   166.674,
+   -171.552,
+   -63.7796
+  ],
+  "cle": "phalange-middle-little-toe",
+  "fr": "Phalange moyenne du 5e orteil",
+  "la": "Phalanx media digiti minimi pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3305",
+  "fma": "FMA230986",
+  "en": "Middle phalanx of right little toe",
+  "systeme": "os",
+  "centre": [
+   -162.4,
+   -175.1,
+   -66.9
+  ],
+  "min": [
+   -166.69,
+   -178.818,
+   -70.0904
+  ],
+  "max": [
+   -158.08,
+   -171.45,
+   -63.7391
+  ],
+  "cle": "phalange-middle-little-toe",
+  "fr": "Phalange moyenne du 5e orteil",
+  "la": "Phalanx media digiti minimi pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3310",
+  "fma": "FMA43253",
+  "en": "Proximal phalanx of right big toe",
+  "systeme": "os",
+  "centre": [
+   -101.9,
+   -202.7,
+   -60
+  ],
+  "min": [
+   -117.196,
+   -219.289,
+   -68.6391
+  ],
+  "max": [
+   -86.6596,
+   -186.07,
+   -51.4087
+  ],
+  "cle": "phalange-proximal-big-toe",
+  "fr": "Phalange proximale de l'hallux",
+  "la": "Phalanx proximalis hallucis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3329",
+  "fma": "FMA43254",
+  "en": "Proximal phalanx of left big toe",
+  "systeme": "os",
+  "centre": [
+   101.9,
+   -202.7,
+   -60
+  ],
+  "min": [
+   86.7033,
+   -219.271,
+   -68.4152
+  ],
+  "max": [
+   117.082,
+   -186.036,
+   -51.5522
+  ],
+  "cle": "phalange-proximal-big-toe",
+  "fr": "Phalange proximale de l'hallux",
+  "la": "Phalanx proximalis hallucis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3319",
+  "fma": "FMA32634",
+  "en": "Proximal phalanx of right second toe",
+  "systeme": "os",
+  "centre": [
+   -122.5,
+   -197.6,
+   -60.7
+  ],
+  "min": [
+   -133.565,
+   -211.68,
+   -66.8736
+  ],
+  "max": [
+   -111.346,
+   -183.555,
+   -54.5464
+  ],
+  "cle": "phalange-proximal-second-toe",
+  "fr": "Phalange proximale du 2e orteil",
+  "la": "Phalanx proximalis digiti II pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3328",
+  "fma": "FMA32635",
+  "en": "Proximal phalanx of left second toe",
+  "systeme": "os",
+  "centre": [
+   122.5,
+   -197.6,
+   -60.7
+  ],
+  "min": [
+   111.449,
+   -211.624,
+   -66.8401
+  ],
+  "max": [
+   133.493,
+   -183.485,
+   -54.4701
+  ],
+  "cle": "phalange-proximal-second-toe",
+  "fr": "Phalange proximale du 2e orteil",
+  "la": "Phalanx proximalis digiti II pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3311",
+  "fma": "FMA32637",
+  "en": "Proximal phalanx of left third toe",
+  "systeme": "os",
+  "centre": [
+   135.5,
+   -188.7,
+   -61.8
+  ],
+  "min": [
+   125.132,
+   -202.834,
+   -67.6983
+  ],
+  "max": [
+   145.808,
+   -174.617,
+   -55.9134
+  ],
+  "cle": "phalange-proximal-third-toe",
+  "fr": "Phalange proximale du 3e orteil",
+  "la": "Phalanx proximalis digiti III pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3320",
+  "fma": "FMA32636",
+  "en": "Proximal phalanx of right third toe",
+  "systeme": "os",
+  "centre": [
+   -135.5,
+   -188.6,
+   -61.9
+  ],
+  "min": [
+   -145.902,
+   -202.841,
+   -67.645
+  ],
+  "max": [
+   -125.076,
+   -174.436,
+   -56.2044
+  ],
+  "cle": "phalange-proximal-third-toe",
+  "fr": "Phalange proximale du 3e orteil",
+  "la": "Phalanx proximalis digiti III pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3312",
+  "fma": "FMA32639",
+  "en": "Proximal phalanx of left fourth toe",
+  "systeme": "os",
+  "centre": [
+   145.1,
+   -176.4,
+   -63.1
+  ],
+  "min": [
+   134.309,
+   -188.425,
+   -69.7053
+  ],
+  "max": [
+   155.9,
+   -164.428,
+   -56.5251
+  ],
+  "cle": "phalange-proximal-fourth-toe",
+  "fr": "Phalange proximale du 4e orteil",
+  "la": "Phalanx proximalis digiti IV pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3321",
+  "fma": "FMA32638",
+  "en": "Proximal phalanx of right fourth toe",
+  "systeme": "os",
+  "centre": [
+   -145.1,
+   -176.4,
+   -63.1
+  ],
+  "min": [
+   -155.93,
+   -188.428,
+   -69.741
+  ],
+  "max": [
+   -134.339,
+   -164.379,
+   -56.4986
+  ],
+  "cle": "phalange-proximal-fourth-toe",
+  "fr": "Phalange proximale du 4e orteil",
+  "la": "Phalanx proximalis digiti IV pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3315",
+  "fma": "FMA32641",
+  "en": "Proximal phalanx of left little toe",
+  "systeme": "os",
+  "centre": [
+   153.9,
+   -161.4,
+   -64.9
+  ],
+  "min": [
+   142.938,
+   -174.019,
+   -69.8092
+  ],
+  "max": [
+   164.79,
+   -148.775,
+   -59.9871
+  ],
+  "cle": "phalange-proximal-little-toe",
+  "fr": "Phalange proximale du 5e orteil",
+  "la": "Phalanx proximalis digiti minimi pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3324",
+  "fma": "FMA32640",
+  "en": "Proximal phalanx of right little toe",
+  "systeme": "os",
+  "centre": [
+   -153.9,
+   -161.4,
+   -65
+  ],
+  "min": [
+   -164.837,
+   -174.084,
+   -69.8932
+  ],
+  "max": [
+   -142.885,
+   -148.711,
+   -60.0473
+  ],
+  "cle": "phalange-proximal-little-toe",
+  "fr": "Phalange proximale du 5e orteil",
+  "la": "Phalanx proximalis digiti minimi pedis",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3270",
+  "fma": "FMA45098",
+  "en": "Sesamoid bone of left foot",
+  "systeme": "os",
+  "centre": [
+   98.9,
+   -177.1,
+   -65.6
+  ],
+  "min": [
+   94.6944,
+   -183.496,
+   -69.2931
+  ],
+  "max": [
+   103.166,
+   -170.643,
+   -61.925
+  ],
+  "cle": "sesamoide-lateral",
+  "fr": "Sésamoïde latéral de l'hallux",
+  "la": "Os sesamoideum laterale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3376",
+  "fma": "FMA45097",
+  "en": "Sesamoid bone of right foot",
+  "systeme": "os",
+  "centre": [
+   -98.9,
+   -177.1,
+   -65.5
+  ],
+  "min": [
+   -103.008,
+   -183.56,
+   -69.2641
+  ],
+  "max": [
+   -94.7786,
+   -170.738,
+   -61.7233
+  ],
+  "cle": "sesamoide-lateral",
+  "fr": "Sésamoïde latéral de l'hallux",
+  "la": "Os sesamoideum laterale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3266",
+  "fma": "FMA45098",
+  "en": "Sesamoid bone of left foot",
+  "systeme": "os",
+  "centre": [
+   90.9,
+   -180.1,
+   -64.8
+  ],
+  "min": [
+   87.4948,
+   -184.752,
+   -67.9974
+  ],
+  "max": [
+   94.2792,
+   -175.536,
+   -61.5728
+  ],
+  "cle": "sesamoide-medial",
+  "fr": "Sésamoïde médial de l'hallux",
+  "la": "Os sesamoideum mediale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3372",
+  "fma": "FMA45097",
+  "en": "Sesamoid bone of right foot",
+  "systeme": "os",
+  "centre": [
+   -90.6,
+   -180.1,
+   -64.7
+  ],
+  "min": [
+   -94.1604,
+   -184.779,
+   -67.7893
+  ],
+  "max": [
+   -87.0611,
+   -175.493,
+   -61.5882
+  ],
+  "cle": "sesamoide-medial",
+  "fr": "Sésamoïde médial de l'hallux",
+  "la": "Os sesamoideum mediale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Métatarse et orteils",
+  "fiche": "pied-metatarse-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3256",
+  "fma": "FMA24498",
+  "en": "Left calcaneus",
+  "systeme": "os",
+  "centre": [
+   72.9,
+   -59.2,
+   -43.7
+  ],
+  "min": [
+   45.01,
+   -94.1418,
+   -68.4172
+  ],
+  "max": [
+   100.768,
+   -24.2068,
+   -19.0712
+  ],
+  "cle": "calcaneus",
+  "fr": "Calcanéus",
+  "la": "Calcaneus",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3360",
+  "fma": "FMA24497",
+  "en": "Right calcaneus",
+  "systeme": "os",
+  "centre": [
+   -72.8,
+   -59.1,
+   -43.8
+  ],
+  "min": [
+   -100.781,
+   -94.1485,
+   -68.4907
+  ],
+  "max": [
+   -44.8758,
+   -24.0051,
+   -19.1547
+  ],
+  "cle": "calcaneus",
+  "fr": "Calcanéus",
+  "la": "Calcaneus",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3258",
+  "fma": "FMA24529",
+  "en": "Left cuboid bone",
+  "systeme": "os",
+  "centre": [
+   98.5,
+   -99.9,
+   -36.7
+  ],
+  "min": [
+   81.965,
+   -116.685,
+   -51.5223
+  ],
+  "max": [
+   115.134,
+   -83.163,
+   -21.853
+  ],
+  "cle": "cuboide",
+  "fr": "Cuboïde",
+  "la": "Os cuboideum",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3364",
+  "fma": "FMA24528",
+  "en": "Right cuboid bone",
+  "systeme": "os",
+  "centre": [
+   -98.7,
+   -100.3,
+   -36.6
+  ],
+  "min": [
+   -115.085,
+   -116.768,
+   -51.1216
+  ],
+  "max": [
+   -82.3665,
+   -83.7327,
+   -22.0883
+  ],
+  "cle": "cuboide",
+  "fr": "Cuboïde",
+  "la": "Os cuboideum",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3264",
+  "fma": "FMA24524",
+  "en": "Left intermediate cuneiform bone",
+  "systeme": "os",
+  "centre": [
+   92,
+   -120,
+   -22.9
+  ],
+  "min": [
+   82.0136,
+   -130.33,
+   -34.4288
+  ],
+  "max": [
+   101.955,
+   -109.632,
+   -11.3104
+  ],
+  "cle": "cuneiforme-intermediaire",
+  "fr": "Cunéiforme intermédiaire",
+  "la": "Os cuneiforme intermedium",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3370",
+  "fma": "FMA24523",
+  "en": "Right intermediate cuneiform bone",
+  "systeme": "os",
+  "centre": [
+   -91.9,
+   -120.1,
+   -22.9
+  ],
+  "min": [
+   -102.007,
+   -130.534,
+   -34.4366
+  ],
+  "max": [
+   -81.8595,
+   -109.585,
+   -11.3854
+  ],
+  "cle": "cuneiforme-intermediaire",
+  "fr": "Cunéiforme intermédiaire",
+  "la": "Os cuneiforme intermedium",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3267",
+  "fma": "FMA24526",
+  "en": "Left lateral cuneiform bone",
+  "systeme": "os",
+  "centre": [
+   100.1,
+   -113,
+   -27.7
+  ],
+  "min": [
+   87.226,
+   -125.146,
+   -40.6271
+  ],
+  "max": [
+   112.885,
+   -100.898,
+   -14.8154
+  ],
+  "cle": "cuneiforme-lateral",
+  "fr": "Cunéiforme latéral",
+  "la": "Os cuneiforme laterale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3373",
+  "fma": "FMA24525",
+  "en": "Right lateral cuneiform bone",
+  "systeme": "os",
+  "centre": [
+   -100,
+   -113,
+   -27.7
+  ],
+  "min": [
+   -112.875,
+   -125.232,
+   -40.5644
+  ],
+  "max": [
+   -87.1983,
+   -100.838,
+   -14.8562
+  ],
+  "cle": "cuneiforme-lateral",
+  "fr": "Cunéiforme latéral",
+  "la": "Os cuneiforme laterale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3271",
+  "fma": "FMA24522",
+  "en": "Left medial cuneiform bone",
+  "systeme": "os",
+  "centre": [
+   80.1,
+   -126.3,
+   -29.7
+  ],
+  "min": [
+   66.0426,
+   -140.519,
+   -45.1444
+  ],
+  "max": [
+   94.1094,
+   -112.061,
+   -14.1921
+  ],
+  "cle": "cuneiforme-medial",
+  "fr": "Cunéiforme médial",
+  "la": "Os cuneiforme mediale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3377",
+  "fma": "FMA24521",
+  "en": "Right medial cuneiform bone",
+  "systeme": "os",
+  "centre": [
+   -80.1,
+   -126.2,
+   -29.8
+  ],
+  "min": [
+   -94.1276,
+   -140.507,
+   -45.2732
+  ],
+  "max": [
+   -66.0044,
+   -111.982,
+   -14.2296
+  ],
+  "cle": "cuneiforme-medial",
+  "fr": "Cunéiforme médial",
+  "la": "Os cuneiforme mediale",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3307",
+  "fma": "FMA24501",
+  "en": "Navicular bone of left foot",
+  "systeme": "os",
+  "centre": [
+   77.3,
+   -107.7,
+   -18.6
+  ],
+  "min": [
+   57.9296,
+   -121.097,
+   -30.9742
+  ],
+  "max": [
+   96.6438,
+   -94.276,
+   -6.2971
+  ],
+  "cle": "naviculaire",
+  "fr": "Naviculaire",
+  "la": "Os naviculare",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3308",
+  "fma": "FMA24500",
+  "en": "Navicular bone of right foot",
+  "systeme": "os",
+  "centre": [
+   -77.5,
+   -107.7,
+   -18.5
+  ],
+  "min": [
+   -96.754,
+   -120.993,
+   -30.7763
+  ],
+  "max": [
+   -58.1896,
+   -94.329,
+   -6.1558
+  ],
+  "cle": "naviculaire",
+  "fr": "Naviculaire",
+  "la": "Os naviculare",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3280",
+  "fma": "FMA24483",
+  "en": "Left talus",
+  "systeme": "os",
+  "centre": [
+   69.9,
+   -77.2,
+   -14.1
+  ],
+  "min": [
+   49.6354,
+   -105.677,
+   -31.3056
+  ],
+  "max": [
+   90.1784,
+   -48.814,
+   3.0981
+  ],
+  "cle": "talus",
+  "fr": "Talus",
+  "la": "Talus",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3385",
+  "fma": "FMA24482",
+  "en": "Right talus",
+  "systeme": "os",
+  "centre": [
+   -69.9,
+   -77.2,
+   -14
+  ],
+  "min": [
+   -90.1136,
+   -105.569,
+   -31.1561
+  ],
+  "max": [
+   -49.6273,
+   -48.754,
+   3.1109
+  ],
+  "cle": "talus",
+  "fr": "Talus",
+  "la": "Talus",
+  "genre": "m",
+  "region": "membre-inf",
+  "groupe": "Tarse",
+  "fiche": "tarse",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3277",
+  "fma": "FMA23465",
+  "en": "Left radius",
+  "systeme": "os",
+  "centre": [
+   249.5,
+   -94.4,
+   920.6
+  ],
+  "min": [
+   219.836,
+   -127.252,
+   806.163
+  ],
+  "max": [
+   279.143,
+   -61.4693,
+   1035.01
+  ],
+  "cle": "radius",
+  "fr": "Radius",
+  "la": "Radius",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Avant-bras",
+  "fiche": "radius",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3349",
+  "fma": "FMA23464",
+  "en": "Right radius",
+  "systeme": "os",
+  "centre": [
+   -249.7,
+   -94,
+   920.4
+  ],
+  "min": [
+   -279.535,
+   -126.908,
+   805.835
+  ],
+  "max": [
+   -219.833,
+   -61.1026,
+   1035.0501
+  ],
+  "cle": "radius",
+  "fr": "Radius",
+  "la": "Radius",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Avant-bras",
+  "fiche": "radius",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3286",
+  "fma": "FMA23468",
+  "en": "Left ulna",
+  "systeme": "os",
+  "centre": [
+   222,
+   -83.9,
+   928.7
+  ],
+  "min": [
+   196.892,
+   -123.279,
+   805.016
+  ],
+  "max": [
+   247.12,
+   -44.5523,
+   1052.47
+  ],
+  "cle": "ulna",
+  "fr": "Ulna",
+  "la": "Ulna",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Avant-bras",
+  "fiche": "ulna",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3391",
+  "fma": "FMA23467",
+  "en": "Right ulna",
+  "systeme": "os",
+  "centre": [
+   -222,
+   -84.1,
+   928.8
+  ],
+  "min": [
+   -247.179,
+   -123.494,
+   805.173
+  ],
+  "max": [
+   -196.881,
+   -44.7992,
+   1052.45
+  ],
+  "cle": "ulna",
+  "fr": "Ulna",
+  "la": "Ulna",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Avant-bras",
+  "fiche": "ulna",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3262",
+  "fma": "FMA23131",
+  "en": "Left humerus",
+  "systeme": "os",
+  "centre": [
+   190.4,
+   -75.6,
+   1182.9
+  ],
+  "min": [
+   140.073,
+   -100.229,
+   1029.21
+  ],
+  "max": [
+   240.76,
+   -51.0559,
+   1336.52
+  ],
+  "cle": "humerus",
+  "fr": "Humérus",
+  "la": "Humerus",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Bras",
+  "fiche": "humerus",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3368",
+  "fma": "FMA23130",
+  "en": "Right humerus",
+  "systeme": "os",
+  "centre": [
+   -190.5,
+   -75.6,
+   1182.9
+  ],
+  "min": [
+   -240.841,
+   -100.219,
+   1029.2
+  ],
+  "max": [
+   -140.09,
+   -51.0391,
+   1336.54
+  ],
+  "cle": "humerus",
+  "fr": "Humérus",
+  "la": "Humerus",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Bras",
+  "fiche": "humerus",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3257",
+  "fma": "FMA24447",
+  "en": "Left capitate",
+  "systeme": "os",
+  "centre": [
+   256.4,
+   -119,
+   793.4
+  ],
+  "min": [
+   248.61,
+   -127.351,
+   782.164
+  ],
+  "max": [
+   264.288,
+   -110.573,
+   804.588
+  ],
+  "cle": "capitatum",
+  "fr": "Capitatum (grand os)",
+  "la": "Os capitatum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3361",
+  "fma": "FMA24446",
+  "en": "Right capitate",
+  "systeme": "os",
+  "centre": [
+   -256.4,
+   -119,
+   793.4
+  ],
+  "min": [
+   -264.482,
+   -127.492,
+   782.191
+  ],
+  "max": [
+   -248.401,
+   -110.534,
+   804.597
+  ],
+  "cle": "capitatum",
+  "fr": "Capitatum (grand os)",
+  "la": "Os capitatum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3261",
+  "fma": "FMA24449",
+  "en": "Left hamate",
+  "systeme": "os",
+  "centre": [
+   244.1,
+   -122.7,
+   790.9
+  ],
+  "min": [
+   236.597,
+   -133.982,
+   781.256
+  ],
+  "max": [
+   251.57,
+   -111.322,
+   800.631
+  ],
+  "cle": "hamatum",
+  "fr": "Hamatum (os crochu)",
+  "la": "Os hamatum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3367",
+  "fma": "FMA24448",
+  "en": "Right hamate",
+  "systeme": "os",
+  "centre": [
+   -244.3,
+   -122.7,
+   791
+  ],
+  "min": [
+   -251.928,
+   -133.931,
+   781.293
+  ],
+  "max": [
+   -236.6,
+   -111.406,
+   800.653
+  ],
+  "cle": "hamatum",
+  "fr": "Hamatum (os crochu)",
+  "la": "Os hamatum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3268",
+  "fma": "FMA24438",
+  "en": "Left lunate",
+  "systeme": "os",
+  "centre": [
+   244.6,
+   -118.9,
+   803.6
+  ],
+  "min": [
+   236.339,
+   -127.131,
+   797.222
+  ],
+  "max": [
+   252.883,
+   -110.628,
+   809.888
+  ],
+  "cle": "lunatum",
+  "fr": "Lunatum (semi-lunaire)",
+  "la": "Os lunatum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3374",
+  "fma": "FMA24437",
+  "en": "Right lunate",
+  "systeme": "os",
+  "centre": [
+   -244.5,
+   -118.8,
+   803.6
+  ],
+  "min": [
+   -252.724,
+   -126.924,
+   797.461
+  ],
+  "max": [
+   -236.202,
+   -110.635,
+   809.82
+  ],
+  "cle": "lunatum",
+  "fr": "Lunatum (semi-lunaire)",
+  "la": "Os lunatum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3276",
+  "fma": "FMA24442",
+  "en": "Left pisiform",
+  "systeme": "os",
+  "centre": [
+   235.9,
+   -132.3,
+   795.5
+  ],
+  "min": [
+   231.838,
+   -137.589,
+   789.725
+  ],
+  "max": [
+   240.03,
+   -127.031,
+   801.277
+  ],
+  "cle": "pisiforme",
+  "fr": "Pisiforme",
+  "la": "Os pisiforme",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3382",
+  "fma": "FMA24441",
+  "en": "Right pisiform",
+  "systeme": "os",
+  "centre": [
+   -236.1,
+   -132.5,
+   795.5
+  ],
+  "min": [
+   -240.22,
+   -137.658,
+   789.675
+  ],
+  "max": [
+   -231.956,
+   -127.249,
+   801.325
+  ],
+  "cle": "pisiforme",
+  "fr": "Pisiforme",
+  "la": "Os pisiforme",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3278",
+  "fma": "FMA24436",
+  "en": "Left scaphoid",
+  "systeme": "os",
+  "centre": [
+   261.2,
+   -119,
+   804
+  ],
+  "min": [
+   249.452,
+   -126.444,
+   796.22
+  ],
+  "max": [
+   272.977,
+   -111.527,
+   811.682
+  ],
+  "cle": "scaphoide",
+  "fr": "Scaphoïde",
+  "la": "Os scaphoideum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3383",
+  "fma": "FMA24435",
+  "en": "Right scaphoid",
+  "systeme": "os",
+  "centre": [
+   -261.2,
+   -119.1,
+   804.1
+  ],
+  "min": [
+   -273.06,
+   -126.663,
+   796.354
+  ],
+  "max": [
+   -249.332,
+   -111.574,
+   811.79
+  ],
+  "cle": "scaphoide",
+  "fr": "Scaphoïde",
+  "la": "Os scaphoideum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3283",
+  "fma": "FMA24444",
+  "en": "Left trapezium",
+  "systeme": "os",
+  "centre": [
+   273.3,
+   -126.1,
+   795.8
+  ],
+  "min": [
+   264.781,
+   -134.554,
+   785.747
+  ],
+  "max": [
+   281.795,
+   -117.71,
+   805.793
+  ],
+  "cle": "trapeze",
+  "fr": "Trapèze",
+  "la": "Os trapezium",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3388",
+  "fma": "FMA24443",
+  "en": "Right trapezium",
+  "systeme": "os",
+  "centre": [
+   -273.3,
+   -126.2,
+   795.8
+  ],
+  "min": [
+   -281.722,
+   -134.576,
+   785.805
+  ],
+  "max": [
+   -264.938,
+   -117.73,
+   805.733
+  ],
+  "cle": "trapeze",
+  "fr": "Trapèze",
+  "la": "Os trapezium",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3284",
+  "fma": "FMA24445",
+  "en": "Left trapezoid",
+  "systeme": "os",
+  "centre": [
+   267.8,
+   -121,
+   789
+  ],
+  "min": [
+   262.253,
+   -128.45,
+   782.722
+  ],
+  "max": [
+   273.289,
+   -113.645,
+   795.27
+  ],
+  "cle": "trapezoide",
+  "fr": "Trapézoïde",
+  "la": "Os trapezoideum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3389",
+  "fma": "FMA23725",
+  "en": "Right trapezoid",
+  "systeme": "os",
+  "centre": [
+   -267.7,
+   -121,
+   789.1
+  ],
+  "min": [
+   -273.261,
+   -128.388,
+   782.865
+  ],
+  "max": [
+   -262.14,
+   -113.527,
+   795.311
+  ],
+  "cle": "trapezoide",
+  "fr": "Trapézoïde",
+  "la": "Os trapezoideum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3285",
+  "fma": "FMA24440",
+  "en": "Left triquetral",
+  "systeme": "os",
+  "centre": [
+   237.3,
+   -122.1,
+   795.7
+  ],
+  "min": [
+   231.821,
+   -129.807,
+   788.949
+  ],
+  "max": [
+   242.731,
+   -114.425,
+   802.52
+  ],
+  "cle": "triquetrum",
+  "fr": "Triquetrum (pyramidal)",
+  "la": "Os triquetrum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3390",
+  "fma": "FMA24439",
+  "en": "Right triquetral",
+  "systeme": "os",
+  "centre": [
+   -237.5,
+   -122.2,
+   795.7
+  ],
+  "min": [
+   -242.766,
+   -129.736,
+   788.769
+  ],
+  "max": [
+   -232.157,
+   -114.631,
+   802.59
+  ],
+  "cle": "triquetrum",
+  "fr": "Triquetrum (pyramidal)",
+  "la": "Os triquetrum",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Carpe",
+  "fiche": "carpe",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3237",
+  "fma": "FMA13323",
+  "en": "Left clavicle",
+  "systeme": "os",
+  "centre": [
+   76.2,
+   -100.7,
+   1331.9
+  ],
+  "min": [
+   8.3787,
+   -147.078,
+   1308.53
+  ],
+  "max": [
+   143.942,
+   -54.3875,
+   1355.1801
+  ],
+  "cle": "clavicule",
+  "fr": "Clavicule",
+  "la": "Clavicula",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Ceinture scapulaire",
+  "fiche": "clavicule",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3362",
+  "fma": "FMA13322",
+  "en": "Right clavicle",
+  "systeme": "os",
+  "centre": [
+   -77.5,
+   -100.7,
+   1332
+  ],
+  "min": [
+   -145.277,
+   -146.948,
+   1308.62
+  ],
+  "max": [
+   -9.6616,
+   -54.4125,
+   1355.4399
+  ],
+  "cle": "clavicule",
+  "fr": "Clavicule",
+  "la": "Clavicula",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Ceinture scapulaire",
+  "fiche": "clavicule",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3279",
+  "fma": "FMA13396",
+  "en": "Left scapula",
+  "systeme": "os",
+  "centre": [
+   111.8,
+   -48.9,
+   1266.9
+  ],
+  "min": [
+   57.0614,
+   -102.845,
+   1183.95
+  ],
+  "max": [
+   166.464,
+   5.0764,
+   1349.86
+  ],
+  "cle": "scapula",
+  "fr": "Scapula",
+  "la": "Scapula",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Ceinture scapulaire",
+  "fiche": "scapula",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3384",
+  "fma": "FMA13395",
+  "en": "Right scapula",
+  "systeme": "os",
+  "centre": [
+   -111.8,
+   -48.9,
+   1266.9
+  ],
+  "min": [
+   -166.464,
+   -102.856,
+   1183.96
+  ],
+  "max": [
+   -57.0538,
+   5.0828,
+   1349.86
+  ],
+  "cle": "scapula",
+  "fr": "Scapula",
+  "la": "Scapula",
+  "genre": "f",
+  "region": "membre-sup",
+  "groupe": "Ceinture scapulaire",
+  "fiche": "scapula",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3240",
+  "fma": "FMA24465",
+  "en": "Left first metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   291,
+   -138.6,
+   778.9
+  ],
+  "min": [
+   272.353,
+   -153.782,
+   760.295
+  ],
+  "max": [
+   309.625,
+   -123.406,
+   797.407
+  ],
+  "cle": "metacarpien-1",
+  "fr": "1er métacarpien",
+  "la": "Os metacarpi I",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3350",
+  "fma": "FMA24464",
+  "en": "Right first metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   -290.9,
+   -138.7,
+   778.8
+  ],
+  "min": [
+   -309.577,
+   -153.861,
+   760.281
+  ],
+  "max": [
+   -272.236,
+   -123.627,
+   797.238
+  ],
+  "cle": "metacarpien-1",
+  "fr": "1er métacarpien",
+  "la": "Os metacarpi I",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3243",
+  "fma": "FMA24467",
+  "en": "Left second metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   277.2,
+   -129.8,
+   753
+  ],
+  "min": [
+   261.841,
+   -142.433,
+   719.042
+  ],
+  "max": [
+   292.613,
+   -117.117,
+   786.869
+  ],
+  "cle": "metacarpien-2",
+  "fr": "2e métacarpien",
+  "la": "Os metacarpi II",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3352",
+  "fma": "FMA24466",
+  "en": "Right second metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   -277.3,
+   -129.9,
+   752.9
+  ],
+  "min": [
+   -292.687,
+   -142.787,
+   718.871
+  ],
+  "max": [
+   -261.82,
+   -117.057,
+   786.869
+  ],
+  "cle": "metacarpien-2",
+  "fr": "2e métacarpien",
+  "la": "Os metacarpi II",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3246",
+  "fma": "FMA24469",
+  "en": "Left third metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   262.3,
+   -127.6,
+   752.8
+  ],
+  "min": [
+   252.36,
+   -142.813,
+   720.649
+  ],
+  "max": [
+   272.252,
+   -112.41,
+   785.025
+  ],
+  "cle": "metacarpien-3",
+  "fr": "3e métacarpien",
+  "la": "Os metacarpi III",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3354",
+  "fma": "FMA24468",
+  "en": "Right third metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   -262.4,
+   -127.5,
+   753.1
+  ],
+  "min": [
+   -272.346,
+   -142.733,
+   720.84
+  ],
+  "max": [
+   -252.486,
+   -112.326,
+   785.262
+  ],
+  "cle": "metacarpien-3",
+  "fr": "3e métacarpien",
+  "la": "Os metacarpi III",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3249",
+  "fma": "FMA24471",
+  "en": "Left fourth metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   247.6,
+   -128.9,
+   755.2
+  ],
+  "min": [
+   241.356,
+   -141.911,
+   725.253
+  ],
+  "max": [
+   253.774,
+   -115.898,
+   785.218
+  ],
+  "cle": "metacarpien-4",
+  "fr": "4e métacarpien",
+  "la": "Os metacarpi IV",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3356",
+  "fma": "FMA24470",
+  "en": "Right fourth metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   -247.6,
+   -128.9,
+   755.2
+  ],
+  "min": [
+   -253.741,
+   -141.971,
+   725.279
+  ],
+  "max": [
+   -241.426,
+   -115.917,
+   785.158
+  ],
+  "cle": "metacarpien-4",
+  "fr": "4e métacarpien",
+  "la": "Os metacarpi IV",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3252",
+  "fma": "FMA24473",
+  "en": "Left fifth metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   235.3,
+   -132.3,
+   759.4
+  ],
+  "min": [
+   225.27,
+   -144.42,
+   732.031
+  ],
+  "max": [
+   245.394,
+   -120.224,
+   786.759
+  ],
+  "cle": "metacarpien-5",
+  "fr": "5e métacarpien",
+  "la": "Os metacarpi V",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3358",
+  "fma": "FMA24472",
+  "en": "Right fifth metacarpal bone",
+  "systeme": "os",
+  "centre": [
+   -235.3,
+   -132.3,
+   759.5
+  ],
+  "min": [
+   -245.314,
+   -144.52,
+   732.016
+  ],
+  "max": [
+   -225.202,
+   -120.076,
+   786.919
+  ],
+  "cle": "metacarpien-5",
+  "fr": "5e métacarpien",
+  "la": "Os metacarpi V",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3187",
+  "fma": "FMA23957",
+  "en": "Distal phalanx of left ring finger",
+  "systeme": "os",
+  "centre": [
+   249.5,
+   -186.6,
+   669.4
+  ],
+  "min": [
+   245.3,
+   -194.36,
+   664.812
+  ],
+  "max": [
+   253.646,
+   -178.756,
+   673.899
+  ],
+  "cle": "phalange-distal-ring-finger",
+  "fr": "Phalange distale de l'annulaire",
+  "la": "Phalanx distalis digiti anularis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3197",
+  "fma": "FMA24462",
+  "en": "Distal phalanx of right ring finger",
+  "systeme": "os",
+  "centre": [
+   -249.4,
+   -186.5,
+   669.4
+  ],
+  "min": [
+   -253.614,
+   -194.38,
+   664.869
+  ],
+  "max": [
+   -245.281,
+   -178.717,
+   674.008
+  ],
+  "cle": "phalange-distal-ring-finger",
+  "fr": "Phalange distale de l'annulaire",
+  "la": "Phalanx distalis digiti anularis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3184",
+  "fma": "FMA23959",
+  "en": "Distal phalanx of left little finger",
+  "systeme": "os",
+  "centre": [
+   223,
+   -175.4,
+   683
+  ],
+  "min": [
+   218.894,
+   -182.284,
+   676.628
+  ],
+  "max": [
+   227.155,
+   -168.42,
+   689.309
+  ],
+  "cle": "phalange-distal-little-finger",
+  "fr": "Phalange distale de l'auriculaire",
+  "la": "Phalanx distalis digiti minimi",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3194",
+  "fma": "FMA24463",
+  "en": "Distal phalanx of right little finger",
+  "systeme": "os",
+  "centre": [
+   -223,
+   -175,
+   683
+  ],
+  "min": [
+   -227.203,
+   -181.873,
+   676.749
+  ],
+  "max": [
+   -218.895,
+   -168.171,
+   689.277
+  ],
+  "cle": "phalange-distal-little-finger",
+  "fr": "Phalange distale de l'auriculaire",
+  "la": "Phalanx distalis digiti minimi",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3183",
+  "fma": "FMA23953",
+  "en": "Distal phalanx of left index finger",
+  "systeme": "os",
+  "centre": [
+   306.3,
+   -178.2,
+   668.7
+  ],
+  "min": [
+   301.261,
+   -186.711,
+   661.851
+  ],
+  "max": [
+   311.254,
+   -169.614,
+   675.567
+  ],
+  "cle": "phalange-distal-index-finger",
+  "fr": "Phalange distale de l'index",
+  "la": "Phalanx distalis indicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3193",
+  "fma": "FMA24460",
+  "en": "Distal phalanx of right index finger",
+  "systeme": "os",
+  "centre": [
+   -306.4,
+   -178.2,
+   668.8
+  ],
+  "min": [
+   -311.368,
+   -186.73,
+   661.846
+  ],
+  "max": [
+   -301.425,
+   -169.647,
+   675.689
+  ],
+  "cle": "phalange-distal-index-finger",
+  "fr": "Phalange distale de l'index",
+  "la": "Phalanx distalis indicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3186",
+  "fma": "FMA23955",
+  "en": "Distal phalanx of left middle finger",
+  "systeme": "os",
+  "centre": [
+   276.1,
+   -186.6,
+   659.9
+  ],
+  "min": [
+   271.361,
+   -195.089,
+   653.367
+  ],
+  "max": [
+   280.854,
+   -178.084,
+   666.371
+  ],
+  "cle": "phalange-distal-middle-finger",
+  "fr": "Phalange distale du majeur",
+  "la": "Phalanx distalis digiti medii",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3196",
+  "fma": "FMA24461",
+  "en": "Distal phalanx of right middle finger",
+  "systeme": "os",
+  "centre": [
+   -276.1,
+   -186.8,
+   659.8
+  ],
+  "min": [
+   -280.912,
+   -195.428,
+   653.067
+  ],
+  "max": [
+   -271.365,
+   -178.205,
+   666.531
+  ],
+  "cle": "phalange-distal-middle-finger",
+  "fr": "Phalange distale du majeur",
+  "la": "Phalanx distalis digiti medii",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3188",
+  "fma": "FMA23951",
+  "en": "Distal phalanx of left thumb",
+  "systeme": "os",
+  "centre": [
+   317.4,
+   -165.3,
+   730.7
+  ],
+  "min": [
+   310.838,
+   -173.273,
+   719.243
+  ],
+  "max": [
+   323.935,
+   -157.241,
+   742.231
+  ],
+  "cle": "phalange-distal-thumb",
+  "fr": "Phalange distale du pouce",
+  "la": "Phalanx distalis pollicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3198",
+  "fma": "FMA24459",
+  "en": "Distal phalanx of right thumb",
+  "systeme": "os",
+  "centre": [
+   -317.1,
+   -165.2,
+   730.7
+  ],
+  "min": [
+   -323.914,
+   -173.358,
+   719.139
+  ],
+  "max": [
+   -310.263,
+   -157.135,
+   742.166
+  ],
+  "cle": "phalange-distal-thumb",
+  "fr": "Phalange distale du pouce",
+  "la": "Phalanx distalis pollicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3291",
+  "fma": "FMA23942",
+  "en": "Middle phalanx of left ring finger",
+  "systeme": "os",
+  "centre": [
+   248.7,
+   -168.7,
+   681.8
+  ],
+  "min": [
+   242.782,
+   -180.547,
+   669.821
+  ],
+  "max": [
+   254.532,
+   -156.794,
+   693.684
+  ],
+  "cle": "phalange-middle-ring-finger",
+  "fr": "Phalange moyenne de l'annulaire",
+  "la": "Phalanx media digiti anularis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3292",
+  "fma": "FMA24457",
+  "en": "Middle phalanx of right ring finger",
+  "systeme": "os",
+  "centre": [
+   -248.5,
+   -168.6,
+   681.7
+  ],
+  "min": [
+   -254.293,
+   -180.567,
+   669.704
+  ],
+  "max": [
+   -242.763,
+   -156.536,
+   693.604
+  ],
+  "cle": "phalange-middle-ring-finger",
+  "fr": "Phalange moyenne de l'annulaire",
+  "la": "Phalanx media digiti anularis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3297",
+  "fma": "FMA23944",
+  "en": "Middle phalanx of left little finger",
+  "systeme": "os",
+  "centre": [
+   224.6,
+   -163.2,
+   697.3
+  ],
+  "min": [
+   218.921,
+   -171.479,
+   687.466
+  ],
+  "max": [
+   230.299,
+   -154.912,
+   707.061
+  ],
+  "cle": "phalange-middle-little-finger",
+  "fr": "Phalange moyenne de l'auriculaire",
+  "la": "Phalanx media digiti minimi",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3304",
+  "fma": "FMA24458",
+  "en": "Middle phalanx of right little finger",
+  "systeme": "os",
+  "centre": [
+   -224.7,
+   -163.1,
+   697.4
+  ],
+  "min": [
+   -230.545,
+   -171.439,
+   687.57
+  ],
+  "max": [
+   -218.935,
+   -154.823,
+   707.155
+  ],
+  "cle": "phalange-middle-little-finger",
+  "fr": "Phalange moyenne de l'auriculaire",
+  "la": "Phalanx media digiti minimi",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3296",
+  "fma": "FMA23938",
+  "en": "Middle phalanx of left index finger",
+  "systeme": "os",
+  "centre": [
+   301.7,
+   -161.7,
+   681.2
+  ],
+  "min": [
+   294.389,
+   -172.057,
+   670.975
+  ],
+  "max": [
+   309.001,
+   -151.256,
+   691.453
+  ],
+  "cle": "phalange-middle-index-finger",
+  "fr": "Phalange moyenne de l'index",
+  "la": "Phalanx media indicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3303",
+  "fma": "FMA24455",
+  "en": "Middle phalanx of right index finger",
+  "systeme": "os",
+  "centre": [
+   -301.7,
+   -161.7,
+   681.2
+  ],
+  "min": [
+   -309,
+   -172.083,
+   671.006
+  ],
+  "max": [
+   -294.4,
+   -151.309,
+   691.476
+  ],
+  "cle": "phalange-middle-index-finger",
+  "fr": "Phalange moyenne de l'index",
+  "la": "Phalanx media indicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3299",
+  "fma": "FMA23940",
+  "en": "Middle phalanx of left middle finger",
+  "systeme": "os",
+  "centre": [
+   273.4,
+   -169.4,
+   675.1
+  ],
+  "min": [
+   266.517,
+   -180.876,
+   662.409
+  ],
+  "max": [
+   280.205,
+   -157.858,
+   687.767
+  ],
+  "cle": "phalange-middle-middle-finger",
+  "fr": "Phalange moyenne du majeur",
+  "la": "Phalanx media digiti medii",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3306",
+  "fma": "FMA24456",
+  "en": "Middle phalanx of right middle finger",
+  "systeme": "os",
+  "centre": [
+   -273.4,
+   -169.4,
+   675.1
+  ],
+  "min": [
+   -280.202,
+   -180.934,
+   662.457
+  ],
+  "max": [
+   -266.588,
+   -157.799,
+   687.807
+  ],
+  "cle": "phalange-middle-middle-finger",
+  "fr": "Phalange moyenne du majeur",
+  "la": "Phalanx media digiti medii",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3317",
+  "fma": "FMA71916",
+  "en": "Proximal phalanx of left ring finger",
+  "systeme": "os",
+  "centre": [
+   247.2,
+   -148.8,
+   709.5
+  ],
+  "min": [
+   240.492,
+   -161.93,
+   690.052
+  ],
+  "max": [
+   253.886,
+   -135.709,
+   728.958
+  ],
+  "cle": "phalange-proximal-ring-finger",
+  "fr": "Phalange proximale de l'annulaire",
+  "la": "Phalanx proximalis digiti anularis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3326",
+  "fma": "FMA24453",
+  "en": "Proximal phalanx of right ring finger",
+  "systeme": "os",
+  "centre": [
+   -247.2,
+   -148.8,
+   709.5
+  ],
+  "min": [
+   -253.824,
+   -161.977,
+   689.968
+  ],
+  "max": [
+   -240.591,
+   -135.658,
+   728.932
+  ],
+  "cle": "phalange-proximal-ring-finger",
+  "fr": "Phalange proximale de l'annulaire",
+  "la": "Phalanx proximalis digiti anularis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3314",
+  "fma": "FMA66791",
+  "en": "Proximal phalanx of left little finger",
+  "systeme": "os",
+  "centre": [
+   229.3,
+   -149.1,
+   719.6
+  ],
+  "min": [
+   222.227,
+   -159.461,
+   703.385
+  ],
+  "max": [
+   236.294,
+   -138.668,
+   735.79
+  ],
+  "cle": "phalange-proximal-little-finger",
+  "fr": "Phalange proximale de l'auriculaire",
+  "la": "Phalanx proximalis digiti minimi",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3323",
+  "fma": "FMA24454",
+  "en": "Proximal phalanx of right little finger",
+  "systeme": "os",
+  "centre": [
+   -229.2,
+   -149.1,
+   719.7
+  ],
+  "min": [
+   -236.329,
+   -159.523,
+   703.356
+  ],
+  "max": [
+   -222.152,
+   -138.721,
+   735.956
+  ],
+  "cle": "phalange-proximal-little-finger",
+  "fr": "Phalange proximale de l'auriculaire",
+  "la": "Phalanx proximalis digiti minimi",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3313",
+  "fma": "FMA71915",
+  "en": "Proximal phalanx of left index finger",
+  "systeme": "os",
+  "centre": [
+   291.8,
+   -145.6,
+   704.5
+  ],
+  "min": [
+   280.814,
+   -157.057,
+   685.721
+  ],
+  "max": [
+   302.81,
+   -134.089,
+   723.356
+  ],
+  "cle": "phalange-proximal-index-finger",
+  "fr": "Phalange proximale de l'index",
+  "la": "Phalanx proximalis indicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3322",
+  "fma": "FMA24451",
+  "en": "Proximal phalanx of right index finger",
+  "systeme": "os",
+  "centre": [
+   -291.9,
+   -145.4,
+   704.5
+  ],
+  "min": [
+   -302.765,
+   -156.758,
+   685.819
+  ],
+  "max": [
+   -280.952,
+   -134.093,
+   723.197
+  ],
+  "cle": "phalange-proximal-index-finger",
+  "fr": "Phalange proximale de l'index",
+  "la": "Phalanx proximalis indicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3316",
+  "fma": "FMA71908",
+  "en": "Proximal phalanx of left middle finger",
+  "systeme": "os",
+  "centre": [
+   268.3,
+   -149.6,
+   704.6
+  ],
+  "min": [
+   259.201,
+   -164.096,
+   684.299
+  ],
+  "max": [
+   277.38,
+   -135.192,
+   724.966
+  ],
+  "cle": "phalange-proximal-middle-finger",
+  "fr": "Phalange proximale du majeur",
+  "la": "Phalanx proximalis digiti medii",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3325",
+  "fma": "FMA24452",
+  "en": "Proximal phalanx of right middle finger",
+  "systeme": "os",
+  "centre": [
+   -268.3,
+   -149.7,
+   704.6
+  ],
+  "min": [
+   -277.414,
+   -164.201,
+   684.281
+  ],
+  "max": [
+   -259.208,
+   -135.112,
+   724.861
+  ],
+  "cle": "phalange-proximal-middle-finger",
+  "fr": "Phalange proximale du majeur",
+  "la": "Phalanx proximalis digiti medii",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3318",
+  "fma": "FMA65470",
+  "en": "Proximal phalanx of left thumb",
+  "systeme": "os",
+  "centre": [
+   308.7,
+   -153.7,
+   751.3
+  ],
+  "min": [
+   298.694,
+   -164.753,
+   735.529
+  ],
+  "max": [
+   318.619,
+   -142.629,
+   767.168
+  ],
+  "cle": "phalange-proximal-thumb",
+  "fr": "Phalange proximale du pouce",
+  "la": "Phalanx proximalis pollicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3327",
+  "fma": "FMA24450",
+  "en": "Proximal phalanx of right thumb",
+  "systeme": "os",
+  "centre": [
+   -308.7,
+   -153.8,
+   751.4
+  ],
+  "min": [
+   -318.809,
+   -164.883,
+   735.607
+  ],
+  "max": [
+   -298.649,
+   -142.653,
+   767.198
+  ],
+  "cle": "phalange-proximal-thumb",
+  "fr": "Phalange proximale du pouce",
+  "la": "Phalanx proximalis pollicis",
+  "genre": "m",
+  "region": "membre-sup",
+  "groupe": "Métacarpe et doigts",
+  "fiche": "main-metacarpe-phalanges",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3202",
+  "fma": "FMA25058",
+  "en": "Intervertebral disk of axis",
+  "systeme": "os",
+  "centre": [
+   -0.9,
+   -78.2,
+   1446.2
+  ],
+  "min": [
+   -13.4404,
+   -87.2534,
+   1441.45
+  ],
+  "max": [
+   11.684,
+   -69.2213,
+   1450.9399
+  ],
+  "cle": "disque-c2-c3",
+  "fr": "Disque intervertébral C2–C3",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3213",
+  "fma": "FMA13896",
+  "en": "Intervertebral disk of third cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -80.7,
+   1430
+  ],
+  "min": [
+   -11.9711,
+   -88.691,
+   1426.89
+  ],
+  "max": [
+   10.6614,
+   -72.6619,
+   1433.07
+  ],
+  "cle": "disque-c3-c4",
+  "fr": "Disque intervertébral C3–C4",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3218",
+  "fma": "FMA13897",
+  "en": "Intervertebral disk of fourth cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -82.7,
+   1414
+  ],
+  "min": [
+   -13.3902,
+   -91.2835,
+   1408.71
+  ],
+  "max": [
+   12.0673,
+   -74.2152,
+   1419.33
+  ],
+  "cle": "disque-c4-c5",
+  "fr": "Disque intervertébral C4–C5",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3219",
+  "fma": "FMA13898",
+  "en": "Intervertebral disk of fifth cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -83.8,
+   1397.9
+  ],
+  "min": [
+   -14.8096,
+   -91.9798,
+   1392.57
+  ],
+  "max": [
+   13.479,
+   -75.5214,
+   1403.33
+  ],
+  "cle": "disque-c5-c6",
+  "fr": "Disque intervertébral C5–C6",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3220",
+  "fma": "FMA13899",
+  "en": "Intervertebral disk of sixth cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -81.9,
+   1382
+  ],
+  "min": [
+   -14.826,
+   -90.3012,
+   1377.1801
+  ],
+  "max": [
+   13.355,
+   -73.5229,
+   1386.75
+  ],
+  "cle": "disque-c6-c7",
+  "fr": "Disque intervertébral C6–C7",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3221",
+  "fma": "FMA13900",
+  "en": "Intervertebral disk of seventh cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -78.7,
+   1365.8
+  ],
+  "min": [
+   -16.3312,
+   -87.6123,
+   1360
+  ],
+  "max": [
+   14.939,
+   -69.7753,
+   1371.67
+  ],
+  "cle": "disque-c7-t1",
+  "fr": "Disque intervertébral C7–T1",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3212",
+  "fma": "FMA16033",
+  "en": "Intervertebral disk of first lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -93.4,
+   1040.6
+  ],
+  "min": [
+   -21.8952,
+   -112.303,
+   1032.5601
+  ],
+  "max": [
+   20.5982,
+   -74.5321,
+   1048.57
+  ],
+  "cle": "disque-l1-l2",
+  "fr": "Disque intervertébral L1–L2",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3214",
+  "fma": "FMA16034",
+  "en": "Intervertebral disk of second lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -97.1,
+   1006.8
+  ],
+  "min": [
+   -22.9699,
+   -115.991,
+   1001.12
+  ],
+  "max": [
+   21.649,
+   -78.1293,
+   1012.57
+  ],
+  "cle": "disque-l2-l3",
+  "fr": "Disque intervertébral L2–L3",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3215",
+  "fma": "FMA16035",
+  "en": "Intervertebral disk of third lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -93.7,
+   972
+  ],
+  "min": [
+   -23.0097,
+   -112.853,
+   963.294
+  ],
+  "max": [
+   21.7167,
+   -74.5784,
+   980.707
+  ],
+  "cle": "disque-l3-l4",
+  "fr": "Disque intervertébral L3–L4",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3216",
+  "fma": "FMA16036",
+  "en": "Intervertebral disk of fourth lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -83.5,
+   942.1
+  ],
+  "min": [
+   -25.2531,
+   -102.767,
+   930.628
+  ],
+  "max": [
+   23.8987,
+   -64.255,
+   953.593
+  ],
+  "cle": "disque-l4-l5",
+  "fr": "Disque intervertébral L4–L5",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3217",
+  "fma": "FMA16037",
+  "en": "Intervertebral disk of fifth lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -72.5,
+   909.3
+  ],
+  "min": [
+   -24.355,
+   -91.0785,
+   894.826
+  ],
+  "max": [
+   22.9925,
+   -53.946,
+   923.771
+  ],
+  "cle": "disque-l5-s1",
+  "fr": "Disque intervertébral L5–S1",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3222",
+  "fma": "FMA10458",
+  "en": "Intervertebral disk of first thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.8,
+   -73.8,
+   1348.3
+  ],
+  "min": [
+   -17.064,
+   -83.7819,
+   1341.9
+  ],
+  "max": [
+   15.5358,
+   -63.9087,
+   1354.75
+  ],
+  "cle": "disque-t1-t2",
+  "fr": "Disque intervertébral T1–T2",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3209",
+  "fma": "FMA13507",
+  "en": "Intervertebral disk of tenth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -68.7,
+   1127.6
+  ],
+  "min": [
+   -19.9665,
+   -87.7942,
+   1119.91
+  ],
+  "max": [
+   18.6696,
+   -49.6815,
+   1135.3101
+  ],
+  "cle": "disque-t10-t11",
+  "fr": "Disque intervertébral T10–T11",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3210",
+  "fma": "FMA13508",
+  "en": "Intervertebral disk of eleventh thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -77,
+   1099.9
+  ],
+  "min": [
+   -20.7728,
+   -97.0122,
+   1091.61
+  ],
+  "max": [
+   19.4286,
+   -56.9869,
+   1108.24
+  ],
+  "cle": "disque-t11-t12",
+  "fr": "Disque intervertébral T11–T12",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3211",
+  "fma": "FMA10446",
+  "en": "Intervertebral disk",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -85.5,
+   1070.2
+  ],
+  "min": [
+   -21.7746,
+   -105.126,
+   1061.5
+  ],
+  "max": [
+   20.4661,
+   -65.797,
+   1078.89
+  ],
+  "cle": "disque-t12-l1",
+  "fr": "Disque intervertébral T12–L1",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3223",
+  "fma": "FMA13495",
+  "en": "Intervertebral disk of second thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -66.8,
+   1328.2
+  ],
+  "min": [
+   -16.6084,
+   -78.2662,
+   1320.74
+  ],
+  "max": [
+   15.3047,
+   -55.3544,
+   1335.62
+  ],
+  "cle": "disque-t2-t3",
+  "fr": "Disque intervertébral T2–T3",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3224",
+  "fma": "FMA13500",
+  "en": "Intervertebral disk of third thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -58.6,
+   1307.1
+  ],
+  "min": [
+   -15.5442,
+   -71.5834,
+   1299.73
+  ],
+  "max": [
+   14.2062,
+   -45.6897,
+   1314.4
+  ],
+  "cle": "disque-t3-t4",
+  "fr": "Disque intervertébral T3–T4",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3203",
+  "fma": "FMA13501",
+  "en": "Intervertebral disk of fourth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -52.2,
+   1284.7
+  ],
+  "min": [
+   -15.4939,
+   -66.7359,
+   1278.03
+  ],
+  "max": [
+   14.2347,
+   -37.6833,
+   1291.33
+  ],
+  "cle": "disque-t4-t5",
+  "fr": "Disque intervertébral T4–T5",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3204",
+  "fma": "FMA13502",
+  "en": "Intervertebral disk of fifth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -49.4,
+   1259.8
+  ],
+  "min": [
+   -15.9234,
+   -65.3025,
+   1254.5
+  ],
+  "max": [
+   14.6322,
+   -33.5565,
+   1265
+  ],
+  "cle": "disque-t5-t6",
+  "fr": "Disque intervertébral T5–T6",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3205",
+  "fma": "FMA13503",
+  "en": "Intervertebral disk of sixth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -48.4,
+   1233.1
+  ],
+  "min": [
+   -17.6541,
+   -66.1989,
+   1227.09
+  ],
+  "max": [
+   16.3522,
+   -30.6065,
+   1239.14
+  ],
+  "cle": "disque-t6-t7",
+  "fr": "Disque intervertébral T6–T7",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3206",
+  "fma": "FMA13504",
+  "en": "Intervertebral disk of seventh thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -51.2,
+   1207.1
+  ],
+  "min": [
+   -17.619,
+   -69.4926,
+   1200.95
+  ],
+  "max": [
+   16.2887,
+   -32.8435,
+   1213.1801
+  ],
+  "cle": "disque-t7-t8",
+  "fr": "Disque intervertébral T7–T8",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3207",
+  "fma": "FMA13505",
+  "en": "Intervertebral disk of eighth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -56.3,
+   1182
+  ],
+  "min": [
+   -18.4752,
+   -74.1825,
+   1174.72
+  ],
+  "max": [
+   17.1607,
+   -38.3823,
+   1189.37
+  ],
+  "cle": "disque-t8-t9",
+  "fr": "Disque intervertébral T8–T9",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3208",
+  "fma": "FMA13506",
+  "en": "Intervertebral disk of ninth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -61.6,
+   1154.8
+  ],
+  "min": [
+   -19.5791,
+   -79.6317,
+   1147.11
+  ],
+  "max": [
+   18.2622,
+   -43.5852,
+   1162.54
+  ],
+  "cle": "disque-t9-t10",
+  "fr": "Disque intervertébral T9–T10",
+  "la": "Discus intervertebralis",
+  "genre": "m",
+  "cote": null,
+  "region": "rachis",
+  "groupe": "Disques intervertébraux",
+  "fiche": "disques-intervertebraux"
+ },
+ {
+  "fj": "FJ3176",
+  "fma": "FMA12519",
+  "en": "Atlas",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -64.1,
+   1471.8
+  ],
+  "min": [
+   -41.3646,
+   -87.6442,
+   1462.21
+  ],
+  "max": [
+   40.2307,
+   -40.5958,
+   1481.4301
+  ],
+  "cle": "atlas",
+  "fr": "Atlas (C1)",
+  "la": "Atlas",
+  "genre": "m",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "atlas-axis",
+  "cote": null
+ },
+ {
+  "fj": "FJ3177",
+  "fma": "FMA12520",
+  "en": "Axis",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -61.6,
+   1455.8
+  ],
+  "min": [
+   -25.9616,
+   -86.5391,
+   1433.17
+  ],
+  "max": [
+   24.5742,
+   -36.6709,
+   1478.35
+  ],
+  "cle": "axis",
+  "fr": "Axis (C2)",
+  "la": "Axis",
+  "genre": "m",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "atlas-axis",
+  "cote": null
+ },
+ {
+  "fj": "FJ3161",
+  "fma": "FMA12521",
+  "en": "Third cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -63,
+   1431.4
+  ],
+  "min": [
+   -29.8428,
+   -87.8132,
+   1417
+  ],
+  "max": [
+   28.5393,
+   -38.1331,
+   1445.74
+  ],
+  "cle": "vertebre-c3",
+  "fr": "Vertèbre C3",
+  "la": "Vertebra cervicalis III",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "vertebres-cervicales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3164",
+  "fma": "FMA12522",
+  "en": "Fourth cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -64.9,
+   1418.4
+  ],
+  "min": [
+   -27.7534,
+   -89.1081,
+   1404.6
+  ],
+  "max": [
+   26.3775,
+   -40.6936,
+   1432.14
+  ],
+  "cle": "vertebre-c4",
+  "fr": "Vertèbre C4",
+  "la": "Vertebra cervicalis IV",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "vertebres-cervicales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3167",
+  "fma": "FMA12523",
+  "en": "Fifth cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -63.4,
+   1405.9
+  ],
+  "min": [
+   -29.6978,
+   -90.7726,
+   1393.77
+  ],
+  "max": [
+   28.3332,
+   -36.0825,
+   1417.99
+  ],
+  "cle": "vertebre-c5",
+  "fr": "Vertèbre C5",
+  "la": "Vertebra cervicalis V",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "vertebres-cervicales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3170",
+  "fma": "FMA12524",
+  "en": "Sixth cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -60.4,
+   1393.2
+  ],
+  "min": [
+   -31.2652,
+   -91.671,
+   1381.59
+  ],
+  "max": [
+   29.9477,
+   -29.1794,
+   1404.74
+  ],
+  "cle": "vertebre-c6",
+  "fr": "Vertèbre C6",
+  "la": "Vertebra cervicalis VI",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "vertebres-cervicales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3172",
+  "fma": "FMA12525",
+  "en": "Seventh cervical vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -55.6,
+   1378.3
+  ],
+  "min": [
+   -33.2293,
+   -90.0319,
+   1364.71
+  ],
+  "max": [
+   31.9316,
+   -21.2664,
+   1391.84
+  ],
+  "cle": "vertebre-c7",
+  "fr": "Vertèbre C7",
+  "la": "Vertebra cervicalis VII",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis cervical",
+  "fiche": "vertebres-cervicales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3157",
+  "fma": "FMA13072",
+  "en": "First lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -69.4,
+   1043.6
+  ],
+  "min": [
+   -35.7798,
+   -109.48,
+   1015.2
+  ],
+  "max": [
+   34.4614,
+   -29.2224,
+   1071.98
+  ],
+  "cle": "vertebre-l1",
+  "fr": "Vertèbre L1",
+  "la": "Vertebra lumbalis I",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis lombal",
+  "fiche": "vertebres-lombales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3159",
+  "fma": "FMA13073",
+  "en": "Second lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -74.5,
+   1016
+  ],
+  "min": [
+   -40.3509,
+   -114.72,
+   992.316
+  ],
+  "max": [
+   39.0608,
+   -34.3488,
+   1039.76
+  ],
+  "cle": "vertebre-l2",
+  "fr": "Vertèbre L2",
+  "la": "Vertebra lumbalis II",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis lombal",
+  "fiche": "vertebres-lombales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3162",
+  "fma": "FMA13074",
+  "en": "Third lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -72.4,
+   988.7
+  ],
+  "min": [
+   -40.2029,
+   -115.353,
+   967.693
+  ],
+  "max": [
+   38.841,
+   -29.514,
+   1009.73
+  ],
+  "cle": "vertebre-l3",
+  "fr": "Vertèbre L3",
+  "la": "Vertebra lumbalis III",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis lombal",
+  "fiche": "vertebres-lombales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3165",
+  "fma": "FMA13075",
+  "en": "Fourth lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -68.3,
+   961
+  ],
+  "min": [
+   -42.7661,
+   -110.405,
+   938.664
+  ],
+  "max": [
+   41.4154,
+   -26.1562,
+   983.402
+  ],
+  "cle": "vertebre-l4",
+  "fr": "Vertèbre L4",
+  "la": "Vertebra lumbalis IV",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis lombal",
+  "fiche": "vertebres-lombales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3168",
+  "fma": "FMA13076",
+  "en": "Fifth lumbar vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -58.7,
+   929.7
+  ],
+  "min": [
+   -51.0007,
+   -99.0765,
+   904.595
+  ],
+  "max": [
+   49.5736,
+   -18.245,
+   954.833
+  ],
+  "cle": "vertebre-l5",
+  "fr": "Vertèbre L5",
+  "la": "Vertebra lumbalis V",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis lombal",
+  "fiche": "vertebres-lombales",
+  "cote": null
+ },
+ {
+  "fj": "FJ3158",
+  "fma": "FMA9165",
+  "en": "First thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -52,
+   1362.1
+  ],
+  "min": [
+   -37.383,
+   -86.8719,
+   1347.22
+  ],
+  "max": [
+   35.9162,
+   -17.0867,
+   1376.9
+  ],
+  "cle": "vertebre-t1",
+  "fr": "Vertèbre T1",
+  "la": "Vertebra thoracica I",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3154",
+  "fma": "FMA10037",
+  "en": "Tenth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -45.9,
+   1128.5
+  ],
+  "min": [
+   -33.6568,
+   -84.0578,
+   1099.77
+  ],
+  "max": [
+   32.2452,
+   -7.8225,
+   1157.13
+  ],
+  "cle": "vertebre-t10",
+  "fr": "Vertèbre T10",
+  "la": "Vertebra thoracica X",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3155",
+  "fma": "FMA10059",
+  "en": "Eleventh thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -52.8,
+   1102.5
+  ],
+  "min": [
+   -26.761,
+   -92.5324,
+   1075.72
+  ],
+  "max": [
+   25.5593,
+   -13.0089,
+   1129.27
+  ],
+  "cle": "vertebre-t11",
+  "fr": "Vertèbre T11",
+  "la": "Vertebra thoracica XI",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3156",
+  "fma": "FMA10081",
+  "en": "Twelfth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -62,
+   1075.8
+  ],
+  "min": [
+   -22.3864,
+   -101.385,
+   1049.96
+  ],
+  "max": [
+   21.0548,
+   -22.5609,
+   1101.59
+  ],
+  "cle": "vertebre-t12",
+  "fr": "Vertèbre T12",
+  "la": "Vertebra thoracica XII",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3160",
+  "fma": "FMA9187",
+  "en": "Second thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -47.4,
+   1343.5
+  ],
+  "min": [
+   -35.9221,
+   -82.6758,
+   1326.59
+  ],
+  "max": [
+   34.5784,
+   -12.1205,
+   1360.36
+  ],
+  "cle": "vertebre-t2",
+  "fr": "Vertèbre T2",
+  "la": "Vertebra thoracica II",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3163",
+  "fma": "FMA9209",
+  "en": "Third thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -39,
+   1322
+  ],
+  "min": [
+   -32.9661,
+   -76.7363,
+   1302.23
+  ],
+  "max": [
+   31.8409,
+   -1.3601,
+   1341.85
+  ],
+  "cle": "vertebre-t3",
+  "fr": "Vertèbre T3",
+  "la": "Vertebra thoracica III",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3166",
+  "fma": "FMA9248",
+  "en": "Fourth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -34.9,
+   1299.6
+  ],
+  "min": [
+   -35.4617,
+   -69.6049,
+   1277.74
+  ],
+  "max": [
+   34.282,
+   -0.1979,
+   1321.41
+  ],
+  "cle": "vertebre-t4",
+  "fr": "Vertèbre T4",
+  "la": "Vertebra thoracica IV",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3169",
+  "fma": "FMA9922",
+  "en": "Fifth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -33,
+   1268.5
+  ],
+  "min": [
+   -36.1515,
+   -66.009,
+   1239.77
+  ],
+  "max": [
+   34.8897,
+   0.0186,
+   1297.27
+  ],
+  "cle": "vertebre-t5",
+  "fr": "Vertèbre T5",
+  "la": "Vertebra thoracica V",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3171",
+  "fma": "FMA9945",
+  "en": "Sixth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -33.2,
+   1239.2
+  ],
+  "min": [
+   -36.4227,
+   -65.2209,
+   1209.38
+  ],
+  "max": [
+   35.0339,
+   -1.1924,
+   1269.08
+  ],
+  "cle": "vertebre-t6",
+  "fr": "Vertèbre T6",
+  "la": "Vertebra thoracica VI",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3173",
+  "fma": "FMA9968",
+  "en": "Seventh thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.5,
+   -33.8,
+   1210.6
+  ],
+  "min": [
+   -37.2263,
+   -66.9792,
+   1179.3001
+  ],
+  "max": [
+   36.3206,
+   -0.6715,
+   1241.8001
+  ],
+  "cle": "vertebre-t7",
+  "fr": "Vertèbre T7",
+  "la": "Vertebra thoracica VII",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3174",
+  "fma": "FMA9991",
+  "en": "Eighth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.8,
+   -36.5,
+   1183.4
+  ],
+  "min": [
+   -33.6594,
+   -72.0276,
+   1153.75
+  ],
+  "max": [
+   32.1527,
+   -0.9318,
+   1213.0501
+  ],
+  "cle": "vertebre-t8",
+  "fr": "Vertèbre T8",
+  "la": "Vertebra thoracica VIII",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3175",
+  "fma": "FMA10014",
+  "en": "Ninth thoracic vertebra",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -41.9,
+   1155.7
+  ],
+  "min": [
+   -34.3948,
+   -77.6529,
+   1126.63
+  ],
+  "max": [
+   32.998,
+   -6.1561,
+   1184.84
+  ],
+  "cle": "vertebre-t9",
+  "fr": "Vertèbre T9",
+  "la": "Vertebra thoracica IX",
+  "genre": "f",
+  "region": "rachis",
+  "groupe": "Rachis thoracique",
+  "fiche": "vertebres-thoraciques",
+  "cote": null
+ },
+ {
+  "fj": "FJ3199",
+  "fma": "FMA52740",
+  "en": "Ethmoid",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -143.5,
+   1514.8
+  ],
+  "min": [
+   -21.5099,
+   -167.2,
+   1497.28
+  ],
+  "max": [
+   20.2014,
+   -119.816,
+   1532.34
+  ],
+  "cle": "ethmoide",
+  "fr": "Os ethmoïde",
+  "la": "Os ethmoidale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": null
+ },
+ {
+  "fj": "FJ3200",
+  "fma": "FMA52734",
+  "en": "Frontal bone",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -142,
+   1575.4
+  ],
+  "min": [
+   -63.3025,
+   -177.385,
+   1520.89
+  ],
+  "max": [
+   61.9921,
+   -106.639,
+   1629.9399
+  ],
+  "cle": "frontal",
+  "fr": "Os frontal",
+  "la": "Os frontale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": null
+ },
+ {
+  "fj": "FJ3309",
+  "fma": "FMA52735",
+  "en": "Occipital bone",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -41.5,
+   1531.1
+  ],
+  "min": [
+   -61.9612,
+   -100.959,
+   1477.77
+  ],
+  "max": [
+   60.7053,
+   18.001,
+   1584.51
+  ],
+  "cle": "occipital",
+  "fr": "Os occipital",
+  "la": "Os occipitale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": null
+ },
+ {
+  "fj": "FJ3274",
+  "fma": "FMA52789",
+  "en": "Left parietal bone",
+  "systeme": "os",
+  "centre": [
+   33.5,
+   -58.4,
+   1577
+  ],
+  "min": [
+   -7.8677,
+   -131.686,
+   1517.8001
+  ],
+  "max": [
+   74.8565,
+   14.9522,
+   1636.27
+  ],
+  "cle": "parietal",
+  "fr": "Os pariétal",
+  "la": "Os parietale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3380",
+  "fma": "FMA52788",
+  "en": "Right parietal bone",
+  "systeme": "os",
+  "centre": [
+   -35.6,
+   -56.5,
+   1577.1
+  ],
+  "min": [
+   -76.1885,
+   -127.886,
+   1517.88
+  ],
+  "max": [
+   5.0024,
+   14.8314,
+   1636.27
+  ],
+  "cle": "parietal",
+  "fr": "Os pariétal",
+  "la": "Os parietale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3394",
+  "fma": "FMA52736",
+  "en": "Sphenoid bone",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -117.7,
+   1513.7
+  ],
+  "min": [
+   -56.3198,
+   -145.019,
+   1478.91
+  ],
+  "max": [
+   55.0329,
+   -90.4127,
+   1548.46
+  ],
+  "cle": "sphenoide",
+  "fr": "Os sphénoïde",
+  "la": "Os sphenoidale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": null
+ },
+ {
+  "fj": "FJ3281",
+  "fma": "FMA52739",
+  "en": "Left temporal bone",
+  "systeme": "os",
+  "centre": [
+   42.1,
+   -84.3,
+   1513.5
+  ],
+  "min": [
+   11.6242,
+   -133.567,
+   1475.48
+  ],
+  "max": [
+   72.5853,
+   -35.0704,
+   1551.46
+  ],
+  "cle": "temporal",
+  "fr": "Os temporal",
+  "la": "Os temporale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3386",
+  "fma": "FMA52738",
+  "en": "Right temporal bone",
+  "systeme": "os",
+  "centre": [
+   -43.3,
+   -84.4,
+   1513.5
+  ],
+  "min": [
+   -73.9894,
+   -133.736,
+   1475.57
+  ],
+  "max": [
+   -12.6951,
+   -35.0126,
+   1551.53
+  ],
+  "cle": "temporal",
+  "fr": "Os temporal",
+  "la": "Os temporale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Neurocrâne",
+  "fiche": "crane",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3263",
+  "fma": "FMA54738",
+  "en": "Left inferior nasal concha",
+  "systeme": "os",
+  "centre": [
+   10.3,
+   -151.7,
+   1490.4
+  ],
+  "min": [
+   4.5912,
+   -169.48,
+   1482.66
+  ],
+  "max": [
+   15.9399,
+   -133.951,
+   1498.0501
+  ],
+  "cle": "cornet-inferieur",
+  "fr": "Cornet nasal inférieur",
+  "la": "Concha nasalis inferior",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3369",
+  "fma": "FMA54737",
+  "en": "Right inferior nasal concha",
+  "systeme": "os",
+  "centre": [
+   -11.6,
+   -148.1,
+   1488.5
+  ],
+  "min": [
+   -16.5321,
+   -166.327,
+   1478.52
+  ],
+  "max": [
+   -6.6882,
+   -129.961,
+   1498.48
+  ],
+  "cle": "cornet-inferieur",
+  "fr": "Cornet nasal inférieur",
+  "la": "Concha nasalis inferior",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3289",
+  "fma": "FMA52748",
+  "en": "Mandible",
+  "systeme": "os",
+  "centre": [
+   -0.6,
+   -131.8,
+   1463.9
+  ],
+  "min": [
+   -53.8459,
+   -173.832,
+   1421.63
+  ],
+  "max": [
+   52.5541,
+   -89.8537,
+   1506.1
+  ],
+  "cle": "mandibule",
+  "fr": "Mandibule",
+  "la": "Mandibula",
+  "genre": "f",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "mandibule",
+  "cote": null
+ },
+ {
+  "fj": "FJ3269",
+  "fma": "FMA53650",
+  "en": "Left maxilla",
+  "systeme": "os",
+  "centre": [
+   21.4,
+   -154.8,
+   1498.6
+  ],
+  "min": [
+   -3.0679,
+   -182.88,
+   1463.99
+  ],
+  "max": [
+   45.7952,
+   -126.814,
+   1533.29
+  ],
+  "cle": "maxillaire",
+  "fr": "Maxillaire",
+  "la": "Maxilla",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3375",
+  "fma": "FMA53649",
+  "en": "Right maxilla",
+  "systeme": "os",
+  "centre": [
+   -23.9,
+   -156.7,
+   1498.7
+  ],
+  "min": [
+   -47.6107,
+   -184.029,
+   1463.99
+  ],
+  "max": [
+   -0.251,
+   -129.374,
+   1533.35
+  ],
+  "cle": "maxillaire",
+  "fr": "Maxillaire",
+  "la": "Maxilla",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3265",
+  "fma": "FMA53646",
+  "en": "Left lacrimal bone",
+  "systeme": "os",
+  "centre": [
+   12.6,
+   -157.7,
+   1512.4
+  ],
+  "min": [
+   7.3194,
+   -164.732,
+   1497.87
+  ],
+  "max": [
+   17.9311,
+   -150.764,
+   1526.88
+  ],
+  "cle": "lacrymal",
+  "fr": "Os lacrymal",
+  "la": "Os lacrimale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3371",
+  "fma": "FMA53645",
+  "en": "Right lacrimal bone",
+  "systeme": "os",
+  "centre": [
+   -12.8,
+   -158.2,
+   1514.6
+  ],
+  "min": [
+   -18.0419,
+   -165.51,
+   1501.88
+  ],
+  "max": [
+   -7.4865,
+   -150.947,
+   1527.35
+  ],
+  "cle": "lacrymal",
+  "fr": "Os lacrymal",
+  "la": "Os lacrimale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3272",
+  "fma": "FMA53648",
+  "en": "Left nasal bone",
+  "systeme": "os",
+  "centre": [
+   2.3,
+   -179.4,
+   1517.7
+  ],
+  "min": [
+   -2.5224,
+   -189.467,
+   1501.85
+  ],
+  "max": [
+   7.1999,
+   -169.29,
+   1533.49
+  ],
+  "cle": "nasal",
+  "fr": "Os nasal",
+  "la": "Os nasale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3378",
+  "fma": "FMA53647",
+  "en": "Right nasal bone",
+  "systeme": "os",
+  "centre": [
+   -4.9,
+   -180.2,
+   1517.2
+  ],
+  "min": [
+   -9.1487,
+   -190.833,
+   1501.17
+  ],
+  "max": [
+   -0.7414,
+   -169.585,
+   1533.1899
+  ],
+  "cle": "nasal",
+  "fr": "Os nasal",
+  "la": "Os nasale",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3273",
+  "fma": "FMA53656",
+  "en": "Left palatine bone",
+  "systeme": "os",
+  "centre": [
+   13,
+   -126.6,
+   1491.8
+  ],
+  "min": [
+   -1.5432,
+   -149.962,
+   1470.16
+  ],
+  "max": [
+   27.4584,
+   -103.322,
+   1513.4
+  ],
+  "cle": "palatin",
+  "fr": "Os palatin",
+  "la": "Os palatinum",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3379",
+  "fma": "FMA53655",
+  "en": "Right palatine bone",
+  "systeme": "os",
+  "centre": [
+   -14.3,
+   -126.6,
+   1491.9
+  ],
+  "min": [
+   -28.8104,
+   -149.907,
+   1470.45
+  ],
+  "max": [
+   0.1472,
+   -103.313,
+   1513.34
+  ],
+  "cle": "palatin",
+  "fr": "Os palatin",
+  "la": "Os palatinum",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3287",
+  "fma": "FMA52893",
+  "en": "Left zygomatic bone",
+  "systeme": "os",
+  "centre": [
+   47.6,
+   -141.6,
+   1508.7
+  ],
+  "min": [
+   31.8933,
+   -161.432,
+   1480.62
+  ],
+  "max": [
+   63.2444,
+   -121.743,
+   1536.74
+  ],
+  "cle": "zygomatique",
+  "fr": "Os zygomatique",
+  "la": "Os zygomaticum",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3392",
+  "fma": "FMA52892",
+  "en": "Right zygomatic bone",
+  "systeme": "os",
+  "centre": [
+   -48.9,
+   -141.6,
+   1508.6
+  ],
+  "min": [
+   -64.5779,
+   -161.453,
+   1480.64
+  ],
+  "max": [
+   -33.2346,
+   -121.774,
+   1536.64
+  ],
+  "cle": "zygomatique",
+  "fr": "Os zygomatique",
+  "la": "Os zygomaticum",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3395",
+  "fma": "FMA9710",
+  "en": "Vomer",
+  "systeme": "os",
+  "centre": [
+   -0.7,
+   -138.3,
+   1496.3
+  ],
+  "min": [
+   -6.1112,
+   -165.807,
+   1474.59
+  ],
+  "max": [
+   4.811,
+   -110.747,
+   1518.11
+  ],
+  "cle": "vomer",
+  "fr": "Vomer",
+  "la": "Vomer",
+  "genre": "m",
+  "region": "tete",
+  "groupe": "Viscérocrâne (face)",
+  "fiche": "face",
+  "cote": null
+ },
+ {
+  "fj": "FJ3239",
+  "fma": "FMA8005",
+  "en": "Left first costal cartilage",
+  "systeme": "os",
+  "centre": [
+   37.8,
+   -136.6,
+   1308.6
+  ],
+  "min": [
+   19.4952,
+   -150.812,
+   1296.87
+  ],
+  "max": [
+   56.1953,
+   -122.324,
+   1320.25
+  ],
+  "cle": "cartilage-costal-1",
+  "fr": "1er cartilage costal",
+  "la": "Cartilago costalis I",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3333",
+  "fma": "FMA7875",
+  "en": "Right first costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -37.8,
+   -136.5,
+   1308.6
+  ],
+  "min": [
+   -56.1874,
+   -150.757,
+   1296.91
+  ],
+  "max": [
+   -19.5121,
+   -122.171,
+   1320.22
+  ],
+  "cle": "cartilage-costal-1",
+  "fr": "1er cartilage costal",
+  "la": "Cartilago costalis I",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3242",
+  "fma": "FMA8031",
+  "en": "Left second costal cartilage",
+  "systeme": "os",
+  "centre": [
+   29.1,
+   -168,
+   1279.1
+  ],
+  "min": [
+   10.2025,
+   -178.245,
+   1270.17
+  ],
+  "max": [
+   48.0573,
+   -157.748,
+   1288.01
+  ],
+  "cle": "cartilage-costal-2",
+  "fr": "2e cartilage costal",
+  "la": "Cartilago costalis II",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3335",
+  "fma": "FMA7886",
+  "en": "Right second costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -29.2,
+   -168,
+   1279.1
+  ],
+  "min": [
+   -48.187,
+   -178.261,
+   1270.12
+  ],
+  "max": [
+   -10.2446,
+   -157.745,
+   1288.02
+  ],
+  "cle": "cartilage-costal-2",
+  "fr": "2e cartilage costal",
+  "la": "Cartilago costalis II",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3245",
+  "fma": "FMA8058",
+  "en": "Left third costal cartilage",
+  "systeme": "os",
+  "centre": [
+   31.9,
+   -180.8,
+   1251.2
+  ],
+  "min": [
+   13.0945,
+   -190.074,
+   1242.4
+  ],
+  "max": [
+   50.7226,
+   -171.438,
+   1259.99
+  ],
+  "cle": "cartilage-costal-3",
+  "fr": "3e cartilage costal",
+  "la": "Cartilago costalis III",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3337",
+  "fma": "FMA7913",
+  "en": "Right third costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -31.9,
+   -180.8,
+   1251.2
+  ],
+  "min": [
+   -50.7242,
+   -190.108,
+   1242.38
+  ],
+  "max": [
+   -13.051,
+   -171.421,
+   1259.98
+  ],
+  "cle": "cartilage-costal-3",
+  "fr": "3e cartilage costal",
+  "la": "Cartilago costalis III",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3248",
+  "fma": "FMA8167",
+  "en": "Left fourth costal cartilage",
+  "systeme": "os",
+  "centre": [
+   37,
+   -191.5,
+   1223.3
+  ],
+  "min": [
+   14.3017,
+   -198.577,
+   1211.08
+  ],
+  "max": [
+   59.7768,
+   -184.326,
+   1235.57
+  ],
+  "cle": "cartilage-costal-4",
+  "fr": "4e cartilage costal",
+  "la": "Cartilago costalis IV",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3339",
+  "fma": "FMA7976",
+  "en": "Right fourth costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -37.1,
+   -191.4,
+   1223.3
+  ],
+  "min": [
+   -59.9068,
+   -198.587,
+   1211.1
+  ],
+  "max": [
+   -14.3111,
+   -184.204,
+   1235.5601
+  ],
+  "cle": "cartilage-costal-4",
+  "fr": "4e cartilage costal",
+  "la": "Cartilago costalis IV",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3251",
+  "fma": "FMA8112",
+  "en": "Left fifth costal cartilage",
+  "systeme": "os",
+  "centre": [
+   49.9,
+   -199.2,
+   1193.4
+  ],
+  "min": [
+   17.7153,
+   -209.038,
+   1171.61
+  ],
+  "max": [
+   82.0336,
+   -189.325,
+   1215.24
+  ],
+  "cle": "cartilage-costal-5",
+  "fr": "5e cartilage costal",
+  "la": "Cartilago costalis V",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3341",
+  "fma": "FMA8070",
+  "en": "Right fifth costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -49.9,
+   -199.2,
+   1193.4
+  ],
+  "min": [
+   -82.1658,
+   -209.036,
+   1171.61
+  ],
+  "max": [
+   -17.6996,
+   -189.316,
+   1215.25
+  ],
+  "cle": "cartilage-costal-5",
+  "fr": "5e cartilage costal",
+  "la": "Cartilago costalis V",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3254",
+  "fma": "FMA8221",
+  "en": "Left sixth costal cartilage",
+  "systeme": "os",
+  "centre": [
+   53.4,
+   -198.7,
+   1167.4
+  ],
+  "min": [
+   13.8622,
+   -212.161,
+   1137.58
+  ],
+  "max": [
+   93.0014,
+   -185.172,
+   1197.28
+  ],
+  "cle": "cartilage-costal-6",
+  "fr": "6e cartilage costal",
+  "la": "Cartilago costalis VI",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3343",
+  "fma": "FMA8194",
+  "en": "Right sixth costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -53.8,
+   -198.5,
+   1167.4
+  ],
+  "min": [
+   -93.6974,
+   -212.187,
+   1137.5601
+  ],
+  "max": [
+   -13.8655,
+   -184.749,
+   1197.25
+  ],
+  "cle": "cartilage-costal-6",
+  "fr": "6e cartilage costal",
+  "la": "Cartilago costalis VI",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3255",
+  "fma": "FMA8275",
+  "en": "Left seventh costal cartilage",
+  "systeme": "os",
+  "centre": [
+   55.9,
+   -192.1,
+   1144.5
+  ],
+  "min": [
+   3.329,
+   -213.216,
+   1102.58
+  ],
+  "max": [
+   108.457,
+   -170.904,
+   1186.41
+  ],
+  "cle": "cartilage-costal-7",
+  "fr": "7e cartilage costal",
+  "la": "Cartilago costalis VII",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3345",
+  "fma": "FMA8248",
+  "en": "Right seventh costal cartilage",
+  "systeme": "os",
+  "centre": [
+   -30.2,
+   -192,
+   1144.5
+  ],
+  "min": [
+   -109.909,
+   -213.208,
+   1102.5601
+  ],
+  "max": [
+   49.5653,
+   -170.775,
+   1186.45
+  ],
+  "cle": "cartilage-costal-7",
+  "fr": "7e cartilage costal",
+  "la": "Cartilago costalis VII",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Cartilages costaux",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3225",
+  "fma": "FMA8472",
+  "en": "Left tenth rib",
+  "systeme": "os",
+  "centre": [
+   69,
+   -64.5,
+   1091
+  ],
+  "min": [
+   15.5623,
+   -117.715,
+   1022.96
+  ],
+  "max": [
+   122.349,
+   -11.3545,
+   1158.99
+  ],
+  "cle": "cote-10",
+  "fr": "10e côte",
+  "la": "Costa X",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3330",
+  "fma": "FMA8445",
+  "en": "Right tenth rib",
+  "systeme": "os",
+  "centre": [
+   -70.3,
+   -64.5,
+   1091
+  ],
+  "min": [
+   -123.648,
+   -117.687,
+   1022.98
+  ],
+  "max": [
+   -16.8729,
+   -11.3593,
+   1158.98
+  ],
+  "cle": "cote-10",
+  "fr": "10e côte",
+  "la": "Costa X",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3226",
+  "fma": "FMA8532",
+  "en": "Left eleventh rib",
+  "systeme": "os",
+  "centre": [
+   63.2,
+   -57,
+   1064.9
+  ],
+  "min": [
+   16.279,
+   -96.0117,
+   1008.06
+  ],
+  "max": [
+   110.054,
+   -17.9614,
+   1121.74
+  ],
+  "cle": "cote-11",
+  "fr": "11e côte",
+  "la": "Costa XI",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3331",
+  "fma": "FMA8531",
+  "en": "Right eleventh rib",
+  "systeme": "os",
+  "centre": [
+   -64.5,
+   -57,
+   1064.9
+  ],
+  "min": [
+   -111.353,
+   -96.0183,
+   1008.08
+  ],
+  "max": [
+   -17.5963,
+   -17.962,
+   1121.73
+  ],
+  "cle": "cote-11",
+  "fr": "11e côte",
+  "la": "Costa XI",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3227",
+  "fma": "FMA8534",
+  "en": "Left twelfth rib",
+  "systeme": "os",
+  "centre": [
+   51.1,
+   -47,
+   1050.2
+  ],
+  "min": [
+   16.8903,
+   -66.0698,
+   1011.33
+  ],
+  "max": [
+   85.2211,
+   -28.0149,
+   1089.16
+  ],
+  "cle": "cote-12",
+  "fr": "12e côte",
+  "la": "Costa XII",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3332",
+  "fma": "FMA8533",
+  "en": "Right twelfth rib",
+  "systeme": "os",
+  "centre": [
+   -52.4,
+   -47,
+   1050.3
+  ],
+  "min": [
+   -86.5332,
+   -66.0973,
+   1011.34
+  ],
+  "max": [
+   -18.2125,
+   -27.9922,
+   1089.17
+  ],
+  "cle": "cote-12",
+  "fr": "12e côte",
+  "la": "Costa XII",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3228",
+  "fma": "FMA7987",
+  "en": "Left first rib",
+  "systeme": "os",
+  "centre": [
+   41.1,
+   -97.4,
+   1340.3
+  ],
+  "min": [
+   13.8004,
+   -130.42,
+   1310.07
+  ],
+  "max": [
+   68.4546,
+   -64.417,
+   1370.48
+  ],
+  "cle": "cote-1",
+  "fr": "1re côte",
+  "la": "Costa I",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3334",
+  "fma": "FMA7857",
+  "en": "Right first rib",
+  "systeme": "os",
+  "centre": [
+   -42.4,
+   -97.4,
+   1340.3
+  ],
+  "min": [
+   -69.7641,
+   -130.424,
+   1310.07
+  ],
+  "max": [
+   -15.1109,
+   -64.4146,
+   1370.48
+  ],
+  "cle": "cote-1",
+  "fr": "1re côte",
+  "la": "Costa I",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3229",
+  "fma": "FMA8012",
+  "en": "Left second rib",
+  "systeme": "os",
+  "centre": [
+   55.2,
+   -108.9,
+   1316.3
+  ],
+  "min": [
+   14.7349,
+   -167.127,
+   1273.51
+  ],
+  "max": [
+   95.661,
+   -50.6468,
+   1359.03
+  ],
+  "cle": "cote-2",
+  "fr": "2e côte",
+  "la": "Costa II",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3336",
+  "fma": "FMA7882",
+  "en": "Right second rib",
+  "systeme": "os",
+  "centre": [
+   -56.5,
+   -108.9,
+   1316.3
+  ],
+  "min": [
+   -96.9721,
+   -167.157,
+   1273.5501
+  ],
+  "max": [
+   -16.0495,
+   -50.6529,
+   1359.03
+  ],
+  "cle": "cote-2",
+  "fr": "2e côte",
+  "la": "Costa II",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3230",
+  "fma": "FMA8039",
+  "en": "Left third rib",
+  "systeme": "os",
+  "centre": [
+   60.2,
+   -108.1,
+   1289.9
+  ],
+  "min": [
+   12.7243,
+   -179.257,
+   1243.84
+  ],
+  "max": [
+   107.633,
+   -36.8579,
+   1335.98
+  ],
+  "cle": "cote-3",
+  "fr": "3e côte",
+  "la": "Costa III",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3338",
+  "fma": "FMA7909",
+  "en": "Right third rib",
+  "systeme": "os",
+  "centre": [
+   -61.5,
+   -108,
+   1289.9
+  ],
+  "min": [
+   -108.947,
+   -179.268,
+   1243.82
+  ],
+  "max": [
+   -14.024,
+   -36.829,
+   1335.97
+  ],
+  "cle": "cote-3",
+  "fr": "3e côte",
+  "la": "Costa III",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3231",
+  "fma": "FMA8148",
+  "en": "Left fourth rib",
+  "systeme": "os",
+  "centre": [
+   64.6,
+   -107.7,
+   1263.2
+  ],
+  "min": [
+   12.9057,
+   -192.195,
+   1211.1
+  ],
+  "max": [
+   116.281,
+   -23.1919,
+   1315.35
+  ],
+  "cle": "cote-4",
+  "fr": "4e côte",
+  "la": "Costa IV",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3340",
+  "fma": "FMA7957",
+  "en": "Right fourth rib",
+  "systeme": "os",
+  "centre": [
+   -66.3,
+   -107.7,
+   1263.2
+  ],
+  "min": [
+   -117.593,
+   -192.192,
+   1211.1
+  ],
+  "max": [
+   -15.0119,
+   -23.1945,
+   1315.35
+  ],
+  "cle": "cote-4",
+  "fr": "4e côte",
+  "la": "Costa IV",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3232",
+  "fma": "FMA8093",
+  "en": "Left fifth rib",
+  "systeme": "os",
+  "centre": [
+   69.9,
+   -105.2,
+   1231.7
+  ],
+  "min": [
+   14.0045,
+   -197.688,
+   1172.17
+  ],
+  "max": [
+   125.768,
+   -12.7227,
+   1291.32
+  ],
+  "cle": "cote-5",
+  "fr": "5e côte",
+  "la": "Costa V",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3342",
+  "fma": "FMA8066",
+  "en": "Right fifth rib",
+  "systeme": "os",
+  "centre": [
+   -71.2,
+   -105.2,
+   1231.7
+  ],
+  "min": [
+   -127.079,
+   -197.651,
+   1172.16
+  ],
+  "max": [
+   -15.3142,
+   -12.7276,
+   1291.32
+  ],
+  "cle": "cote-5",
+  "fr": "5e côte",
+  "la": "Costa V",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3233",
+  "fma": "FMA8202",
+  "en": "Left sixth rib",
+  "systeme": "os",
+  "centre": [
+   72.9,
+   -98.6,
+   1202.4
+  ],
+  "min": [
+   12.7754,
+   -193.495,
+   1137.9
+  ],
+  "max": [
+   133.054,
+   -3.6444,
+   1266.83
+  ],
+  "cle": "cote-6",
+  "fr": "6e côte",
+  "la": "Costa VI",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3344",
+  "fma": "FMA8175",
+  "en": "Right sixth rib",
+  "systeme": "os",
+  "centre": [
+   -74.6,
+   -98.6,
+   1201.8
+  ],
+  "min": [
+   -134.349,
+   -193.505,
+   1137.91
+  ],
+  "max": [
+   -14.8373,
+   -3.6414,
+   1265.7
+  ],
+  "cle": "cote-6",
+  "fr": "6e côte",
+  "la": "Costa VI",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3234",
+  "fma": "FMA8256",
+  "en": "Left seventh rib",
+  "systeme": "os",
+  "centre": [
+   74.1,
+   -92.4,
+   1172.7
+  ],
+  "min": [
+   12.3825,
+   -180.208,
+   1105.1899
+  ],
+  "max": [
+   135.778,
+   -4.4979,
+   1240.25
+  ],
+  "cle": "cote-7",
+  "fr": "7e côte",
+  "la": "Costa VII",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3346",
+  "fma": "FMA8229",
+  "en": "Right seventh rib",
+  "systeme": "os",
+  "centre": [
+   -75.4,
+   -92.3,
+   1172.7
+  ],
+  "min": [
+   -137.085,
+   -180.203,
+   1105.1899
+  ],
+  "max": [
+   -13.6897,
+   -4.4869,
+   1240.27
+  ],
+  "cle": "cote-7",
+  "fr": "7e côte",
+  "la": "Costa VII",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3235",
+  "fma": "FMA8310",
+  "en": "Left eighth rib",
+  "systeme": "os",
+  "centre": [
+   72,
+   -83.6,
+   1143
+  ],
+  "min": [
+   12.3704,
+   -162.675,
+   1074.65
+  ],
+  "max": [
+   131.638,
+   -4.5696,
+   1211.32
+  ],
+  "cle": "cote-8",
+  "fr": "8e côte",
+  "la": "Costa VIII",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3347",
+  "fma": "FMA8283",
+  "en": "Right eighth rib",
+  "systeme": "os",
+  "centre": [
+   -73.3,
+   -83.6,
+   1143
+  ],
+  "min": [
+   -132.968,
+   -162.678,
+   1074.66
+  ],
+  "max": [
+   -13.6765,
+   -4.5645,
+   1211.33
+  ],
+  "cle": "cote-8",
+  "fr": "8e côte",
+  "la": "Costa VIII",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3236",
+  "fma": "FMA8391",
+  "en": "Left ninth rib",
+  "systeme": "os",
+  "centre": [
+   71.2,
+   -71.6,
+   1117.7
+  ],
+  "min": [
+   14.5582,
+   -135.602,
+   1050.09
+  ],
+  "max": [
+   127.783,
+   -7.5277,
+   1185.36
+  ],
+  "cle": "cote-9",
+  "fr": "9e côte",
+  "la": "Costa IX",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "g"
+ },
+ {
+  "fj": "FJ3348",
+  "fma": "FMA8364",
+  "en": "Right ninth rib",
+  "systeme": "os",
+  "centre": [
+   -72.5,
+   -71.6,
+   1117.7
+  ],
+  "min": [
+   -129.098,
+   -135.632,
+   1050.09
+  ],
+  "max": [
+   -15.8646,
+   -7.5291,
+   1185.37
+  ],
+  "cle": "cote-9",
+  "fr": "9e côte",
+  "la": "Costa IX",
+  "genre": "f",
+  "region": "thorax",
+  "groupe": "Côtes",
+  "fiche": "cotes",
+  "cote": "d"
+ },
+ {
+  "fj": "FJ3178",
+  "fma": "FMA7487",
+  "en": "Body of sternum",
+  "systeme": "os",
+  "centre": [
+   0.2,
+   -189.5,
+   1234.6
+  ],
+  "min": [
+   -23.6149,
+   -213.832,
+   1179.65
+  ],
+  "max": [
+   23.9556,
+   -165.166,
+   1289.64
+  ],
+  "cle": "corps-sternum",
+  "fr": "Corps du sternum",
+  "la": "Corpus sterni",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Sternum",
+  "fiche": "sternum",
+  "cote": null
+ },
+ {
+  "fj": "FJ3290",
+  "fma": "FMA7486",
+  "en": "Manubrium",
+  "systeme": "os",
+  "centre": [
+   0,
+   -154.7,
+   1302.8
+  ],
+  "min": [
+   -27.4497,
+   -178.588,
+   1280.27
+  ],
+  "max": [
+   27.4497,
+   -130.801,
+   1325.25
+  ],
+  "cle": "manubrium",
+  "fr": "Manubrium sternal",
+  "la": "Manubrium sterni",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Sternum",
+  "fiche": "sternum",
+  "cote": null
+ },
+ {
+  "fj": "FJ3153",
+  "fma": "FMA7488",
+  "en": "Xiphoid process",
+  "systeme": "os",
+  "centre": [
+   0.1,
+   -205.9,
+   1174.3
+  ],
+  "min": [
+   -10.3378,
+   -213.353,
+   1164.02
+  ],
+  "max": [
+   10.6039,
+   -198.509,
+   1184.5
+  ],
+  "cle": "xiphoide",
+  "fr": "Processus xiphoïde",
+  "la": "Processus xiphoideus",
+  "genre": "m",
+  "region": "thorax",
+  "groupe": "Sternum",
+  "fiche": "sternum",
+  "cote": null
+ }
+]

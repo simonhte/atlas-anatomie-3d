@@ -1,0 +1,41 @@
+{
+  "name": "atlas-anatomie-3d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Atlas 3D d'anatomie humaine pour réviser la P2 (DFGSM2)",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "modeles:telecharger": "node pipeline/01-telecharger.mjs",
+    "modeles:inventaire": "node pipeline/02-inventaire.mjs",
+    "modeles:construire": "node pipeline/03-construire-glb.mjs",
+    "modeles": "npm run modeles:telecharger && npm run modeles:inventaire && npm run modeles:construire"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.1.0",
+    "@fontsource/ibm-plex-serif": "^5.1.0",
+    "marked": "^15.0.0",
+    "three": "^0.171.0",
+    "three-mesh-bvh": "^0.8.3"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.1.0",
+    "@gltf-transform/extensions": "^4.1.0",
+    "@gltf-transform/functions": "^4.1.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/node": "^24.19.2",
+    "@types/three": "^0.171.0",
+    "meshoptimizer": "^0.22.0",
+    "svelte": "^5.15.0",
+    "svelte-check": "^4.1.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.2.7"
+  }
+}

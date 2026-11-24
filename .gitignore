@@ -1,0 +1,14 @@
+# Dépendances et fichiers générés localement
+node_modules/
+dist/
+.vite/
+coverage/
+test-results/
+playwright-report/
+
+# Modèles sources téléchargés par le pipeline (volumineux, re-téléchargeables)
+sources/
+pipeline/.cache/
+
+# macOS
+.DS_Store
