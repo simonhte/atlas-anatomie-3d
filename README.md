@@ -3,7 +3,7 @@
 Atlas d'anatomie humaine en 3D pour réviser la P2 (DFGSM2) : modèles anatomiques réels
 (BodyParts3D), fiches de cours en français, et bientôt dissection par couches, coupes et quiz.
 
-> État : **étape 4 — coupes** (plans de coupe 3D avec sections pleines, coupes de scanner réelles annotées).
+> État : **étape 5 — quiz et répétition espacée**.
 
 ## Lancer l'app sur le Mac
 
@@ -101,6 +101,23 @@ seulement approchés (autre modèle).
 ```bash
 brew install --cask blender
 ```
+
+## Quiz et répétition espacée
+
+- Bouton **Quiz** : quatre types de questions, combinables :
+  - **Identifier** une structure surlignée sur le modèle (QCM ou réponse tapée, tolérante aux fautes ;
+    le côté droit/gauche est demandé) ;
+  - **Pointer** la structure demandée sur le modèle (clic ou appui, tolérance de 14 px pour les nerfs fins) ;
+  - **Cours** : questions tirées des fiches (innervation, origine, terminaison, rapports, vascularisation…) —
+    QCM quand la réponse est courte, sinon carte à retourner puis auto-évaluation ;
+  - **Coupes** : reconnaître une structure surlignée sur une coupe de scanner réelle.
+- Filtres : systèmes, régions, **liste personnelle** (bouton « ☆ Ma liste » dans les fiches).
+- **Répétition espacée FSRS** (`ts-fsrs`) : une erreur fait revenir la question le jour même, une bonne réponse
+  l'espace (jours, semaines…). Au plus 10 nouvelles questions par séance, les révisions dues passent d'abord.
+- **Progression** : tableau de bord par système et par région, questions les plus ratées.
+  Enregistrée sur l'appareil ; **export / import** d'un fichier pour passer du Mac à la tablette
+  (les deux progressions sont fusionnées).
+- Logique testée : `src/lib/progression.ts`, `src/lib/quiz.ts` (`tests/quiz.test.ts`).
 
 ## Coupes
 

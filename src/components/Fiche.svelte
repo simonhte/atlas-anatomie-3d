@@ -4,7 +4,10 @@
   import type { Fiche, Structure } from '../lib/types';
   import { nomComplet, nomRegion, nomSysteme } from '../lib/data';
 
-  let { structure, fiche, onMasquer, onIsoler, onCadrer, onRetirer, dessous, onChoisirDessous, onFermerDessous }: {
+  let { structure, fiche, onMasquer, onIsoler, onCadrer, onRetirer, dessous, onChoisirDessous, onFermerDessous, dansListe = false, onListe }: {
+    /** La structure est-elle dans la liste personnelle de révision ? */
+    dansListe?: boolean;
+    onListe?: () => void;
     structure: Structure | null;
     fiche: Fiche | null;
     onMasquer: () => void;
@@ -62,6 +65,9 @@
       <button class="chip" onclick={onCadrer}>Cadrer</button>
       <button class="chip" onclick={onIsoler}>Isoler</button>
       <button class="chip" onclick={onMasquer}>Masquer</button>
+      {#if onListe}
+        <button class="chip" class:on={dansListe} title="Liste personnelle de révision (filtre du quiz)" onclick={onListe}>{dansListe ? '★ Dans ma liste' : '☆ Ma liste'}</button>
+      {/if}
       {#if structure.systeme !== 'os'}
         <button class="chip" title="Touche R" onclick={onRetirer}>Retirer et voir dessous</button>
       {/if}

@@ -84,6 +84,8 @@
     <li><a href="https://gltf-transform.dev" target="_blank" rel="noopener">glTF Transform</a> — licence MIT</li>
     <li><a href="https://svelte.dev" target="_blank" rel="noopener">Svelte</a> et <a href="https://vite.dev" target="_blank" rel="noopener">Vite</a> — licence MIT</li>
     <li><a href="https://marked.js.org" target="_blank" rel="noopener">marked</a> — licence MIT</li>
+    <li><a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">ts-fsrs</a> (algorithme de répétition espacée FSRS) — licence MIT</li>
+    <li><a href="https://github.com/jpeg-js/jpeg-js" target="_blank" rel="noopener">jpeg-js</a> (fabrication des coupes) — licence BSD-3-Clause</li>
     <li>Polices <a href="https://github.com/IBM/plex" target="_blank" rel="noopener">IBM Plex</a> — SIL Open Font License 1.1</li>
   </ul>
   <p class="petit">Les identifiants de structures proviennent de la Foundational Model of Anatomy (FMA, University of Washington).</p>

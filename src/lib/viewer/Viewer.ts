@@ -84,7 +84,7 @@ export class Viewer {
   /** Survol à la souris : id du maillage et position du pointeur */
   onSurvol: ((id: string | null, x: number, y: number) => void) | null = null;
   /** Clic / appui : id du maillage touché (null = dans le vide) */
-  onClic: ((id: string | null) => void) | null = null;
+  onClic: ((id: string | null, x: number, y: number) => void) | null = null;
 
   constructor(private canvas: HTMLCanvasElement, private conteneur: HTMLElement) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -240,7 +240,8 @@ export class Viewer {
       info.mesh.visible = this.visibleSelonEtat(id, info, masques);
       let op = this.etat.opacites[info.systeme] ?? 1;
       // Rayons X : tout devient translucide sauf la sélection
-      if (this.etat.rayonsX && !sel) op = Math.min(op, 0.18);
+      // (les structures mises en évidence restent opaques, comme la sélection)
+      if (this.etat.rayonsX && !sel && !this.evidence.has(id)) op = Math.min(op, 0.18);
       const transparent = op < 0.999;
       if (mat.transparent !== transparent) mat.needsUpdate = true;
       mat.transparent = transparent;
@@ -281,7 +282,7 @@ export class Viewer {
       const duree = performance.now() - depart.t;
       depart = null;
       // Un « clic » = peu de mouvement et appui court (sinon c'était une rotation)
-      if (bouge < 8 && duree < 500 && e.button === 0) this.onClic?.(this.pick(e.clientX, e.clientY));
+      if (bouge < 8 && duree < 500 && e.button === 0) this.onClic?.(this.pick(e.clientX, e.clientY), e.clientX, e.clientY);
     };
     this.canvas.addEventListener('pointerup', fin);
     this.canvas.addEventListener('pointercancel', () => { nbPointeurs = 0; depart = null; });
@@ -362,8 +363,9 @@ export class Viewer {
     const centre = b.getCenter(new THREE.Vector3());
     const r = b.getSize(new THREE.Vector3()).length() / 2;
     const fov = THREE.MathUtils.degToRad(this.camera.fov);
-    // ×3 : on garde les structures voisines dans le champ (contexte anatomique)
-    const dist = Math.max(0.15, (r * 3) / Math.sin(fov / 2) / Math.min(1, this.camera.aspect));
+    // petites structures : ×3 pour garder le contexte anatomique ; grandes : ×1,6 pour bien les voir
+    const marge = r > 0.08 ? 1.6 : 3;
+    const dist = Math.max(0.15, (r * marge) / Math.sin(fov / 2) / Math.min(1, this.camera.aspect));
     const d = this.camera.position.clone().sub(this.controls.target).normalize();
     this.allerA(centre.clone().addScaledVector(d, dist), centre);
   }
@@ -408,6 +410,30 @@ export class Viewer {
       .map(([k, n]) => ({ id: k, part: n / Math.max(1, total) }))
       .filter((x) => x.part >= 0.02)
       .sort((a, b) => b.part - a.part);
+  }
+
+  /**
+   * Plus petite distance (pixels) entre un point de l'écran et la surface visible
+   * d'un ensemble de maillages (sommets échantillonnés) : sert à tolérer un clic
+   * « presque » sur une structure fine (nerf, vaisseau).
+   */
+  distanceEcran(ids: string[], x: number, y: number): number {
+    const r = this.canvas.getBoundingClientRect();
+    const v = new THREE.Vector3();
+    let min = Infinity;
+    for (const id of ids) {
+      const info = this.maillages.get(id);
+      if (!info || !info.mesh.visible) continue;
+      const p = info.mesh.geometry.attributes.position;
+      const pas = Math.max(1, Math.floor(p.count / 3000));
+      for (let i = 0; i < p.count; i += pas) {
+        v.fromBufferAttribute(p, i).applyMatrix4(info.mesh.matrixWorld).project(this.camera);
+        if (v.z > 1) continue;
+        const sx = r.left + ((v.x + 1) / 2) * r.width, sy = r.top + ((1 - v.y) / 2) * r.height;
+        min = Math.min(min, Math.hypot(sx - x, sy - y));
+      }
+    }
+    return min;
   }
 
   // ------------------------------------------------------------------ coupes

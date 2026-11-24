@@ -19,6 +19,11 @@
   import Coupes from './components/Coupes.svelte';
   import Scanner from './components/Scanner.svelte';
   import { plansActifs, type Plans } from './lib/coupes';
+  import Quiz from './components/Quiz.svelte';
+  import ProgressionVue from './components/Progression.svelte';
+  import { charger as chargerProgression, sauvegarder as sauverProgression, type Progression } from './lib/progression';
+  import { cartesPossibles, construireCibles, idCible } from './lib/quiz';
+  import type { IndexScanner } from './lib/scanner';
   import { DISSECTION_INITIALE, ETAPES, deplacer, etapeEffective } from './lib/dissection';
 
   let canvas: HTMLCanvasElement;
@@ -82,6 +87,66 @@
   let chargementFond = $state('');
   let erreur = $state('');
   let creditsOuverts = $state(false);
+
+  // ------------------------------------------------------------ quiz et progression
+  let modeApp: 'explorer' | 'quiz' = $state('explorer');
+  let progression: Progression = $state(chargerProgression());
+  let progressionOuverte = $state(false);
+  let indexScanner: IndexScanner | null = $state(null);
+  /** En mode « pointer », le quiz écoute les clics sur le modèle */
+  let ecouteClic: ((id: string | null, x: number, y: number) => void) | null = null;
+  let etatAvantQuiz: EtatAffichage | null = null;
+  /** Consigne du mode « pointer », affichée sur la scène */
+  let consigne: string | null = $state(null);
+  function changerConsigne(t: string | null) {
+    consigne = t;
+    // sur téléphone : on replie le panneau pour dégager le modèle, puis on le rouvre pour la correction
+    if (matchMedia('(max-width: 900px)').matches) panneau = t ? null : 'fiche';
+  }
+  async function chargerIndexScanner() {
+    if (!indexScanner) indexScanner = await (await fetch(`${import.meta.env.BASE_URL}coupes/s1371/index.json`)).json();
+  }
+  function sauverProg() { sauverProgression($state.snapshot(progression) as Progression); progression = progression; }
+  function entrerQuiz() {
+    etatAvantQuiz = $state.snapshot(etat);
+    etiquettes = false; // les étiquettes donneraient les réponses
+    effacerDessous();
+    modeApp = 'quiz';
+    if (matchMedia('(max-width: 900px)').matches) panneau = 'fiche';
+  }
+  function sortirQuiz() {
+    modeApp = 'explorer';
+    ecouteClic = null;
+    viewer?.mettreEnEvidence([]);
+    if (etatAvantQuiz) { etat = etatAvantQuiz; etatAvantQuiz = null; pousser(); }
+  }
+  /** Étape de dissection qui met une couche à nu (sa couche et les plus profondes restent visibles). */
+  const etapePour = (couche: number) => ETAPES.reduce((m, e, i) => (e.seuil <= couche ? i : m), 0);
+  /** Prépare le modèle pour une question du quiz. */
+  function sceneQuiz(ids: string[] | null, opts: { surligner: boolean; cadrer: 'cible' | 'region' }) {
+    if (!viewer) return;
+    if (!ids) { viewer.mettreEnEvidence([]); return; }
+    const cibles = ids.map((id) => parId.get(id)).filter((x): x is Structure => !!x);
+    if (!cibles.length) return;
+    const couche = Math.min(...cibles.map((x) => x.couche));
+    const profonde = couche >= 5 && couche < 9; // vaisseaux, nerfs, organes (pas les os) : cachés par le squelette
+    etat.masques = []; etat.selection = null;
+    // structure interne surlignée : rayons X (elle reste opaque, le reste devient translucide)
+    etat.rayonsX = profonde && opts.surligner;
+    etat.dissection = { global: etapePour(couche), regions: {} };
+    for (const k in etat.systemesVisibles) if (k !== 'genital-f' && k !== 'genital-m') etat.systemesVisibles[k] = true;
+    if (profonde) etat.systemesVisibles.os = false;
+    // « pointer » une structure profonde : on n'affiche que son système (sinon elle serait cachée)
+    if (profonde && !opts.surligner) for (const k in etat.systemesVisibles) etat.systemesVisibles[k] = k === cibles[0].systeme;
+    pousser();
+    viewer.mettreEnEvidence(opts.surligner ? ids : []);
+    if (opts.cadrer === 'cible') viewer.cadrer(ids);
+    else viewer.vue('ant', structures.filter((x) => x.region === cibles[0].region && x.systeme === 'os').map((x) => x.id));
+  }
+  const toutesCartes = $derived(structures.length
+    ? cartesPossibles(['identifier', 'pointer', 'fiche', 'coupe'], { systemes: [], regions: [], listePerso: false }, construireCibles(structures, fiches), fiches, [], indexScanner)
+    : []);
+
   /** Sur téléphone : panneau ouvert en surimpression */
   let panneau: 'arbre' | 'fiche' | null = $state(null);
   let versionRendu = $state(0);
@@ -91,6 +156,14 @@
 
   const selection = $derived(etat.selection ? parId.get(etat.selection) ?? null : null);
   const ficheSel = $derived(selection ? fiches.get(selection.fiche) ?? null : null);
+  /** Liste personnelle : ajouter / retirer la structure sélectionnée */
+  const dansListe = $derived(selection ? progression.liste.includes(idCible(selection)) : false);
+  function basculerListe() {
+    if (!selection) return;
+    const k = idCible(selection);
+    progression.liste = dansListe ? progression.liste.filter((x) => x !== k) : [...progression.liste, k];
+    sauverProg();
+  }
 
   // ------------------------------------------------------------ état + historique
   function modifier(f: (e: EtatAffichage) => void) {
@@ -238,7 +311,10 @@
       const r = scene.getBoundingClientRect();
       survol = id ? { id, x: x - r.left, y: y - r.top } : null;
     };
-    v.onClic = (id) => selectionner(id);
+    v.onClic = (id, x, y) => {
+      if (modeApp === 'quiz') { ecouteClic?.(id, x, y); return; } // pas de sélection libre pendant le quiz
+      selectionner(id);
+    };
 
     (async () => {
       try {
@@ -317,6 +393,11 @@
     <div class="outils">
       <button class="btn icone" title="Annuler (⌘Z)" aria-label="Annuler" disabled={!peutAnnuler} onclick={annuler}>↶</button>
       <button class="btn icone" title="Rétablir (⇧⌘Z)" aria-label="Rétablir" disabled={!peutRetablir} onclick={retablir}>↷</button>
+      <div class="modes" role="group" aria-label="Mode">
+        <button class="btn" class:on={modeApp === 'explorer'} onclick={() => modeApp === 'quiz' && sortirQuiz()}>Explorer</button>
+        <button class="btn" class:on={modeApp === 'quiz'} onclick={() => modeApp === 'explorer' && entrerQuiz()}>Quiz</button>
+      </div>
+      <button class="btn" onclick={async () => { progressionOuverte = true; await chargerIndexScanner(); }}>Progression</button>
       <button class="btn" onclick={() => (creditsOuverts = true)}>Crédits</button>
     </div>
   </header>
@@ -380,7 +461,7 @@
     {#if viewer && etiquettes}
       <Etiquettes {viewer} {parId} selection={etat.selection} version={versionRendu} />
     {/if}
-    {#if survol && parId.get(survol.id)}
+    {#if survol && parId.get(survol.id) && modeApp === 'explorer'}
       <div class="bulle" style:left="{survol.x + 14}px" style:top="{survol.y + 10}px">{nomComplet(parId.get(survol.id)!)}</div>
     {/if}
     <div class="vues">
@@ -398,6 +479,7 @@
     {#if scannerOuvert}
       <Scanner onSelection={selectionDepuisScanner} onRepere={repereScanner} onFermer={() => (scannerOuvert = false)} />
     {/if}
+    {#if consigne && modeApp === 'quiz'}<div class="consigne" role="status">{consigne}</div>{/if}
     {#if chargement}<div class="etat">{chargement}</div>{/if}
     {#if chargementFond}<div class="fond-chargement">{chargementFond}</div>{/if}
     {#if erreur}<div class="etat erreur">Erreur : {erreur}</div>{/if}
@@ -416,15 +498,24 @@
 
   <aside id="cote-droit" aria-label="Fiche de la structure">
     <button class="fermer" aria-label="Fermer" onclick={() => (panneau = null)}>✕</button>
-    <FicheVue structure={selection} fiche={ficheSel}
+    {#if modeApp === 'quiz'}
+      <Quiz {structures} {fiches} {progression} scanner={indexScanner} chargerScanner={chargerIndexScanner}
+        onSauver={sauverProg} onScene={sceneQuiz} onEcouteClic={(f) => (ecouteClic = f)} distanceEcran={(ids, x, y) => viewer?.distanceEcran(ids, x, y) ?? Infinity} onConsigne={changerConsigne} onQuitter={sortirQuiz} />
+    {:else}
+    <FicheVue structure={selection} fiche={ficheSel} {dansListe} onListe={basculerListe}
       onMasquer={masquerSelection} onIsoler={isolerSelection}
       onCadrer={() => etat.selection && viewer?.cadrer([etat.selection])}
       onRetirer={retirerEtVoirDessous}
       dessous={dessous ? { muscle: parId.get(dessous.muscle) ?? null, liste: dessous.ids.map((x) => ({ structure: parId.get(x.id)!, part: x.part })).filter((x) => x.structure) } : null}
       onChoisirDessous={(id) => selectionner(id, false)}
       onFermerDessous={() => { if (dessous) { const m = dessous.muscle; effacerDessous(); modifier((e) => { e.masques = e.masques.filter((x) => x !== m); }); } }} />
+    {/if}
   </aside>
 </div>
+
+{#if progressionOuverte}
+  <ProgressionVue {progression} possibles={toutesCartes} onRemplacer={(p) => { progression = p; sauverProg(); }} onFermer={() => (progressionOuverte = false)} />
+{/if}
 
 {#if creditsOuverts}
   <Credits onFermer={() => (creditsOuverts = false)} />
@@ -449,6 +540,8 @@
   h1 { font: 600 19px/1 var(--serif); margin: 0; white-space: nowrap; }
   h1 span { color: var(--acc); }
   .outils { display: flex; gap: 6px; margin-left: auto; }
+  .modes { display: flex; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 10px; }
+  .modes .btn { border: 0; height: 32px; }
   aside { overflow: auto; background: var(--pan); padding: 14px; position: relative; }
   #cote-gauche { border-right: 1px solid var(--line); }
   #cote-droit { border-left: 1px solid var(--line); }
@@ -460,6 +553,7 @@
   .pastille { width: 12px; height: 12px; border-radius: 3px; flex: none; }
   .sexe { display: flex; align-items: center; gap: 6px; margin: 10px 0 4px; }
   .sexe span { font-size: 13.5px; color: var(--mut); margin-right: 4px; }
+  .consigne { position: absolute; z-index: 3; left: 50%; top: 96px; transform: translateX(-50%); background: var(--acc); color: var(--acc-ink); font-weight: 600; padding: 8px 14px; border-radius: 10px; box-shadow: 0 6px 20px #0008; max-width: calc(100% - 20px); text-align: center; }
   .fond-chargement { position: absolute; left: 12px; top: 92px; font-size: 12px; color: var(--mut); background: #0e1418b0; padding: 4px 8px; border-radius: 6px; z-index: 2; }
   .rangee { display: flex; flex-wrap: wrap; gap: 6px; }
   .petit { font-size: 12.5px; color: var(--mut); margin: 8px 0 0; }
